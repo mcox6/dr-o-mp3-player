@@ -1,0 +1,146 @@
+   1              		.file	"cpu.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	cpuSetupHardware
+   6              	cpuSetupHardware:
+   7              		@ args = 0, pretend = 0, frame = 0
+   8              		@ frame_needed = 0, uses_anonymous_args = 0
+   9              		@ link register save eliminated.
+  10 0000 88209FE5 		ldr	r2, .L5
+  11 0004 88009FE5 		ldr	r0, .L5+4
+  12 0008 0030A0E3 		mov	r3, #0
+  13 000c 84109FE5 		ldr	r1, .L5+8
+  14 0010 003082E5 		str	r3, [r2, #0]
+  15 0014 043082E5 		str	r3, [r2, #4]
+  16 0018 143082E5 		str	r3, [r2, #20]
+  17 001c 083080E5 		str	r3, [r0, #8]
+  18 0020 183080E5 		str	r3, [r0, #24]
+  19 0024 233083E2 		add	r3, r3, #35
+  20 0028 843081E5 		str	r3, [r1, #132]
+  21 002c 0130A0E3 		mov	r3, #1
+  22 0030 803081E5 		str	r3, [r1, #128]
+  23 0034 A93083E2 		add	r3, r3, #169
+  24 0038 8C3081E5 		str	r3, [r1, #140]
+  25 003c 5530A0E3 		mov	r3, #85
+  26 0040 8C3081E5 		str	r3, [r1, #140]
+  27              	.L2:
+  28 0044 883091E5 		ldr	r3, [r1, #136]
+  29 0048 010B13E3 		tst	r3, #1024
+  30 004c 44009FE5 		ldr	r0, .L5+8
+  31 0050 FBFFFF0A 		beq	.L2
+  32 0054 0320A0E3 		mov	r2, #3
+  33 0058 AA30A0E3 		mov	r3, #170
+  34 005c 802080E5 		str	r2, [r0, #128]
+  35 0060 8C3080E5 		str	r3, [r0, #140]
+  36 0064 5530A0E3 		mov	r3, #85
+  37 0068 8C3080E5 		str	r3, [r0, #140]
+  38 006c 0230A0E3 		mov	r3, #2
+  39 0070 042080E5 		str	r2, [r0, #4]
+  40 0074 003080E5 		str	r3, [r0, #0]
+  41 0078 1C209FE5 		ldr	r2, .L5+12
+  42 007c 0130A0E3 		mov	r3, #1
+  43 0080 003180E5 		str	r3, [r0, #256]
+  44 0084 0030E0E3 		mvn	r3, #0
+  45 0088 EB2F03E5 		str	r2, [r3, #-4075]
+  46 008c 1EFF2FE1 		bx	lr
+  47              	.L6:
+  48              		.align	2
+  49              	.L5:
+  50 0090 00C002E0 		.word	-536690688
+  51 0094 008002E0 		.word	-536707072
+  52 0098 00C01FE0 		.word	-534790144
+  53 009c FDFF7F00 		.word	8388605
+  55              		.align	2
+  56              		.global	cpuSetupFIQISR
+  58              	cpuSetupFIQISR:
+  59              		@ args = 0, pretend = 0, frame = 0
+  60              		@ frame_needed = 0, uses_anonymous_args = 0
+  61              		@ link register save eliminated.
+  62 00a0 1EFF2FE1 		bx	lr
+  64              		.section	.rodata.str1.1,"aMS",%progbits,1
+  65              	.LC0:
+  66 0000 0A00     		.ascii	"\012\000"
+  67              	.LC1:
+  68 0002 2D2D2D2D 		.ascii	"------------------------------\012\000"
+  68      2D2D2D2D 
+  68      2D2D2D2D 
+  68      2D2D2D2D 
+  68      2D2D2D2D 
+  69              	.LC2:
+  70 0022 2D2D2D2D 		.ascii	"----- Memory Information -----\012\000"
+  70      2D204D65 
+  70      6D6F7279 
+  70      20496E66 
+  70      6F726D61 
+  71              	.LC3:
+  72 0042 2D2D2020 		.ascii	"--       Total Stack: % 5u --\012\000"
+  72      20202020 
+  72      20546F74 
+  72      616C2053 
+  72      7461636B 
+  73              	.LC4:
+  74 0061 2D2D2020 		.ascii	"--  Approx. Used Mem: % 5u --\012\000"
+  74      41707072 
+  74      6F782E20 
+  74      55736564 
+  74      204D656D 
+  75              	.LC5:
+  76 0080 2D2D2020 		.ascii	"--  Approx. Heap Mem: % 5u --\012\000"
+  76      41707072 
+  76      6F782E20 
+  76      48656170 
+  76      204D656D 
+  77              		.text
+  78              		.align	2
+  79              		.global	cpuPrintMemoryInfo
+  81              	cpuPrintMemoryInfo:
+  82              		@ args = 0, pretend = 0, frame = 0
+  83              		@ frame_needed = 0, uses_anonymous_args = 0
+  84 00a4 30402DE9 		stmfd	sp!, {r4, r5, lr}
+  85 00a8 54409FE5 		ldr	r4, .L11
+  86 00ac 54009FE5 		ldr	r0, .L11+4
+  87 00b0 FEFFFFEB 		bl	rprintf
+  88 00b4 0400A0E1 		mov	r0, r4
+  89 00b8 FEFFFFEB 		bl	rprintf
+  90 00bc 48009FE5 		ldr	r0, .L11+8
+  91 00c0 FEFFFFEB 		bl	rprintf
+  92 00c4 44509FE5 		ldr	r5, .L11+12
+  93 00c8 0400A0E1 		mov	r0, r4
+  94 00cc FEFFFFEB 		bl	rprintf
+  95 00d0 3C009FE5 		ldr	r0, .L11+16
+  96 00d4 111DA0E3 		mov	r1, #1088
+  97 00d8 FEFFFFEB 		bl	rprintf
+  98 00dc 0510A0E1 		mov	r1, r5
+  99 00e0 30009FE5 		ldr	r0, .L11+20
+ 100 00e4 FEFFFFEB 		bl	rprintf
+ 101 00e8 7B1C65E2 		rsb	r1, r5, #31488
+ 102 00ec A01081E2 		add	r1, r1, #160
+ 103 00f0 24009FE5 		ldr	r0, .L11+24
+ 104 00f4 FEFFFFEB 		bl	rprintf
+ 105 00f8 0400A0E1 		mov	r0, r4
+ 106 00fc 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
+ 107 0100 FEFFFFEA 		b	rprintf
+ 108              	.L12:
+ 109              		.align	2
+ 110              	.L11:
+ 111 0104 02000000 		.word	.LC1
+ 112 0108 00000000 		.word	.LC0
+ 113 010c 22000000 		.word	.LC2
+ 114 0110 000000C0 		.word	__bss_end__-1073741824
+ 115 0114 42000000 		.word	.LC3
+ 116 0118 61000000 		.word	.LC4
+ 117 011c 80000000 		.word	.LC5
+ 119              		.ident	"GCC: (GNU) 4.3.2"
+DEFINED SYMBOLS
+                            *ABS*:00000000 cpu.c
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCxoN9l.s:6      .text:00000000 cpuSetupHardware
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCxoN9l.s:10     .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCxoN9l.s:50     .text:00000090 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCxoN9l.s:58     .text:000000a0 cpuSetupFIQISR
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCxoN9l.s:62     .text:000000a0 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCxoN9l.s:81     .text:000000a4 cpuPrintMemoryInfo
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCxoN9l.s:111    .text:00000104 $d
+
+UNDEFINED SYMBOLS
+rprintf
+__bss_end__

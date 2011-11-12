@@ -1,0 +1,241 @@
+   1              		.file	"portISR.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	vPortISRStartFirstTask
+   6              	vPortISRStartFirstTask:
+   7              		@ args = 0, pretend = 0, frame = 0
+   8              		@ frame_needed = 0, uses_anonymous_args = 0
+   9              		@ link register save eliminated.
+  10              	@ 108 "../FreeRTOS/portISR.c" 1
+  11 0000 18029FE5 		LDR		R0, =pxCurrentTCB								
+  12 0004 000090E5 		LDR		R0, [R0]										
+  13 0008 00E090E5 		LDR		LR, [R0]										
+  14 000c 10029FE5 		LDR		R0, =ulCriticalNesting							
+  15 0010 0200BEE8 		LDMFD	LR!, {R1}											
+  16 0014 001080E5 		STR		R1, [R0]										
+  17 0018 0100BEE8 		LDMFD	LR!, {R0}											
+  18 001c 00F069E1 		MSR		SPSR, R0										
+  19 0020 FF7FDEE8 		LDMFD	LR, {R0-R14}^										
+  20 0024 0000A0E1 		NOP														
+  21 0028 3CE09EE5 		LDR		LR, [LR, #+60]									
+  22 002c 04F05EE2 		SUBS	PC, LR, #4											
+  23              		
+  24              	@ 0 "" 2
+  25 0030 0C309FE5 		ldr	r3, .L3
+  26 0034 003093E5 		ldr	r3, [r3, #0]
+  27 0038 08309FE5 		ldr	r3, .L3+4
+  28 003c 003093E5 		ldr	r3, [r3, #0]
+  29 0040 1EFF2FE1 		bx	lr
+  30              	.L4:
+  31              		.align	2
+  32              	.L3:
+  33 0044 00000000 		.word	ulCriticalNesting
+  34 0048 00000000 		.word	pxCurrentTCB
+  36              		.align	2
+  37              		.global	vPortYieldProcessor
+  39              	vPortYieldProcessor:
+  40              		@ ARM Exception Handler.
+  41              		@ Naked Function: prologue and epilogue provided by programmer.
+  42              		@ args = 0, pretend = 0, frame = 0
+  43              		@ frame_needed = 0, uses_anonymous_args = 0
+  44              	@ 125 "../FreeRTOS/portISR.c" 1
+  45 004c 04E08EE2 		ADD		LR, LR, #4
+  46              	@ 0 "" 2
+  47              	@ 128 "../FreeRTOS/portISR.c" 1
+  48 0050 01002DE9 		STMDB	SP!, {R0}											
+  49 0054 00204DE9 		STMDB	SP,{SP}^											
+  50 0058 0000A0E1 		NOP														
+  51 005c 04D04DE2 		SUB	SP, SP, #4											
+  52 0060 0100BDE8 		LDMIA	SP!,{R0}											
+  53 0064 004020E9 		STMDB	R0!, {LR}											
+  54 0068 00E0A0E1 		MOV	LR, R0												
+  55 006c 0100BDE8 		LDMIA	SP!, {R0}											
+  56 0070 FF7F4EE9 		STMDB	LR,{R0-LR}^											
+  57 0074 0000A0E1 		NOP														
+  58 0078 3CE04EE2 		SUB	LR, LR, #60											
+  59 007c 00004FE1 		MRS	R0, SPSR											
+  60 0080 01002EE9 		STMDB	LR!, {R0}											
+  61 0084 98019FE5 		LDR	R0, =ulCriticalNesting								
+  62 0088 000090E5 		LDR	R0, [R0]											
+  63 008c 01002EE9 		STMDB	LR!, {R0}											
+  64 0090 88019FE5 		LDR	R0, =pxCurrentTCB									
+  65 0094 000090E5 		LDR	R0, [R0]											
+  66 0098 00E080E5 		STR	LR, [R0]											
+  67              		
+  68              	@ 0 "" 2
+  69 009c 44309FE5 		ldr	r3, .L7
+  70 00a0 44209FE5 		ldr	r2, .L7+4
+  71 00a4 001093E5 		ldr	r1, [r3, #0]
+  72 00a8 001092E5 		ldr	r1, [r2, #0]
+  73              	@ 131 "../FreeRTOS/portISR.c" 1
+  74 00ac FEFFFFEB 		bl vTaskSwitchContext
+  75              	@ 0 "" 2
+  76              	@ 134 "../FreeRTOS/portISR.c" 1
+  77 00b0 68019FE5 		LDR		R0, =pxCurrentTCB								
+  78 00b4 000090E5 		LDR		R0, [R0]										
+  79 00b8 00E090E5 		LDR		LR, [R0]										
+  80 00bc 60019FE5 		LDR		R0, =ulCriticalNesting							
+  81 00c0 0200BEE8 		LDMFD	LR!, {R1}											
+  82 00c4 001080E5 		STR		R1, [R0]										
+  83 00c8 0100BEE8 		LDMFD	LR!, {R0}											
+  84 00cc 00F069E1 		MSR		SPSR, R0										
+  85 00d0 FF7FDEE8 		LDMFD	LR, {R0-R14}^										
+  86 00d4 0000A0E1 		NOP														
+  87 00d8 3CE09EE5 		LDR		LR, [LR, #+60]									
+  88 00dc 04F05EE2 		SUBS	PC, LR, #4											
+  89              		
+  90              	@ 0 "" 2
+  91 00e0 003093E5 		ldr	r3, [r3, #0]
+  92 00e4 002092E5 		ldr	r2, [r2, #0]
+  93              	.L8:
+  94              		.align	2
+  95              	.L7:
+  96 00e8 00000000 		.word	ulCriticalNesting
+  97 00ec 00000000 		.word	pxCurrentTCB
+  99              		.align	2
+ 100              		.global	vTickISR
+ 102              	vTickISR:
+ 103              		@ Naked Function: prologue and epilogue provided by programmer.
+ 104              		@ args = 0, pretend = 0, frame = 0
+ 105              		@ frame_needed = 0, uses_anonymous_args = 0
+ 106              	@ 145 "../FreeRTOS/portISR.c" 1
+ 107 00f0 01002DE9 		STMDB	SP!, {R0}											
+ 108 00f4 00204DE9 		STMDB	SP,{SP}^											
+ 109 00f8 0000A0E1 		NOP														
+ 110 00fc 04D04DE2 		SUB	SP, SP, #4											
+ 111 0100 0100BDE8 		LDMIA	SP!,{R0}											
+ 112 0104 004020E9 		STMDB	R0!, {LR}											
+ 113 0108 00E0A0E1 		MOV	LR, R0												
+ 114 010c 0100BDE8 		LDMIA	SP!, {R0}											
+ 115 0110 FF7F4EE9 		STMDB	LR,{R0-LR}^											
+ 116 0114 0000A0E1 		NOP														
+ 117 0118 3CE04EE2 		SUB	LR, LR, #60											
+ 118 011c 00004FE1 		MRS	R0, SPSR											
+ 119 0120 01002EE9 		STMDB	LR!, {R0}											
+ 120 0124 F8009FE5 		LDR	R0, =ulCriticalNesting								
+ 121 0128 000090E5 		LDR	R0, [R0]											
+ 122 012c 01002EE9 		STMDB	LR!, {R0}											
+ 123 0130 E8009FE5 		LDR	R0, =pxCurrentTCB									
+ 124 0134 000090E5 		LDR	R0, [R0]											
+ 125 0138 00E080E5 		STR	LR, [R0]											
+ 126              		
+ 127              	@ 0 "" 2
+ 128 013c 60109FE5 		ldr	r1, .L11
+ 129 0140 60009FE5 		ldr	r0, .L11+4
+ 130 0144 003091E5 		ldr	r3, [r1, #0]
+ 131 0148 003090E5 		ldr	r3, [r0, #0]
+ 132              	@ 149 "../FreeRTOS/portISR.c" 1
+ 133 014c FEFFFFEB 		bl vTaskIncrementTick
+ 134              	@ 0 "" 2
+ 135              	@ 152 "../FreeRTOS/portISR.c" 1
+ 136 0150 FEFFFFEB 		bl vTaskSwitchContext
+ 137              	@ 0 "" 2
+ 138 0154 50309FE5 		ldr	r3, .L11+8
+ 139 0158 0120A0E3 		mov	r2, #1
+ 140 015c 002083E5 		str	r2, [r3, #0]
+ 141 0160 0020A0E3 		mov	r2, #0
+ 142 0164 0030E0E3 		mvn	r3, #0
+ 143 0168 CF2F03E5 		str	r2, [r3, #-4047]
+ 144              	@ 160 "../FreeRTOS/portISR.c" 1
+ 145 016c AC009FE5 		LDR		R0, =pxCurrentTCB								
+ 146 0170 000090E5 		LDR		R0, [R0]										
+ 147 0174 00E090E5 		LDR		LR, [R0]										
+ 148 0178 A4009FE5 		LDR		R0, =ulCriticalNesting							
+ 149 017c 0200BEE8 		LDMFD	LR!, {R1}											
+ 150 0180 001080E5 		STR		R1, [R0]										
+ 151 0184 0100BEE8 		LDMFD	LR!, {R0}											
+ 152 0188 00F069E1 		MSR		SPSR, R0										
+ 153 018c FF7FDEE8 		LDMFD	LR, {R0-R14}^										
+ 154 0190 0000A0E1 		NOP														
+ 155 0194 3CE09EE5 		LDR		LR, [LR, #+60]									
+ 156 0198 04F05EE2 		SUBS	PC, LR, #4											
+ 157              		
+ 158              	@ 0 "" 2
+ 159 019c 001091E5 		ldr	r1, [r1, #0]
+ 160 01a0 000090E5 		ldr	r0, [r0, #0]
+ 161              	.L12:
+ 162              		.align	2
+ 163              	.L11:
+ 164 01a4 00000000 		.word	ulCriticalNesting
+ 165 01a8 00000000 		.word	pxCurrentTCB
+ 166 01ac 004000E0 		.word	-536854528
+ 168              		.align	2
+ 169              		.global	vPortEnterCritical
+ 171              	vPortEnterCritical:
+ 172              		@ args = 0, pretend = 0, frame = 0
+ 173              		@ frame_needed = 0, uses_anonymous_args = 0
+ 174              		@ link register save eliminated.
+ 175              	@ 206 "../FreeRTOS/portISR.c" 1
+ 176 01b0 01002DE9 		STMDB	SP!, {R0}			
+ 177 01b4 00000FE1 		MRS	R0, CPSR			
+ 178 01b8 C00080E3 		ORR	R0, R0, #0xC0		
+ 179 01bc 00F029E1 		MSR	CPSR, R0			
+ 180 01c0 0100BDE8 		LDMIA	SP!, {R0}
+ 181              	@ 0 "" 2
+ 182 01c4 0C209FE5 		ldr	r2, .L15
+ 183 01c8 003092E5 		ldr	r3, [r2, #0]
+ 184 01cc 013083E2 		add	r3, r3, #1
+ 185 01d0 003082E5 		str	r3, [r2, #0]
+ 186 01d4 1EFF2FE1 		bx	lr
+ 187              	.L16:
+ 188              		.align	2
+ 189              	.L15:
+ 190 01d8 00000000 		.word	ulCriticalNesting
+ 192              		.align	2
+ 193              		.global	vPortExitCritical
+ 195              	vPortExitCritical:
+ 196              		@ args = 0, pretend = 0, frame = 0
+ 197              		@ frame_needed = 0, uses_anonymous_args = 0
+ 198              		@ link register save eliminated.
+ 199 01dc 38209FE5 		ldr	r2, .L20
+ 200 01e0 003092E5 		ldr	r3, [r2, #0]
+ 201 01e4 000053E3 		cmp	r3, #0
+ 202 01e8 1EFF2F01 		bxeq	lr
+ 203 01ec 003092E5 		ldr	r3, [r2, #0]
+ 204 01f0 013043E2 		sub	r3, r3, #1
+ 205 01f4 003082E5 		str	r3, [r2, #0]
+ 206 01f8 003092E5 		ldr	r3, [r2, #0]
+ 207 01fc 000053E3 		cmp	r3, #0
+ 208 0200 1EFF2F11 		bxne	lr
+ 209              	@ 231 "../FreeRTOS/portISR.c" 1
+ 210 0204 01002DE9 		STMDB	SP!, {R0}		
+ 211 0208 00000FE1 		MRS	R0, CPSR		
+ 212 020c C000C0E3 		BIC	R0, R0, #0xC0	
+ 213 0210 00F029E1 		MSR	CPSR, R0		
+ 214 0214 0100BDE8 		LDMIA	SP!, {R0}
+ 215              	@ 0 "" 2
+ 216 0218 1EFF2FE1 		bx	lr
+ 217              	.L21:
+ 218              		.align	2
+ 219              	.L20:
+ 220 021c 00000000 		.word	ulCriticalNesting
+ 222              		.global	ulCriticalNesting
+ 223              		.data
+ 224              		.align	2
+ 227              	ulCriticalNesting:
+ 228 0000 0F270000 		.word	9999
+ 229              		.ident	"GCC: (GNU) 4.3.2"
+DEFINED SYMBOLS
+                            *ABS*:00000000 portISR.c
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY9G16g.s:6      .text:00000000 vPortISRStartFirstTask
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY9G16g.s:11     .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY9G16g.s:227    .data:00000000 ulCriticalNesting
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY9G16g.s:33     .text:00000044 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY9G16g.s:39     .text:0000004c vPortYieldProcessor
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY9G16g.s:45     .text:0000004c $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY9G16g.s:96     .text:000000e8 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY9G16g.s:102    .text:000000f0 vTickISR
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY9G16g.s:107    .text:000000f0 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY9G16g.s:164    .text:000001a4 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY9G16g.s:171    .text:000001b0 vPortEnterCritical
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY9G16g.s:176    .text:000001b0 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY9G16g.s:190    .text:000001d8 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY9G16g.s:195    .text:000001dc vPortExitCritical
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY9G16g.s:199    .text:000001dc $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY9G16g.s:220    .text:0000021c $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY9G16g.s:228    .data:00000000 $d
+
+UNDEFINED SYMBOLS
+pxCurrentTCB
+vTaskSwitchContext
+vTaskIncrementTick

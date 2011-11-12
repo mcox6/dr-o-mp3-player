@@ -1,0 +1,544 @@
+   1              	# 1 "../Startup.S"
+   1              	@
+   0              	
+   0              	
+   2              	@  $Id: boot.s 354 2009-01-12 04:09:59Z jcw $
+   3              	@  $Revision: 354 $
+   4              	@  $Author: jcw $
+   5              	@  $Date: 2009-01-11 23:09:59 -0500 (Sun, 11 Jan 2009) $
+   6              	@  $HeadURL: http://tinymicros.com/svn_public/arm/lpc2148_demo/trunk/boot.s $
+   7              	@
+   8              	
+   9              	@
+  10              	@  Sample initialization file 
+  11              	@
+  12              	#include "./System/sysConfig.h"
+   1              	#ifndef _SYSCONFIG_H_
+  13              	
+  14              	        .extern main
+  15              	        .extern exit
+  16              	
+  17              	        .text
+  18              	        .code 32
+  19              	
+  20              	        .align  0
+  21              	
+  22              	        .extern __bss_beg__
+  23              	        .extern __bss_end__
+  24              	        .extern __stack_end__
+  25              	        .extern __data_beg__
+  26              	        .extern __data_beg_src__   
+  27              	        .extern __intvects_beg__     
+  28              	        .extern __intvects_beg_src__
+  29              	        .extern __intvects_end__   
+  30              	        .extern __data_end__
+  31              	        .extern __data+beg_src__
+  32              	
+  33              	        .global start
+  34              	        .global endless_loop
+  35              	
+  36              	@ 
+  37              	@  Stack sizes.  These have been determined empirically.  If your interrupt
+  38              	@  routines become more complex or use a lot of dynamically allocated space,
+  39              	@  the IRQ and/or FIQ stacks may been be grown.  The supervisor stack may 
+  40              	@  overflow into the system/user stack as the system is going any initialization,
+  41              	@  before starting the FreeRTOS scheduler.  The scheduler itself needs a small
+  42              	@  amount of supervisor stack space, once it's running.
+  43              	@
+  44              	        .set  UND_STACK_SIZE, stackSize_UND // 0x00000004
+  45              	        .set  ABT_STACK_SIZE, stackSize_ABT // 0x00000004
+  46              	        .set  FIQ_STACK_SIZE, stackSize_FIQ // 0x00000020
+  47              	        .set  IRQ_STACK_SIZE, stackSize_IRQ // 0X00000200
+  48              	        .set  SVC_STACK_SIZE, stackSize_SVC // 0x00000200
+  49              	
+  50              	@
+  51              	@  Standard definitions of Mode bits and Interrupt (I & F) flags in PSRs 
+  52              	@
+  53              	        .set  MODE_USR, 0x10            @ User Mode 
+  54              	        .set  MODE_FIQ, 0x11            @ FIQ Mode 
+  55              	        .set  MODE_IRQ, 0x12            @ IRQ Mode 
+  56              	        .set  MODE_SVC, 0x13            @ Supervisor Mode 
+  57              	        .set  MODE_ABT, 0x17            @ Abort Mode 
+  58              	        .set  MODE_UND, 0x1B            @ Undefined Mode 
+  59              	        .set  MODE_SYS, 0x1F            @ System Mode 
+  60              	
+  61              	        .equ  I_BIT, 0x80               @ when I bit is set, IRQ is disabled 
+  62              	        .equ  F_BIT, 0x40               @ when F bit is set, FIQ is disabled 
+  63              	        .equ  T_BIT, 0x20               @ when T bit is set, THUMB mode is active
+  64              	
+  65              	start:
+  66              	__start:
+  67              	_mainCRTStartup:
+  68              	@
+  69              	@  Clear all of memory to 0xe5e5e5e5.  We use this value later to determine
+  70              	@  stack highwater usage.
+  71              	@
+  72 0000 10119FE5 	        ldr     r1, =__data_beg__       @ __data_beg__ is start of RAM 
+  73 0004 10319FE5 	        ldr     r3, =__stack_end__      @ __stack_end__ is end of RAM
+  74 0008 013043E0 	        sub     r3, r3, r1              @ Length of RAM to set
+  75 000c 0C219FE5 	        ldr     r2, =0xe5e5e5e5         @ Fill value
+  76              	
+  77              	.init_loop:
+  78 0010 042081E4 	        str     r2, [r1], #4            @ Store fill value, r1 += 4
+  79 0014 043053E2 	        subs    r3, r3, #4              @ Length -= 4
+  80 0018 FCFFFFCA 	        bgt     .init_loop              @ >= 0, go again
+  81              	
+  82              	.end_init_loop:
+  83              	
+  84              	@
+  85              	@  Clear BSS. 
+  86              	@
+  87 001c 00119FE5 	        ldr     r1, =__bss_beg__        @ Start of memory block 
+  88 0020 00319FE5 	        ldr     r3, =__bss_end__        @ End of memory block 
+  89 0024 013053E0 	        subs    r3, r3, r1              @ Calculate length of block 
+  90 0028 0300000A 	        beq     .end_clear_loop         @ If 0, nothing to do
+  91 002c 0020A0E3 	        mov     r2, #0                  @ Fill value
+  92              	
+  93              	.clear_loop:
+  94 0030 0120C1E4 	        strb    r2, [r1], #1            @ Store byte, r1++
+  95 0034 013053E2 	        subs    r3, r3, #1              @ Decrement counter
+  96 0038 FCFFFFCA 	        bgt     .clear_loop             @ >= 0, go again
+  97              	
+  98              	.end_clear_loop:
+  99              	
+ 100              	@
+ 101              	@  Initialize data.
+ 102              	@
+ 103 003c D4109FE5 	        ldr     r1, =__data_beg__       @ Destination (.data in RAM)
+ 104 0040 E4209FE5 	        ldr     r2, =__data_beg_src__   @ Source (.data in FLASH)
+ 105 0044 E4309FE5 	        ldr     r3, =__data_end__       @ End of .data in RAM
+ 106 0048 013053E0 	        subs    r3, r3, r1              @ Calculate length of block 
+ 107 004c 0300000A 	        beq     .end_set_loop           @ If 0, nothing to do
+ 108              	
+ 109              	.set_loop:
+ 110 0050 0140D2E4 	        ldrb    r4, [r2], #1            @ Get byte from source, r2++
+ 111 0054 0140C1E4 	        strb    r4, [r1], #1            @ Store byte to destination, r1++
+ 112 0058 013053E2 	        subs    r3, r3, #1              @ Decrement loop counter
+ 113 005c FBFFFFCA 	        bgt     .set_loop               @ >= 0, go again
+ 114              	
+ 115              	.end_set_loop:
+ 116              	
+ 117              	@
+ 118              	@  Copy interrupt vectors (See note below why this is not disabled with 
+ 119              	@  CFG_RAM_INTS isn't defined)
+ 120              	@
+ 121 0060 CC109FE5 	        ldr     r1, =__intvects_beg__     @ Destination (.intvects in RAM)
+ 122 0064 CC209FE5 	        ldr     r2, =__intvects_beg_src__ @ Source (.intvects in FLASH)
+ 123 0068 CC309FE5 	        ldr     r3, =__intvects_end__     @ End of .intvects in RAM
+ 124 006c 013053E0 	        subs    r3, r3, r1                @ Calculate length of block 
+ 125 0070 0300000A 	        beq     .end_ints_loop            @ If 0, nothing to do
+ 126              	
+ 127              	.ints_loop:
+ 128 0074 0140D2E4 	        ldrb    r4, [r2], #1            @ Get byte from source, r2++
+ 129 0078 0140C1E4 	        strb    r4, [r1], #1            @ Store byte to destination, r1++
+ 130 007c 013053E2 	        subs    r3, r3, #1              @ Decrement loop counter
+ 131 0080 FBFFFFCA 	        bgt     .ints_loop              @ >= 0, go again
+ 132              	
+ 133              	.end_ints_loop:
+ 134              	
+ 135              	@
+ 136              	@  Setup a stack for each mode - note that this only sets up a usable stack
+ 137              	@  for system/user, SWI and IRQ modes.   Also each mode is setup with
+ 138              	@  interrupts initially disabled. 
+ 139              	@
+ 140 0084 B4109FE5 	        ldr   r1, =__stack_beg_und          @ Pointer to various values we update
+ 141 0088 8C009FE5 	        ldr   r0, =__stack_end__            @ Get top of stack space
+ 142 008c DBF021E3 	        msr   CPSR_c, #MODE_UND|I_BIT|F_BIT @ Undefined Instruction Mode
+ 143 0090 00D0A0E1 	        mov   sp, r0                        @ Set undef mode SP
+ 144 0094 000081E5 	        str   r0, [r1, #0]                  @ Store this so 'mem map' knows
+ 145              	
+ 146 0098 100040E2 	        sub   r0, r0, #UND_STACK_SIZE       @ Subtract undef stack size for abort stack start
+ 147 009c D7F021E3 	        msr   CPSR_c, #MODE_ABT|I_BIT|F_BIT @ Abort Mode 
+ 148 00a0 00D0A0E1 	        mov   sp, r0                        @ Set abort mode SP
+ 149 00a4 040081E5 	        str   r0, [r1, #4]                  @ Store this so 'mem map' knows
+ 150 00a8 080081E5 	        str   r0, [r1, #8]                  @ Store this so 'mem map' knows
+ 151              	
+ 152 00ac 100040E2 	        sub   r0, r0, #ABT_STACK_SIZE       @ Subtract abort stack size for FIQ stack start
+ 153 00b0 D1F021E3 	        msr   CPSR_c, #MODE_FIQ|I_BIT|F_BIT @ FIQ Mode 
+ 154 00b4 00D0A0E1 	        mov   sp, r0                        @ Set FIQ mode SP
+ 155 00b8 0C0081E5 	        str   r0, [r1, #12]                 @ Store this so 'mem map' knows
+ 156 00bc 100081E5 	        str   r0, [r1, #16]                 @ Store this so 'mem map' knows
+ 157              	
+ 158 00c0 200040E2 	        sub   r0, r0, #FIQ_STACK_SIZE       @ Subtract FIQ stack size for IRQ stack start
+ 159 00c4 D2F021E3 	        msr   CPSR_c, #MODE_IRQ|I_BIT|F_BIT @ IRQ Mode 
+ 160 00c8 00D0A0E1 	        mov   sp, r0                        @ Set IRQ mode SP
+ 161 00cc 140081E5 	        str   r0, [r1, #20]                 @ Store this so 'mem map' knows
+ 162 00d0 180081E5 	        str   r0, [r1, #24]                 @ Store this so 'mem map' knows
+ 163              	
+ 164 00d4 020C40E2 	        sub   r0, r0, #IRQ_STACK_SIZE       @ Subtract IRQ stack size for SVC stack start
+ 165 00d8 D3F021E3 	        msr   CPSR_c, #MODE_SVC|I_BIT|F_BIT @ Supervisor Mode 
+ 166 00dc 00D0A0E1 	        mov   sp, r0                        @ Set supervisor mode SP
+ 167 00e0 1C0081E5 	        str   r0, [r1, #28]                 @ Store this so 'mem map' knows
+ 168 00e4 200081E5 	        str   r0, [r1, #32]                 @ Store this so 'mem map' knows
+ 169 00e8 012C40E2 	        sub   r2, r0, #256                  @ MAGIC! FreeRTOS only uses a few bytes of supervisor s
+ 170 00ec 302081E5 	        str   r2, [r1, #48]                 @ ...so tell _sbrk() where heap ends when FreeRTOS runn
+ 171              	
+ 172 00f0 020C40E2 	        sub   r0, r0, #SVC_STACK_SIZE       @ Subtract supervisor stack size for system/user stack 
+ 173 00f4 DFF021E3 	        msr   CPSR_c, #MODE_SYS|I_BIT|F_BIT @ System Mode 
+ 174 00f8 00D0A0E1 	        mov   sp, r0                        @ Set system/user mode SP
+ 175 00fc 240081E5 	        str   r0, [r1, #36]                 @ Store this so 'mem map' knows
+ 176 0100 280081E5 	        str   r0, [r1, #40]                 @ Store this so 'mem map' knows
+ 177              	
+ 178              	@
+ 179              	@  We want to start in supervisor mode (probably always, but FreeRTOS demands it)
+ 180              	@
+ 181 0104 D3F021E3 	        msr   CPSR_c, #MODE_SVC|I_BIT|F_BIT
+ 182              	
+ 183              	@
+ 184              	@  Set argc & argv, initialize newlib, and jump to main
+ 185              	@
+ 186 0108 0000A0E3 	        mov     r0, #0                  @ No arguments  
+ 187 010c 0010A0E3 	        mov     r1, #0                  @ No argv either 
+ 188              	
+ 189              	        //bl      syscallsInit            @ Initialize ./newlib/syscalls.c
+ 190 0110 FEFFFFEB 	        bl      main                    @ And call good ol' main()
+ 191 0114 FEFFFFEA 	        b       .                       @ In case main() ever returns
+ 192              	
+ 193              	@
+ 194              	@  Setup vector table.  
+ 195              	@
+ 196              	        .section .startup,"ax"
+ 197              	        .code 32
+ 198              	        .align 0
+ 199              	
+ 200 0000 18F09FE5 	        ldr     pc, _start              @ reset - _start               
+ 201 0004 18F09FE5 	        ldr     pc, _undf               @ undefined - _undf            
+ 202 0008 18F09FE5 	        ldr     pc, _swi                @ SWI - _swi                   
+ 203 000c 18F09FE5 	        ldr     pc, _pabt               @ program abort - _pabt        
+ 204 0010 18F09FE5 	        ldr     pc, _dabt               @ data abort - _dabt           
+ 205 0014 04F09FE5 	        ldr     pc, _start              @ reserved - reset
+ 206 0018 F0FF1FE5 	        ldr     pc, [pc, #-0xff0]       @ IRQ - read VIC_VectAddr (magic!  It's at 0xfffff030)
+ 207 001c 10F09FE5 	        ldr     pc, _fiq                @ FIQ - _fiq                   
+ 208              	
+ 209 0020 00000000 	_start: .word   __start                 @ reset
+ 210 0024 38000000 	_undf:  .word   __undf                  @ undefined                    
+ 211 0028 74000000 	_swi:   .word   __swi             		@ SWI  *************** CHANGED FROM swiDispatch
+ 212 002c 4C000000 	_pabt:  .word   __pabt                  @ program abort                
+ 213 0030 60000000 	_dabt:  .word   __dabt                  @ data abort                   
+ 214 0034 00000000 	_fiq:   .word   fiqISR                  @ FIQ                          
+ 215              	
+ 216              	@
+ 217              	@  Handlers for undef, program abort and data abort.  They all update
+ 218              	@  their respective registers, then reset the system by timing out
+ 219              	@  the watchdog (only apparent way to force a hardware reset)
+ 220              	@
+ 221              	__undf: 
+ 222 0038 04D19FE5 	        ldr     sp, =(__abort_mem+5*4)  @ Set sp_abt to data array with offset (restore later)
+ 223 003c FF1F8DE8 	        stmia   sp, {r0-r12}            @ Save first dataset in r0-r12 to array
+ 224 0040 04004EE2 	        sub     r0, lr, #4              @ Calculate PC value of undef instruction
+ 225 0044 0010A0E3 	        mov     r1, #0                  @ Abort type
+ 226 0048 0A0000EA 	        b       .abtstore               @ Save info, reset system
+ 227              	
+ 228              	__pabt: 
+ 229 004c F0D09FE5 	        ldr     sp, =(__abort_mem+5*4)  @ Set sp_abt to data array with offset (restore later)
+ 230 0050 FF1F8DE8 	        stmia   sp, {r0-r12}            @ Save first dataset in r0-r12 to array
+ 231 0054 04004EE2 	        sub     r0, lr, #4              @ Calculate PC value of undef instruction
+ 232 0058 0110A0E3 	        mov     r1, #1                  @ Abort type
+ 233 005c 050000EA 	        b       .abtstore               @ Save info, reset system
+ 234              	
+ 235              	__dabt: 
+ 236 0060 DCD09FE5 	        ldr     sp, =(__abort_mem+5*4)  @ Set sp_abt to data array with offset (restore later)
+ 237 0064 FF1F8DE8 	        stmia   sp, {r0-r12}            @ Save first dataset in r0-r12 to array
+ 238 0068 08004EE2 	        sub     r0, lr, #8              @ Calculate PC value of undef instruction
+ 239 006c 0210A0E3 	        mov     r1, #2                  @ Abort type
+ 240 0070 000000EA 	        b       .abtstore               @ Save info, reset system
+ 241              	
+ 242              	__swi:
+ 243 0074 FEFFFFEA 			b       vPortYieldProcessor		@ FreeRTOS needs this
+ 244              	
+ 245              	@
+ 246              	@  Store the abort type.  Then see if the sigil value is set, and if not,
+ 247              	@  reset the abort counter to 0.
+ 248              	@
+ 249              	.abtstore:
+ 250 0078 C8209FE5 	        ldr     r2, =__abort_typ        @ Abort type
+ 251 007c 001082E5 	        str     r1, [r2]                @ Store it
+ 252              	
+ 253 0080 C4209FE5 	        ldr     r2, =__abort_sig        @ Get the sigil address
+ 254 0084 C4409FE5 	        ldr     r4, =ABORT_SIGIL        @ Load sigil value
+ 255 0088 003092E5 	        ldr     r3, [r2]                @ Get sigil contents
+ 256 008c 040053E1 	        cmp     r3, r4                  @ Sigil set?
+ 257              	
+ 258 0090 00408215 	        strne   r4, [r2]                @ No, store sigil value
+ 259 0094 B8209F15 	        ldrne   r2, =__abort_cnt        @ No, load address of abort counter
+ 260 0098 0040A013 	        movne   r4, #0                  @ No, Zero for store
+ 261 009c 00408215 	        strne   r4, [r2]                @ No, Clear counter
+ 262              	
+ 263              	@
+ 264              	@  Now build up structure of registers and stack (r0 = abort address, r1 = 
+ 265              	@  abort type).  This code is based heavily on the work of Roger Lynx, from 
+ 266              	@  http://www.embedded.com/shared/printableArticle.jhtml?articleID=192202641
+ 267              	@
+ 268 00a0 00500FE1 	        mrs     r5, cpsr                @ Save current mode to R5 for mode switching
+ 269 00a4 00604FE1 	        mrs     r6, spsr                @ spsr_abt = CPSR of dabt originating mode, save to r6 for 
+ 270 00a8 0620A0E1 	        mov     r2, r6                  @ Building second dataset: r2 = CPSR of exception
+ 271 00ac 0F0016E3 	        tst     r6, #0x0f               @ Test mode of the raised exception
+ 272 00b0 0F608603 	        orreq   r6, r6, #0x0f           @ If 0, elevate from user mode to system mode
+ 273 00b4 06F021E1 	        msr     cpsr_c, r6              @ Switch out from mode 0x17 (abort) to ...
+ 274 00b8 0E30A0E1 	        mov     r3, lr                  @ ... dabt generating mode and state
+ 275 00bc 0D40A0E1 	        mov     r4, sp                  @ ... Get lr (=r3) and sp (=r4)
+ 276 00c0 05F021E1 	        msr     cpsr_c, r5              @ Switch back to mode 0x17 (abort)
+ 277 00c4 010051E3 	        cmp     r1, #1                  @ Test for prefetch abort
+ 278 00c8 0010A003 	        moveq   r1, #0                  @ Can't fetch instruction at the abort address
+ 279 00cc 00109015 	        ldrne   r1, [r0]                @ r1 = [pc] (dabt)
+ 280 00d0 80D09FE5 	        ldr     sp, =__abort_mem        @ Reset sp to arrays starting address
+ 281 00d4 1F008DE8 	        stmia   sp, {r0-r4}             @ Save second dataset from r0 to r4
+ 282              	
+ 283 00d8 7C109FE5 	        ldr     r1, =__abort_stk        @ Space where we'll store abort stack
+ 284 00dc 0820A0E3 	        mov     r2,#8                   @ Copy 8 stack entries
+ 285              	.abtcopy:
+ 286 00e0 040094E4 	        ldr     r0, [r4], #4            @ Get byte from source, r4 += 4
+ 287 00e4 040081E4 	        str     r0, [r1], #4            @ Store byte to destination, r1 += 4
+ 288 00e8 012052E2 	        subs    r2, r2, #1              @ Decrement loop counter
+ 289 00ec FBFFFFCA 	        bgt     .abtcopy                @ >= 0, go again
+ 290              	
+ 291 00f0 FFFFFFEA 	        b       .sysreset               @ And reset
+ 292              	
+ 293              	@
+ 294              	@  Force a system reset with ye olde watch dogge
+ 295              	@
+ 296              	        .set    SCB_RSIR_MASK, 0x0000000f
+ 297              	        .set    SCB_RSIR,      0xe01fc180
+ 298              	        .set    WD_MOD,        0xe0000000
+ 299              	        .set    WD_TC,         0xe0000004
+ 300              	        .set    WD_FEED,       0xe0000008
+ 301              	        .set    WD_MOD_WDEN,   0x00000001
+ 302              	        .set    WD_MOD_RESET,  0x00000002
+ 303              	        .set    WD_MOD_TOF,    0x00000004
+ 304              	        .set    WD_MOD_INT,    0x00000008
+ 305              	        .set    WD_MOD_MASK,   0x0000000f
+ 306              	        .set    WD_FEED_FEED1, 0x000000aa
+ 307              	        .set    WD_FEED_FEED2, 0x00000055
+ 308              	        .set    ABORT_SIGIL,   0xdeadc0de
+ 309              	
+ 310              	.sysreset:
+ 311 00f4 58109FE5 	        ldr     r1, =__abort_cnt        @ Get the abort counter address
+ 312 00f8 000091E5 	        ldr     r0, [r1]                @ Load it
+ 313 00fc 010080E2 	        add     r0, r0, #1              @ Add 1
+ 314 0100 000081E5 	        str     r0, [r1]                @ Store it back
+ 315              	
+ 316              	@
+ 317              	@  Now enable the watch dog, and go into a loop waiting for a timeout
+ 318              	@
+ 319 0104 0F00A0E3 	        ldr     r0, =SCB_RSIR_MASK
+ 320 0108 50109FE5 	        ldr     r1, =SCB_RSIR
+ 321 010c 000081E5 	        str     r0, [r1]
+ 322 0110 0300A0E3 	        ldr     r0, =WD_MOD_WDEN | WD_MOD_RESET
+ 323 0114 0E12A0E3 	        ldr     r1, =WD_MOD
+ 324 0118 000081E5 	        str     r0, [r1]
+ 325 011c 40009FE5 	        ldr     r0, =120000
+ 326 0120 4E12A0E3 	        ldr     r1, =WD_TC
+ 327 0124 000081E5 	        str     r0, [r1]
+ 328 0128 AA00A0E3 	        ldr     r0, =WD_FEED_FEED1
+ 329 012c 8E12A0E3 	        ldr     r1, =WD_FEED
+ 330 0130 000081E5 	        str     r0, [r1]
+ 331 0134 5500A0E3 	        ldr     r0, =WD_FEED_FEED2
+ 332 0138 8E12A0E3 	        ldr     r1, =WD_FEED
+ 333 013c 000081E5 	        str     r0, [r1]
+ 334 0140 FEFFFFEA 	        b       .
+ 335              	
+ 336              	@
+ 337              	@  Reserve space for interrupt vectors in RAM, in case we decide to be tricky.
+ 338              	@  Note that we never actually disable this code if it is not used (i.e.
+ 339              	@  CFG_RAM_INTS not defined).  This is because 'as' is painfully stupid about
+ 340              	@  somethings, and -D parameters on the command line is one of them.  In 
+ 341              	@  theory we could pipe it through 'cpp', but at this point I didn't want to
+ 342              	@  break what appear to be fairly fragile WinARM things.  Use Linux! (Okay,
+ 343              	@  alright, important safety tip, thanks Egon).
+ 344              	@
+ 345              	        .global __intvects
+ 346              	        .section .intvects,"ax"
+ 347              	        .align  0
+ 348              	
+ 349 0000 18F09FE5 	__intvects:   ldr     pc, _ram_reset          @ reset
+ 350 0004 18F09FE5 	              ldr     pc, _ram_undf           @ undefined
+ 351 0008 18F09FE5 	              ldr     pc, _ram_swi            @ SWI
+ 352 000c 18F09FE5 	              ldr     pc, _ram_pabt           @ program abort
+ 353 0010 18F09FE5 	              ldr     pc, _ram_dabt           @ data abort
+ 354 0014 18F09FE5 	              ldr     pc, _ram_rsrvd          @ reserved
+ 355 0018 F0FF1FE5 	              ldr     pc, [pc, #-0xff0]       @ IRQ - read VIC_VectAddr (magic!  It's at 0xfffff030
+ 356 001c 18F09FE5 	              ldr     pc, _ram_fiq            @ FIQ
+ 357              	
+ 358 0020 00000000 	_ram_reset:   .word   __start                 @ reset
+ 359 0024 38000000 	_ram_undf:    .word   __undf                  @ undefined                    
+ 360 0028 74000000 	_ram_swi:     .word   __swi             	  @ SWI  *************** CHANGED FROM swiDispatch
+ 361 002c 4C000000 	_ram_pabt:    .word   __pabt                  @ program abort                
+ 362 0030 60000000 	_ram_dabt:    .word   __dabt                  @ data abort                   
+ 363 0034 00000000 	_ram_rsrvd:   .word   __start                 @ reserved
+ 364 0038 00000000 	_ram_irq:     .word   0                       @ (not used, just reserved space)
+ 365 003c 00000000 	_ram_fiq:     .word   fiqISR                  @ FIQ                          
+ 366              	
+ 367              	@
+ 368              	@  These are in the .protected space in RAM to make sure that initialization 
+ 369              	@  code doesn't overwrite them.  When a data abort or an undefined instruction
+ 370              	@  exception occurs, the handlers update the respective locations below.  ORDER
+ 371              	@  IS IMPORTANT, THESE ARE MAPPED INTO THE C STRUCTURE abortDat_t in monitor.c
+ 372              	@  (See note above why this is not disabled with CFG_ABORT isn't defined)
+ 373              	@
+ 374              	        .global __abort_dat
+ 375              	        .section .protected
+ 376              	        .align  0
+ 377              	
+ 378 0000 00000000 	__abort_dat:  .word 0                   @ Dummy, not used
+ 379 0004 00000000 	__abort_sig:  .word 0                   @ Sigil to indicate data validity
+ 380 0008 00000000 	__abort_cnt:  .word 0                   @ Number of times we've aborted
+ 381 000c 00000000 	__abort_typ:  .word 0                   @ Type of abort (0=undef,1=pabort,2=dabort)
+ 382 0010 00000000 	__abort_mem:  .space (18 * 4), 0        @ Registers from abort state
+ 382      00000000 
+ 382      00000000 
+ 382      00000000 
+ 382      00000000 
+ 383 0058 00000000 	__abort_stk:  .space (8 * 4), 0         @ 8 stack entries from abort state
+ 383      00000000 
+ 383      00000000 
+ 383      00000000 
+ 383      00000000 
+ 384              	
+ 385              	@
+ 386              	@  Define globals so application can figure out what stacks are where.
+ 387              	@  Keep these in order!  The stack setup code expects it.
+ 388              	@
+ 389              	        .global __stack_beg_und
+ 390              	        .global __stack_end_und
+ 391              	        .global __stack_beg_abt
+ 392              	        .global __stack_end_abt
+ 393              	        .global __stack_beg_fiq
+ 394              	        .global __stack_end_fiq
+ 395              	        .global __stack_beg_irq
+ 396              	        .global __stack_end_irq
+ 397              	        .global __stack_beg_svc
+ 398              	        .global __stack_end_svc
+ 399              	        .global __stack_beg_sys
+ 400              	        .global __stack_end_sys
+ 401              	        .global __heap_max
+ 402              	        .global __heap_beg
+ 403              	        .global __heap_end
+ 404              	        .data
+ 405              	        .align  0
+ 406              	
+ 407 0000 00000000 	__stack_beg_und: .word 0                @ 0
+ 408 0004 00000000 	__stack_end_und: .word 0                @ 4
+ 409 0008 00000000 	__stack_beg_abt: .word 0                @ 8
+ 410 000c 00000000 	__stack_end_abt: .word 0                @ 12
+ 411 0010 00000000 	__stack_beg_fiq: .word 0                @ 16
+ 412 0014 00000000 	__stack_end_fiq: .word 0                @ 20
+ 413 0018 00000000 	__stack_beg_irq: .word 0                @ 24
+ 414 001c 00000000 	__stack_end_irq: .word 0                @ 28
+ 415 0020 00000000 	__stack_beg_svc: .word 0                @ 32
+ 416 0024 00000000 	__stack_end_svc: .word 0                @ 36
+ 417 0028 00000000 	__stack_beg_sys: .word 0                @ 40
+ 418 002c 00000000 	__stack_end_sys: .word 0                @ 44
+ 419 0030 00000000 	__heap_max:      .word 0                @ 48
+ 420 0034 00000000 	__heap_beg:      .word __heap_beg__
+ 421 0038 00000000 	__heap_end:      .word __heap_end__
+ 422              	
+ 423              	        .end
+DEFINED SYMBOLS
+        ../Startup.S:18     .text:00000000 $a
+        ../Startup.S:65     .text:00000000 start
+        ../Startup.S:44     *ABS*:00000010 UND_STACK_SIZE
+        ../Startup.S:45     *ABS*:00000010 ABT_STACK_SIZE
+        ../Startup.S:46     *ABS*:00000020 FIQ_STACK_SIZE
+        ../Startup.S:47     *ABS*:00000200 IRQ_STACK_SIZE
+        ../Startup.S:48     *ABS*:00000200 SVC_STACK_SIZE
+        ../Startup.S:53     *ABS*:00000010 MODE_USR
+        ../Startup.S:54     *ABS*:00000011 MODE_FIQ
+        ../Startup.S:55     *ABS*:00000012 MODE_IRQ
+        ../Startup.S:56     *ABS*:00000013 MODE_SVC
+        ../Startup.S:57     *ABS*:00000017 MODE_ABT
+        ../Startup.S:58     *ABS*:0000001b MODE_UND
+        ../Startup.S:59     *ABS*:0000001f MODE_SYS
+        ../Startup.S:61     *ABS*:00000080 I_BIT
+        ../Startup.S:62     *ABS*:00000040 F_BIT
+        ../Startup.S:63     *ABS*:00000020 T_BIT
+        ../Startup.S:66     .text:00000000 __start
+        ../Startup.S:67     .text:00000000 _mainCRTStartup
+        ../Startup.S:77     .text:00000010 .init_loop
+        ../Startup.S:82     .text:0000001c .end_init_loop
+        ../Startup.S:98     .text:0000003c .end_clear_loop
+        ../Startup.S:93     .text:00000030 .clear_loop
+        ../Startup.S:115    .text:00000060 .end_set_loop
+        ../Startup.S:109    .text:00000050 .set_loop
+        ../Startup.S:133    .text:00000084 .end_ints_loop
+        ../Startup.S:127    .text:00000074 .ints_loop
+        ../Startup.S:407    .data:00000000 __stack_beg_und
+        ../Startup.S:197    .startup:00000000 $a
+        ../Startup.S:209    .startup:00000020 _start
+        ../Startup.S:210    .startup:00000024 _undf
+        ../Startup.S:211    .startup:00000028 _swi
+        ../Startup.S:212    .startup:0000002c _pabt
+        ../Startup.S:213    .startup:00000030 _dabt
+        ../Startup.S:214    .startup:00000034 _fiq
+        ../Startup.S:209    .startup:00000020 $d
+        ../Startup.S:221    .startup:00000038 __undf
+        ../Startup.S:242    .startup:00000074 __swi
+        ../Startup.S:228    .startup:0000004c __pabt
+        ../Startup.S:235    .startup:00000060 __dabt
+        ../Startup.S:222    .startup:00000038 $a
+        ../Startup.S:382    .protected:00000010 __abort_mem
+        ../Startup.S:249    .startup:00000078 .abtstore
+        ../Startup.S:381    .protected:0000000c __abort_typ
+        ../Startup.S:379    .protected:00000004 __abort_sig
+                            *ABS*:deadc0de ABORT_SIGIL
+        ../Startup.S:380    .protected:00000008 __abort_cnt
+        ../Startup.S:383    .protected:00000058 __abort_stk
+        ../Startup.S:285    .startup:000000e0 .abtcopy
+        ../Startup.S:310    .startup:000000f4 .sysreset
+        ../Startup.S:296    *ABS*:0000000f SCB_RSIR_MASK
+        ../Startup.S:297    *ABS*:e01fc180 SCB_RSIR
+        ../Startup.S:298    *ABS*:e0000000 WD_MOD
+        ../Startup.S:299    *ABS*:e0000004 WD_TC
+        ../Startup.S:300    *ABS*:e0000008 WD_FEED
+        ../Startup.S:301    *ABS*:00000001 WD_MOD_WDEN
+        ../Startup.S:302    *ABS*:00000002 WD_MOD_RESET
+        ../Startup.S:303    *ABS*:00000004 WD_MOD_TOF
+        ../Startup.S:304    *ABS*:00000008 WD_MOD_INT
+        ../Startup.S:305    *ABS*:0000000f WD_MOD_MASK
+        ../Startup.S:306    *ABS*:000000aa WD_FEED_FEED1
+        ../Startup.S:307    *ABS*:00000055 WD_FEED_FEED2
+        ../Startup.S:349    .intvects:00000000 __intvects
+        ../Startup.S:349    .intvects:00000000 $a
+        ../Startup.S:358    .intvects:00000020 _ram_reset
+        ../Startup.S:359    .intvects:00000024 _ram_undf
+        ../Startup.S:360    .intvects:00000028 _ram_swi
+        ../Startup.S:361    .intvects:0000002c _ram_pabt
+        ../Startup.S:362    .intvects:00000030 _ram_dabt
+        ../Startup.S:363    .intvects:00000034 _ram_rsrvd
+        ../Startup.S:365    .intvects:0000003c _ram_fiq
+        ../Startup.S:358    .intvects:00000020 $d
+        ../Startup.S:364    .intvects:00000038 _ram_irq
+        ../Startup.S:378    .protected:00000000 __abort_dat
+        ../Startup.S:408    .data:00000004 __stack_end_und
+        ../Startup.S:409    .data:00000008 __stack_beg_abt
+        ../Startup.S:410    .data:0000000c __stack_end_abt
+        ../Startup.S:411    .data:00000010 __stack_beg_fiq
+        ../Startup.S:412    .data:00000014 __stack_end_fiq
+        ../Startup.S:413    .data:00000018 __stack_beg_irq
+        ../Startup.S:414    .data:0000001c __stack_end_irq
+        ../Startup.S:415    .data:00000020 __stack_beg_svc
+        ../Startup.S:416    .data:00000024 __stack_end_svc
+        ../Startup.S:417    .data:00000028 __stack_beg_sys
+        ../Startup.S:418    .data:0000002c __stack_end_sys
+        ../Startup.S:419    .data:00000030 __heap_max
+        ../Startup.S:420    .data:00000034 __heap_beg
+        ../Startup.S:421    .data:00000038 __heap_end
+        ../Startup.S:407    .data:00000000 $d
+        ../Startup.S:346    .startup:00000144 $d
+        ../Startup.S:196    .text:00000118 $d
+
+UNDEFINED SYMBOLS
+endless_loop
+__data_beg__
+__stack_end__
+__bss_beg__
+__bss_end__
+__data_beg_src__
+__data_end__
+__intvects_beg__
+__intvects_beg_src__
+__intvects_end__
+main
+fiqISR
+vPortYieldProcessor
+__heap_beg__
+__heap_end__

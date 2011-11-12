@@ -1,0 +1,224 @@
+   1              		.file	"rprintf.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	rprintf_devopen
+   6              	rprintf_devopen:
+   7              		@ args = 0, pretend = 0, frame = 0
+   8              		@ frame_needed = 0, uses_anonymous_args = 0
+   9              		@ link register save eliminated.
+  10 0000 04309FE5 		ldr	r3, .L3
+  11 0004 000083E5 		str	r0, [r3, #0]
+  12 0008 1EFF2FE1 		bx	lr
+  13              	.L4:
+  14              		.align	2
+  15              	.L3:
+  16 000c 00000000 		.word	putcharfunc
+  18              		.align	2
+  20              	rprintf_putCharSource:
+  21              		@ args = 0, pretend = 0, frame = 0
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23 0010 10402DE9 		stmfd	sp!, {r4, lr}
+  24 0014 FF4000E2 		and	r4, r0, #255
+  25 0018 0A0054E3 		cmp	r4, #10
+  26 001c 0D00A003 		moveq	r0, #13
+  27 0020 20109F05 		ldreq	r1, .L8
+  28 0024 20309F05 		ldreq	r3, .L8+4
+  29 0028 0FE0A001 		moveq	lr, pc
+  30 002c 00F09305 		ldreq	pc, [r3, #0]
+  31              	.L6:
+  32 0030 0400A0E1 		mov	r0, r4
+  33 0034 0C109FE5 		ldr	r1, .L8
+  34 0038 0C309FE5 		ldr	r3, .L8+4
+  35 003c 0FE0A0E1 		mov	lr, pc
+  36 0040 00F093E5 		ldr	pc, [r3, #0]
+  37 0044 1080BDE8 		ldmfd	sp!, {r4, pc}
+  38              	.L9:
+  39              		.align	2
+  40              	.L8:
+  41 0048 9F860100 		.word	99999
+  42 004c 00000000 		.word	putcharfunc
+  44              		.global	__umodsi3
+  45              		.global	__udivsi3
+  46              		.align	2
+  47              		.global	rprintf
+  49              	rprintf:
+  50              		@ args = 4, pretend = 16, frame = 12
+  51              		@ frame_needed = 0, uses_anonymous_args = 1
+  52 0050 0F002DE9 		stmfd	sp!, {r0, r1, r2, r3}
+  53 0054 F04F2DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  54 0058 0CD04DE2 		sub	sp, sp, #12
+  55 005c 30A09DE5 		ldr	sl, [sp, #48]
+  56 0060 34508DE2 		add	r5, sp, #52
+  57 0064 0BB08DE2 		add	fp, sp, #11
+  58 0068 020000EA 		b	.L46
+  59              	.L13:
+  60 006c 000050E3 		cmp	r0, #0
+  61 0070 7700000A 		beq	.L47
+  62              	.L49:
+  63 0074 E5FFFFEB 		bl	rprintf_putCharSource
+  64              	.L46:
+  65 0078 0100DAE4 		ldrb	r0, [sl], #1	@ zero_extendqisi2
+  66 007c 250050E3 		cmp	r0, #37
+  67 0080 F9FFFF1A 		bne	.L13
+  68 0084 0100DAE4 		ldrb	r0, [sl], #1	@ zero_extendqisi2
+  69 0088 200050E3 		cmp	r0, #32
+  70 008c 30005013 		cmpne	r0, #48
+  71 0090 0030A013 		movne	r3, #0
+  72 0094 0130A003 		moveq	r3, #1
+  73 0098 0390A011 		movne	r9, r3
+  74 009c 0960A011 		movne	r6, r9
+  75 00a0 0800001A 		bne	.L15
+  76 00a4 0120DAE4 		ldrb	r2, [sl], #1	@ zero_extendqisi2
+  77 00a8 303042E2 		sub	r3, r2, #48
+  78 00ac FF6003E2 		and	r6, r3, #255
+  79 00b0 090056E3 		cmp	r6, #9
+  80 00b4 0090A091 		movls	r9, r0
+  81 00b8 0100DA94 		ldrlsb	r0, [sl], #1	@ zero_extendqisi2
+  82 00bc 0090A081 		movhi	r9, r0
+  83 00c0 0060A083 		movhi	r6, #0
+  84 00c4 0200A081 		movhi	r0, r2
+  85              	.L15:
+  86 00c8 4C0050E3 		cmp	r0, #76
+  87 00cc 6C005013 		cmpne	r0, #108
+  88 00d0 0100DA04 		ldreqb	r0, [sl], #1	@ zero_extendqisi2
+  89 00d4 580050E3 		cmp	r0, #88
+  90 00d8 1B00000A 		beq	.L24
+  91 00dc 0B00008A 		bhi	.L25
+  92 00e0 490050E3 		cmp	r0, #73
+  93 00e4 2700000A 		beq	.L21
+  94 00e8 0300008A 		bhi	.L26
+  95 00ec 430050E3 		cmp	r0, #67
+  96 00f0 1700000A 		beq	.L20
+  97 00f4 440050E3 		cmp	r0, #68
+  98 00f8 0A0000EA 		b	.L51
+  99              	.L26:
+ 100 00fc 530050E3 		cmp	r0, #83
+ 101 0100 1600000A 		beq	.L22
+ 102 0104 550050E3 		cmp	r0, #85
+ 103 0108 D9FFFF1A 		bne	.L49
+ 104 010c 4B0000EA 		b	.L23
+ 105              	.L25:
+ 106 0110 690050E3 		cmp	r0, #105
+ 107 0114 1B00000A 		beq	.L21
+ 108 0118 0400008A 		bhi	.L27
+ 109 011c 630050E3 		cmp	r0, #99
+ 110 0120 0B00000A 		beq	.L20
+ 111 0124 640050E3 		cmp	r0, #100
+ 112              	.L51:
+ 113 0128 D1FFFF1A 		bne	.L49
+ 114 012c 150000EA 		b	.L21
+ 115              	.L27:
+ 116 0130 750050E3 		cmp	r0, #117
+ 117 0134 4100000A 		beq	.L23
+ 118 0138 780050E3 		cmp	r0, #120
+ 119 013c 0200000A 		beq	.L24
+ 120 0140 730050E3 		cmp	r0, #115
+ 121 0144 CAFFFF1A 		bne	.L49
+ 122 0148 040000EA 		b	.L22
+ 123              	.L24:
+ 124 014c 1080A0E3 		mov	r8, #16
+ 125 0150 3B0000EA 		b	.L28
+ 126              	.L20:
+ 127 0154 0000D5E5 		ldrb	r0, [r5, #0]	@ zero_extendqisi2
+ 128 0158 045085E2 		add	r5, r5, #4
+ 129 015c C4FFFFEA 		b	.L49
+ 130              	.L22:
+ 131 0160 006095E5 		ldr	r6, [r5, #0]
+ 132 0164 0040A0E3 		mov	r4, #0
+ 133 0168 045085E2 		add	r5, r5, #4
+ 134 016c 000000EA 		b	.L29
+ 135              	.L30:
+ 136 0170 A6FFFFEB 		bl	rprintf_putCharSource
+ 137              	.L29:
+ 138 0174 0430D6E7 		ldrb	r3, [r6, r4]	@ zero_extendqisi2
+ 139 0178 000053E2 		subs	r0, r3, #0
+ 140 017c 014084E2 		add	r4, r4, #1
+ 141 0180 FAFFFF1A 		bne	.L30
+ 142 0184 BBFFFFEA 		b	.L46
+ 143              	.L21:
+ 144 0188 004095E5 		ldr	r4, [r5, #0]
+ 145 018c 043085E2 		add	r3, r5, #4
+ 146 0190 000054E3 		cmp	r4, #0
+ 147 0194 0350A0E1 		mov	r5, r3
+ 148 0198 2D00A0B3 		movlt	r0, #45
+ 149 019c 004064B2 		rsblt	r4, r4, #0
+ 150 01a0 9AFFFFBB 		bllt	rprintf_putCharSource
+ 151              	.L33:
+ 152 01a4 0A80A0E3 		mov	r8, #10
+ 153              	.L34:
+ 154 01a8 0030A0E3 		mov	r3, #0
+ 155 01ac 0030CBE5 		strb	r3, [fp, #0]
+ 156 01b0 0B70A0E1 		mov	r7, fp
+ 157              	.L37:
+ 158 01b4 0400A0E1 		mov	r0, r4
+ 159 01b8 0810A0E1 		mov	r1, r8
+ 160 01bc FEFFFFEB 		bl	__umodsi3
+ 161 01c0 300080E2 		add	r0, r0, #48
+ 162 01c4 FF3000E2 		and	r3, r0, #255
+ 163 01c8 390053E3 		cmp	r3, #57
+ 164 01cc 072083E2 		add	r2, r3, #7
+ 165 01d0 FF300282 		andhi	r3, r2, #255
+ 166 01d4 0400A0E1 		mov	r0, r4
+ 167 01d8 013067E5 		strb	r3, [r7, #-1]!
+ 168 01dc 0810A0E1 		mov	r1, r8
+ 169 01e0 FEFFFFEB 		bl	__udivsi3
+ 170 01e4 000056E3 		cmp	r6, #0
+ 171 01e8 013046E2 		sub	r3, r6, #1
+ 172 01ec FF600312 		andne	r6, r3, #255
+ 173 01f0 000050E3 		cmp	r0, #0
+ 174 01f4 0040A0E1 		mov	r4, r0
+ 175 01f8 EDFFFF1A 		bne	.L37
+ 176 01fc 0620A0E1 		mov	r2, r6
+ 177 0200 010000EA 		b	.L38
+ 178              	.L39:
+ 179 0204 0090C7E7 		strb	r9, [r7, r0]
+ 180 0208 FF6003E2 		and	r6, r3, #255
+ 181              	.L38:
+ 182 020c 000056E3 		cmp	r6, #0
+ 183 0210 013046E2 		sub	r3, r6, #1
+ 184 0214 010040E2 		sub	r0, r0, #1
+ 185 0218 F9FFFF1A 		bne	.L39
+ 186 021c 077062E0 		rsb	r7, r2, r7
+ 187 0220 0640A0E1 		mov	r4, r6
+ 188 0224 000000EA 		b	.L40
+ 189              	.L41:
+ 190 0228 78FFFFEB 		bl	rprintf_putCharSource
+ 191              	.L40:
+ 192 022c 0430D7E7 		ldrb	r3, [r7, r4]	@ zero_extendqisi2
+ 193 0230 000053E2 		subs	r0, r3, #0
+ 194 0234 014084E2 		add	r4, r4, #1
+ 195 0238 FAFFFF1A 		bne	.L41
+ 196 023c 8DFFFFEA 		b	.L46
+ 197              	.L23:
+ 198 0240 0A80A0E3 		mov	r8, #10
+ 199              	.L28:
+ 200 0244 043085E2 		add	r3, r5, #4
+ 201 0248 004095E5 		ldr	r4, [r5, #0]
+ 202 024c 0350A0E1 		mov	r5, r3
+ 203 0250 D4FFFFEA 		b	.L34
+ 204              	.L47:
+ 205 0254 0CD08DE2 		add	sp, sp, #12
+ 206 0258 F04FBDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+ 207 025c 10D08DE2 		add	sp, sp, #16
+ 208 0260 1EFF2FE1 		bx	lr
+ 210              		.bss
+ 211              		.align	2
+ 212              	putcharfunc:
+ 213 0000 00000000 		.space	4
+ 214              		.ident	"GCC: (GNU) 4.3.2"
+DEFINED SYMBOLS
+                            *ABS*:00000000 rprintf.c
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccvz2Emd.s:6      .text:00000000 rprintf_devopen
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccvz2Emd.s:10     .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccvz2Emd.s:16     .text:0000000c $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccvz2Emd.s:212    .bss:00000000 putcharfunc
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccvz2Emd.s:20     .text:00000010 rprintf_putCharSource
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccvz2Emd.s:23     .text:00000010 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccvz2Emd.s:41     .text:00000048 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccvz2Emd.s:49     .text:00000050 rprintf
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccvz2Emd.s:52     .text:00000050 $a
+                             .bss:00000000 $d
+
+UNDEFINED SYMBOLS
+__umodsi3
+__udivsi3
