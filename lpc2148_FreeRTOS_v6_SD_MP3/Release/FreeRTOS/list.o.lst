@@ -97,11 +97,11 @@
  107              		.ident	"GCC: (GNU) 4.3.2"
 DEFINED SYMBOLS
                             *ABS*:00000000 list.c
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBoegiR.s:6      .text:00000000 vListInitialise
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBoegiR.s:10     .text:00000000 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBoegiR.s:23     .text:00000024 vListInitialiseItem
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBoegiR.s:34     .text:00000030 vListInsertEnd
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBoegiR.s:55     .text:00000064 vListInsert
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBoegiR.s:87     .text:000000b8 vListRemove
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccKEW2rH.s:6      .text:00000000 vListInitialise
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccKEW2rH.s:10     .text:00000000 $a
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccKEW2rH.s:23     .text:00000024 vListInitialiseItem
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccKEW2rH.s:34     .text:00000030 vListInsertEnd
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccKEW2rH.s:55     .text:00000064 vListInsert
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccKEW2rH.s:87     .text:000000b8 vListRemove
 
 NO UNDEFINED SYMBOLS

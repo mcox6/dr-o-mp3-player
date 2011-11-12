@@ -6,5 +6,7 @@
 
 void getUartLine(char* uartInput);
 void uartUI(void *pvParameters);
+void getMP3Names(void );
+void retGlobals(char c, char *toReturn);
 
 #endif /* USERINTERFACE_H_ */

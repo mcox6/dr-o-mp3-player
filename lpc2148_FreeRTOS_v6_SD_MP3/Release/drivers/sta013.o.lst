@@ -4249,29 +4249,29 @@
  4281              		.ident	"GCC: (GNU) 4.3.2"
 DEFINED SYMBOLS
                             *ABS*:00000000 sta013.c
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccaNhKmp.s:6      .text:00000000 sta013ReadReg
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccaNhKmp.s:10     .text:00000000 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccaNhKmp.s:16     .text:00000008 sta013WriteReg
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccaNhKmp.s:25     .text:0000000c sta013HWReset
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccaNhKmp.s:61     .text:00000078 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccaNhKmp.s:67     .text:00000080 sta013DownloadUpdate
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccaNhKmp.s:71     .text:00000080 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccaNhKmp.s:84     .text:000000a4 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccaNhKmp.s:264    .rodata:00000030 STA013_UpdateData
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccaNhKmp.s:89     .text:000000a8 initialize_sta013
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccaNhKmp.s:92     .text:000000a8 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccaNhKmp.s:123    .text:00000118 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccaNhKmp.s:129    .text:00000120 sta013StartDecoder
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccaNhKmp.s:133    .text:00000120 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccaNhKmp.s:138    .text:00000124 sta013StopDecoder
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccaNhKmp.s:147    .text:00000128 sta013PauseDecoder
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccaNhKmp.s:156    .text:0000012c sta013ResumeDecoder
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccaNhKmp.s:165    .text:00000130 sta013GetMP3Info
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccaNhKmp.s:179    .text:00000148 sta013GetAverageBitrate
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccaNhKmp.s:189    .text:00000150 sta013SetVolume
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccaNhKmp.s:198    .text:00000154 sta013SetTone
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccaNhKmp.s:208    .rodata:00000000 MP3_Bitrates
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccaNhKmp.s:209    .rodata:00000000 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccaNhKmp.s:244    .rodata:00000020 MP3_SamplingFrequencies
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccTUa8Bc.s:6      .text:00000000 sta013ReadReg
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccTUa8Bc.s:10     .text:00000000 $a
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccTUa8Bc.s:16     .text:00000008 sta013WriteReg
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccTUa8Bc.s:25     .text:0000000c sta013HWReset
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccTUa8Bc.s:61     .text:00000078 $d
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccTUa8Bc.s:67     .text:00000080 sta013DownloadUpdate
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccTUa8Bc.s:71     .text:00000080 $a
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccTUa8Bc.s:84     .text:000000a4 $d
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccTUa8Bc.s:264    .rodata:00000030 STA013_UpdateData
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccTUa8Bc.s:89     .text:000000a8 initialize_sta013
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccTUa8Bc.s:92     .text:000000a8 $a
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccTUa8Bc.s:123    .text:00000118 $d
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccTUa8Bc.s:129    .text:00000120 sta013StartDecoder
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccTUa8Bc.s:133    .text:00000120 $a
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccTUa8Bc.s:138    .text:00000124 sta013StopDecoder
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccTUa8Bc.s:147    .text:00000128 sta013PauseDecoder
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccTUa8Bc.s:156    .text:0000012c sta013ResumeDecoder
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccTUa8Bc.s:165    .text:00000130 sta013GetMP3Info
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccTUa8Bc.s:179    .text:00000148 sta013GetAverageBitrate
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccTUa8Bc.s:189    .text:00000150 sta013SetVolume
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccTUa8Bc.s:198    .text:00000154 sta013SetTone
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccTUa8Bc.s:208    .rodata:00000000 MP3_Bitrates
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccTUa8Bc.s:209    .rodata:00000000 $d
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccTUa8Bc.s:244    .rodata:00000020 MP3_SamplingFrequencies
 
 NO UNDEFINED SYMBOLS
