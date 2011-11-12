@@ -1,0 +1,107 @@
+   1              		.file	"list.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	vListInitialise
+   6              	vListInitialise:
+   7              		@ args = 0, pretend = 0, frame = 0
+   8              		@ frame_needed = 0, uses_anonymous_args = 0
+   9              		@ link register save eliminated.
+  10 0000 0030E0E3 		mvn	r3, #0
+  11 0004 083080E5 		str	r3, [r0, #8]
+  12 0008 082080E2 		add	r2, r0, #8
+  13 000c 013083E2 		add	r3, r3, #1
+  14 0010 0C2080E5 		str	r2, [r0, #12]
+  15 0014 042080E5 		str	r2, [r0, #4]
+  16 0018 102080E5 		str	r2, [r0, #16]
+  17 001c 003080E5 		str	r3, [r0, #0]
+  18 0020 1EFF2FE1 		bx	lr
+  20              		.align	2
+  21              		.global	vListInitialiseItem
+  23              	vListInitialiseItem:
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26              		@ link register save eliminated.
+  27 0024 0030A0E3 		mov	r3, #0
+  28 0028 103080E5 		str	r3, [r0, #16]
+  29 002c 1EFF2FE1 		bx	lr
+  31              		.align	2
+  32              		.global	vListInsertEnd
+  34              	vListInsertEnd:
+  35              		@ args = 0, pretend = 0, frame = 0
+  36              		@ frame_needed = 0, uses_anonymous_args = 0
+  37              		@ link register save eliminated.
+  38 0030 043090E5 		ldr	r3, [r0, #4]
+  39 0034 042093E5 		ldr	r2, [r3, #4]
+  40 0038 042081E5 		str	r2, [r1, #4]
+  41 003c 042093E5 		ldr	r2, [r3, #4]
+  42 0040 083081E5 		str	r3, [r1, #8]
+  43 0044 081082E5 		str	r1, [r2, #8]
+  44 0048 041083E5 		str	r1, [r3, #4]
+  45 004c 003090E5 		ldr	r3, [r0, #0]
+  46 0050 013083E2 		add	r3, r3, #1
+  47 0054 003080E5 		str	r3, [r0, #0]
+  48 0058 100081E5 		str	r0, [r1, #16]
+  49 005c 041080E5 		str	r1, [r0, #4]
+  50 0060 1EFF2FE1 		bx	lr
+  52              		.align	2
+  53              		.global	vListInsert
+  55              	vListInsert:
+  56              		@ args = 0, pretend = 0, frame = 0
+  57              		@ frame_needed = 0, uses_anonymous_args = 0
+  58              		@ link register save eliminated.
+  59 0064 00C091E5 		ldr	ip, [r1, #0]
+  60 0068 01007CE3 		cmn	ip, #1
+  61 006c 10209005 		ldreq	r2, [r0, #16]
+  62 0070 08208012 		addne	r2, r0, #8
+  63 0074 0100001A 		bne	.L10
+  64 0078 040000EA 		b	.L9
+  65              	.L11:
+  66 007c 042092E5 		ldr	r2, [r2, #4]
+  67              	.L10:
+  68 0080 043092E5 		ldr	r3, [r2, #4]
+  69 0084 003093E5 		ldr	r3, [r3, #0]
+  70 0088 0C0053E1 		cmp	r3, ip
+  71 008c FAFFFF9A 		bls	.L11
+  72              	.L9:
+  73 0090 043092E5 		ldr	r3, [r2, #4]
+  74 0094 081083E5 		str	r1, [r3, #8]
+  75 0098 043081E5 		str	r3, [r1, #4]
+  76 009c 041082E5 		str	r1, [r2, #4]
+  77 00a0 003090E5 		ldr	r3, [r0, #0]
+  78 00a4 013083E2 		add	r3, r3, #1
+  79 00a8 003080E5 		str	r3, [r0, #0]
+  80 00ac 100081E5 		str	r0, [r1, #16]
+  81 00b0 082081E5 		str	r2, [r1, #8]
+  82 00b4 1EFF2FE1 		bx	lr
+  84              		.align	2
+  85              		.global	vListRemove
+  87              	vListRemove:
+  88              		@ args = 0, pretend = 0, frame = 0
+  89              		@ frame_needed = 0, uses_anonymous_args = 0
+  90              		@ link register save eliminated.
+  91 00b8 043090E5 		ldr	r3, [r0, #4]
+  92 00bc 082090E5 		ldr	r2, [r0, #8]
+  93 00c0 082083E5 		str	r2, [r3, #8]
+  94 00c4 082090E5 		ldr	r2, [r0, #8]
+  95 00c8 101090E5 		ldr	r1, [r0, #16]
+  96 00cc 043082E5 		str	r3, [r2, #4]
+  97 00d0 043091E5 		ldr	r3, [r1, #4]
+  98 00d4 000053E1 		cmp	r3, r0
+  99 00d8 003091E5 		ldr	r3, [r1, #0]
+ 100 00dc 04208105 		streq	r2, [r1, #4]
+ 101 00e0 013043E2 		sub	r3, r3, #1
+ 102 00e4 0020A0E3 		mov	r2, #0
+ 103 00e8 102080E5 		str	r2, [r0, #16]
+ 104 00ec 003081E5 		str	r3, [r1, #0]
+ 105 00f0 1EFF2FE1 		bx	lr
+ 107              		.ident	"GCC: (GNU) 4.3.2"
+DEFINED SYMBOLS
+                            *ABS*:00000000 list.c
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBoegiR.s:6      .text:00000000 vListInitialise
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBoegiR.s:10     .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBoegiR.s:23     .text:00000024 vListInitialiseItem
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBoegiR.s:34     .text:00000030 vListInsertEnd
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBoegiR.s:55     .text:00000064 vListInsert
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBoegiR.s:87     .text:000000b8 vListRemove
+
+NO UNDEFINED SYMBOLS
