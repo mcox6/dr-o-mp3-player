@@ -1,0 +1,45 @@
+   1              		.file	"heap_3.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	vPortFree
+   6              	vPortFree:
+   7              		@ args = 0, pretend = 0, frame = 0
+   8              		@ frame_needed = 0, uses_anonymous_args = 0
+   9 0000 10402DE9 		stmfd	sp!, {r4, lr}
+  10 0004 004050E2 		subs	r4, r0, #0
+  11 0008 1080BD08 		ldmeqfd	sp!, {r4, pc}
+  12 000c FEFFFFEB 		bl	vTaskSuspendAll
+  13 0010 0400A0E1 		mov	r0, r4
+  14 0014 FEFFFFEB 		bl	free
+  15 0018 1040BDE8 		ldmfd	sp!, {r4, lr}
+  16 001c FEFFFFEA 		b	xTaskResumeAll
+  18              		.align	2
+  19              		.global	pvPortMalloc
+  21              	pvPortMalloc:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24 0020 10402DE9 		stmfd	sp!, {r4, lr}
+  25 0024 0040A0E1 		mov	r4, r0
+  26 0028 FEFFFFEB 		bl	vTaskSuspendAll
+  27 002c 0400A0E1 		mov	r0, r4
+  28 0030 FEFFFFEB 		bl	malloc
+  29 0034 0040A0E1 		mov	r4, r0
+  30 0038 FEFFFFEB 		bl	xTaskResumeAll
+  31 003c 000054E3 		cmp	r4, #0
+  32 0040 FEFFFF0B 		bleq	vApplicationMallocFailedHook
+  33              	.L5:
+  34 0044 0400A0E1 		mov	r0, r4
+  35 0048 1080BDE8 		ldmfd	sp!, {r4, pc}
+  37              		.ident	"GCC: (GNU) 4.3.2"
+DEFINED SYMBOLS
+                            *ABS*:00000000 heap_3.c
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccAESPKk.s:6      .text:00000000 vPortFree
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccAESPKk.s:9      .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccAESPKk.s:21     .text:00000020 pvPortMalloc
+
+UNDEFINED SYMBOLS
+vTaskSuspendAll
+free
+xTaskResumeAll
+malloc
+vApplicationMallocFailedHook

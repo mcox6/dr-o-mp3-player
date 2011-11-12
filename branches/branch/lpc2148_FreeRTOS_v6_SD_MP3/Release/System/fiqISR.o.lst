@@ -1,0 +1,17 @@
+   1              		.file	"fiqISR.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	fiqISR
+   6              	fiqISR:
+   7              		@ Fast Interrupt Service Routine.
+   8              		@ args = 0, pretend = 0, frame = 0
+   9              		@ frame_needed = 0, uses_anonymous_args = 0
+  10              		@ link register save eliminated.
+  11 0000 04F05EE2 		subs	pc, lr, #4
+  13              		.ident	"GCC: (GNU) 4.3.2"
+DEFINED SYMBOLS
+                            *ABS*:00000000 fiqISR.c
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccm9UW7P.s:6      .text:00000000 fiqISR
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccm9UW7P.s:11     .text:00000000 $a
+
+NO UNDEFINED SYMBOLS

@@ -1,0 +1,630 @@
+   1              		.file	"i2c.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	i2cStateMachine
+   6              	i2cStateMachine:
+   7              		@ args = 0, pretend = 0, frame = 0
+   8              		@ frame_needed = 0, uses_anonymous_args = 0
+   9 0000 30402DE9 		stmfd	sp!, {r4, r5, lr}
+  10 0004 84539FE5 		ldr	r5, .L54
+  11 0008 04C095E5 		ldr	ip, [r5, #4]
+  12 000c 28005CE3 		cmp	ip, #40
+  13 0010 4900000A 		beq	.L8
+  14 0014 0C00008A 		bhi	.L15
+  15 0018 10005CE3 		cmp	ip, #16
+  16 001c 2200000A 		beq	.L5
+  17 0020 0400008A 		bhi	.L16
+  18 0024 00005CE3 		cmp	ip, #0
+  19 0028 AD00000A 		beq	.L3
+  20 002c 08005CE3 		cmp	ip, #8
+  21 0030 C100001A 		bne	.L2
+  22 0034 130000EA 		b	.L50
+  23              	.L16:
+  24 0038 18005CE3 		cmp	ip, #24
+  25 003c 1E00000A 		beq	.L6
+  26 0040 20005CE3 		cmp	ip, #32
+  27 0044 BC00001A 		bne	.L2
+  28 0048 2E0000EA 		b	.L51
+  29              	.L15:
+  30 004c 40005CE3 		cmp	ip, #64
+  31 0050 6500000A 		beq	.L11
+  32 0054 0400008A 		bhi	.L17
+  33 0058 30005CE3 		cmp	ip, #48
+  34 005c 5400000A 		beq	.L9
+  35 0060 38005CE3 		cmp	ip, #56
+  36 0064 B400001A 		bne	.L2
+  37 0068 AB0000EA 		b	.L52
+  38              	.L17:
+  39 006c 50005CE3 		cmp	ip, #80
+  40 0070 7200000A 		beq	.L13
+  41 0074 58005CE3 		cmp	ip, #88
+  42 0078 8600000A 		beq	.L14
+  43 007c 48005CE3 		cmp	ip, #72
+  44 0080 AD00001A 		bne	.L2
+  45 0084 5F0000EA 		b	.L53
+  46              	.L50:
+  47 0088 04339FE5 		ldr	r3, .L54+4
+  48 008c 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+  49 0090 083085E5 		str	r3, [r5, #8]
+  50 0094 FC329FE5 		ldr	r3, .L54+8
+  51 0098 0020A0E3 		mov	r2, #0
+  52 009c 18C085E5 		str	ip, [r5, #24]
+  53 00a0 002083E5 		str	r2, [r3, #0]
+  54 00a4 0200A0E1 		mov	r0, r2
+  55 00a8 3080BDE8 		ldmfd	sp!, {r4, r5, pc}
+  56              	.L5:
+  57 00ac E0329FE5 		ldr	r3, .L54+4
+  58 00b0 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+  59 00b4 013083E3 		orr	r3, r3, #1
+  60 00b8 100000EA 		b	.L48
+  61              	.L6:
+  62 00bc D0229FE5 		ldr	r2, .L54+4
+  63 00c0 0C3092E5 		ldr	r3, [r2, #12]
+  64 00c4 000053E3 		cmp	r3, #0
+  65 00c8 2030A0E3 		mov	r3, #32
+  66 00cc 183085E5 		str	r3, [r5, #24]
+  67 00d0 0900001A 		bne	.L19
+  68 00d4 183085E5 		str	r3, [r5, #24]
+  69 00d8 1030A0E3 		mov	r3, #16
+  70 00dc 003085E5 		str	r3, [r5, #0]
+  71 00e0 0830A0E3 		mov	r3, #8
+  72 00e4 183085E5 		str	r3, [r5, #24]
+  73 00e8 0520A0E1 		mov	r2, r5
+  74              	.L20:
+  75 00ec 003092E5 		ldr	r3, [r2, #0]
+  76 00f0 100013E3 		tst	r3, #16
+  77 00f4 FCFFFF1A 		bne	.L20
+  78 00f8 9C0000EA 		b	.L45
+  79              	.L19:
+  80 00fc 0130D2E5 		ldrb	r3, [r2, #1]	@ zero_extendqisi2
+  81              	.L48:
+  82 0100 083085E5 		str	r3, [r5, #8]
+  83 0104 270000EA 		b	.L47
+  84              	.L51:
+  85 0108 042095E5 		ldr	r2, [r5, #4]
+  86 010c 80329FE5 		ldr	r3, .L54+4
+  87 0110 0220C3E5 		strb	r2, [r3, #2]
+  88 0114 1030A0E3 		mov	r3, #16
+  89 0118 18C085E5 		str	ip, [r5, #24]
+  90 011c 003085E5 		str	r3, [r5, #0]
+  91 0120 0830A0E3 		mov	r3, #8
+  92 0124 183085E5 		str	r3, [r5, #24]
+  93 0128 0520A0E1 		mov	r2, r5
+  94              	.L23:
+  95 012c 003092E5 		ldr	r3, [r2, #0]
+  96 0130 100013E3 		tst	r3, #16
+  97 0134 FCFFFF1A 		bne	.L23
+  98 0138 8C0000EA 		b	.L45
+  99              	.L8:
+ 100 013c 50229FE5 		ldr	r2, .L54+4
+ 101 0140 043092E5 		ldr	r3, [r2, #4]
+ 102 0144 010053E3 		cmp	r3, #1
+ 103 0148 1F308302 		addeq	r3, r3, #31
+ 104 014c 00308505 		streq	r3, [r5, #0]
+ 105 0150 1400000A 		beq	.L47
+ 106 0154 3C029FE5 		ldr	r0, .L54+8
+ 107 0158 0C3092E5 		ldr	r3, [r2, #12]
+ 108 015c 001090E5 		ldr	r1, [r0, #0]
+ 109 0160 030051E1 		cmp	r1, r3
+ 110 0164 0A0000BA 		blt	.L25
+ 111 0168 2030A0E3 		mov	r3, #32
+ 112 016c 183085E5 		str	r3, [r5, #24]
+ 113 0170 1030A0E3 		mov	r3, #16
+ 114 0174 003085E5 		str	r3, [r5, #0]
+ 115 0178 0830A0E3 		mov	r3, #8
+ 116 017c 183085E5 		str	r3, [r5, #24]
+ 117 0180 0520A0E1 		mov	r2, r5
+ 118              	.L26:
+ 119 0184 003092E5 		ldr	r3, [r2, #0]
+ 120 0188 100013E3 		tst	r3, #16
+ 121 018c FCFFFF1A 		bne	.L26
+ 122 0190 7A0000EA 		b	.L22
+ 123              	.L25:
+ 124 0194 013082E0 		add	r3, r2, r1
+ 125 0198 0820D3E5 		ldrb	r2, [r3, #8]	@ zero_extendqisi2
+ 126 019c 013081E2 		add	r3, r1, #1
+ 127 01a0 003080E5 		str	r3, [r0, #0]
+ 128 01a4 082085E5 		str	r2, [r5, #8]
+ 129              	.L47:
+ 130 01a8 0830A0E3 		mov	r3, #8
+ 131 01ac 183085E5 		str	r3, [r5, #24]
+ 132 01b0 360000EA 		b	.L46
+ 133              	.L9:
+ 134 01b4 042095E5 		ldr	r2, [r5, #4]
+ 135 01b8 D4319FE5 		ldr	r3, .L54+4
+ 136 01bc 0220C3E5 		strb	r2, [r3, #2]
+ 137 01c0 2030A0E3 		mov	r3, #32
+ 138 01c4 183085E5 		str	r3, [r5, #24]
+ 139 01c8 1030A0E3 		mov	r3, #16
+ 140 01cc 003085E5 		str	r3, [r5, #0]
+ 141 01d0 0830A0E3 		mov	r3, #8
+ 142 01d4 183085E5 		str	r3, [r5, #24]
+ 143 01d8 0520A0E1 		mov	r2, r5
+ 144              	.L27:
+ 145 01dc 003092E5 		ldr	r3, [r2, #0]
+ 146 01e0 100013E3 		tst	r3, #16
+ 147 01e4 FCFFFF1A 		bne	.L27
+ 148 01e8 600000EA 		b	.L45
+ 149              	.L11:
+ 150 01ec A0319FE5 		ldr	r3, .L54+4
+ 151 01f0 0C3093E5 		ldr	r3, [r3, #12]
+ 152 01f4 010053E3 		cmp	r3, #1
+ 153 01f8 2030A0E3 		mov	r3, #32
+ 154 01fc 183085E5 		str	r3, [r5, #24]
+ 155 0200 1D0000CA 		bgt	.L31
+ 156 0204 190000EA 		b	.L49
+ 157              	.L53:
+ 158 0208 042095E5 		ldr	r2, [r5, #4]
+ 159 020c 80319FE5 		ldr	r3, .L54+4
+ 160 0210 0220C3E5 		strb	r2, [r3, #2]
+ 161 0214 2030A0E3 		mov	r3, #32
+ 162 0218 183085E5 		str	r3, [r5, #24]
+ 163 021c 1030A0E3 		mov	r3, #16
+ 164 0220 003085E5 		str	r3, [r5, #0]
+ 165 0224 0830A0E3 		mov	r3, #8
+ 166 0228 183085E5 		str	r3, [r5, #24]
+ 167 022c 0520A0E1 		mov	r2, r5
+ 168              	.L30:
+ 169 0230 003092E5 		ldr	r3, [r2, #0]
+ 170 0234 100013E3 		tst	r3, #16
+ 171 0238 FCFFFF1A 		bne	.L30
+ 172 023c 4B0000EA 		b	.L45
+ 173              	.L13:
+ 174 0240 50419FE5 		ldr	r4, .L54+8
+ 175 0244 48219FE5 		ldr	r2, .L54+4
+ 176 0248 000094E5 		ldr	r0, [r4, #0]
+ 177 024c 0C3092E5 		ldr	r3, [r2, #12]
+ 178 0250 01C080E2 		add	ip, r0, #1
+ 179 0254 013043E2 		sub	r3, r3, #1
+ 180 0258 081095E5 		ldr	r1, [r5, #8]
+ 181 025c 002082E0 		add	r2, r2, r0
+ 182 0260 03005CE1 		cmp	ip, r3
+ 183 0264 0810C2E5 		strb	r1, [r2, #8]
+ 184 0268 00C084E5 		str	ip, [r4, #0]
+ 185 026c 020000BA 		blt	.L31
+ 186              	.L49:
+ 187 0270 0430A0E3 		mov	r3, #4
+ 188 0274 183085E5 		str	r3, [r5, #24]
+ 189 0278 010000EA 		b	.L32
+ 190              	.L31:
+ 191 027c 0430A0E3 		mov	r3, #4
+ 192 0280 003085E5 		str	r3, [r5, #0]
+ 193              	.L32:
+ 194 0284 04319FE5 		ldr	r3, .L54
+ 195 0288 0820A0E3 		mov	r2, #8
+ 196 028c 182083E5 		str	r2, [r3, #24]
+ 197              	.L46:
+ 198 0290 0000A0E3 		mov	r0, #0
+ 199 0294 3080BDE8 		ldmfd	sp!, {r4, r5, pc}
+ 200              	.L14:
+ 201 0298 F8009FE5 		ldr	r0, .L54+8
+ 202 029c F0309FE5 		ldr	r3, .L54+4
+ 203 02a0 002090E5 		ldr	r2, [r0, #0]
+ 204 02a4 081095E5 		ldr	r1, [r5, #8]
+ 205 02a8 023083E0 		add	r3, r3, r2
+ 206 02ac 0810C3E5 		strb	r1, [r3, #8]
+ 207 02b0 2030A0E3 		mov	r3, #32
+ 208 02b4 183085E5 		str	r3, [r5, #24]
+ 209 02b8 1030A0E3 		mov	r3, #16
+ 210 02bc 003085E5 		str	r3, [r5, #0]
+ 211 02c0 0830A0E3 		mov	r3, #8
+ 212 02c4 012082E2 		add	r2, r2, #1
+ 213 02c8 183085E5 		str	r3, [r5, #24]
+ 214 02cc 002080E5 		str	r2, [r0, #0]
+ 215 02d0 0520A0E1 		mov	r2, r5
+ 216              	.L33:
+ 217 02d4 003092E5 		ldr	r3, [r2, #0]
+ 218 02d8 100013E3 		tst	r3, #16
+ 219 02dc FCFFFF1A 		bne	.L33
+ 220 02e0 220000EA 		b	.L45
+ 221              	.L3:
+ 222 02e4 042095E5 		ldr	r2, [r5, #4]
+ 223 02e8 A4309FE5 		ldr	r3, .L54+4
+ 224 02ec 0220C3E5 		strb	r2, [r3, #2]
+ 225 02f0 2030A0E3 		mov	r3, #32
+ 226 02f4 183085E5 		str	r3, [r5, #24]
+ 227 02f8 1030A0E3 		mov	r3, #16
+ 228 02fc 003085E5 		str	r3, [r5, #0]
+ 229 0300 0830A0E3 		mov	r3, #8
+ 230 0304 183085E5 		str	r3, [r5, #24]
+ 231 0308 0520A0E1 		mov	r2, r5
+ 232              	.L34:
+ 233 030c 003092E5 		ldr	r3, [r2, #0]
+ 234 0310 100013E3 		tst	r3, #16
+ 235 0314 FCFFFF1A 		bne	.L34
+ 236 0318 140000EA 		b	.L45
+ 237              	.L52:
+ 238 031c 70309FE5 		ldr	r3, .L54+4
+ 239 0320 042095E5 		ldr	r2, [r5, #4]
+ 240 0324 0220C3E5 		strb	r2, [r3, #2]
+ 241 0328 68309FE5 		ldr	r3, .L54+8
+ 242 032c 0010A0E3 		mov	r1, #0
+ 243 0330 001083E5 		str	r1, [r3, #0]
+ 244 0334 0100A0E1 		mov	r0, r1
+ 245 0338 3080BDE8 		ldmfd	sp!, {r4, r5, pc}
+ 246              	.L2:
+ 247 033c 4C209FE5 		ldr	r2, .L54
+ 248 0340 4C309FE5 		ldr	r3, .L54+4
+ 249 0344 041092E5 		ldr	r1, [r2, #4]
+ 250 0348 0210C3E5 		strb	r1, [r3, #2]
+ 251 034c 2030A0E3 		mov	r3, #32
+ 252 0350 183082E5 		str	r3, [r2, #24]
+ 253 0354 1030A0E3 		mov	r3, #16
+ 254 0358 003082E5 		str	r3, [r2, #0]
+ 255 035c 0830A0E3 		mov	r3, #8
+ 256 0360 183082E5 		str	r3, [r2, #24]
+ 257              	.L35:
+ 258 0364 003092E5 		ldr	r3, [r2, #0]
+ 259 0368 100013E3 		tst	r3, #16
+ 260 036c FCFFFF1A 		bne	.L35
+ 261              	.L45:
+ 262 0370 1C309FE5 		ldr	r3, .L54+4
+ 263 0374 043093E5 		ldr	r3, [r3, #4]
+ 264 0378 010053E3 		cmp	r3, #1
+ 265 037c 0100000A 		beq	.L21
+ 266              	.L22:
+ 267 0380 0200A0E3 		mov	r0, #2
+ 268 0384 3080BDE8 		ldmfd	sp!, {r4, r5, pc}
+ 269              	.L21:
+ 270 0388 0100A0E3 		mov	r0, #1
+ 271 038c 3080BDE8 		ldmfd	sp!, {r4, r5, pc}
+ 272              	.L55:
+ 273              		.align	2
+ 274              	.L54:
+ 275 0390 00C001E0 		.word	-536756224
+ 276 0394 04000000 		.word	I2C_IOFRAME
+ 277 0398 00000000 		.word	bPointer.1752
+ 279              		.align	2
+ 280              		.global	i2cKickOffTransfer
+ 282              	i2cKickOffTransfer:
+ 283              		@ args = 4, pretend = 0, frame = 0
+ 284              		@ frame_needed = 0, uses_anonymous_args = 0
+ 285 039c 30402DE9 		stmfd	sp!, {r4, r5, lr}
+ 286 03a0 0C409DE5 		ldr	r4, [sp, #12]
+ 287 03a4 040054E3 		cmp	r4, #4
+ 288 03a8 00C0A0E1 		mov	ip, r0
+ 289 03ac 0350A0E1 		mov	r5, r3
+ 290 03b0 FF1001E2 		and	r1, r1, #255
+ 291 03b4 FF2002E2 		and	r2, r2, #255
+ 292 03b8 3080BDC8 		ldmgtfd	sp!, {r4, r5, pc}
+ 293 03bc 3C009FE5 		ldr	r0, .L60
+ 294 03c0 0030A0E3 		mov	r3, #0
+ 295 03c4 00005CE3 		cmp	ip, #0
+ 296 03c8 0230C0E5 		strb	r3, [r0, #2]
+ 297 03cc 0010C0E5 		strb	r1, [r0, #0]
+ 298 03d0 0120C0E5 		strb	r2, [r0, #1]
+ 299 03d4 04C080E5 		str	ip, [r0, #4]
+ 300 03d8 0C4080E5 		str	r4, [r0, #12]
+ 301 03dc 08008002 		addeq	r0, r0, #8
+ 302 03e0 0510A001 		moveq	r1, r5
+ 303 03e4 0420A001 		moveq	r2, r4
+ 304 03e8 FEFFFF0B 		bleq	memcpy
+ 305              	.L58:
+ 306 03ec 10209FE5 		ldr	r2, .L60+4
+ 307 03f0 003092E5 		ldr	r3, [r2, #0]
+ 308 03f4 203083E3 		orr	r3, r3, #32
+ 309 03f8 003082E5 		str	r3, [r2, #0]
+ 310 03fc 3080BDE8 		ldmfd	sp!, {r4, r5, pc}
+ 311              	.L61:
+ 312              		.align	2
+ 313              	.L60:
+ 314 0400 04000000 		.word	I2C_IOFRAME
+ 315 0404 00C001E0 		.word	-536756224
+ 317              		.align	2
+ 318              		.global	i2cWriteDeviceRegister
+ 320              	i2cWriteDeviceRegister:
+ 321              		@ args = 0, pretend = 0, frame = 4
+ 322              		@ frame_needed = 0, uses_anonymous_args = 0
+ 323 0408 70402DE9 		stmfd	sp!, {r4, r5, r6, lr}
+ 324 040c 08D04DE2 		sub	sp, sp, #8
+ 325 0410 08608DE2 		add	r6, sp, #8
+ 326 0414 48309FE5 		ldr	r3, .L64
+ 327 0418 042066E5 		strb	r2, [r6, #-4]!
+ 328 041c 0150A0E1 		mov	r5, r1
+ 329 0420 0010A0E3 		mov	r1, #0
+ 330 0424 FF4000E2 		and	r4, r0, #255
+ 331 0428 FF5005E2 		and	r5, r5, #255
+ 332 042c 000093E5 		ldr	r0, [r3, #0]
+ 333 0430 0020E0E3 		mvn	r2, #0
+ 334 0434 0130A0E1 		mov	r3, r1
+ 335 0438 FEFFFFEB 		bl	xQueueGenericReceive
+ 336 043c 01C0A0E3 		mov	ip, #1
+ 337 0440 0410A0E1 		mov	r1, r4
+ 338 0444 0520A0E1 		mov	r2, r5
+ 339 0448 0630A0E1 		mov	r3, r6
+ 340 044c 0000A0E3 		mov	r0, #0
+ 341 0450 00C08DE5 		str	ip, [sp, #0]
+ 342 0454 FEFFFFEB 		bl	i2cKickOffTransfer
+ 343 0458 0000A0E3 		mov	r0, #0
+ 344 045c 08D08DE2 		add	sp, sp, #8
+ 345 0460 7080BDE8 		ldmfd	sp!, {r4, r5, r6, pc}
+ 346              	.L65:
+ 347              		.align	2
+ 348              	.L64:
+ 349 0464 00000000 		.word	i2cLock
+ 351              		.align	2
+ 352              		.global	initPE
+ 354              	initPE:
+ 355              		@ args = 0, pretend = 0, frame = 0
+ 356              		@ frame_needed = 0, uses_anonymous_args = 0
+ 357 0468 04E02DE5 		str	lr, [sp, #-4]!
+ 358 046c 0610A0E3 		mov	r1, #6
+ 359 0470 0020A0E3 		mov	r2, #0
+ 360 0474 4000A0E3 		mov	r0, #64
+ 361 0478 FEFFFFEB 		bl	i2cWriteDeviceRegister
+ 362 047c 0710A0E3 		mov	r1, #7
+ 363 0480 FF20A0E3 		mov	r2, #255
+ 364 0484 4000A0E3 		mov	r0, #64
+ 365 0488 FEFFFFEB 		bl	i2cWriteDeviceRegister
+ 366 048c 4000A0E3 		mov	r0, #64
+ 367 0490 0710A0E3 		mov	r1, #7
+ 368 0494 FF20A0E3 		mov	r2, #255
+ 369 0498 04E09DE4 		ldr	lr, [sp], #4
+ 370 049c FEFFFFEA 		b	i2cWriteDeviceRegister
+ 372              		.align	2
+ 373              		.global	i2cReadDeviceRegister
+ 375              	i2cReadDeviceRegister:
+ 376              		@ args = 0, pretend = 0, frame = 4
+ 377              		@ frame_needed = 0, uses_anonymous_args = 0
+ 378 04a0 F0412DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, lr}
+ 379 04a4 90809FE5 		ldr	r8, .L70
+ 380 04a8 08D04DE2 		sub	sp, sp, #8
+ 381 04ac 0060A0E3 		mov	r6, #0
+ 382 04b0 08708DE2 		add	r7, sp, #8
+ 383 04b4 016067E5 		strb	r6, [r7, #-1]!
+ 384 04b8 0630A0E1 		mov	r3, r6
+ 385 04bc 0040A0E1 		mov	r4, r0
+ 386 04c0 0150A0E1 		mov	r5, r1
+ 387 04c4 0020E0E3 		mvn	r2, #0
+ 388 04c8 0610A0E1 		mov	r1, r6
+ 389 04cc 000098E5 		ldr	r0, [r8, #0]
+ 390 04d0 FEFFFFEB 		bl	xQueueGenericReceive
+ 391 04d4 FF4004E2 		and	r4, r4, #255
+ 392 04d8 01C0A0E3 		mov	ip, #1
+ 393 04dc FF5005E2 		and	r5, r5, #255
+ 394 04e0 0C00A0E1 		mov	r0, ip
+ 395 04e4 0410A0E1 		mov	r1, r4
+ 396 04e8 0520A0E1 		mov	r2, r5
+ 397 04ec 0730A0E1 		mov	r3, r7
+ 398 04f0 00C08DE5 		str	ip, [sp, #0]
+ 399 04f4 FEFFFFEB 		bl	i2cKickOffTransfer
+ 400 04f8 40309FE5 		ldr	r3, .L70+4
+ 401 04fc 0610A0E1 		mov	r1, r6
+ 402 0500 000093E5 		ldr	r0, [r3, #0]
+ 403 0504 0020E0E3 		mvn	r2, #0
+ 404 0508 0630A0E1 		mov	r3, r6
+ 405 050c FEFFFFEB 		bl	xQueueGenericReceive
+ 406 0510 2C309FE5 		ldr	r3, .L70+8
+ 407 0514 08C0D3E5 		ldrb	ip, [r3, #8]	@ zero_extendqisi2
+ 408 0518 0610A0E1 		mov	r1, r6
+ 409 051c 000098E5 		ldr	r0, [r8, #0]
+ 410 0520 0620A0E1 		mov	r2, r6
+ 411 0524 0630A0E1 		mov	r3, r6
+ 412 0528 07C0CDE5 		strb	ip, [sp, #7]
+ 413 052c FEFFFFEB 		bl	xQueueGenericSend
+ 414 0530 0700DDE5 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
+ 415 0534 08D08DE2 		add	sp, sp, #8
+ 416 0538 F081BDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, pc}
+ 417              	.L71:
+ 418              		.align	2
+ 419              	.L70:
+ 420 053c 00000000 		.word	i2cLock
+ 421 0540 00000000 		.word	i2cReadCompleteSignal
+ 422 0544 04000000 		.word	I2C_IOFRAME
+ 424              		.global	__udivsi3
+ 425              		.align	2
+ 426              		.global	initialize_I2C0
+ 428              	initialize_I2C0:
+ 429              		@ args = 0, pretend = 0, frame = 0
+ 430              		@ frame_needed = 0, uses_anonymous_args = 0
+ 431 0548 08C19FE5 		ldr	ip, .L77
+ 432 054c 00309CE5 		ldr	r3, [ip, #0]
+ 433 0550 F030C3E3 		bic	r3, r3, #240
+ 434 0554 00308CE5 		str	r3, [ip, #0]
+ 435 0558 FC309FE5 		ldr	r3, .L77+4
+ 436 055c 00209CE5 		ldr	r2, [ip, #0]
+ 437 0560 F8109FE5 		ldr	r1, .L77+8
+ 438 0564 030050E1 		cmp	r0, r3
+ 439 0568 30402DE9 		stmfd	sp!, {r4, r5, lr}
+ 440 056c F0409FE5 		ldr	r4, .L77+12
+ 441 0570 0050A091 		movls	r5, r0
+ 442 0574 0150A081 		movhi	r5, r1
+ 443 0578 502082E3 		orr	r2, r2, #80
+ 444 057c 6C30A0E3 		mov	r3, #108
+ 445 0580 00208CE5 		str	r2, [ip, #0]
+ 446 0584 011085E2 		add	r1, r5, #1
+ 447 0588 183084E5 		str	r3, [r4, #24]
+ 448 058c D4009FE5 		ldr	r0, .L77+16
+ 449 0590 FEFFFFEB 		bl	__udivsi3
+ 450 0594 0030A0E1 		mov	r3, r0
+ 451 0598 0510A0E1 		mov	r1, r5
+ 452 059c 103084E5 		str	r3, [r4, #16]
+ 453 05a0 C0009FE5 		ldr	r0, .L77+16
+ 454 05a4 FEFFFFEB 		bl	__udivsi3
+ 455 05a8 0050A0E3 		mov	r5, #0
+ 456 05ac 4030A0E3 		mov	r3, #64
+ 457 05b0 140084E5 		str	r0, [r4, #20]
+ 458 05b4 0C5084E5 		str	r5, [r4, #12]
+ 459 05b8 003084E5 		str	r3, [r4, #0]
+ 460 05bc 0020E0E3 		mvn	r2, #0
+ 461 05c0 F33F12E5 		ldr	r3, [r2, #-4083]
+ 462 05c4 023CC3E3 		bic	r3, r3, #512
+ 463 05c8 F33F02E5 		str	r3, [r2, #-4083]
+ 464 05cc 2930A0E3 		mov	r3, #41
+ 465 05d0 EF3D02E5 		str	r3, [r2, #-3567]
+ 466 05d4 90309FE5 		ldr	r3, .L77+20
+ 467 05d8 0100A0E3 		mov	r0, #1
+ 468 05dc EF3E02E5 		str	r3, [r2, #-3823]
+ 469 05e0 0510A0E1 		mov	r1, r5
+ 470 05e4 FEFFFFEB 		bl	xQueueCreate
+ 471 05e8 80309FE5 		ldr	r3, .L77+24
+ 472 05ec 050050E1 		cmp	r0, r5
+ 473 05f0 000083E5 		str	r0, [r3, #0]
+ 474 05f4 0510A011 		movne	r1, r5
+ 475 05f8 0520A011 		movne	r2, r5
+ 476 05fc 0530A011 		movne	r3, r5
+ 477 0600 FEFFFF1B 		blne	xQueueGenericSend
+ 478              	.L74:
+ 479 0604 0100A0E3 		mov	r0, #1
+ 480 0608 0010A0E3 		mov	r1, #0
+ 481 060c FEFFFFEB 		bl	xQueueCreate
+ 482 0610 5C309FE5 		ldr	r3, .L77+28
+ 483 0614 000050E3 		cmp	r0, #0
+ 484 0618 000083E5 		str	r0, [r3, #0]
+ 485 061c 0010A013 		movne	r1, #0
+ 486 0620 0120A011 		movne	r2, r1
+ 487 0624 0130A011 		movne	r3, r1
+ 488 0628 FEFFFF1B 		blne	xQueueGenericSend
+ 489              	.L75:
+ 490 062c 40309FE5 		ldr	r3, .L77+28
+ 491 0630 0010A0E3 		mov	r1, #0
+ 492 0634 0120A0E1 		mov	r2, r1
+ 493 0638 000093E5 		ldr	r0, [r3, #0]
+ 494 063c 0130A0E1 		mov	r3, r1
+ 495 0640 FEFFFFEB 		bl	xQueueGenericReceive
+ 496 0644 022CA0E3 		mov	r2, #512
+ 497 0648 0030E0E3 		mvn	r3, #0
+ 498 064c EF2F03E5 		str	r2, [r3, #-4079]
+ 499 0650 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
+ 500 0654 FEFFFFEA 		b	initPE
+ 501              	.L78:
+ 502              		.align	2
+ 503              	.L77:
+ 504 0658 00C002E0 		.word	-536690688
+ 505 065c 40420F00 		.word	1000000
+ 506 0660 801A0600 		.word	400000
+ 507 0664 00C001E0 		.word	-536756224
+ 508 0668 00366E01 		.word	24000000
+ 509 066c 00000000 		.word	i2cISR
+ 510 0670 00000000 		.word	i2cLock
+ 511 0674 00000000 		.word	i2cReadCompleteSignal
+ 513              		.align	2
+ 515              	i2cISR:
+ 516              		@ Naked Function: prologue and epilogue provided by programmer.
+ 517              		@ args = 0, pretend = 0, frame = 4
+ 518              		@ frame_needed = 0, uses_anonymous_args = 0
+ 519              	@ 270 "../drivers/i2c.c" 1
+ 520 0678 01002DE9 		STMDB	SP!, {R0}											
+ 521 067c 00204DE9 		STMDB	SP,{SP}^											
+ 522 0680 0000A0E1 		NOP														
+ 523 0684 04D04DE2 		SUB	SP, SP, #4											
+ 524 0688 0100BDE8 		LDMIA	SP!,{R0}											
+ 525 068c 004020E9 		STMDB	R0!, {LR}											
+ 526 0690 00E0A0E1 		MOV	LR, R0												
+ 527 0694 0100BDE8 		LDMIA	SP!, {R0}											
+ 528 0698 FF7F4EE9 		STMDB	LR,{R0-LR}^											
+ 529 069c 0000A0E1 		NOP														
+ 530 06a0 3CE04EE2 		SUB	LR, LR, #60											
+ 531 06a4 00004FE1 		MRS	R0, SPSR											
+ 532 06a8 01002EE9 		STMDB	LR!, {R0}											
+ 533 06ac C4009FE5 		LDR	R0, =ulCriticalNesting								
+ 534 06b0 000090E5 		LDR	R0, [R0]											
+ 535 06b4 01002EE9 		STMDB	LR!, {R0}											
+ 536 06b8 BC009FE5 		LDR	R0, =pxCurrentTCB									
+ 537 06bc 000090E5 		LDR	R0, [R0]											
+ 538 06c0 00E080E5 		STR	LR, [R0]											
+ 539              		
+ 540              	@ 0 "" 2
+ 541 06c4 9C309FE5 		ldr	r3, .L85
+ 542 06c8 003093E5 		ldr	r3, [r3, #0]
+ 543 06cc 98309FE5 		ldr	r3, .L85+4
+ 544 06d0 0040A0E3 		mov	r4, #0
+ 545 06d4 003093E5 		ldr	r3, [r3, #0]
+ 546 06d8 00408DE5 		str	r4, [sp, #0]
+ 547 06dc FEFFFFEB 		bl	i2cStateMachine
+ 548 06e0 010050E3 		cmp	r0, #1
+ 549 06e4 0410A001 		moveq	r1, r4
+ 550 06e8 80309F05 		ldreq	r3, .L85+8
+ 551 06ec 0300000A 		beq	.L84
+ 552 06f0 020050E3 		cmp	r0, #2
+ 553 06f4 0500001A 		bne	.L81
+ 554 06f8 74309FE5 		ldr	r3, .L85+12
+ 555 06fc 0410A0E1 		mov	r1, r4
+ 556              	.L84:
+ 557 0700 000093E5 		ldr	r0, [r3, #0]
+ 558 0704 0D20A0E1 		mov	r2, sp
+ 559 0708 0130A0E1 		mov	r3, r1
+ 560 070c FEFFFFEB 		bl	xQueueGenericSendFromISR
+ 561              	.L81:
+ 562 0710 00309DE5 		ldr	r3, [sp, #0]
+ 563 0714 000053E3 		cmp	r3, #0
+ 564 0718 FEFFFF1B 		blne	vTaskSwitchContext
+ 565              	.L82:
+ 566 071c 0020A0E3 		mov	r2, #0
+ 567 0720 0030E0E3 		mvn	r3, #0
+ 568 0724 CF2F03E5 		str	r2, [r3, #-4047]
+ 569              	@ 289 "../drivers/i2c.c" 1
+ 570 0728 4C009FE5 		LDR		R0, =pxCurrentTCB								
+ 571 072c 000090E5 		LDR		R0, [R0]										
+ 572 0730 00E090E5 		LDR		LR, [R0]										
+ 573 0734 3C009FE5 		LDR		R0, =ulCriticalNesting							
+ 574 0738 0200BEE8 		LDMFD	LR!, {R1}											
+ 575 073c 001080E5 		STR		R1, [R0]										
+ 576 0740 0100BEE8 		LDMFD	LR!, {R0}											
+ 577 0744 00F069E1 		MSR		SPSR, R0										
+ 578 0748 FF7FDEE8 		LDMFD	LR, {R0-R14}^										
+ 579 074c 0000A0E1 		NOP														
+ 580 0750 3CE09EE5 		LDR		LR, [LR, #+60]									
+ 581 0754 04F05EE2 		SUBS	PC, LR, #4											
+ 582              		
+ 583              	@ 0 "" 2
+ 584 0758 08309FE5 		ldr	r3, .L85
+ 585 075c 003093E5 		ldr	r3, [r3, #0]
+ 586 0760 04309FE5 		ldr	r3, .L85+4
+ 587 0764 003093E5 		ldr	r3, [r3, #0]
+ 588              	.L86:
+ 589              		.align	2
+ 590              	.L85:
+ 591 0768 00000000 		.word	ulCriticalNesting
+ 592 076c 00000000 		.word	pxCurrentTCB
+ 593 0770 00000000 		.word	i2cReadCompleteSignal
+ 594 0774 00000000 		.word	i2cLock
+ 596              		.bss
+ 597              		.align	2
+ 598              	bPointer.1752:
+ 599 0000 00000000 		.space	4
+ 600              		.align	2
+ 601              	I2C_IOFRAME:
+ 602 0004 00000000 		.space	16
+ 602      00000000 
+ 602      00000000 
+ 602      00000000 
+ 603              		.comm	i2cReadCompleteSignal,4,4
+ 604              		.comm	i2cLock,4,4
+ 605              		.ident	"GCC: (GNU) 4.3.2"
+DEFINED SYMBOLS
+                            *ABS*:00000000 i2c.c
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccIC8QSQ.s:6      .text:00000000 i2cStateMachine
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccIC8QSQ.s:9      .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccIC8QSQ.s:275    .text:00000390 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccIC8QSQ.s:601    .bss:00000004 I2C_IOFRAME
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccIC8QSQ.s:598    .bss:00000000 bPointer.1752
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccIC8QSQ.s:282    .text:0000039c i2cKickOffTransfer
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccIC8QSQ.s:285    .text:0000039c $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccIC8QSQ.s:314    .text:00000400 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccIC8QSQ.s:320    .text:00000408 i2cWriteDeviceRegister
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccIC8QSQ.s:323    .text:00000408 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccIC8QSQ.s:349    .text:00000464 $d
+                            *COM*:00000004 i2cLock
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccIC8QSQ.s:354    .text:00000468 initPE
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccIC8QSQ.s:357    .text:00000468 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccIC8QSQ.s:375    .text:000004a0 i2cReadDeviceRegister
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccIC8QSQ.s:420    .text:0000053c $d
+                            *COM*:00000004 i2cReadCompleteSignal
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccIC8QSQ.s:428    .text:00000548 initialize_I2C0
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccIC8QSQ.s:431    .text:00000548 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccIC8QSQ.s:504    .text:00000658 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccIC8QSQ.s:515    .text:00000678 i2cISR
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccIC8QSQ.s:520    .text:00000678 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccIC8QSQ.s:591    .text:00000768 $d
+
+UNDEFINED SYMBOLS
+memcpy
+xQueueGenericReceive
+xQueueGenericSend
+__udivsi3
+xQueueCreate
+ulCriticalNesting
+pxCurrentTCB
+xQueueGenericSendFromISR
+vTaskSwitchContext
