@@ -9,23 +9,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
   2 .intvects     00000040  40000000  00010b94  00018000  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  3 .protected    00000078  40000040  40000040  00018918  2**2
+  3 .protected    00000078  40000040  40000040  00018914  2**2
                   CONTENTS, READONLY
-  4 .data         00000860  400000b8  00010bd4  000180b8  2**2
+  4 .data         0000085c  400000b8  00010bd4  000180b8  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  5 .bss          00000200  40000918  40000918  00018918  2**2
+  5 .bss          00000200  40000914  40000914  00018914  2**2
                   ALLOC
-  6 .ARM.attributes 00000010  00000000  00000000  00018990  2**0
+  6 .ARM.attributes 00000010  00000000  00000000  0001898c  2**0
                   CONTENTS, READONLY
-  7 .comment      0000044a  00000000  00000000  000189a0  2**0
+  7 .comment      0000044a  00000000  00000000  0001899c  2**0
                   CONTENTS, READONLY
-  8 .debug_frame  00000868  00000000  00000000  00018dec  2**2
+  8 .debug_frame  00000868  00000000  00000000  00018de8  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_line   00002a02  00000000  00000000  00019654  2**0
+  9 .debug_line   00002a02  00000000  00000000  00019650  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_info   0000eec2  00000000  00000000  0001c056  2**0
+ 10 .debug_info   0000eec2  00000000  00000000  0001c052  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_abbrev 00002f08  00000000  00000000  0002af18  2**0
+ 11 .debug_abbrev 00002f08  00000000  00000000  0002af14  2**0
                   CONTENTS, READONLY, DEBUGGING
  12 .debug_aranges 00000480  00000000  00000000  0002de20  2**3
                   CONTENTS, READONLY, DEBUGGING
@@ -250,10 +250,10 @@ Disassembly of section prog:
     1280:	400000b8 	.word	0x400000b8
     1284:	40007fdc 	.word	0x40007fdc
     1288:	e5e5e5e5 	.word	0xe5e5e5e5
-    128c:	40000918 	.word	0x40000918
-    1290:	40000b18 	.word	0x40000b18
+    128c:	40000914 	.word	0x40000914
+    1290:	40000b14 	.word	0x40000b14
     1294:	00010bd4 	.word	0x00010bd4
-    1298:	40000918 	.word	0x40000918
+    1298:	40000914 	.word	0x40000914
     129c:	40000000 	.word	0x40000000
     12a0:	00010b94 	.word	0x00010b94
     12a4:	40000040 	.word	0x40000040
@@ -366,7 +366,7 @@ Disassembly of section prog:
     1448:	eb00176e 	bl	7208 <rprintf>
     144c:	eaffff9d 	b	12c8 <i2cTimer+0x1c>
     1450:	00061a80 	.word	0x00061a80
-    1454:	40000918 	.word	0x40000918
+    1454:	40000914 	.word	0x40000914
     1458:	00010064 	.word	0x00010064
     145c:	00010070 	.word	0x00010070
     1460:	00010088 	.word	0x00010088
@@ -585,7 +585,7 @@ Disassembly of section prog:
     17a4:	e0028000 	.word	0xe0028000
     17a8:	00010192 	.word	0x00010192
     17ac:	000101a4 	.word	0x000101a4
-    17b0:	40000918 	.word	0x40000918
+    17b0:	40000914 	.word	0x40000914
     17b4:	000101c1 	.word	0x000101c1
     17b8:	000101ef 	.word	0x000101ef
 
@@ -600,7 +600,7 @@ Disassembly of section prog:
     17d0:	e59f3004 	ldr	r3, [pc, #4]	; 17dc <diskio_initializeSPIMutex+0xc>
     17d4:	e5830000 	str	r0, [r3]
     17d8:	e12fff1e 	bx	lr
-    17dc:	40000a78 	.word	0x40000a78
+    17dc:	40000a74 	.word	0x40000a74
 
 000017e0 <initialize_SdCardSignals>:
     17e0:	e59f1054 	ldr	r1, [pc, #84]	; 183c <initialize_SdCardSignals+0x5c>
@@ -648,7 +648,7 @@ Disassembly of section prog:
     1870:	13a00001 	movne	r0, #1	; 0x1
     1874:	020300ff 	andeq	r0, r3, #255	; 0xff
     1878:	e12fff1e 	bx	lr
-    187c:	400000f8 	.word	0x400000f8
+    187c:	400000f4 	.word	0x400000f4
 
 00001880 <disk_timerproc>:
     1880:	e59f2068 	ldr	r2, [pc, #104]	; 18f0 <disk_timerproc+0x70>
@@ -679,11 +679,11 @@ Disassembly of section prog:
     18e4:	e5d11000 	ldrb	r1, [r1]
     18e8:	e5c23000 	strb	r3, [r2]
     18ec:	e12fff1e 	bx	lr
-    18f0:	40000a7c 	.word	0x40000a7c
-    18f4:	40000a75 	.word	0x40000a75
-    18f8:	4000091c 	.word	0x4000091c
+    18f0:	40000a78 	.word	0x40000a78
+    18f4:	40000a71 	.word	0x40000a71
+    18f8:	40000918 	.word	0x40000918
     18fc:	e0028000 	.word	0xe0028000
-    1900:	400000f8 	.word	0x400000f8
+    1900:	400000f4 	.word	0x400000f4
 
 00001904 <rcvr_datablock>:
     1904:	e59f2098 	ldr	r2, [pc, #152]	; 19a4 <rcvr_datablock+0xa0>
@@ -726,7 +726,7 @@ Disassembly of section prog:
     1998:	e8bd8070 	pop	{r4, r5, r6, pc}
     199c:	e3a00000 	mov	r0, #0	; 0x0
     19a0:	e8bd8070 	pop	{r4, r5, r6, pc}
-    19a4:	40000a7c 	.word	0x40000a7c
+    19a4:	40000a78 	.word	0x40000a78
 
 000019a8 <wait_ready>:
     19a8:	e92d4010 	push	{r4, lr}
@@ -743,7 +743,7 @@ Disassembly of section prog:
     19d4:	e3530000 	cmp	r3, #0	; 0x0
     19d8:	1afffff8 	bne	19c0 <wait_ready+0x18>
     19dc:	e8bd8010 	pop	{r4, pc}
-    19e0:	40000a75 	.word	0x40000a75
+    19e0:	40000a71 	.word	0x40000a71
 
 000019e4 <send_cmd>:
     19e4:	e92d4070 	push	{r4, r5, r6, lr}
@@ -850,7 +850,7 @@ Disassembly of section prog:
     1b68:	e49de004 	pop	{lr}		; (ldr lr, [sp], #4)
     1b6c:	ea001ba0 	b	89f4 <xQueueGenericSend>
     1b70:	e0028000 	.word	0xe0028000
-    1b74:	40000a78 	.word	0x40000a78
+    1b74:	40000a74 	.word	0x40000a74
 
 00001b78 <get_spi>:
     1b78:	e59f3030 	ldr	r3, [pc, #48]	; 1bb0 <get_spi+0x38>
@@ -867,7 +867,7 @@ Disassembly of section prog:
     1ba4:	1583200c 	strne	r2, [r3, #12]
     1ba8:	13a00001 	movne	r0, #1	; 0x1
     1bac:	e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
-    1bb0:	40000a78 	.word	0x40000a78
+    1bb0:	40000a74 	.word	0x40000a74
     1bb4:	00000bb8 	.word	0x00000bb8
     1bb8:	e0028000 	.word	0xe0028000
 
@@ -1011,8 +1011,8 @@ Disassembly of section prog:
     1dd4:	e2540000 	subs	r0, r4, #0	; 0x0
     1dd8:	13a00001 	movne	r0, #1	; 0x1
     1ddc:	e8bd8070 	pop	{r4, r5, r6, pc}
-    1de0:	400000f8 	.word	0x400000f8
-    1de4:	40000a74 	.word	0x40000a74
+    1de0:	400000f4 	.word	0x400000f4
+    1de4:	40000a70 	.word	0x40000a70
 
 00001de8 <disk_read>:
     1de8:	e31000ff 	tst	r0, #255	; 0xff
@@ -1073,8 +1073,8 @@ Disassembly of section prog:
     1ec4:	e2560000 	subs	r0, r6, #0	; 0x0
     1ec8:	13a00001 	movne	r0, #1	; 0x1
     1ecc:	e8bd8070 	pop	{r4, r5, r6, pc}
-    1ed0:	400000f8 	.word	0x400000f8
-    1ed4:	40000a74 	.word	0x40000a74
+    1ed0:	400000f4 	.word	0x400000f4
+    1ed4:	40000a70 	.word	0x40000a70
 
 00001ed8 <power_off>:
     1ed8:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
@@ -1088,7 +1088,7 @@ Disassembly of section prog:
     1ef8:	e3833001 	orr	r3, r3, #1	; 0x1
     1efc:	e5c23000 	strb	r3, [r2]
     1f00:	e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
-    1f04:	400000f8 	.word	0x400000f8
+    1f04:	400000f4 	.word	0x400000f4
 
 00001f08 <disk_ioctl>:
     1f08:	e92d4070 	push	{r4, r5, r6, lr}
@@ -1317,8 +1317,8 @@ Disassembly of section prog:
     2284:	e28dd010 	add	sp, sp, #16	; 0x10
     2288:	e8bd8070 	pop	{r4, r5, r6, pc}
     228c:	e0028000 	.word	0xe0028000
-    2290:	400000f8 	.word	0x400000f8
-    2294:	40000a74 	.word	0x40000a74
+    2290:	400000f4 	.word	0x400000f4
+    2294:	40000a70 	.word	0x40000a70
 
 00002298 <disk_initialize>:
     2298:	e92d4070 	push	{r4, r5, r6, lr}
@@ -1444,10 +1444,10 @@ Disassembly of section prog:
     2478:	e3a00001 	mov	r0, #1	; 0x1
     247c:	e28dd004 	add	sp, sp, #4	; 0x4
     2480:	e8bd8070 	pop	{r4, r5, r6, pc}
-    2484:	400000f8 	.word	0x400000f8
-    2488:	40000a7c 	.word	0x40000a7c
+    2484:	400000f4 	.word	0x400000f4
+    2488:	40000a78 	.word	0x40000a78
     248c:	000001aa 	.word	0x000001aa
-    2490:	40000a74 	.word	0x40000a74
+    2490:	40000a70 	.word	0x40000a70
 
 00002494 <clust2sect>:
     2494:	e590301c 	ldr	r3, [r0, #28]
@@ -1833,13 +1833,13 @@ Disassembly of section prog:
     2a6c:	e8bd85f0 	pop	{r4, r5, r6, r7, r8, sl, pc}
     2a70:	e3a0000d 	mov	r0, #13	; 0xd
     2a74:	e8bd85f0 	pop	{r4, r5, r6, r7, r8, sl, pc}
-    2a78:	40000920 	.word	0x40000920
+    2a78:	4000091c 	.word	0x4000091c
     2a7c:	00000ff5 	.word	0x00000ff5
     2a80:	0000fff5 	.word	0x0000fff5
     2a84:	0000aa55 	.word	0x0000aa55
     2a88:	41615252 	.word	0x41615252
     2a8c:	61417272 	.word	0x61417272
-    2a90:	40000924 	.word	0x40000924
+    2a90:	40000920 	.word	0x40000920
 
 00002a94 <validate>:
     2a94:	e92d4010 	push	{r4, lr}
@@ -4982,7 +4982,7 @@ Disassembly of section prog:
     5a98:	e8bd8070 	pop	{r4, r5, r6, pc}
     5a9c:	e3a00002 	mov	r0, #2	; 0x2
     5aa0:	e8bd8070 	pop	{r4, r5, r6, pc}
-    5aa4:	40000920 	.word	0x40000920
+    5aa4:	4000091c 	.word	0x4000091c
 
 00005aa8 <initialize_RTC>:
     5aa8:	e59f3018 	ldr	r3, [pc, #24]	; 5ac8 <initialize_RTC+0x20>
@@ -5198,7 +5198,7 @@ Disassembly of section prog:
     5d90:	e2500000 	subs	r0, r0, #0	; 0x0
     5d94:	13a00001 	movne	r0, #1	; 0x1
     5d98:	e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
-    5d9c:	40000928 	.word	0x40000928
+    5d9c:	40000924 	.word	0x40000924
 
 00005da0 <uart0PutChar>:
     5da0:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
@@ -5243,9 +5243,9 @@ Disassembly of section prog:
     5e3c:	e1a00005 	mov	r0, r5
     5e40:	e28dd004 	add	sp, sp, #4	; 0x4
     5e44:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}
-    5e48:	40000930 	.word	0x40000930
+    5e48:	4000092c 	.word	0x4000092c
     5e4c:	e000c000 	.word	0xe000c000
-    5e50:	4000092c 	.word	0x4000092c
+    5e50:	40000928 	.word	0x40000928
 
 00005e54 <uart0Init>:
     5e54:	e3510000 	cmp	r1, #0	; 0x0
@@ -5321,9 +5321,9 @@ Disassembly of section prog:
     5f6c:	e8bd8070 	pop	{r4, r5, r6, pc}
     5f70:	e3a00000 	mov	r0, #0	; 0x0
     5f74:	e8bd8070 	pop	{r4, r5, r6, pc}
-    5f78:	40000928 	.word	0x40000928
-    5f7c:	4000092c 	.word	0x4000092c
-    5f80:	40000930 	.word	0x40000930
+    5f78:	40000924 	.word	0x40000924
+    5f7c:	40000928 	.word	0x40000928
+    5f80:	4000092c 	.word	0x4000092c
     5f84:	e002c000 	.word	0xe002c000
     5f88:	02dc6c00 	.word	0x02dc6c00
     5f8c:	e000c000 	.word	0xe000c000
@@ -5442,14 +5442,14 @@ Disassembly of section prog:
     6148:	e5933000 	ldr	r3, [r3]
     614c:	e59f3004 	ldr	r3, [pc, #4]	; 6158 <uart0ISR+0x1c4>
     6150:	e5933000 	ldr	r3, [r3]
-    6154:	400000fc 	.word	0x400000fc
-    6158:	40000950 	.word	0x40000950
+    6154:	400000f8 	.word	0x400000f8
+    6158:	4000094c 	.word	0x4000094c
     615c:	e000c000 	.word	0xe000c000
-    6160:	4000092c 	.word	0x4000092c
-    6164:	40000930 	.word	0x40000930
-    6168:	40000928 	.word	0x40000928
-    616c:	400000fc 	.word	0x400000fc
-    6170:	40000950 	.word	0x40000950
+    6160:	40000928 	.word	0x40000928
+    6164:	4000092c 	.word	0x4000092c
+    6168:	40000924 	.word	0x40000924
+    616c:	400000f8 	.word	0x400000f8
+    6170:	4000094c 	.word	0x4000094c
 
 00006174 <i2cStateMachine>:
     6174:	e92d4030 	push	{r4, r5, lr}
@@ -5681,8 +5681,8 @@ Disassembly of section prog:
     64fc:	e3a00001 	mov	r0, #1	; 0x1
     6500:	e8bd8030 	pop	{r4, r5, pc}
     6504:	e001c000 	.word	0xe001c000
-    6508:	40000938 	.word	0x40000938
-    650c:	40000934 	.word	0x40000934
+    6508:	40000934 	.word	0x40000934
+    650c:	40000930 	.word	0x40000930
 
 00006510 <i2cKickOffTransfer>:
     6510:	e92d4030 	push	{r4, r5, lr}
@@ -5710,7 +5710,7 @@ Disassembly of section prog:
     6568:	e3833020 	orr	r3, r3, #32	; 0x20
     656c:	e5823000 	str	r3, [r2]
     6570:	e8bd8030 	pop	{r4, r5, pc}
-    6574:	40000938 	.word	0x40000938
+    6574:	40000934 	.word	0x40000934
     6578:	e001c000 	.word	0xe001c000
 
 0000657c <i2cWriteDeviceRegister>:
@@ -5737,7 +5737,7 @@ Disassembly of section prog:
     65cc:	e3a00000 	mov	r0, #0	; 0x0
     65d0:	e28dd008 	add	sp, sp, #8	; 0x8
     65d4:	e8bd8070 	pop	{r4, r5, r6, pc}
-    65d8:	40000a84 	.word	0x40000a84
+    65d8:	40000a80 	.word	0x40000a80
 
 000065dc <initPE>:
     65dc:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
@@ -5795,9 +5795,9 @@ Disassembly of section prog:
     66a4:	e5dd0007 	ldrb	r0, [sp, #7]
     66a8:	e28dd008 	add	sp, sp, #8	; 0x8
     66ac:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}
-    66b0:	40000a84 	.word	0x40000a84
-    66b4:	40000a80 	.word	0x40000a80
-    66b8:	40000938 	.word	0x40000938
+    66b0:	40000a80 	.word	0x40000a80
+    66b4:	40000a7c 	.word	0x40000a7c
+    66b8:	40000934 	.word	0x40000934
 
 000066bc <initialize_I2C0>:
     66bc:	e59fc108 	ldr	ip, [pc, #264]	; 67cc <initialize_I2C0+0x110>
@@ -5874,8 +5874,8 @@ Disassembly of section prog:
     67d8:	e001c000 	.word	0xe001c000
     67dc:	016e3600 	.word	0x016e3600
     67e0:	000067ec 	.word	0x000067ec
-    67e4:	40000a84 	.word	0x40000a84
-    67e8:	40000a80 	.word	0x40000a80
+    67e4:	40000a80 	.word	0x40000a80
+    67e8:	40000a7c 	.word	0x40000a7c
 
 000067ec <i2cISR>:
     67ec:	e92d0001 	push	{r0}
@@ -5938,12 +5938,12 @@ Disassembly of section prog:
     68d0:	e5933000 	ldr	r3, [r3]
     68d4:	e59f3004 	ldr	r3, [pc, #4]	; 68e0 <i2cISR+0xf4>
     68d8:	e5933000 	ldr	r3, [r3]
-    68dc:	400000fc 	.word	0x400000fc
-    68e0:	40000950 	.word	0x40000950
-    68e4:	40000a80 	.word	0x40000a80
-    68e8:	40000a84 	.word	0x40000a84
-    68ec:	400000fc 	.word	0x400000fc
-    68f0:	40000950 	.word	0x40000950
+    68dc:	400000f8 	.word	0x400000f8
+    68e0:	4000094c 	.word	0x4000094c
+    68e4:	40000a7c 	.word	0x40000a7c
+    68e8:	40000a80 	.word	0x40000a80
+    68ec:	400000f8 	.word	0x400000f8
+    68f0:	4000094c 	.word	0x4000094c
 
 000068f4 <pcm1774_sendByte>:
     68f4:	e12fff1e 	bx	lr
@@ -6284,7 +6284,7 @@ Disassembly of section prog:
     6ca0:	000104fc 	.word	0x000104fc
     6ca4:	00010a28 	.word	0x00010a28
     6ca8:	00010214 	.word	0x00010214
-    6cac:	00000b18 	.word	0x00000b18
+    6cac:	00000b14 	.word	0x00000b14
     6cb0:	00010234 	.word	0x00010234
     6cb4:	00010253 	.word	0x00010253
     6cb8:	00010272 	.word	0x00010272
@@ -6626,7 +6626,7 @@ Disassembly of section prog:
     71b8:	e59f3004 	ldr	r3, [pc, #4]	; 71c4 <rprintf_devopen+0xc>
     71bc:	e5830000 	str	r0, [r3]
     71c0:	e12fff1e 	bx	lr
-    71c4:	40000948 	.word	0x40000948
+    71c4:	40000944 	.word	0x40000944
 
 000071c8 <rprintf_putCharSource>:
     71c8:	e92d4010 	push	{r4, lr}
@@ -6644,7 +6644,7 @@ Disassembly of section prog:
     71f8:	e593f000 	ldr	pc, [r3]
     71fc:	e8bd8010 	pop	{r4, pc}
     7200:	0001869f 	.word	0x0001869f
-    7204:	40000948 	.word	0x40000948
+    7204:	40000944 	.word	0x40000944
 
 00007208 <rprintf>:
     7208:	e92d000f 	push	{r0, r1, r2, r3}
@@ -6818,8 +6818,8 @@ Disassembly of section prog:
     7480:	83e00000 	mvnhi	r0, #0	; 0x0
     7484:	95831000 	strls	r1, [r3]
     7488:	e12fff1e 	bx	lr
-    748c:	4000094c 	.word	0x4000094c
-    7490:	40000b18 	.word	0x40000b18
+    748c:	40000948 	.word	0x40000948
+    7490:	40000b14 	.word	0x40000b14
     7494:	400000e8 	.word	0x400000e8
 
 00007498 <_write_r>:
@@ -6968,9 +6968,9 @@ Disassembly of section prog:
     7688:	e59f300c 	ldr	r3, [pc, #12]	; 769c <retGlobals+0x84>
     768c:	e7930102 	ldr	r0, [r3, r2, lsl #2]
     7690:	e12fff1e 	bx	lr
-    7694:	40000a98 	.word	0x40000a98
-    7698:	40000a94 	.word	0x40000a94
-    769c:	40000a9c 	.word	0x40000a9c
+    7694:	40000a94 	.word	0x40000a94
+    7698:	40000a90 	.word	0x40000a90
+    769c:	40000a98 	.word	0x40000a98
     76a0:	000104b9 	.word	0x000104b9
 
 000076a4 <getMP3Names>:
@@ -7029,12 +7029,12 @@ Disassembly of section prog:
     7774:	eaffffd1 	b	76c0 <getMP3Names+0x1c>
     7778:	e28ddf91 	add	sp, sp, #580	; 0x244
     777c:	e8bd8ff0 	pop	{r4, r5, r6, r7, r8, r9, sl, fp, pc}
-    7780:	40000a9c 	.word	0x40000a9c
+    7780:	40000a98 	.word	0x40000a98
     7784:	000104c0 	.word	0x000104c0
     7788:	00010752 	.word	0x00010752
-    778c:	40000a90 	.word	0x40000a90
-    7790:	40000a98 	.word	0x40000a98
-    7794:	40000a94 	.word	0x40000a94
+    778c:	40000a8c 	.word	0x40000a8c
+    7790:	40000a94 	.word	0x40000a94
+    7794:	40000a90 	.word	0x40000a90
 
 00007798 <getUartLine>:
     7798:	e92d4070 	push	{r4, r5, r6, lr}
@@ -7564,7 +7564,7 @@ Disassembly of section prog:
     7fb8:	00010747 	.word	0x00010747
     7fbc:	0001074c 	.word	0x0001074c
     7fc0:	000104c0 	.word	0x000104c0
-    7fc4:	40000a90 	.word	0x40000a90
+    7fc4:	40000a8c 	.word	0x40000a8c
     7fc8:	00010751 	.word	0x00010751
     7fcc:	00010696 	.word	0x00010696
     7fd0:	00010756 	.word	0x00010756
@@ -7820,8 +7820,8 @@ Disassembly of section prog:
     8360:	e59f3008 	ldr	r3, [pc, #8]	; 8370 <vPortISRStartFirstTask+0x48>
     8364:	e5933000 	ldr	r3, [r3]
     8368:	e12fff1e 	bx	lr
-    836c:	400000fc 	.word	0x400000fc
-    8370:	40000950 	.word	0x40000950
+    836c:	400000f8 	.word	0x400000f8
+    8370:	4000094c 	.word	0x4000094c
 
 00008374 <vPortYieldProcessor>:
     8374:	e28ee004 	add	lr, lr, #4	; 0x4
@@ -7863,8 +7863,8 @@ Disassembly of section prog:
     8404:	e25ef004 	subs	pc, lr, #4	; 0x4
     8408:	e5933000 	ldr	r3, [r3]
     840c:	e5922000 	ldr	r2, [r2]
-    8410:	400000fc 	.word	0x400000fc
-    8414:	40000950 	.word	0x40000950
+    8410:	400000f8 	.word	0x400000f8
+    8414:	4000094c 	.word	0x4000094c
 
 00008418 <vTickISR>:
     8418:	e92d0001 	push	{r0}
@@ -7912,8 +7912,8 @@ Disassembly of section prog:
     84c0:	e25ef004 	subs	pc, lr, #4	; 0x4
     84c4:	e5911000 	ldr	r1, [r1]
     84c8:	e5900000 	ldr	r0, [r0]
-    84cc:	400000fc 	.word	0x400000fc
-    84d0:	40000950 	.word	0x40000950
+    84cc:	400000f8 	.word	0x400000f8
+    84d0:	4000094c 	.word	0x4000094c
     84d4:	e0004000 	.word	0xe0004000
 
 000084d8 <vPortEnterCritical>:
@@ -7927,7 +7927,7 @@ Disassembly of section prog:
     84f4:	e2833001 	add	r3, r3, #1	; 0x1
     84f8:	e5823000 	str	r3, [r2]
     84fc:	e12fff1e 	bx	lr
-    8500:	400000fc 	.word	0x400000fc
+    8500:	400000f8 	.word	0x400000f8
 
 00008504 <vPortExitCritical>:
     8504:	e59f2038 	ldr	r2, [pc, #56]	; 8544 <vPortExitCritical+0x40>
@@ -7946,9 +7946,9 @@ Disassembly of section prog:
     8538:	e129f000 	msr	CPSR_fc, r0
     853c:	e8bd0001 	pop	{r0}
     8540:	e12fff1e 	bx	lr
-    8544:	400000fc 	.word	0x400000fc
-    8548:	40000950 	.word	0x40000950
-    854c:	400000fc 	.word	0x400000fc
+    8544:	400000f8 	.word	0x400000f8
+    8548:	4000094c 	.word	0x4000094c
+    854c:	400000f8 	.word	0x400000f8
 
 00008550 <uxQueueMessagesWaitingFromISR>:
     8550:	e5900038 	ldr	r0, [r0, #56]
@@ -8436,8 +8436,8 @@ Disassembly of section prog:
     8c70:	e12fff1e 	bx	lr
     8c74:	e3a00000 	mov	r0, #0	; 0x0
     8c78:	e12fff1e 	bx	lr
-    8c7c:	40000a2c 	.word	0x40000a2c
-    8c80:	40000a18 	.word	0x40000a18
+    8c7c:	40000a28 	.word	0x40000a28
+    8c80:	40000a14 	.word	0x40000a14
 
 00008c84 <vTaskSuspendAll>:
     8c84:	e59f200c 	ldr	r2, [pc, #12]	; 8c98 <vTaskSuspendAll+0x14>
@@ -8445,13 +8445,13 @@ Disassembly of section prog:
     8c8c:	e2833001 	add	r3, r3, #1	; 0x1
     8c90:	e5823000 	str	r3, [r2]
     8c94:	e12fff1e 	bx	lr
-    8c98:	40000968 	.word	0x40000968
+    8c98:	40000964 	.word	0x40000964
 
 00008c9c <uxTaskGetNumberOfTasks>:
     8c9c:	e59f3004 	ldr	r3, [pc, #4]	; 8ca8 <uxTaskGetNumberOfTasks+0xc>
     8ca0:	e5930000 	ldr	r0, [r3]
     8ca4:	e12fff1e 	bx	lr
-    8ca8:	40000978 	.word	0x40000978
+    8ca8:	40000974 	.word	0x40000974
 
 00008cac <runTimeStatISREntry>:
     8cac:	e59f3028 	ldr	r3, [pc, #40]	; 8cdc <runTimeStatISREntry+0x30>
@@ -8467,8 +8467,8 @@ Disassembly of section prog:
     8cd4:	e580c000 	str	ip, [r0]
     8cd8:	e12fff1e 	bx	lr
     8cdc:	e0008000 	.word	0xe0008000
-    8ce0:	40000950 	.word	0x40000950
-    8ce4:	4000096c 	.word	0x4000096c
+    8ce0:	4000094c 	.word	0x4000094c
+    8ce4:	40000968 	.word	0x40000968
 
 00008ce8 <runTimeStatISRExit>:
     8ce8:	e59f0024 	ldr	r0, [pc, #36]	; 8d14 <runTimeStatISRExit+0x2c>
@@ -8482,9 +8482,9 @@ Disassembly of section prog:
     8d08:	e5803000 	str	r3, [r0]
     8d0c:	e58c1000 	str	r1, [ip]
     8d10:	e12fff1e 	bx	lr
-    8d14:	40000958 	.word	0x40000958
+    8d14:	40000954 	.word	0x40000954
     8d18:	e0008000 	.word	0xe0008000
-    8d1c:	4000096c 	.word	0x4000096c
+    8d1c:	40000968 	.word	0x40000968
 
 00008d20 <vTaskSetTimeOutState>:
     8d20:	e59f3010 	ldr	r3, [pc, #16]	; 8d38 <vTaskSetTimeOutState+0x18>
@@ -8493,15 +8493,15 @@ Disassembly of section prog:
     8d2c:	e5933000 	ldr	r3, [r3]
     8d30:	e880000c 	stm	r0, {r2, r3}
     8d34:	e12fff1e 	bx	lr
-    8d38:	40000964 	.word	0x40000964
-    8d3c:	40000954 	.word	0x40000954
+    8d38:	40000960 	.word	0x40000960
+    8d3c:	40000950 	.word	0x40000950
 
 00008d40 <vTaskMissedYield>:
     8d40:	e59f3008 	ldr	r3, [pc, #8]	; 8d50 <vTaskMissedYield+0x10>
     8d44:	e3a02001 	mov	r2, #1	; 0x1
     8d48:	e5832000 	str	r2, [r3]
     8d4c:	e12fff1e 	bx	lr
-    8d50:	40000960 	.word	0x40000960
+    8d50:	4000095c 	.word	0x4000095c
 
 00008d54 <uxTaskGetStackHighWaterMark>:
     8d54:	e3500000 	cmp	r0, #0	; 0x0
@@ -8516,13 +8516,13 @@ Disassembly of section prog:
     8d78:	0afffffa 	beq	8d68 <uxTaskGetStackHighWaterMark+0x14>
     8d7c:	e1a00920 	lsr	r0, r0, #18
     8d80:	e12fff1e 	bx	lr
-    8d84:	40000950 	.word	0x40000950
+    8d84:	4000094c 	.word	0x4000094c
 
 00008d88 <xTaskGetCurrentTaskHandle>:
     8d88:	e59f3004 	ldr	r3, [pc, #4]	; 8d94 <xTaskGetCurrentTaskHandle+0xc>
     8d8c:	e5930000 	ldr	r0, [r3]
     8d90:	e12fff1e 	bx	lr
-    8d94:	40000950 	.word	0x40000950
+    8d94:	4000094c 	.word	0x4000094c
 
 00008d98 <vTaskPriorityDisinherit>:
     8d98:	e92d4030 	push	{r4, r5, lr}
@@ -8549,8 +8549,8 @@ Disassembly of section prog:
     8dec:	e1a01005 	mov	r1, r5
     8df0:	e8bd4030 	pop	{r4, r5, lr}
     8df4:	eafffcaa 	b	80a4 <vListInsertEnd>
-    8df8:	4000095c 	.word	0x4000095c
-    8dfc:	40000984 	.word	0x40000984
+    8df8:	40000958 	.word	0x40000958
+    8dfc:	40000980 	.word	0x40000980
 
 00008e00 <vTaskPriorityInherit>:
     8e00:	e92d4070 	push	{r4, r5, r6, lr}
@@ -8590,9 +8590,9 @@ Disassembly of section prog:
     8e88:	e1a01006 	mov	r1, r6
     8e8c:	e8bd4070 	pop	{r4, r5, r6, lr}
     8e90:	eafffc83 	b	80a4 <vListInsertEnd>
-    8e94:	40000950 	.word	0x40000950
-    8e98:	40000984 	.word	0x40000984
-    8e9c:	4000095c 	.word	0x4000095c
+    8e94:	4000094c 	.word	0x4000094c
+    8e98:	40000980 	.word	0x40000980
+    8e9c:	40000958 	.word	0x40000958
 
 00008ea0 <xTaskRemoveFromEventList>:
     8ea0:	e5903000 	ldr	r3, [r0]
@@ -8631,11 +8631,11 @@ Disassembly of section prog:
     8f24:	33a00000 	movcc	r0, #0	; 0x0
     8f28:	23a00001 	movcs	r0, #1	; 0x1
     8f2c:	e8bd8030 	pop	{r4, r5, pc}
-    8f30:	40000968 	.word	0x40000968
-    8f34:	40000a18 	.word	0x40000a18
-    8f38:	4000095c 	.word	0x4000095c
-    8f3c:	40000984 	.word	0x40000984
-    8f40:	40000950 	.word	0x40000950
+    8f30:	40000964 	.word	0x40000964
+    8f34:	40000a14 	.word	0x40000a14
+    8f38:	40000958 	.word	0x40000958
+    8f3c:	40000980 	.word	0x40000980
+    8f40:	4000094c 	.word	0x4000094c
 
 00008f44 <vTaskIncrementTick>:
     8f44:	e59f30f0 	ldr	r3, [pc, #240]	; 903c <vTaskIncrementTick+0xf8>
@@ -8700,14 +8700,14 @@ Disassembly of section prog:
     9030:	e2833001 	add	r3, r3, #1	; 0x1
     9034:	e5823000 	str	r3, [r2]
     9038:	e8bd87f0 	pop	{r4, r5, r6, r7, r8, r9, sl, pc}
-    903c:	40000968 	.word	0x40000968
-    9040:	40000954 	.word	0x40000954
-    9044:	40000a10 	.word	0x40000a10
-    9048:	40000a14 	.word	0x40000a14
-    904c:	40000964 	.word	0x40000964
-    9050:	4000095c 	.word	0x4000095c
-    9054:	40000984 	.word	0x40000984
-    9058:	40000970 	.word	0x40000970
+    903c:	40000964 	.word	0x40000964
+    9040:	40000950 	.word	0x40000950
+    9044:	40000a0c 	.word	0x40000a0c
+    9048:	40000a10 	.word	0x40000a10
+    904c:	40000960 	.word	0x40000960
+    9050:	40000958 	.word	0x40000958
+    9054:	40000980 	.word	0x40000980
+    9058:	4000096c 	.word	0x4000096c
 
 0000905c <xTaskResumeFromISR>:
     905c:	e5902014 	ldr	r2, [r0, #20]
@@ -8754,12 +8754,12 @@ Disassembly of section prog:
     9100:	e3530000 	cmp	r3, #0	; 0x0
     9104:	0affffe1 	beq	9090 <xTaskResumeFromISR+0x34>
     9108:	eafffff4 	b	90e0 <xTaskResumeFromISR+0x84>
-    910c:	40000a2c 	.word	0x40000a2c
-    9110:	40000a18 	.word	0x40000a18
-    9114:	40000950 	.word	0x40000950
-    9118:	4000095c 	.word	0x4000095c
-    911c:	40000984 	.word	0x40000984
-    9120:	40000968 	.word	0x40000968
+    910c:	40000a28 	.word	0x40000a28
+    9110:	40000a14 	.word	0x40000a14
+    9114:	4000094c 	.word	0x4000094c
+    9118:	40000958 	.word	0x40000958
+    911c:	40000980 	.word	0x40000980
+    9120:	40000964 	.word	0x40000964
 
 00009124 <xTaskCheckForTimeOut>:
     9124:	e92d4030 	push	{r4, r5, lr}
@@ -8799,8 +8799,8 @@ Disassembly of section prog:
     91ac:	ebfffcd4 	bl	8504 <vPortExitCritical>
     91b0:	e1a00004 	mov	r0, r4
     91b4:	e8bd8030 	pop	{r4, r5, pc}
-    91b8:	40000964 	.word	0x40000964
-    91bc:	40000954 	.word	0x40000954
+    91b8:	40000960 	.word	0x40000960
+    91bc:	40000950 	.word	0x40000950
 
 000091c0 <xTaskGetTickCount>:
     91c0:	e92d4010 	push	{r4, lr}
@@ -8810,7 +8810,7 @@ Disassembly of section prog:
     91d0:	ebfffccb 	bl	8504 <vPortExitCritical>
     91d4:	e1a00004 	mov	r0, r4
     91d8:	e8bd8010 	pop	{r4, pc}
-    91dc:	40000954 	.word	0x40000954
+    91dc:	40000950 	.word	0x40000950
 
 000091e0 <xTaskResumeAll>:
     91e0:	e92d4ff0 	push	{r4, r5, r6, r7, r8, r9, sl, fp, lr}
@@ -8887,14 +8887,14 @@ Disassembly of section prog:
     92fc:	ebfffc80 	bl	8504 <vPortExitCritical>
     9300:	e1a00004 	mov	r0, r4
     9304:	e8bd8ff0 	pop	{r4, r5, r6, r7, r8, r9, sl, fp, pc}
-    9308:	40000968 	.word	0x40000968
-    930c:	40000978 	.word	0x40000978
-    9310:	40000a18 	.word	0x40000a18
-    9314:	4000095c 	.word	0x4000095c
-    9318:	40000984 	.word	0x40000984
-    931c:	40000950 	.word	0x40000950
-    9320:	40000970 	.word	0x40000970
-    9324:	40000960 	.word	0x40000960
+    9308:	40000964 	.word	0x40000964
+    930c:	40000974 	.word	0x40000974
+    9310:	40000a14 	.word	0x40000a14
+    9314:	40000958 	.word	0x40000958
+    9318:	40000980 	.word	0x40000980
+    931c:	4000094c 	.word	0x4000094c
+    9320:	4000096c 	.word	0x4000096c
+    9324:	4000095c 	.word	0x4000095c
 
 00009328 <uxTaskGetIdlePercentage>:
     9328:	e59f30e8 	ldr	r3, [pc, #232]	; 9418 <uxTaskGetIdlePercentage+0xf0>
@@ -8958,8 +8958,8 @@ Disassembly of section prog:
     9410:	e1a00004 	mov	r0, r4
     9414:	e8bd8010 	pop	{r4, pc}
     9418:	e0008000 	.word	0xe0008000
-    941c:	40000968 	.word	0x40000968
-    9420:	40000984 	.word	0x40000984
+    941c:	40000964 	.word	0x40000964
+    9420:	40000980 	.word	0x40000980
 
 00009424 <vTaskResume>:
     9424:	e92d4030 	push	{r4, r5, lr}
@@ -9004,11 +9004,11 @@ Disassembly of section prog:
     94c0:	e1520003 	cmp	r2, r3
     94c4:	3affffea 	bcc	9474 <vTaskResume+0x50>
     94c8:	eaffffe8 	b	9470 <vTaskResume+0x4c>
-    94cc:	40000950 	.word	0x40000950
-    94d0:	40000a2c 	.word	0x40000a2c
-    94d4:	40000a18 	.word	0x40000a18
-    94d8:	4000095c 	.word	0x4000095c
-    94dc:	40000984 	.word	0x40000984
+    94cc:	4000094c 	.word	0x4000094c
+    94d0:	40000a28 	.word	0x40000a28
+    94d4:	40000a14 	.word	0x40000a14
+    94d8:	40000958 	.word	0x40000958
+    94dc:	40000980 	.word	0x40000980
 
 000094e0 <vTaskSuspend>:
     94e0:	e92d4070 	push	{r4, r5, r6, lr}
@@ -9039,8 +9039,8 @@ Disassembly of section prog:
     9544:	18bd8070 	popne	{r4, r5, r6, pc}
     9548:	ef000000 	svc	0x00000000
     954c:	e8bd8070 	pop	{r4, r5, r6, pc}
-    9550:	40000950 	.word	0x40000950
-    9554:	40000a2c 	.word	0x40000a2c
+    9550:	4000094c 	.word	0x4000094c
+    9554:	40000a28 	.word	0x40000a28
 
 00009558 <vTaskPrioritySet>:
     9558:	e92d40f0 	push	{r4, r5, r6, r7, lr}
@@ -9099,9 +9099,9 @@ Disassembly of section prog:
     962c:	ef000000 	svc	0x00000000
     9630:	e8bd40f0 	pop	{r4, r5, r6, r7, lr}
     9634:	eafffbb2 	b	8504 <vPortExitCritical>
-    9638:	40000950 	.word	0x40000950
-    963c:	40000984 	.word	0x40000984
-    9640:	4000095c 	.word	0x4000095c
+    9638:	4000094c 	.word	0x4000094c
+    963c:	40000980 	.word	0x40000980
+    9640:	40000958 	.word	0x40000958
 
 00009644 <uxTaskPriorityGet>:
     9644:	e92d4010 	push	{r4, lr}
@@ -9115,7 +9115,7 @@ Disassembly of section prog:
     9664:	ebfffba6 	bl	8504 <vPortExitCritical>
     9668:	e1a00004 	mov	r0, r4
     966c:	e8bd8010 	pop	{r4, pc}
-    9670:	40000950 	.word	0x40000950
+    9670:	4000094c 	.word	0x4000094c
 
 00009674 <vTaskPlaceOnEventList>:
     9674:	e92d4030 	push	{r4, r5, lr}
@@ -9148,11 +9148,11 @@ Disassembly of section prog:
     96e0:	e2811004 	add	r1, r1, #4	; 0x4
     96e4:	e8bd4030 	pop	{r4, r5, lr}
     96e8:	eafffa7a 	b	80d8 <vListInsert>
-    96ec:	40000950 	.word	0x40000950
-    96f0:	40000a2c 	.word	0x40000a2c
-    96f4:	40000954 	.word	0x40000954
-    96f8:	40000a14 	.word	0x40000a14
-    96fc:	40000a10 	.word	0x40000a10
+    96ec:	4000094c 	.word	0x4000094c
+    96f0:	40000a28 	.word	0x40000a28
+    96f4:	40000950 	.word	0x40000950
+    96f8:	40000a10 	.word	0x40000a10
+    96fc:	40000a0c 	.word	0x40000a0c
 
 00009700 <vTaskDelay>:
     9700:	e2501000 	subs	r1, r0, #0	; 0x0
@@ -9184,11 +9184,11 @@ Disassembly of section prog:
     9768:	18bd8070 	popne	{r4, r5, r6, pc}
     976c:	ef000000 	svc	0x00000000
     9770:	e8bd8070 	pop	{r4, r5, r6, pc}
-    9774:	40000968 	.word	0x40000968
-    9778:	40000950 	.word	0x40000950
-    977c:	40000954 	.word	0x40000954
-    9780:	40000a14 	.word	0x40000a14
-    9784:	40000a10 	.word	0x40000a10
+    9774:	40000964 	.word	0x40000964
+    9778:	4000094c 	.word	0x4000094c
+    977c:	40000950 	.word	0x40000950
+    9780:	40000a10 	.word	0x40000a10
+    9784:	40000a0c 	.word	0x40000a0c
 
 00009788 <vTaskDelayUntil>:
     9788:	e59f30ac 	ldr	r3, [pc, #172]	; 983c <vTaskDelayUntil+0xb4>
@@ -9236,11 +9236,11 @@ Disassembly of section prog:
     9830:	18bd8030 	popne	{r4, r5, pc}
     9834:	ef000000 	svc	0x00000000
     9838:	e8bd8030 	pop	{r4, r5, pc}
-    983c:	40000968 	.word	0x40000968
-    9840:	40000954 	.word	0x40000954
-    9844:	40000950 	.word	0x40000950
-    9848:	40000a14 	.word	0x40000a14
-    984c:	40000a10 	.word	0x40000a10
+    983c:	40000964 	.word	0x40000964
+    9840:	40000950 	.word	0x40000950
+    9844:	4000094c 	.word	0x4000094c
+    9848:	40000a10 	.word	0x40000a10
+    984c:	40000a0c 	.word	0x40000a0c
 
 00009850 <vTaskSwitchContext>:
     9850:	e59f310c 	ldr	r3, [pc, #268]	; 9964 <vTaskSwitchContext+0x114>
@@ -9312,14 +9312,14 @@ Disassembly of section prog:
     9958:	e59f300c 	ldr	r3, [pc, #12]	; 996c <vTaskSwitchContext+0x11c>
     995c:	e5832000 	str	r2, [r3]
     9960:	e8bd8030 	pop	{r4, r5, pc}
-    9964:	40000968 	.word	0x40000968
-    9968:	40000960 	.word	0x40000960
-    996c:	40000950 	.word	0x40000950
+    9964:	40000964 	.word	0x40000964
+    9968:	4000095c 	.word	0x4000095c
+    996c:	4000094c 	.word	0x4000094c
     9970:	e0008000 	.word	0xe0008000
-    9974:	4000096c 	.word	0x4000096c
+    9974:	40000968 	.word	0x40000968
     9978:	0000fe29 	.word	0x0000fe29
-    997c:	4000095c 	.word	0x4000095c
-    9980:	40000984 	.word	0x40000984
+    997c:	40000958 	.word	0x40000958
+    9980:	40000980 	.word	0x40000980
 
 00009984 <prvGenerateRunTimeStatsForTasksInList>:
     9984:	e92d4ff0 	push	{r4, r5, r6, r7, r8, r9, sl, fp, lr}
@@ -9504,18 +9504,18 @@ Disassembly of section prog:
     9c48:	e28dd004 	add	sp, sp, #4	; 0x4
     9c4c:	e8bd45f0 	pop	{r4, r5, r6, r7, r8, sl, lr}
     9c50:	eafffd62 	b	91e0 <xTaskResumeAll>
-    9c54:	40000968 	.word	0x40000968
+    9c54:	40000964 	.word	0x40000964
     9c58:	e0008000 	.word	0xe0008000
-    9c5c:	40000974 	.word	0x40000974
-    9c60:	40000970 	.word	0x40000970
-    9c64:	40000a10 	.word	0x40000a10
-    9c68:	40000a14 	.word	0x40000a14
-    9c6c:	40000a2c 	.word	0x40000a2c
-    9c70:	40000958 	.word	0x40000958
+    9c5c:	40000970 	.word	0x40000970
+    9c60:	4000096c 	.word	0x4000096c
+    9c64:	40000a0c 	.word	0x40000a0c
+    9c68:	40000a10 	.word	0x40000a10
+    9c6c:	40000a28 	.word	0x40000a28
+    9c70:	40000954 	.word	0x40000954
     9c74:	00010a92 	.word	0x00010a92
     9c78:	00010aa6 	.word	0x00010aa6
     9c7c:	00010a7e 	.word	0x00010a7e
-    9c80:	4000096c 	.word	0x4000096c
+    9c80:	40000968 	.word	0x40000968
 
 00009c84 <vTaskEndScheduler>:
     9c84:	e92d0001 	push	{r0}
@@ -9527,7 +9527,7 @@ Disassembly of section prog:
     9c9c:	e3a02000 	mov	r2, #0	; 0x0
     9ca0:	e5832000 	str	r2, [r3]
     9ca4:	eafff983 	b	82b8 <vPortEndScheduler>
-    9ca8:	4000097c 	.word	0x4000097c
+    9ca8:	40000978 	.word	0x40000978
 
 00009cac <prvIdleTask>:
     9cac:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
@@ -9669,19 +9669,19 @@ Disassembly of section prog:
     9ec4:	e8bd8ff0 	pop	{r4, r5, r6, r7, r8, r9, sl, fp, pc}
     9ec8:	e3a00001 	mov	r0, #1	; 0x1
     9ecc:	e8bd8ff0 	pop	{r4, r5, r6, r7, r8, r9, sl, fp, pc}
-    9ed0:	40000978 	.word	0x40000978
-    9ed4:	40000950 	.word	0x40000950
-    9ed8:	40000984 	.word	0x40000984
-    9edc:	400009e8 	.word	0x400009e8
-    9ee0:	400009fc 	.word	0x400009fc
-    9ee4:	40000a18 	.word	0x40000a18
-    9ee8:	40000a2c 	.word	0x40000a2c
-    9eec:	40000a10 	.word	0x40000a10
-    9ef0:	40000a14 	.word	0x40000a14
-    9ef4:	4000097c 	.word	0x4000097c
-    9ef8:	40000974 	.word	0x40000974
-    9efc:	4000095c 	.word	0x4000095c
-    9f00:	40000980 	.word	0x40000980
+    9ed0:	40000974 	.word	0x40000974
+    9ed4:	4000094c 	.word	0x4000094c
+    9ed8:	40000980 	.word	0x40000980
+    9edc:	400009e4 	.word	0x400009e4
+    9ee0:	400009f8 	.word	0x400009f8
+    9ee4:	40000a14 	.word	0x40000a14
+    9ee8:	40000a28 	.word	0x40000a28
+    9eec:	40000a0c 	.word	0x40000a0c
+    9ef0:	40000a10 	.word	0x40000a10
+    9ef4:	40000978 	.word	0x40000978
+    9ef8:	40000970 	.word	0x40000970
+    9efc:	40000958 	.word	0x40000958
+    9f00:	4000097c 	.word	0x4000097c
 
 00009f04 <vTaskStartScheduler>:
     9f04:	e92d4010 	push	{r4, lr}
@@ -9721,8 +9721,8 @@ Disassembly of section prog:
     9f8c:	e8bd8010 	pop	{r4, pc}
     9f90:	00009cac 	.word	0x00009cac
     9f94:	00010ab1 	.word	0x00010ab1
-    9f98:	4000097c 	.word	0x4000097c
-    9f9c:	40000954 	.word	0x40000954
+    9f98:	40000978 	.word	0x40000978
+    9f9c:	40000950 	.word	0x40000950
     9fa0:	e0008000 	.word	0xe0008000
 
 00009fa4 <vApplicationIdleHook>:
@@ -10691,21 +10691,21 @@ Disassembly of section prog:
     ae3c:	e49de004 	pop	{lr}		; (ldr lr, [sp], #4)
     ae40:	e28dd010 	add	sp, sp, #16	; 0x10
     ae44:	e12fff1e 	bx	lr
-    ae48:	40000514 	.word	0x40000514
+    ae48:	40000510 	.word	0x40000510
 
 0000ae4c <free>:
     ae4c:	e59f3008 	ldr	r3, [pc, #8]	; ae5c <free+0x10>
     ae50:	e1a01000 	mov	r1, r0
     ae54:	e5930000 	ldr	r0, [r3]
     ae58:	ea0009ff 	b	d65c <_free_r>
-    ae5c:	40000514 	.word	0x40000514
+    ae5c:	40000510 	.word	0x40000510
 
 0000ae60 <malloc>:
     ae60:	e59f3008 	ldr	r3, [pc, #8]	; ae70 <malloc+0x10>
     ae64:	e1a01000 	mov	r1, r0
     ae68:	e5930000 	ldr	r0, [r3]
     ae6c:	ea000000 	b	ae74 <_malloc_r>
-    ae70:	40000514 	.word	0x40000514
+    ae70:	40000510 	.word	0x40000510
 
 0000ae74 <_malloc_r>:
     ae74:	e1a03001 	mov	r3, r1
@@ -11162,13 +11162,13 @@ Disassembly of section prog:
     b580:	eb0000a7 	bl	b824 <__malloc_unlock>
     b584:	e3a05000 	mov	r5, #0	; 0x0
     b588:	eafffe60 	b	af10 <_malloc_r+0x9c>
-    b58c:	40000100 	.word	0x40000100
-    b590:	40000108 	.word	0x40000108
-    b594:	40000a40 	.word	0x40000a40
-    b598:	4000050c 	.word	0x4000050c
-    b59c:	40000a4c 	.word	0x40000a4c
-    b5a0:	40000a44 	.word	0x40000a44
-    b5a4:	40000a48 	.word	0x40000a48
+    b58c:	400000fc 	.word	0x400000fc
+    b590:	40000104 	.word	0x40000104
+    b594:	40000a3c 	.word	0x40000a3c
+    b598:	40000508 	.word	0x40000508
+    b59c:	40000a48 	.word	0x40000a48
+    b5a0:	40000a40 	.word	0x40000a40
+    b5a4:	40000a44 	.word	0x40000a44
 
 0000b5a8 <memcmp>:
     b5a8:	e3520003 	cmp	r2, #3	; 0x3
@@ -11367,7 +11367,7 @@ Disassembly of section prog:
     b884:	e8bd4010 	pop	{r4, lr}
     b888:	e28dd00c 	add	sp, sp, #12	; 0xc
     b88c:	e12fff1e 	bx	lr
-    b890:	40000514 	.word	0x40000514
+    b890:	40000510 	.word	0x40000510
 
 0000b894 <_siprintf_r>:
     b894:	e92d000c 	push	{r2, r3}
@@ -11662,7 +11662,7 @@ Disassembly of section prog:
     bce8:	e3a03001 	mov	r3, #1	; 0x1
     bcec:	e282205c 	add	r2, r2, #92	; 0x5c
     bcf0:	ea000000 	b	bcf8 <__strtok_r>
-    bcf4:	40000514 	.word	0x40000514
+    bcf4:	40000510 	.word	0x40000510
 
 0000bcf8 <__strtok_r>:
     bcf8:	e92d0070 	push	{r4, r5, r6}
@@ -11829,7 +11829,7 @@ Disassembly of section prog:
     bf6c:	e1a08007 	mov	r8, r7
     bf70:	e2866002 	add	r6, r6, #2	; 0x2
     bf74:	eaffffb6 	b	be54 <_strtol_r+0x8c>
-    bf78:	40000510 	.word	0x40000510
+    bf78:	4000050c 	.word	0x4000050c
 
 0000bf7c <strtol>:
     bf7c:	e52d4004 	push	{r4}		; (str r4, [sp, #-4]!)
@@ -11842,7 +11842,7 @@ Disassembly of section prog:
     bf98:	e1a02004 	mov	r2, r4
     bf9c:	e8bd0010 	pop	{r4}
     bfa0:	eaffff88 	b	bdc8 <_strtol_r>
-    bfa4:	40000514 	.word	0x40000514
+    bfa4:	40000510 	.word	0x40000510
 
 0000bfa8 <__sprint_r>:
     bfa8:	e5923008 	ldr	r3, [r2, #8]
@@ -12868,7 +12868,7 @@ Disassembly of section prog:
     cf88:	e1a02004 	mov	r2, r4
     cf8c:	e8bd0010 	pop	{r4}
     cf90:	eafffc10 	b	bfd8 <_vfiprintf_r>
-    cf94:	40000514 	.word	0x40000514
+    cf94:	40000510 	.word	0x40000510
 
 0000cf98 <__swsetup_r>:
     cf98:	e59f3138 	ldr	r3, [pc, #312]	; d0d8 <__swsetup_r+0x140>
@@ -12951,7 +12951,7 @@ Disassembly of section prog:
     d0cc:	e1c430bc 	strh	r3, [r4, #12]
     d0d0:	e1a02822 	lsr	r2, r2, #16
     d0d4:	eaffffc0 	b	cfdc <__swsetup_r+0x44>
-    d0d8:	40000514 	.word	0x40000514
+    d0d8:	40000510 	.word	0x40000510
 
 0000d0dc <_fflush_r>:
     d0dc:	e92d40f0 	push	{r4, r5, r6, r7, lr}
@@ -13072,7 +13072,7 @@ Disassembly of section prog:
     d2a0:	e59f100c 	ldr	r1, [pc, #12]	; d2b4 <fflush+0x30>
     d2a4:	e5930000 	ldr	r0, [r3]
     d2a8:	ea0002a4 	b	dd40 <_fwalk_reent>
-    d2ac:	40000514 	.word	0x40000514
+    d2ac:	40000510 	.word	0x40000510
     d2b0:	00010060 	.word	0x00010060
     d2b4:	0000d0dc 	.word	0x0000d0dc
 
@@ -13174,7 +13174,7 @@ Disassembly of section prog:
     d3f8:	e59f1008 	ldr	r1, [pc, #8]	; d408 <__fp_unlock_all+0x14>
     d3fc:	e5930000 	ldr	r0, [r3]
     d400:	ea000270 	b	ddc8 <_fwalk>
-    d404:	40000514 	.word	0x40000514
+    d404:	40000510 	.word	0x40000510
     d408:	0000d3ec 	.word	0x0000d3ec
 
 0000d40c <__fp_lock_all>:
@@ -13182,7 +13182,7 @@ Disassembly of section prog:
     d410:	e59f1008 	ldr	r1, [pc, #8]	; d420 <__fp_lock_all+0x14>
     d414:	e5930000 	ldr	r0, [r3]
     d418:	ea00026a 	b	ddc8 <_fwalk>
-    d41c:	40000514 	.word	0x40000514
+    d41c:	40000510 	.word	0x40000510
     d420:	0000d3e4 	.word	0x0000d3e4
 
 0000d424 <_cleanup_r>:
@@ -13333,9 +13333,9 @@ Disassembly of section prog:
     d644:	e5832000 	str	r2, [r3]
     d648:	e58c1004 	str	r1, [ip, #4]
     d64c:	eaffffdb 	b	d5c0 <_malloc_trim_r+0x5c>
-    d650:	40000100 	.word	0x40000100
-    d654:	40000a4c 	.word	0x40000a4c
-    d658:	4000050c 	.word	0x4000050c
+    d650:	400000fc 	.word	0x400000fc
+    d654:	40000a48 	.word	0x40000a48
+    d658:	40000508 	.word	0x40000508
 
 0000d65c <_free_r>:
     d65c:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
@@ -13492,10 +13492,10 @@ Disassembly of section prog:
     d8b8:	e5873004 	str	r3, [r7, #4]
     d8bc:	e1a03000 	mov	r3, r0
     d8c0:	eaffffb2 	b	d790 <_free_r+0x134>
-    d8c4:	40000100 	.word	0x40000100
-    d8c8:	40000108 	.word	0x40000108
-    d8cc:	40000508 	.word	0x40000508
-    d8d0:	40000a40 	.word	0x40000a40
+    d8c4:	400000fc 	.word	0x400000fc
+    d8c8:	40000104 	.word	0x40000104
+    d8cc:	40000504 	.word	0x40000504
+    d8d0:	40000a3c 	.word	0x40000a3c
 
 0000d8d4 <__sfvwrite_r>:
     d8d4:	e92d4ff0 	push	{r4, r5, r6, r7, r8, r9, sl, fp, lr}
@@ -14423,7 +14423,7 @@ Disassembly of section prog:
     e70c:	ebfffe6d 	bl	e0c8 <memmove>
     e710:	e59dc000 	ldr	ip, [sp]
     e714:	eaffffeb 	b	e6c8 <_realloc_r+0x4bc>
-    e718:	40000100 	.word	0x40000100
+    e718:	400000fc 	.word	0x400000fc
 
 0000e71c <__sclose>:
     e71c:	e1d110fe 	ldrsh	r1, [r1, #14]
@@ -14553,7 +14553,7 @@ Disassembly of section prog:
     e8e4:	e1a01000 	mov	r1, r0
     e8e8:	e5930000 	ldr	r0, [r3]
     e8ec:	eaffffba 	b	e7dc <_fclose_r>
-    e8f0:	40000514 	.word	0x40000514
+    e8f0:	40000510 	.word	0x40000510
 
 0000e8f4 <__end_of_prog__>:
     e8f4:	41909a80 	.word	0x41909a80
@@ -14978,7 +14978,7 @@ Disassembly of section prog:
 	...
 
 00010060 <_global_impure_ptr>:
-   10060:	40000518 746e6553 696b5320 000a2170     ...@Sent Skip!..
+   10060:	40000514 746e6553 696b5320 000a2170     ...@Sent Skip!..
    10070:	656d6954 2074756f 69727564 5320676e     Timeout during S
    10080:	21646e65 000a2121 746e6553 78656e20     end!!!..Sent nex
    10090:	6f732074 616e676e 0a21656d 6e655300     t songname!..Sen

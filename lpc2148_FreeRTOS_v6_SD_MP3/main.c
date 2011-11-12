@@ -15,10 +15,6 @@
 
 //GLOBALS
 
-COMMIT WITHOUT UPDATE
-fadssafd
-COMMIT AND THEN SYNCHRONIZE
-
 /* INTERRUPT VECTORS:
  * 0:    OS Timer Tick
  * 1:    Not Used
