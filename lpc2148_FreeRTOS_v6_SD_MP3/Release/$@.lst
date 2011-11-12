@@ -1,0 +1,289 @@
+   1              		.file	"pcm1774.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	pcm1774_sendByte
+   6              	pcm1774_sendByte:
+   7              		@ args = 0, pretend = 0, frame = 0
+   8              		@ frame_needed = 0, uses_anonymous_args = 0
+   9              		@ link register save eliminated.
+  10 0000 1EFF2FE1 		bx	lr
+  12              		.align	2
+  13              		.global	pcm1774_readByte
+  15              	pcm1774_readByte:
+  16              		@ args = 0, pretend = 0, frame = 0
+  17              		@ frame_needed = 0, uses_anonymous_args = 0
+  18              		@ link register save eliminated.
+  19 0004 0000A0E3 		mov	r0, #0
+  20 0008 1EFF2FE1 		bx	lr
+  22              		.align	2
+  23              		.global	pcm1774_bitMask
+  25              	pcm1774_bitMask:
+  26              		@ args = 0, pretend = 0, frame = 0
+  27              		@ frame_needed = 0, uses_anonymous_args = 0
+  28              		@ link register save eliminated.
+  29 000c 1EFF2FE1 		bx	lr
+  31              		.align	2
+  32              		.global	initialize_pcm1774
+  34              	initialize_pcm1774:
+  35              		@ args = 0, pretend = 0, frame = 0
+  36              		@ frame_needed = 0, uses_anonymous_args = 0
+  37              		@ link register save eliminated.
+  38 0010 0100A0E3 		mov	r0, #1
+  39 0014 1EFF2FE1 		bx	lr
+  41              		.align	2
+  42              		.global	pcm1774_Reset
+  44              	pcm1774_Reset:
+  45              		@ args = 0, pretend = 0, frame = 4
+  46              		@ frame_needed = 0, uses_anonymous_args = 0
+  47              		@ link register save eliminated.
+  48 0018 04D04DE2 		sub	sp, sp, #4
+  49 001c 0030A0E3 		mov	r3, #0
+  50 0020 00308DE5 		str	r3, [sp, #0]
+  51 0024 24209FE5 		ldr	r2, .L13
+  52 0028 00308DE5 		str	r3, [sp, #0]
+  53 002c 020000EA 		b	.L10
+  54              	.L11:
+  55 0030 00309DE5 		ldr	r3, [sp, #0]
+  56 0034 013083E2 		add	r3, r3, #1
+  57 0038 00308DE5 		str	r3, [sp, #0]
+  58              	.L10:
+  59 003c 00309DE5 		ldr	r3, [sp, #0]
+  60 0040 020053E1 		cmp	r3, r2
+  61 0044 F9FFFFDA 		ble	.L11
+  62 0048 04D08DE2 		add	sp, sp, #4
+  63 004c 1EFF2FE1 		bx	lr
+  64              	.L14:
+  65              		.align	2
+  66              	.L13:
+  67 0050 87130000 		.word	4999
+  69              		.align	2
+  70              		.global	pcm1774_LoadDefaultDigitalConfiguration
+  72              	pcm1774_LoadDefaultDigitalConfiguration:
+  73              		@ args = 0, pretend = 0, frame = 0
+  74              		@ frame_needed = 0, uses_anonymous_args = 0
+  75              		@ link register save eliminated.
+  76 0054 1EFF2FE1 		bx	lr
+  78              		.align	2
+  79              		.global	pcm1774_OutputVolume
+  81              	pcm1774_OutputVolume:
+  82              		@ args = 0, pretend = 0, frame = 0
+  83              		@ frame_needed = 0, uses_anonymous_args = 0
+  84              		@ link register save eliminated.
+  85 0058 1EFF2FE1 		bx	lr
+  87              		.align	2
+  88              		.global	pcm1774_ConnectDigitalOutputs
+  90              	pcm1774_ConnectDigitalOutputs:
+  91              		@ args = 0, pretend = 0, frame = 0
+  92              		@ frame_needed = 0, uses_anonymous_args = 0
+  93              		@ link register save eliminated.
+  94 005c 1EFF2FE1 		bx	lr
+  96              		.align	2
+  97              		.global	pcm1774_DigitalVolume
+  99              	pcm1774_DigitalVolume:
+ 100              		@ args = 0, pretend = 0, frame = 0
+ 101              		@ frame_needed = 0, uses_anonymous_args = 0
+ 102              		@ link register save eliminated.
+ 103 0060 1EFF2FE1 		bx	lr
+ 105              		.align	2
+ 106              		.global	pcm1774_DigitalDeEmphasisFilter
+ 108              	pcm1774_DigitalDeEmphasisFilter:
+ 109              		@ args = 0, pretend = 0, frame = 0
+ 110              		@ frame_needed = 0, uses_anonymous_args = 0
+ 111              		@ link register save eliminated.
+ 112 0064 1EFF2FE1 		bx	lr
+ 114              		.align	2
+ 115              		.global	pcm1774_DigitalInterfaceSelection
+ 117              	pcm1774_DigitalInterfaceSelection:
+ 118              		@ args = 0, pretend = 0, frame = 0
+ 119              		@ frame_needed = 0, uses_anonymous_args = 0
+ 120              		@ link register save eliminated.
+ 121 0068 1EFF2FE1 		bx	lr
+ 123              		.align	2
+ 124              		.global	pcm1774_DigitalGainControl
+ 126              	pcm1774_DigitalGainControl:
+ 127              		@ args = 0, pretend = 0, frame = 0
+ 128              		@ frame_needed = 0, uses_anonymous_args = 0
+ 129              		@ link register save eliminated.
+ 130 006c 1EFF2FE1 		bx	lr
+ 132              		.align	2
+ 133              		.global	pcm1774_DigitalOversamplingControl
+ 135              	pcm1774_DigitalOversamplingControl:
+ 136              		@ args = 0, pretend = 0, frame = 0
+ 137              		@ frame_needed = 0, uses_anonymous_args = 0
+ 138              		@ link register save eliminated.
+ 139 0070 1EFF2FE1 		bx	lr
+ 141              		.align	2
+ 142              		.global	pcm1774_PowerUpMixer
+ 144              	pcm1774_PowerUpMixer:
+ 145              		@ args = 0, pretend = 0, frame = 0
+ 146              		@ frame_needed = 0, uses_anonymous_args = 0
+ 147              		@ link register save eliminated.
+ 148 0074 1EFF2FE1 		bx	lr
+ 150              		.align	2
+ 151              		.global	pcm1774_PowerUpAnalogBiasControl
+ 153              	pcm1774_PowerUpAnalogBiasControl:
+ 154              		@ args = 0, pretend = 0, frame = 0
+ 155              		@ frame_needed = 0, uses_anonymous_args = 0
+ 156              		@ link register save eliminated.
+ 157 0078 1EFF2FE1 		bx	lr
+ 159              		.align	2
+ 160              		.global	pcm1774_PowerUpDAC
+ 162              	pcm1774_PowerUpDAC:
+ 163              		@ args = 0, pretend = 0, frame = 0
+ 164              		@ frame_needed = 0, uses_anonymous_args = 0
+ 165              		@ link register save eliminated.
+ 166 007c 1EFF2FE1 		bx	lr
+ 168              		.align	2
+ 169              		.global	pcm1774_PowerUpAnalog
+ 171              	pcm1774_PowerUpAnalog:
+ 172              		@ args = 0, pretend = 0, frame = 0
+ 173              		@ frame_needed = 0, uses_anonymous_args = 0
+ 174              		@ link register save eliminated.
+ 175 0080 1EFF2FE1 		bx	lr
+ 177              		.align	2
+ 178              		.global	pcm1774_LineOutputConfiguration
+ 180              	pcm1774_LineOutputConfiguration:
+ 181              		@ args = 0, pretend = 0, frame = 0
+ 182              		@ frame_needed = 0, uses_anonymous_args = 0
+ 183              		@ link register save eliminated.
+ 184 0084 1EFF2FE1 		bx	lr
+ 186              		.align	2
+ 187              		.global	pcm1774_PowerUpVcom
+ 189              	pcm1774_PowerUpVcom:
+ 190              		@ args = 0, pretend = 0, frame = 0
+ 191              		@ frame_needed = 0, uses_anonymous_args = 0
+ 192              		@ link register save eliminated.
+ 193 0088 1EFF2FE1 		bx	lr
+ 195              		.align	2
+ 196              		.global	pcm1774_setShortCircuitProtectionLeft
+ 198              	pcm1774_setShortCircuitProtectionLeft:
+ 199              		@ args = 0, pretend = 0, frame = 0
+ 200              		@ frame_needed = 0, uses_anonymous_args = 0
+ 201              		@ link register save eliminated.
+ 202 008c 1EFF2FE1 		bx	lr
+ 204              		.align	2
+ 205              		.global	pcm1774_setShortCircuitProtectionRight
+ 207              	pcm1774_setShortCircuitProtectionRight:
+ 208              		@ args = 0, pretend = 0, frame = 0
+ 209              		@ frame_needed = 0, uses_anonymous_args = 0
+ 210              		@ link register save eliminated.
+ 211 0090 1EFF2FE1 		bx	lr
+ 213              		.align	2
+ 214              		.global	pcm1774_readShortCircuitStatusLeft
+ 216              	pcm1774_readShortCircuitStatusLeft:
+ 217              		@ args = 0, pretend = 0, frame = 0
+ 218              		@ frame_needed = 0, uses_anonymous_args = 0
+ 219              		@ link register save eliminated.
+ 220 0094 0100A0E3 		mov	r0, #1
+ 221 0098 1EFF2FE1 		bx	lr
+ 223              		.align	2
+ 224              		.global	pcm1774_readShortCircuitStatusRight
+ 226              	pcm1774_readShortCircuitStatusRight:
+ 227              		@ args = 0, pretend = 0, frame = 0
+ 228              		@ frame_needed = 0, uses_anonymous_args = 0
+ 229              		@ link register save eliminated.
+ 230 009c 0100A0E3 		mov	r0, #1
+ 231 00a0 1EFF2FE1 		bx	lr
+ 233              		.align	2
+ 234              		.global	pcm1774_PowerUpGainAmplifierAnalog
+ 236              	pcm1774_PowerUpGainAmplifierAnalog:
+ 237              		@ args = 0, pretend = 0, frame = 0
+ 238              		@ frame_needed = 0, uses_anonymous_args = 0
+ 239              		@ link register save eliminated.
+ 240 00a4 1EFF2FE1 		bx	lr
+ 242              		.align	2
+ 243              		.global	pcm1774_selectAnalogInput
+ 245              	pcm1774_selectAnalogInput:
+ 246              		@ args = 0, pretend = 0, frame = 0
+ 247              		@ frame_needed = 0, uses_anonymous_args = 0
+ 248              		@ link register save eliminated.
+ 249 00a8 1EFF2FE1 		bx	lr
+ 251              		.align	2
+ 252              		.global	pcm1774_gainAmplifierAnalogInput
+ 254              	pcm1774_gainAmplifierAnalogInput:
+ 255              		@ args = 0, pretend = 0, frame = 0
+ 256              		@ frame_needed = 0, uses_anonymous_args = 0
+ 257              		@ link register save eliminated.
+ 258 00ac 1EFF2FE1 		bx	lr
+ 260              		.align	2
+ 261              		.global	pcm1774_redirectAnalogInputToLeftOutput
+ 263              	pcm1774_redirectAnalogInputToLeftOutput:
+ 264              		@ args = 0, pretend = 0, frame = 0
+ 265              		@ frame_needed = 0, uses_anonymous_args = 0
+ 266              		@ link register save eliminated.
+ 267 00b0 1EFF2FE1 		bx	lr
+ 269              		.align	2
+ 270              		.global	pcm1774_redirectAnalogInputToRightOutput
+ 272              	pcm1774_redirectAnalogInputToRightOutput:
+ 273              		@ args = 0, pretend = 0, frame = 0
+ 274              		@ frame_needed = 0, uses_anonymous_args = 0
+ 275              		@ link register save eliminated.
+ 276 00b4 1EFF2FE1 		bx	lr
+ 278              		.align	2
+ 279              		.global	pcm1774_bassBoost
+ 281              	pcm1774_bassBoost:
+ 282              		@ args = 0, pretend = 0, frame = 0
+ 283              		@ frame_needed = 0, uses_anonymous_args = 0
+ 284              		@ link register save eliminated.
+ 285 00b8 1EFF2FE1 		bx	lr
+ 287              		.align	2
+ 288              		.global	pcm1774_middleBoost
+ 290              	pcm1774_middleBoost:
+ 291              		@ args = 0, pretend = 0, frame = 0
+ 292              		@ frame_needed = 0, uses_anonymous_args = 0
+ 293              		@ link register save eliminated.
+ 294 00bc 1EFF2FE1 		bx	lr
+ 296              		.align	2
+ 297              		.global	pcm1774_trebleBoost
+ 299              	pcm1774_trebleBoost:
+ 300              		@ args = 0, pretend = 0, frame = 0
+ 301              		@ frame_needed = 0, uses_anonymous_args = 0
+ 302              		@ link register save eliminated.
+ 303 00c0 1EFF2FE1 		bx	lr
+ 305              		.align	2
+ 306              		.global	pcm1774_3dSoundEffect
+ 308              	pcm1774_3dSoundEffect:
+ 309              		@ args = 0, pretend = 0, frame = 0
+ 310              		@ frame_needed = 0, uses_anonymous_args = 0
+ 311              		@ link register save eliminated.
+ 312 00c4 1EFF2FE1 		bx	lr
+ 314              		.ident	"GCC: (GNU) 4.3.2"
+DEFINED SYMBOLS
+                            *ABS*:00000000 pcm1774.c
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:6      .text:00000000 pcm1774_sendByte
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:10     .text:00000000 $a
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:15     .text:00000004 pcm1774_readByte
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:25     .text:0000000c pcm1774_bitMask
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:34     .text:00000010 initialize_pcm1774
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:44     .text:00000018 pcm1774_Reset
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:67     .text:00000050 $d
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:72     .text:00000054 pcm1774_LoadDefaultDigitalConfiguration
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:76     .text:00000054 $a
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:81     .text:00000058 pcm1774_OutputVolume
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:90     .text:0000005c pcm1774_ConnectDigitalOutputs
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:99     .text:00000060 pcm1774_DigitalVolume
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:108    .text:00000064 pcm1774_DigitalDeEmphasisFilter
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:117    .text:00000068 pcm1774_DigitalInterfaceSelection
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:126    .text:0000006c pcm1774_DigitalGainControl
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:135    .text:00000070 pcm1774_DigitalOversamplingControl
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:144    .text:00000074 pcm1774_PowerUpMixer
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:153    .text:00000078 pcm1774_PowerUpAnalogBiasControl
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:162    .text:0000007c pcm1774_PowerUpDAC
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:171    .text:00000080 pcm1774_PowerUpAnalog
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:180    .text:00000084 pcm1774_LineOutputConfiguration
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:189    .text:00000088 pcm1774_PowerUpVcom
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:198    .text:0000008c pcm1774_setShortCircuitProtectionLeft
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:207    .text:00000090 pcm1774_setShortCircuitProtectionRight
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:216    .text:00000094 pcm1774_readShortCircuitStatusLeft
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:226    .text:0000009c pcm1774_readShortCircuitStatusRight
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:236    .text:000000a4 pcm1774_PowerUpGainAmplifierAnalog
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:245    .text:000000a8 pcm1774_selectAnalogInput
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:254    .text:000000ac pcm1774_gainAmplifierAnalogInput
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:263    .text:000000b0 pcm1774_redirectAnalogInputToLeftOutput
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:272    .text:000000b4 pcm1774_redirectAnalogInputToRightOutput
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:281    .text:000000b8 pcm1774_bassBoost
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:290    .text:000000bc pcm1774_middleBoost
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:299    .text:000000c0 pcm1774_trebleBoost
+/cygdrive/c/Users/ADMINI~1/AppData/Local/Temp/cc9y0zI0.s:308    .text:000000c4 pcm1774_3dSoundEffect
+
+NO UNDEFINED SYMBOLS
