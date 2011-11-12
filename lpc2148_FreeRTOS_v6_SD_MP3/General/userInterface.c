@@ -44,7 +44,8 @@ void uartUI(void *pvParameters)
 	}
 
 	initialize_SSPSPI();
-	initialize_I2C0(100*1000);
+	//initialize_I2C0(100*1000);
+	initialize_I2C0(400*1000);
 
 	diskio_initializeSPIMutex(&(osHandles->lock.SPI));
 	initialize_SdCardSignals();
@@ -321,7 +322,7 @@ void getUartLine(char* uartInput)
 	}
 }
 
-void getMP3Names(void *p)
+void getMP3Names(void)
 {
 	/*char *nextSong;
 	char *prevSong;*/
@@ -345,12 +346,12 @@ void getMP3Names(void *p)
 	char Lfname[512];
 	#endif
 
-	/*rprintf("userInterface.c: WE'RE NOT INSIDE A LOOP!\n");
+	rprintf("userInterface.c: WE'RE NOT INSIDE A LOOP!\n");
 	char dirPath[] = "0:";
 	if (RES_OK != (returnCode = f_opendir(&Dir, dirPath))) {
 		rprintf("Invalid directory: |%s|\n", dirPath);
-		continue; //<----- not inside a loop!
-	}*/
+		return; //<----- not inside a loop!
+	}
 
 	//rprintf("Directory listing of: %s\n\n", dirPath);
 	//for (counter = 0; ; counter++)
@@ -415,7 +416,7 @@ void getMP3Names(void *p)
 	}
 }
 
-char *retGlobals(char c)
+void retGlobals(char c, char toReturn[])
 {
 	if (c == 'S')
 	{
@@ -427,7 +428,7 @@ char *retGlobals(char c)
 		{
 			current++;
 		}
-		return array[current];
+		toReturn = array[current];
 	}
 	else if (c == 'P')
 	{
@@ -439,10 +440,10 @@ char *retGlobals(char c)
 		{
 			current--;
 		}
-		return array[current];
+		toReturn = array[current];
 	}
 	else
 	{
-		return "ERROR!";
+		toReturn = "ERROR!";
 	}
 }

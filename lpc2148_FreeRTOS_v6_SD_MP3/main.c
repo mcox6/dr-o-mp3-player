@@ -222,6 +222,7 @@ void i2cTimer(void *pvParameters)
 	char returnData;
 	char *songName;
 	int index = 0;
+	char send = 0;
 
 	int outputVol = 50;
 	//pcm1774_OutputVolume(outputVol, outputVol);
@@ -230,7 +231,7 @@ void i2cTimer(void *pvParameters)
 	//Additions
 	//i2cInit(handles);
 	//initPE(handles);
-	initialize_I2C0(400000);
+	//initialize_I2C0(400000);
 
 	while(1)
 	{
@@ -272,7 +273,8 @@ void i2cTimer(void *pvParameters)
 						//No function
 						break;
 			case 0x10:
-						if(xQueueSend(osHandles->queue.command, 'S', 100))
+						send = 'S';
+						if(xQueueSend(osHandles->queue.command, &send, 100))
 						{
 							rprintf("Sent Skip!\n");
 						}
@@ -281,7 +283,7 @@ void i2cTimer(void *pvParameters)
 							rprintf("Timeout during Send!!!\n");
 						}
 						vTaskDelay(50);
-						songName = retGlobals('S');
+						retGlobals(send, songName);
 						if(xQueueSend(osHandles->queue.songname, &songName, 100))
 						{
 							rprintf("Sent next songname!\n");
@@ -298,7 +300,8 @@ void i2cTimer(void *pvParameters)
 						//Play here
 						break;
 			case 0x80:
-						if(xQueueSend(osHandles->queue.command, 'P', 100))
+						send = 'P';
+						if(xQueueSend(osHandles->queue.command, &send, 100))
 						{
 							rprintf("Sent Previous!\n");
 						}
@@ -307,7 +310,7 @@ void i2cTimer(void *pvParameters)
 							rprintf("Timeout during Send!!!\n");
 						}
 						vTaskDelay(50);
-						songName = retGlobals('S');
+						retGlobals(send, songName);
 						if(xQueueSend(osHandles->queue.songname, &songName, 100))
 						{
 							rprintf("Sent Previous songname!\n");

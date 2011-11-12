@@ -155,22 +155,22 @@
  169              		.ident	"GCC: (GNU) 4.3.2"
 DEFINED SYMBOLS
                             *ABS*:00000000 syscalls.c
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccNGKcOc.s:6      .text:00000000 _close_r
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccNGKcOc.s:10     .text:00000000 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccNGKcOc.s:16     .text:00000008 _lseek_r
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccNGKcOc.s:26     .text:00000010 _fstat_r
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccNGKcOc.s:38     .text:00000020 isatty
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccNGKcOc.s:48     .text:00000028 _sbrk_r
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccNGKcOc.s:73     .text:00000070 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccNGKcOc.s:167    .bss:00000000 heap_end.2375
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccNGKcOc.s:80     .text:0000007c _write_r
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccNGKcOc.s:83     .text:0000007c $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccNGKcOc.s:104    .text:000000b8 _read_r
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccNGKcOc.s:132    .text:000000f8 _kill_r
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccNGKcOc.s:143    .text:0000010c $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccNGKcOc.s:152    .text:00000110 _getpid_r
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccNGKcOc.s:155    .text:00000110 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccNGKcOc.s:163    .text:00000124 $d
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccrjS3wm.s:6      .text:00000000 _close_r
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccrjS3wm.s:10     .text:00000000 $a
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccrjS3wm.s:16     .text:00000008 _lseek_r
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccrjS3wm.s:26     .text:00000010 _fstat_r
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccrjS3wm.s:38     .text:00000020 isatty
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccrjS3wm.s:48     .text:00000028 _sbrk_r
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccrjS3wm.s:73     .text:00000070 $d
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccrjS3wm.s:167    .bss:00000000 heap_end.2375
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccrjS3wm.s:80     .text:0000007c _write_r
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccrjS3wm.s:83     .text:0000007c $a
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccrjS3wm.s:104    .text:000000b8 _read_r
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccrjS3wm.s:132    .text:000000f8 _kill_r
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccrjS3wm.s:143    .text:0000010c $d
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccrjS3wm.s:152    .text:00000110 _getpid_r
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccrjS3wm.s:155    .text:00000110 $a
+/cygdrive/c/Users/Michael/AppData/Local/Temp/ccrjS3wm.s:163    .text:00000124 $d
 
 UNDEFINED SYMBOLS
 end
