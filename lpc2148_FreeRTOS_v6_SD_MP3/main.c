@@ -13,9 +13,6 @@
 
 #include "drivers/pcm1774.h"
 
-int a = 1;
-
-
 //GLOBALS
 
 
