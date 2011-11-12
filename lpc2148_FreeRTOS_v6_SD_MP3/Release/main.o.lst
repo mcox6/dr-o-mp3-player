@@ -489,33 +489,27 @@
  434 0518 FEFFFFEB 		bl	vTaskDelay
  435 051c FEFFFFEB 		bl	disk_timerproc
  436 0520 FBFFFFEA 		b	.L59
- 438              		.global	a
- 439              		.data
+ 438              		.global	paused
+ 439              		.bss
  440              		.align	2
- 443              	a:
- 444 0000 01000000 		.word	1
- 445              		.global	paused
- 446              		.bss
- 447              		.align	2
- 450              	paused:
- 451 0000 00000000 		.space	4
- 452              		.ident	"GCC: (GNU) 4.3.2"
+ 443              	paused:
+ 444 0000 00000000 		.space	4
+ 445              		.ident	"GCC: (GNU) 4.3.2"
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cckkG227.s:19     .text:00000000 i2cTimer
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cckkG227.s:22     .text:00000000 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cckkG227.s:142    .text:000001a4 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cckkG227.s:450    .bss:00000000 paused
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cckkG227.s:175    .text:000001c4 main
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cckkG227.s:178    .text:000001c4 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cckkG227.s:276    .text:00000334 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cckkG227.s:428    .text:00000510 diskTimer
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cckkG227.s:306    .text:00000374 mp3
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cckkG227.s:309    .text:00000374 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cckkG227.s:418    .text:000004f8 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cckkG227.s:431    .text:00000510 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cckkG227.s:443    .data:00000000 a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cckkG227.s:444    .data:00000000 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY2plV6.s:19     .text:00000000 i2cTimer
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY2plV6.s:22     .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY2plV6.s:142    .text:000001a4 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY2plV6.s:443    .bss:00000000 paused
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY2plV6.s:175    .text:000001c4 main
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY2plV6.s:178    .text:000001c4 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY2plV6.s:276    .text:00000334 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY2plV6.s:428    .text:00000510 diskTimer
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY2plV6.s:306    .text:00000374 mp3
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY2plV6.s:309    .text:00000374 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY2plV6.s:418    .text:000004f8 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccY2plV6.s:431    .text:00000510 $a
+                             .bss:00000000 $d
 
 UNDEFINED SYMBOLS
 initialize_I2C0
