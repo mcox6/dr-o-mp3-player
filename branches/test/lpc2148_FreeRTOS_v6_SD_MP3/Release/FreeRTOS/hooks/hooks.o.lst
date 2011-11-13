@@ -1,0 +1,96 @@
+   1              		.file	"hooks.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	vApplicationIdleHook
+   6              	vApplicationIdleHook:
+   7              		@ args = 0, pretend = 0, frame = 0
+   8              		@ frame_needed = 0, uses_anonymous_args = 0
+   9              		@ link register save eliminated.
+  10 0000 0C209FE5 		ldr	r2, .L3
+  11 0004 C03092E5 		ldr	r3, [r2, #192]
+  12 0008 013083E3 		orr	r3, r3, #1
+  13 000c C03082E5 		str	r3, [r2, #192]
+  14 0010 1EFF2FE1 		bx	lr
+  15              	.L4:
+  16              		.align	2
+  17              	.L3:
+  18 0014 00C01FE0 		.word	-534790144
+  20              		.section	.rodata.str1.1,"aMS",%progbits,1
+  21              	.LC0:
+  22 0000 48414C54 		.ascii	"HALTING SYSTEM: Your system ran out of memory (RAM)"
+  22      494E4720 
+  22      53595354 
+  22      454D3A20 
+  22      596F7572 
+  23 0033 210A00   		.ascii	"!\012\000"
+  24              		.text
+  25              		.align	2
+  26              		.global	vApplicationMallocFailedHook
+  28              	vApplicationMallocFailedHook:
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0018 10009FE5 		ldr	r0, .L8
+  32 001c 04E02DE5 		str	lr, [sp, #-4]!
+  33 0020 FEFFFFEB 		bl	rprintf_devopen
+  34 0024 08009FE5 		ldr	r0, .L8+4
+  35 0028 FEFFFFEB 		bl	rprintf
+  36              	.L6:
+  37 002c FEFFFFEA 		b	.L6
+  38              	.L9:
+  39              		.align	2
+  40              	.L8:
+  41 0030 00000000 		.word	uart0PutCharPolling
+  42 0034 00000000 		.word	.LC0
+  44              		.section	.rodata.str1.1
+  45              	.LC1:
+  46 0036 48414C54 		.ascii	"HALTING SYSTEM: Stack overflow by task: %s\012\000"
+  46      494E4720 
+  46      53595354 
+  46      454D3A20 
+  46      53746163 
+  47              	.LC2:
+  48 0062 54727920 		.ascii	"Try increasing stack memory of this task.\012\000"
+  48      696E6372 
+  48      65617369 
+  48      6E672073 
+  48      7461636B 
+  49              		.text
+  50              		.align	2
+  51              		.global	vApplicationStackOverflowHook
+  53              	vApplicationStackOverflowHook:
+  54              		@ args = 0, pretend = 0, frame = 0
+  55              		@ frame_needed = 0, uses_anonymous_args = 0
+  56 0038 10402DE9 		stmfd	sp!, {r4, lr}
+  57 003c 1C009FE5 		ldr	r0, .L13
+  58 0040 0140A0E1 		mov	r4, r1
+  59 0044 FEFFFFEB 		bl	rprintf_devopen
+  60 0048 14009FE5 		ldr	r0, .L13+4
+  61 004c 0410A0E1 		mov	r1, r4
+  62 0050 FEFFFFEB 		bl	rprintf
+  63 0054 0C009FE5 		ldr	r0, .L13+8
+  64 0058 FEFFFFEB 		bl	rprintf
+  65              	.L11:
+  66 005c FEFFFFEA 		b	.L11
+  67              	.L14:
+  68              		.align	2
+  69              	.L13:
+  70 0060 00000000 		.word	uart0PutCharPolling
+  71 0064 36000000 		.word	.LC1
+  72 0068 62000000 		.word	.LC2
+  74              		.ident	"GCC: (GNU) 4.3.2"
+DEFINED SYMBOLS
+                            *ABS*:00000000 hooks.c
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cch0J9x5.s:6      .text:00000000 vApplicationIdleHook
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cch0J9x5.s:10     .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cch0J9x5.s:18     .text:00000014 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cch0J9x5.s:28     .text:00000018 vApplicationMallocFailedHook
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cch0J9x5.s:31     .text:00000018 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cch0J9x5.s:41     .text:00000030 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cch0J9x5.s:53     .text:00000038 vApplicationStackOverflowHook
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cch0J9x5.s:56     .text:00000038 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cch0J9x5.s:70     .text:00000060 $d
+
+UNDEFINED SYMBOLS
+rprintf_devopen
+rprintf
+uart0PutCharPolling

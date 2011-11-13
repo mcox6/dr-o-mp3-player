@@ -1,0 +1,598 @@
+   1              		.file	"queue.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	uxQueueMessagesWaitingFromISR
+   6              	uxQueueMessagesWaitingFromISR:
+   7              		@ args = 0, pretend = 0, frame = 0
+   8              		@ frame_needed = 0, uses_anonymous_args = 0
+   9              		@ link register save eliminated.
+  10 0000 380090E5 		ldr	r0, [r0, #56]
+  11 0004 1EFF2FE1 		bx	lr
+  13              		.align	2
+  14              		.global	xQueueIsQueueEmptyFromISR
+  16              	xQueueIsQueueEmptyFromISR:
+  17              		@ args = 0, pretend = 0, frame = 0
+  18              		@ frame_needed = 0, uses_anonymous_args = 0
+  19              		@ link register save eliminated.
+  20 0008 380090E5 		ldr	r0, [r0, #56]
+  21 000c 010070E2 		rsbs	r0, r0, #1
+  22 0010 0000A033 		movcc	r0, #0
+  23 0014 1EFF2FE1 		bx	lr
+  25              		.align	2
+  26              		.global	xQueueIsQueueFullFromISR
+  28              	xQueueIsQueueFullFromISR:
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0018 3C3090E5 		ldr	r3, [r0, #60]
+  33 001c 380090E5 		ldr	r0, [r0, #56]
+  34 0020 030050E1 		cmp	r0, r3
+  35 0024 0000A013 		movne	r0, #0
+  36 0028 0100A003 		moveq	r0, #1
+  37 002c 1EFF2FE1 		bx	lr
+  39              		.align	2
+  40              		.global	vQueueDelete
+  42              	vQueueDelete:
+  43              		@ args = 0, pretend = 0, frame = 0
+  44              		@ frame_needed = 0, uses_anonymous_args = 0
+  45 0030 10402DE9 		stmfd	sp!, {r4, lr}
+  46 0034 0040A0E1 		mov	r4, r0
+  47 0038 000090E5 		ldr	r0, [r0, #0]
+  48 003c FEFFFFEB 		bl	vPortFree
+  49 0040 0400A0E1 		mov	r0, r4
+  50 0044 1040BDE8 		ldmfd	sp!, {r4, lr}
+  51 0048 FEFFFFEA 		b	vPortFree
+  53              		.align	2
+  54              		.global	uxQueueMessagesWaiting
+  56              	uxQueueMessagesWaiting:
+  57              		@ args = 0, pretend = 0, frame = 0
+  58              		@ frame_needed = 0, uses_anonymous_args = 0
+  59 004c 10402DE9 		stmfd	sp!, {r4, lr}
+  60 0050 0040A0E1 		mov	r4, r0
+  61 0054 FEFFFFEB 		bl	vPortEnterCritical
+  62 0058 384094E5 		ldr	r4, [r4, #56]
+  63 005c FEFFFFEB 		bl	vPortExitCritical
+  64 0060 0400A0E1 		mov	r0, r4
+  65 0064 1080BDE8 		ldmfd	sp!, {r4, pc}
+  67              		.align	2
+  68              		.global	xQueueReceiveFromISR
+  70              	xQueueReceiveFromISR:
+  71              		@ args = 0, pretend = 0, frame = 0
+  72              		@ frame_needed = 0, uses_anonymous_args = 0
+  73 0068 70402DE9 		stmfd	sp!, {r4, r5, r6, lr}
+  74 006c 0040A0E1 		mov	r4, r0
+  75 0070 380090E5 		ldr	r0, [r0, #56]
+  76 0074 000050E3 		cmp	r0, #0
+  77 0078 0150A0E1 		mov	r5, r1
+  78 007c 0260A0E1 		mov	r6, r2
+  79 0080 7080BD08 		ldmeqfd	sp!, {r4, r5, r6, pc}
+  80 0084 00C094E5 		ldr	ip, [r4, #0]
+  81 0088 00005CE3 		cmp	ip, #0
+  82 008c 0A00000A 		beq	.L14
+  83 0090 0C3094E5 		ldr	r3, [r4, #12]
+  84 0094 402094E5 		ldr	r2, [r4, #64]
+  85 0098 041094E5 		ldr	r1, [r4, #4]
+  86 009c 023083E0 		add	r3, r3, r2
+  87 00a0 010053E1 		cmp	r3, r1
+  88 00a4 0C3084E5 		str	r3, [r4, #12]
+  89 00a8 0CC08425 		strcs	ip, [r4, #12]
+  90 00ac 0500A0E1 		mov	r0, r5
+  91 00b0 0C1094E5 		ldr	r1, [r4, #12]
+  92 00b4 402094E5 		ldr	r2, [r4, #64]
+  93 00b8 FEFFFFEB 		bl	memcpy
+  94              	.L14:
+  95 00bc 442094E5 		ldr	r2, [r4, #68]
+  96 00c0 383094E5 		ldr	r3, [r4, #56]
+  97 00c4 010072E3 		cmn	r2, #1
+  98 00c8 013043E2 		sub	r3, r3, #1
+  99 00cc 383084E5 		str	r3, [r4, #56]
+ 100 00d0 01308212 		addne	r3, r2, #1
+ 101 00d4 44308415 		strne	r3, [r4, #68]
+ 102 00d8 0100A013 		movne	r0, #1
+ 103 00dc 7080BD18 		ldmnefd	sp!, {r4, r5, r6, pc}
+ 104 00e0 103094E5 		ldr	r3, [r4, #16]
+ 105 00e4 000053E3 		cmp	r3, #0
+ 106 00e8 0600000A 		beq	.L17
+ 107 00ec 100084E2 		add	r0, r4, #16
+ 108 00f0 FEFFFFEB 		bl	xTaskRemoveFromEventList
+ 109 00f4 000050E3 		cmp	r0, #0
+ 110 00f8 0130A013 		movne	r3, #1
+ 111 00fc 00308615 		strne	r3, [r6, #0]
+ 112 0100 0300A011 		movne	r0, r3
+ 113 0104 7080BD18 		ldmnefd	sp!, {r4, r5, r6, pc}
+ 114              	.L17:
+ 115 0108 0100A0E3 		mov	r0, #1
+ 116 010c 7080BDE8 		ldmfd	sp!, {r4, r5, r6, pc}
+ 118              		.align	2
+ 120              	prvUnlockQueue:
+ 121              		@ args = 0, pretend = 0, frame = 0
+ 122              		@ frame_needed = 0, uses_anonymous_args = 0
+ 123 0110 30402DE9 		stmfd	sp!, {r4, r5, lr}
+ 124 0114 0040A0E1 		mov	r4, r0
+ 125 0118 245080E2 		add	r5, r0, #36
+ 126 011c FEFFFFEB 		bl	vPortEnterCritical
+ 127 0120 080000EA 		b	.L20
+ 128              	.L23:
+ 129 0124 243094E5 		ldr	r3, [r4, #36]
+ 130 0128 000053E3 		cmp	r3, #0
+ 131 012c 0900000A 		beq	.L21
+ 132 0130 FEFFFFEB 		bl	xTaskRemoveFromEventList
+ 133 0134 000050E3 		cmp	r0, #0
+ 134 0138 FEFFFF1B 		blne	vTaskMissedYield
+ 135              	.L22:
+ 136 013c 483094E5 		ldr	r3, [r4, #72]
+ 137 0140 013043E2 		sub	r3, r3, #1
+ 138 0144 483084E5 		str	r3, [r4, #72]
+ 139              	.L20:
+ 140 0148 483094E5 		ldr	r3, [r4, #72]
+ 141 014c 000053E3 		cmp	r3, #0
+ 142 0150 0500A0E1 		mov	r0, r5
+ 143 0154 F2FFFFCA 		bgt	.L23
+ 144              	.L21:
+ 145 0158 0030E0E3 		mvn	r3, #0
+ 146 015c 483084E5 		str	r3, [r4, #72]
+ 147 0160 FEFFFFEB 		bl	vPortExitCritical
+ 148 0164 105084E2 		add	r5, r4, #16
+ 149 0168 FEFFFFEB 		bl	vPortEnterCritical
+ 150 016c 080000EA 		b	.L24
+ 151              	.L27:
+ 152 0170 103094E5 		ldr	r3, [r4, #16]
+ 153 0174 000053E3 		cmp	r3, #0
+ 154 0178 0900000A 		beq	.L25
+ 155 017c FEFFFFEB 		bl	xTaskRemoveFromEventList
+ 156 0180 000050E3 		cmp	r0, #0
+ 157 0184 FEFFFF1B 		blne	vTaskMissedYield
+ 158              	.L26:
+ 159 0188 443094E5 		ldr	r3, [r4, #68]
+ 160 018c 013043E2 		sub	r3, r3, #1
+ 161 0190 443084E5 		str	r3, [r4, #68]
+ 162              	.L24:
+ 163 0194 443094E5 		ldr	r3, [r4, #68]
+ 164 0198 000053E3 		cmp	r3, #0
+ 165 019c 0500A0E1 		mov	r0, r5
+ 166 01a0 F2FFFFCA 		bgt	.L27
+ 167              	.L25:
+ 168 01a4 0030E0E3 		mvn	r3, #0
+ 169 01a8 443084E5 		str	r3, [r4, #68]
+ 170 01ac 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
+ 171 01b0 FEFFFFEA 		b	vPortExitCritical
+ 173              		.align	2
+ 174              		.global	xQueueGenericReceive
+ 176              	xQueueGenericReceive:
+ 177              		@ args = 0, pretend = 0, frame = 12
+ 178              		@ frame_needed = 0, uses_anonymous_args = 0
+ 179 01b4 F04F2DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+ 180 01b8 0060A0E3 		mov	r6, #0
+ 181 01bc 0CD04DE2 		sub	sp, sp, #12
+ 182 01c0 0050A0E1 		mov	r5, r0
+ 183 01c4 00208DE5 		str	r2, [sp, #0]
+ 184 01c8 0180A0E1 		mov	r8, r1
+ 185 01cc 03A0A0E1 		mov	sl, r3
+ 186 01d0 247080E2 		add	r7, r0, #36
+ 187 01d4 04B08DE2 		add	fp, sp, #4
+ 188 01d8 0690A0E1 		mov	r9, r6
+ 189 01dc 000000EA 		b	.L30
+ 190              	.L45:
+ 191 01e0 0160A0E3 		mov	r6, #1
+ 192              	.L30:
+ 193 01e4 FEFFFFEB 		bl	vPortEnterCritical
+ 194 01e8 383095E5 		ldr	r3, [r5, #56]
+ 195 01ec 000053E3 		cmp	r3, #0
+ 196 01f0 2C00000A 		beq	.L31
+ 197 01f4 001095E5 		ldr	r1, [r5, #0]
+ 198 01f8 000051E3 		cmp	r1, #0
+ 199 01fc 0C4095E5 		ldr	r4, [r5, #12]
+ 200 0200 0900000A 		beq	.L32
+ 201 0204 403095E5 		ldr	r3, [r5, #64]
+ 202 0208 042095E5 		ldr	r2, [r5, #4]
+ 203 020c 033084E0 		add	r3, r4, r3
+ 204 0210 020053E1 		cmp	r3, r2
+ 205 0214 0C3085E5 		str	r3, [r5, #12]
+ 206 0218 0C108525 		strcs	r1, [r5, #12]
+ 207 021c 0800A0E1 		mov	r0, r8
+ 208 0220 0C1095E5 		ldr	r1, [r5, #12]
+ 209 0224 402095E5 		ldr	r2, [r5, #64]
+ 210 0228 FEFFFFEB 		bl	memcpy
+ 211              	.L32:
+ 212 022c 00005AE3 		cmp	sl, #0
+ 213 0230 1000001A 		bne	.L34
+ 214 0234 383095E5 		ldr	r3, [r5, #56]
+ 215 0238 002095E5 		ldr	r2, [r5, #0]
+ 216 023c 013043E2 		sub	r3, r3, #1
+ 217 0240 000052E3 		cmp	r2, #0
+ 218 0244 383085E5 		str	r3, [r5, #56]
+ 219 0248 0100001A 		bne	.L35
+ 220 024c FEFFFFEB 		bl	xTaskGetCurrentTaskHandle
+ 221 0250 040085E5 		str	r0, [r5, #4]
+ 222              	.L35:
+ 223 0254 103095E5 		ldr	r3, [r5, #16]
+ 224 0258 000053E3 		cmp	r3, #0
+ 225 025c 0E00000A 		beq	.L36
+ 226 0260 100085E2 		add	r0, r5, #16
+ 227 0264 FEFFFFEB 		bl	xTaskRemoveFromEventList
+ 228 0268 010050E3 		cmp	r0, #1
+ 229 026c 0A00001A 		bne	.L36
+ 230              	@ 865 "../FreeRTOS/queue.c" 1
+ 231 0270 000000EF 		SWI 0
+ 232              	@ 0 "" 2
+ 233 0274 080000EA 		b	.L36
+ 234              	.L34:
+ 235 0278 243095E5 		ldr	r3, [r5, #36]
+ 236 027c 000053E3 		cmp	r3, #0
+ 237 0280 0C4085E5 		str	r4, [r5, #12]
+ 238 0284 0400000A 		beq	.L36
+ 239 0288 0700A0E1 		mov	r0, r7
+ 240 028c FEFFFFEB 		bl	xTaskRemoveFromEventList
+ 241 0290 000050E3 		cmp	r0, #0
+ 242 0294 0000000A 		beq	.L36
+ 243              	@ 886 "../FreeRTOS/queue.c" 1
+ 244 0298 000000EF 		SWI 0
+ 245              	@ 0 "" 2
+ 246              	.L36:
+ 247 029c FEFFFFEB 		bl	vPortExitCritical
+ 248 02a0 0100A0E3 		mov	r0, #1
+ 249 02a4 350000EA 		b	.L37
+ 250              	.L31:
+ 251 02a8 00409DE5 		ldr	r4, [sp, #0]
+ 252 02ac 000054E3 		cmp	r4, #0
+ 253 02b0 0200001A 		bne	.L38
+ 254 02b4 FEFFFFEB 		bl	vPortExitCritical
+ 255 02b8 0400A0E1 		mov	r0, r4
+ 256 02bc 2F0000EA 		b	.L37
+ 257              	.L38:
+ 258 02c0 000056E3 		cmp	r6, #0
+ 259 02c4 0B00A001 		moveq	r0, fp
+ 260 02c8 FEFFFF0B 		bleq	vTaskSetTimeOutState
+ 261              	.L39:
+ 262 02cc FEFFFFEB 		bl	vPortExitCritical
+ 263 02d0 FEFFFFEB 		bl	vTaskSuspendAll
+ 264 02d4 FEFFFFEB 		bl	vPortEnterCritical
+ 265 02d8 443095E5 		ldr	r3, [r5, #68]
+ 266 02dc 010073E3 		cmn	r3, #1
+ 267 02e0 483095E5 		ldr	r3, [r5, #72]
+ 268 02e4 44908505 		streq	r9, [r5, #68]
+ 269 02e8 010073E3 		cmn	r3, #1
+ 270 02ec 48908505 		streq	r9, [r5, #72]
+ 271 02f0 FEFFFFEB 		bl	vPortExitCritical
+ 272 02f4 0B00A0E1 		mov	r0, fp
+ 273 02f8 0D10A0E1 		mov	r1, sp
+ 274 02fc FEFFFFEB 		bl	xTaskCheckForTimeOut
+ 275 0300 000050E3 		cmp	r0, #0
+ 276 0304 1900001A 		bne	.L42
+ 277 0308 FEFFFFEB 		bl	vPortEnterCritical
+ 278 030c 384095E5 		ldr	r4, [r5, #56]
+ 279 0310 FEFFFFEB 		bl	vPortExitCritical
+ 280 0314 000054E3 		cmp	r4, #0
+ 281 0318 1000001A 		bne	.L43
+ 282 031c 003095E5 		ldr	r3, [r5, #0]
+ 283 0320 000053E3 		cmp	r3, #0
+ 284 0324 0300001A 		bne	.L44
+ 285 0328 FEFFFFEB 		bl	vPortEnterCritical
+ 286 032c 040095E5 		ldr	r0, [r5, #4]
+ 287 0330 FEFFFFEB 		bl	vTaskPriorityInherit
+ 288 0334 FEFFFFEB 		bl	vPortExitCritical
+ 289              	.L44:
+ 290 0338 00109DE5 		ldr	r1, [sp, #0]
+ 291 033c 0700A0E1 		mov	r0, r7
+ 292 0340 FEFFFFEB 		bl	vTaskPlaceOnEventList
+ 293 0344 0500A0E1 		mov	r0, r5
+ 294 0348 70FFFFEB 		bl	prvUnlockQueue
+ 295 034c FEFFFFEB 		bl	xTaskResumeAll
+ 296 0350 000050E3 		cmp	r0, #0
+ 297 0354 A1FFFF1A 		bne	.L45
+ 298              	@ 946 "../FreeRTOS/queue.c" 1
+ 299 0358 000000EF 		SWI 0
+ 300              	@ 0 "" 2
+ 301 035c 9FFFFFEA 		b	.L45
+ 302              	.L43:
+ 303 0360 0500A0E1 		mov	r0, r5
+ 304 0364 69FFFFEB 		bl	prvUnlockQueue
+ 305 0368 FEFFFFEB 		bl	xTaskResumeAll
+ 306 036c 9BFFFFEA 		b	.L45
+ 307              	.L42:
+ 308 0370 0500A0E1 		mov	r0, r5
+ 309 0374 65FFFFEB 		bl	prvUnlockQueue
+ 310 0378 FEFFFFEB 		bl	xTaskResumeAll
+ 311 037c 0000A0E3 		mov	r0, #0
+ 312              	.L37:
+ 313 0380 0CD08DE2 		add	sp, sp, #12
+ 314 0384 F08FBDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+ 316              		.align	2
+ 318              	prvCopyDataToQueue:
+ 319              		@ args = 0, pretend = 0, frame = 0
+ 320              		@ frame_needed = 0, uses_anonymous_args = 0
+ 321 0388 403090E5 		ldr	r3, [r0, #64]
+ 322 038c 000053E3 		cmp	r3, #0
+ 323 0390 30402DE9 		stmfd	sp!, {r4, r5, lr}
+ 324 0394 0040A0E1 		mov	r4, r0
+ 325 0398 0600001A 		bne	.L48
+ 326 039c 005090E5 		ldr	r5, [r0, #0]
+ 327 03a0 000055E3 		cmp	r5, #0
+ 328 03a4 1E00001A 		bne	.L49
+ 329 03a8 040090E5 		ldr	r0, [r0, #4]
+ 330 03ac FEFFFFEB 		bl	vTaskPriorityDisinherit
+ 331 03b0 045084E5 		str	r5, [r4, #4]
+ 332 03b4 1A0000EA 		b	.L49
+ 333              	.L48:
+ 334 03b8 000052E3 		cmp	r2, #0
+ 335 03bc 0B00001A 		bne	.L50
+ 336 03c0 0320A0E1 		mov	r2, r3
+ 337 03c4 080090E5 		ldr	r0, [r0, #8]
+ 338 03c8 FEFFFFEB 		bl	memcpy
+ 339 03cc 083094E5 		ldr	r3, [r4, #8]
+ 340 03d0 402094E5 		ldr	r2, [r4, #64]
+ 341 03d4 041094E5 		ldr	r1, [r4, #4]
+ 342 03d8 023083E0 		add	r3, r3, r2
+ 343 03dc 010053E1 		cmp	r3, r1
+ 344 03e0 083084E5 		str	r3, [r4, #8]
+ 345 03e4 00309425 		ldrcs	r3, [r4, #0]
+ 346 03e8 08308425 		strcs	r3, [r4, #8]
+ 347 03ec 0C0000EA 		b	.L49
+ 348              	.L50:
+ 349 03f0 0320A0E1 		mov	r2, r3
+ 350 03f4 0C0090E5 		ldr	r0, [r0, #12]
+ 351 03f8 FEFFFFEB 		bl	memcpy
+ 352 03fc 403094E5 		ldr	r3, [r4, #64]
+ 353 0400 0C2094E5 		ldr	r2, [r4, #12]
+ 354 0404 001063E2 		rsb	r1, r3, #0
+ 355 0408 003094E5 		ldr	r3, [r4, #0]
+ 356 040c 012082E0 		add	r2, r2, r1
+ 357 0410 030052E1 		cmp	r2, r3
+ 358 0414 04309435 		ldrcc	r3, [r4, #4]
+ 359 0418 01308330 		addcc	r3, r3, r1
+ 360 041c 0C2084E5 		str	r2, [r4, #12]
+ 361 0420 0C308435 		strcc	r3, [r4, #12]
+ 362              	.L49:
+ 363 0424 383094E5 		ldr	r3, [r4, #56]
+ 364 0428 013083E2 		add	r3, r3, #1
+ 365 042c 383084E5 		str	r3, [r4, #56]
+ 366 0430 3080BDE8 		ldmfd	sp!, {r4, r5, pc}
+ 368              		.align	2
+ 369              		.global	xQueueGenericSendFromISR
+ 371              	xQueueGenericSendFromISR:
+ 372              		@ args = 0, pretend = 0, frame = 0
+ 373              		@ frame_needed = 0, uses_anonymous_args = 0
+ 374 0434 30402DE9 		stmfd	sp!, {r4, r5, lr}
+ 375 0438 3CC090E5 		ldr	ip, [r0, #60]
+ 376 043c 384090E5 		ldr	r4, [r0, #56]
+ 377 0440 0C0054E1 		cmp	r4, ip
+ 378 0444 0050A0E1 		mov	r5, r0
+ 379 0448 0240A0E1 		mov	r4, r2
+ 380 044c 0000A023 		movcs	r0, #0
+ 381 0450 0320A0E1 		mov	r2, r3
+ 382 0454 3080BD28 		ldmcsfd	sp!, {r4, r5, pc}
+ 383 0458 CAFFFFEB 		bl	prvCopyDataToQueue
+ 384 045c 483095E5 		ldr	r3, [r5, #72]
+ 385 0460 010073E3 		cmn	r3, #1
+ 386 0464 01308312 		addne	r3, r3, #1
+ 387 0468 48308515 		strne	r3, [r5, #72]
+ 388 046c 0100A013 		movne	r0, #1
+ 389 0470 3080BD18 		ldmnefd	sp!, {r4, r5, pc}
+ 390 0474 243095E5 		ldr	r3, [r5, #36]
+ 391 0478 000053E3 		cmp	r3, #0
+ 392 047c 0600000A 		beq	.L56
+ 393 0480 240085E2 		add	r0, r5, #36
+ 394 0484 FEFFFFEB 		bl	xTaskRemoveFromEventList
+ 395 0488 000050E3 		cmp	r0, #0
+ 396 048c 0130A013 		movne	r3, #1
+ 397 0490 00308415 		strne	r3, [r4, #0]
+ 398 0494 0300A011 		movne	r0, r3
+ 399 0498 3080BD18 		ldmnefd	sp!, {r4, r5, pc}
+ 400              	.L56:
+ 401 049c 0100A0E3 		mov	r0, #1
+ 402 04a0 3080BDE8 		ldmfd	sp!, {r4, r5, pc}
+ 404              		.align	2
+ 405              		.global	xQueueGenericSend
+ 407              	xQueueGenericSend:
+ 408              		@ args = 0, pretend = 0, frame = 12
+ 409              		@ frame_needed = 0, uses_anonymous_args = 0
+ 410 04a4 F04F2DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+ 411 04a8 0050A0E3 		mov	r5, #0
+ 412 04ac 0CD04DE2 		sub	sp, sp, #12
+ 413 04b0 0060A0E1 		mov	r6, r0
+ 414 04b4 00208DE5 		str	r2, [sp, #0]
+ 415 04b8 0180A0E1 		mov	r8, r1
+ 416 04bc 03A0A0E1 		mov	sl, r3
+ 417 04c0 107080E2 		add	r7, r0, #16
+ 418 04c4 04B08DE2 		add	fp, sp, #4
+ 419 04c8 0590A0E1 		mov	r9, r5
+ 420 04cc 000000EA 		b	.L59
+ 421              	.L69:
+ 422 04d0 0150A0E3 		mov	r5, #1
+ 423              	.L59:
+ 424 04d4 FEFFFFEB 		bl	vPortEnterCritical
+ 425 04d8 382096E5 		ldr	r2, [r6, #56]
+ 426 04dc 3C3096E5 		ldr	r3, [r6, #60]
+ 427 04e0 030052E1 		cmp	r2, r3
+ 428 04e4 0E00002A 		bcs	.L60
+ 429 04e8 0810A0E1 		mov	r1, r8
+ 430 04ec 0A20A0E1 		mov	r2, sl
+ 431 04f0 0600A0E1 		mov	r0, r6
+ 432 04f4 A3FFFFEB 		bl	prvCopyDataToQueue
+ 433 04f8 243096E5 		ldr	r3, [r6, #36]
+ 434 04fc 000053E3 		cmp	r3, #0
+ 435 0500 0400000A 		beq	.L61
+ 436 0504 240086E2 		add	r0, r6, #36
+ 437 0508 FEFFFFEB 		bl	xTaskRemoveFromEventList
+ 438 050c 010050E3 		cmp	r0, #1
+ 439 0510 0000001A 		bne	.L61
+ 440              	@ 480 "../FreeRTOS/queue.c" 1
+ 441 0514 000000EF 		SWI 0
+ 442              	@ 0 "" 2
+ 443              	.L61:
+ 444 0518 FEFFFFEB 		bl	vPortExitCritical
+ 445 051c 0100A0E3 		mov	r0, #1
+ 446 0520 2F0000EA 		b	.L62
+ 447              	.L60:
+ 448 0524 00409DE5 		ldr	r4, [sp, #0]
+ 449 0528 000054E3 		cmp	r4, #0
+ 450 052c 0200001A 		bne	.L63
+ 451 0530 FEFFFFEB 		bl	vPortExitCritical
+ 452 0534 0400A0E1 		mov	r0, r4
+ 453 0538 290000EA 		b	.L62
+ 454              	.L63:
+ 455 053c 000055E3 		cmp	r5, #0
+ 456 0540 0B00A001 		moveq	r0, fp
+ 457 0544 FEFFFF0B 		bleq	vTaskSetTimeOutState
+ 458              	.L64:
+ 459 0548 FEFFFFEB 		bl	vPortExitCritical
+ 460 054c FEFFFFEB 		bl	vTaskSuspendAll
+ 461 0550 FEFFFFEB 		bl	vPortEnterCritical
+ 462 0554 443096E5 		ldr	r3, [r6, #68]
+ 463 0558 010073E3 		cmn	r3, #1
+ 464 055c 483096E5 		ldr	r3, [r6, #72]
+ 465 0560 44908605 		streq	r9, [r6, #68]
+ 466 0564 010073E3 		cmn	r3, #1
+ 467 0568 48908605 		streq	r9, [r6, #72]
+ 468 056c FEFFFFEB 		bl	vPortExitCritical
+ 469 0570 0B00A0E1 		mov	r0, fp
+ 470 0574 0D10A0E1 		mov	r1, sp
+ 471 0578 FEFFFFEB 		bl	xTaskCheckForTimeOut
+ 472 057c 000050E3 		cmp	r0, #0
+ 473 0580 1300001A 		bne	.L67
+ 474 0584 FEFFFFEB 		bl	vPortEnterCritical
+ 475 0588 385096E5 		ldr	r5, [r6, #56]
+ 476 058c 3C4096E5 		ldr	r4, [r6, #60]
+ 477 0590 FEFFFFEB 		bl	vPortExitCritical
+ 478 0594 040055E1 		cmp	r5, r4
+ 479 0598 0900001A 		bne	.L68
+ 480 059c 00109DE5 		ldr	r1, [sp, #0]
+ 481 05a0 0700A0E1 		mov	r0, r7
+ 482 05a4 FEFFFFEB 		bl	vTaskPlaceOnEventList
+ 483 05a8 0600A0E1 		mov	r0, r6
+ 484 05ac D7FEFFEB 		bl	prvUnlockQueue
+ 485 05b0 FEFFFFEB 		bl	xTaskResumeAll
+ 486 05b4 000050E3 		cmp	r0, #0
+ 487 05b8 C4FFFF1A 		bne	.L69
+ 488              	@ 542 "../FreeRTOS/queue.c" 1
+ 489 05bc 000000EF 		SWI 0
+ 490              	@ 0 "" 2
+ 491 05c0 C2FFFFEA 		b	.L69
+ 492              	.L68:
+ 493 05c4 0600A0E1 		mov	r0, r6
+ 494 05c8 D0FEFFEB 		bl	prvUnlockQueue
+ 495 05cc FEFFFFEB 		bl	xTaskResumeAll
+ 496 05d0 BEFFFFEA 		b	.L69
+ 497              	.L67:
+ 498 05d4 0600A0E1 		mov	r0, r6
+ 499 05d8 CCFEFFEB 		bl	prvUnlockQueue
+ 500 05dc FEFFFFEB 		bl	xTaskResumeAll
+ 501 05e0 0000A0E3 		mov	r0, #0
+ 502              	.L62:
+ 503 05e4 0CD08DE2 		add	sp, sp, #12
+ 504 05e8 F08FBDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+ 506              		.align	2
+ 507              		.global	xQueueCreateMutex
+ 509              	xQueueCreateMutex:
+ 510              		@ args = 0, pretend = 0, frame = 0
+ 511              		@ frame_needed = 0, uses_anonymous_args = 0
+ 512 05ec 30402DE9 		stmfd	sp!, {r4, r5, lr}
+ 513 05f0 4C00A0E3 		mov	r0, #76
+ 514 05f4 FEFFFFEB 		bl	pvPortMalloc
+ 515 05f8 005050E2 		subs	r5, r0, #0
+ 516 05fc 1400000A 		beq	.L72
+ 517 0600 0040A0E3 		mov	r4, #0
+ 518 0604 0020E0E3 		mvn	r2, #0
+ 519 0608 0130A0E3 		mov	r3, #1
+ 520 060c 3C3085E5 		str	r3, [r5, #60]
+ 521 0610 482085E5 		str	r2, [r5, #72]
+ 522 0614 442085E5 		str	r2, [r5, #68]
+ 523 0618 100085E2 		add	r0, r5, #16
+ 524 061c 044085E5 		str	r4, [r5, #4]
+ 525 0620 004085E5 		str	r4, [r5, #0]
+ 526 0624 084085E5 		str	r4, [r5, #8]
+ 527 0628 0C4085E5 		str	r4, [r5, #12]
+ 528 062c 384085E5 		str	r4, [r5, #56]
+ 529 0630 404085E5 		str	r4, [r5, #64]
+ 530 0634 FEFFFFEB 		bl	vListInitialise
+ 531 0638 240085E2 		add	r0, r5, #36
+ 532 063c FEFFFFEB 		bl	vListInitialise
+ 533 0640 0500A0E1 		mov	r0, r5
+ 534 0644 0410A0E1 		mov	r1, r4
+ 535 0648 0420A0E1 		mov	r2, r4
+ 536 064c 0430A0E1 		mov	r3, r4
+ 537 0650 FEFFFFEB 		bl	xQueueGenericSend
+ 538              	.L72:
+ 539 0654 0500A0E1 		mov	r0, r5
+ 540 0658 3080BDE8 		ldmfd	sp!, {r4, r5, pc}
+ 542              		.align	2
+ 543              		.global	xQueueCreate
+ 545              	xQueueCreate:
+ 546              		@ args = 0, pretend = 0, frame = 0
+ 547              		@ frame_needed = 0, uses_anonymous_args = 0
+ 548 065c F0412DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, lr}
+ 549 0660 006050E2 		subs	r6, r0, #0
+ 550 0664 0170A0E1 		mov	r7, r1
+ 551 0668 0640A001 		moveq	r4, r6
+ 552 066c 1F00000A 		beq	.L76
+ 553 0670 4C00A0E3 		mov	r0, #76
+ 554 0674 FEFFFFEB 		bl	pvPortMalloc
+ 555 0678 004050E2 		subs	r4, r0, #0
+ 556 067c 1B00000A 		beq	.L76
+ 557 0680 960708E0 		mul	r8, r6, r7
+ 558 0684 010088E2 		add	r0, r8, #1
+ 559 0688 FEFFFFEB 		bl	pvPortMalloc
+ 560 068c 000050E3 		cmp	r0, #0
+ 561 0690 0050A0E1 		mov	r5, r0
+ 562 0694 000084E5 		str	r0, [r4, #0]
+ 563 0698 1100000A 		beq	.L77
+ 564 069c 013046E2 		sub	r3, r6, #1
+ 565 06a0 970322E0 		mla	r2, r7, r3, r0
+ 566 06a4 083080E0 		add	r3, r0, r8
+ 567 06a8 0010E0E3 		mvn	r1, #0
+ 568 06ac 043084E5 		str	r3, [r4, #4]
+ 569 06b0 0030A0E3 		mov	r3, #0
+ 570 06b4 080084E5 		str	r0, [r4, #8]
+ 571 06b8 383084E5 		str	r3, [r4, #56]
+ 572 06bc 100084E2 		add	r0, r4, #16
+ 573 06c0 0C2084E5 		str	r2, [r4, #12]
+ 574 06c4 3C6084E5 		str	r6, [r4, #60]
+ 575 06c8 407084E5 		str	r7, [r4, #64]
+ 576 06cc 481084E5 		str	r1, [r4, #72]
+ 577 06d0 441084E5 		str	r1, [r4, #68]
+ 578 06d4 FEFFFFEB 		bl	vListInitialise
+ 579 06d8 240084E2 		add	r0, r4, #36
+ 580 06dc FEFFFFEB 		bl	vListInitialise
+ 581 06e0 020000EA 		b	.L76
+ 582              	.L77:
+ 583 06e4 0400A0E1 		mov	r0, r4
+ 584 06e8 FEFFFFEB 		bl	vPortFree
+ 585 06ec 0540A0E1 		mov	r4, r5
+ 586              	.L76:
+ 587 06f0 0400A0E1 		mov	r0, r4
+ 588 06f4 F081BDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, pc}
+ 590              		.ident	"GCC: (GNU) 4.3.2"
+DEFINED SYMBOLS
+                            *ABS*:00000000 queue.c
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccWhfRDY.s:6      .text:00000000 uxQueueMessagesWaitingFromISR
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccWhfRDY.s:10     .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccWhfRDY.s:16     .text:00000008 xQueueIsQueueEmptyFromISR
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccWhfRDY.s:28     .text:00000018 xQueueIsQueueFullFromISR
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccWhfRDY.s:42     .text:00000030 vQueueDelete
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccWhfRDY.s:56     .text:0000004c uxQueueMessagesWaiting
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccWhfRDY.s:70     .text:00000068 xQueueReceiveFromISR
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccWhfRDY.s:120    .text:00000110 prvUnlockQueue
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccWhfRDY.s:176    .text:000001b4 xQueueGenericReceive
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccWhfRDY.s:318    .text:00000388 prvCopyDataToQueue
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccWhfRDY.s:371    .text:00000434 xQueueGenericSendFromISR
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccWhfRDY.s:407    .text:000004a4 xQueueGenericSend
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccWhfRDY.s:509    .text:000005ec xQueueCreateMutex
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccWhfRDY.s:545    .text:0000065c xQueueCreate
+
+UNDEFINED SYMBOLS
+vPortFree
+vPortEnterCritical
+vPortExitCritical
+memcpy
+xTaskRemoveFromEventList
+vTaskMissedYield
+xTaskGetCurrentTaskHandle
+vTaskSetTimeOutState
+vTaskSuspendAll
+xTaskCheckForTimeOut
+vTaskPriorityInherit
+vTaskPlaceOnEventList
+xTaskResumeAll
+vTaskPriorityDisinherit
+pvPortMalloc
+vListInitialise
