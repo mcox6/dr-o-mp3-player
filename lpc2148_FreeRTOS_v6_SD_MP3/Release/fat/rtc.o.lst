@@ -122,16 +122,16 @@
  130              		.ident	"GCC: (GNU) 4.3.2"
 DEFINED SYMBOLS
                             *ABS*:00000000 rtc.c
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccgo5uVN.s:6      .text:00000000 initialize_RTC
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccgo5uVN.s:10     .text:00000000 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccgo5uVN.s:21     .text:00000020 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccgo5uVN.s:27     .text:00000028 rtc_gettime
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccgo5uVN.s:30     .text:00000028 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccgo5uVN.s:65     .text:000000a4 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccgo5uVN.s:70     .text:000000a8 rtc_settime
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccgo5uVN.s:74     .text:000000a8 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccgo5uVN.s:101    .text:00000108 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccgo5uVN.s:106    .text:0000010c get_fattime
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccgo5uVN.s:109    .text:0000010c $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccnb3xVq.s:6      .text:00000000 initialize_RTC
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccnb3xVq.s:10     .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccnb3xVq.s:21     .text:00000020 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccnb3xVq.s:27     .text:00000028 rtc_gettime
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccnb3xVq.s:30     .text:00000028 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccnb3xVq.s:65     .text:000000a4 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccnb3xVq.s:70     .text:000000a8 rtc_settime
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccnb3xVq.s:74     .text:000000a8 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccnb3xVq.s:101    .text:00000108 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccnb3xVq.s:106    .text:0000010c get_fattime
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccnb3xVq.s:109    .text:0000010c $a
 
 NO UNDEFINED SYMBOLS

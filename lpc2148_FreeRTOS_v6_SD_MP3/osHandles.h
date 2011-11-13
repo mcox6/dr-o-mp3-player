@@ -21,7 +21,7 @@ typedef struct
 		xTaskHandle diskTimer;
 		xTaskHandle sender;
 		xTaskHandle receiver;
-		xTaskHandle i2cTimer;
+		xTaskHandle buttonHandler;
 		xTaskHandle mp3player;
 	}task;
 
