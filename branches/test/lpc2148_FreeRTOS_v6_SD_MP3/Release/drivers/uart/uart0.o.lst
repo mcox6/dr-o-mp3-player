@@ -1,0 +1,404 @@
+   1              		.file	"uart0.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	uart0Deinit
+   6              	uart0Deinit:
+   7              		@ args = 0, pretend = 0, frame = 0
+   8              		@ frame_needed = 0, uses_anonymous_args = 0
+   9              		@ link register save eliminated.
+  10 0000 4020A0E3 		mov	r2, #64
+  11 0004 0030E0E3 		mvn	r3, #0
+  12 0008 EB2F03E5 		str	r2, [r3, #-4075]
+  13 000c 1C209FE5 		ldr	r2, .L3
+  14 0010 C43092E5 		ldr	r3, [r2, #196]
+  15 0014 0830C3E3 		bic	r3, r3, #8
+  16 0018 C43082E5 		str	r3, [r2, #196]
+  17 001c 1D2842E2 		sub	r2, r2, #1900544
+  18 0020 003092E5 		ldr	r3, [r2, #0]
+  19 0024 0F30C3E3 		bic	r3, r3, #15
+  20 0028 003082E5 		str	r3, [r2, #0]
+  21 002c 1EFF2FE1 		bx	lr
+  22              	.L4:
+  23              		.align	2
+  24              	.L3:
+  25 0030 00C01FE0 		.word	-534790144
+  27              		.align	2
+  28              		.global	uart0PutCharPolling
+  30              	uart0PutCharPolling:
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  34 0034 1C209FE5 		ldr	r2, .L9
+  35 0038 FF0000E2 		and	r0, r0, #255
+  36              	.L6:
+  37 003c 143092E5 		ldr	r3, [r2, #20]
+  38 0040 200013E3 		tst	r3, #32
+  39 0044 FCFFFF0A 		beq	.L6
+  40 0048 08309FE5 		ldr	r3, .L9
+  41 004c 000083E5 		str	r0, [r3, #0]
+  42 0050 0100A0E3 		mov	r0, #1
+  43 0054 1EFF2FE1 		bx	lr
+  44              	.L10:
+  45              		.align	2
+  46              	.L9:
+  47 0058 00C000E0 		.word	-536821760
+  49              		.align	2
+  50              		.global	uart0GetChar
+  52              	uart0GetChar:
+  53              		@ args = 0, pretend = 0, frame = 0
+  54              		@ frame_needed = 0, uses_anonymous_args = 0
+  55 005c 0120A0E1 		mov	r2, r1
+  56 0060 20109FE5 		ldr	r1, .L13
+  57 0064 0030A0E1 		mov	r3, r0
+  58 0068 04E02DE5 		str	lr, [sp, #-4]!
+  59 006c 000091E5 		ldr	r0, [r1, #0]
+  60 0070 0310A0E1 		mov	r1, r3
+  61 0074 0030A0E3 		mov	r3, #0
+  62 0078 FEFFFFEB 		bl	xQueueGenericReceive
+  63 007c 000050E2 		subs	r0, r0, #0
+  64 0080 0100A013 		movne	r0, #1
+  65 0084 04F09DE4 		ldr	pc, [sp], #4
+  66              	.L14:
+  67              		.align	2
+  68              	.L13:
+  69 0088 00000000 		.word	xRX0Queue
+  71              		.align	2
+  72              		.global	uart0PutChar
+  74              	uart0PutChar:
+  75              		@ args = 0, pretend = 0, frame = 4
+  76              		@ frame_needed = 0, uses_anonymous_args = 0
+  77 008c F0412DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, lr}
+  78 0090 9C609FE5 		ldr	r6, .L19
+  79 0094 04D04DE2 		sub	sp, sp, #4
+  80 0098 0000CDE5 		strb	r0, [sp, #0]
+  81 009c 0150A0E1 		mov	r5, r1
+  82 00a0 FEFFFFEB 		bl	vPortEnterCritical
+  83 00a4 004096E5 		ldr	r4, [r6, #0]
+  84 00a8 000054E3 		cmp	r4, #0
+  85 00ac 0600000A 		beq	.L16
+  86 00b0 0020A0E3 		mov	r2, #0
+  87 00b4 002086E5 		str	r2, [r6, #0]
+  88 00b8 0030DDE5 		ldrb	r3, [sp, #0]	@ zero_extendqisi2
+  89 00bc 74209FE5 		ldr	r2, .L19+4
+  90 00c0 0150A0E3 		mov	r5, #1
+  91 00c4 003082E5 		str	r3, [r2, #0]
+  92 00c8 150000EA 		b	.L17
+  93              	.L16:
+  94 00cc 68709FE5 		ldr	r7, .L19+8
+  95 00d0 0520A0E1 		mov	r2, r5
+  96 00d4 0430A0E1 		mov	r3, r4
+  97 00d8 000097E5 		ldr	r0, [r7, #0]
+  98 00dc 0D10A0E1 		mov	r1, sp
+  99 00e0 FEFFFFEB 		bl	xQueueGenericSend
+ 100 00e4 003096E5 		ldr	r3, [r6, #0]
+ 101 00e8 000053E3 		cmp	r3, #0
+ 102 00ec 0D80A0E1 		mov	r8, sp
+ 103 00f0 0050A0E1 		mov	r5, r0
+ 104 00f4 0A00000A 		beq	.L17
+ 105 00f8 010050E3 		cmp	r0, #1
+ 106 00fc 0800001A 		bne	.L17
+ 107 0100 0420A0E1 		mov	r2, r4
+ 108 0104 0430A0E1 		mov	r3, r4
+ 109 0108 000097E5 		ldr	r0, [r7, #0]
+ 110 010c 0D10A0E1 		mov	r1, sp
+ 111 0110 FEFFFFEB 		bl	xQueueGenericReceive
+ 112 0114 0020DDE5 		ldrb	r2, [sp, #0]	@ zero_extendqisi2
+ 113 0118 18309FE5 		ldr	r3, .L19+4
+ 114 011c 004086E5 		str	r4, [r6, #0]
+ 115 0120 002083E5 		str	r2, [r3, #0]
+ 116              	.L17:
+ 117 0124 FEFFFFEB 		bl	vPortExitCritical
+ 118 0128 0500A0E1 		mov	r0, r5
+ 119 012c 04D08DE2 		add	sp, sp, #4
+ 120 0130 F081BDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, pc}
+ 121              	.L20:
+ 122              		.align	2
+ 123              	.L19:
+ 124 0134 08000000 		.word	lTHREEmpty0
+ 125 0138 00C000E0 		.word	-536821760
+ 126 013c 04000000 		.word	xTX0Queue
+ 128              		.global	__udivsi3
+ 129              		.align	2
+ 130              		.global	uart0Init
+ 132              	uart0Init:
+ 133              		@ args = 0, pretend = 0, frame = 0
+ 134              		@ frame_needed = 0, uses_anonymous_args = 0
+ 135 0140 000051E3 		cmp	r1, #0
+ 136 0144 70402DE9 		stmfd	sp!, {r4, r5, r6, lr}
+ 137 0148 0150A011 		movne	r5, r1
+ 138 014c 4050A003 		moveq	r5, #64
+ 139 0150 000050E3 		cmp	r0, #0
+ 140 0154 0060A011 		movne	r6, r0
+ 141 0158 0110A0E3 		mov	r1, #1
+ 142 015c 0500A0E1 		mov	r0, r5
+ 143 0160 966CA003 		moveq	r6, #38400
+ 144 0164 FEFFFFEB 		bl	xQueueCreate
+ 145 0168 F4409FE5 		ldr	r4, .L27
+ 146 016c 0110A0E3 		mov	r1, #1
+ 147 0170 000084E5 		str	r0, [r4, #0]
+ 148 0174 010085E2 		add	r0, r5, #1
+ 149 0178 FEFFFFEB 		bl	xQueueCreate
+ 150 017c 003094E5 		ldr	r3, [r4, #0]
+ 151 0180 000053E3 		cmp	r3, #0
+ 152 0184 DC309FE5 		ldr	r3, .L27+4
+ 153 0188 000083E5 		str	r0, [r3, #0]
+ 154 018c D8309FE5 		ldr	r3, .L27+8
+ 155 0190 0140A0E3 		mov	r4, #1
+ 156 0194 004083E5 		str	r4, [r3, #0]
+ 157 0198 2F00000A 		beq	.L24
+ 158 019c 000050E3 		cmp	r0, #0
+ 159 01a0 2D00000A 		beq	.L24
+ 160 01a4 FEFFFFEB 		bl	vPortEnterCritical
+ 161 01a8 C0209FE5 		ldr	r2, .L27+12
+ 162 01ac 003092E5 		ldr	r3, [r2, #0]
+ 163 01b0 0F30C3E3 		bic	r3, r3, #15
+ 164 01b4 053083E3 		orr	r3, r3, #5
+ 165 01b8 003082E5 		str	r3, [r2, #0]
+ 166 01bc 1D2882E2 		add	r2, r2, #1900544
+ 167 01c0 C43092E5 		ldr	r3, [r2, #196]
+ 168 01c4 083083E3 		orr	r3, r3, #8
+ 169 01c8 C43082E5 		str	r3, [r2, #196]
+ 170 01cc 0612A0E1 		mov	r1, r6, asl #4
+ 171 01d0 9C009FE5 		ldr	r0, .L27+16
+ 172 01d4 FEFFFFEB 		bl	__udivsi3
+ 173 01d8 98109FE5 		ldr	r1, .L27+20
+ 174 01dc 0C3091E5 		ldr	r3, [r1, #12]
+ 175 01e0 2024A0E1 		mov	r2, r0, lsr #8
+ 176 01e4 803083E3 		orr	r3, r3, #128
+ 177 01e8 0C3081E5 		str	r3, [r1, #12]
+ 178 01ec FF0000E2 		and	r0, r0, #255
+ 179 01f0 FF2002E2 		and	r2, r2, #255
+ 180 01f4 0730A0E3 		mov	r3, #7
+ 181 01f8 000081E5 		str	r0, [r1, #0]
+ 182 01fc 042081E5 		str	r2, [r1, #4]
+ 183 0200 083081E5 		str	r3, [r1, #8]
+ 184 0204 083091E5 		ldr	r3, [r1, #8]
+ 185 0208 403083E3 		orr	r3, r3, #64
+ 186 020c 083081E5 		str	r3, [r1, #8]
+ 187 0210 0330A0E3 		mov	r3, #3
+ 188 0214 0C3081E5 		str	r3, [r1, #12]
+ 189 0218 0020E0E3 		mvn	r2, #0
+ 190 021c F33F12E5 		ldr	r3, [r2, #-4083]
+ 191 0220 4030C3E3 		bic	r3, r3, #64
+ 192 0224 F33F02E5 		str	r3, [r2, #-4083]
+ 193 0228 4C309FE5 		ldr	r3, .L27+24
+ 194 022c F73E02E5 		str	r3, [r2, #-3831]
+ 195 0230 2630A0E3 		mov	r3, #38
+ 196 0234 F73D02E5 		str	r3, [r2, #-3575]
+ 197 0238 EF3F12E5 		ldr	r3, [r2, #-4079]
+ 198 023c 403083E3 		orr	r3, r3, #64
+ 199 0240 EF3F02E5 		str	r3, [r2, #-4079]
+ 200 0244 043091E5 		ldr	r3, [r1, #4]
+ 201 0248 033083E3 		orr	r3, r3, #3
+ 202 024c 043081E5 		str	r3, [r1, #4]
+ 203 0250 FEFFFFEB 		bl	vPortExitCritical
+ 204 0254 0400A0E1 		mov	r0, r4
+ 205 0258 7080BDE8 		ldmfd	sp!, {r4, r5, r6, pc}
+ 206              	.L24:
+ 207 025c 0000A0E3 		mov	r0, #0
+ 208 0260 7080BDE8 		ldmfd	sp!, {r4, r5, r6, pc}
+ 209              	.L28:
+ 210              		.align	2
+ 211              	.L27:
+ 212 0264 00000000 		.word	xRX0Queue
+ 213 0268 04000000 		.word	xTX0Queue
+ 214 026c 08000000 		.word	lTHREEmpty0
+ 215 0270 00C002E0 		.word	-536690688
+ 216 0274 006CDC02 		.word	48000000
+ 217 0278 00C000E0 		.word	-536821760
+ 218 027c 00000000 		.word	uart0ISR
+ 220              		.align	2
+ 221              		.global	uart0ISR
+ 223              	uart0ISR:
+ 224              		@ Naked Function: prologue and epilogue provided by programmer.
+ 225              		@ args = 0, pretend = 0, frame = 8
+ 226              		@ frame_needed = 0, uses_anonymous_args = 0
+ 227              	@ 86 "../drivers/uart/uart0.c" 1
+ 228 0280 01002DE9 		STMDB	SP!, {R0}											
+ 229 0284 00204DE9 		STMDB	SP,{SP}^											
+ 230 0288 0000A0E1 		NOP														
+ 231 028c 04D04DE2 		SUB	SP, SP, #4											
+ 232 0290 0100BDE8 		LDMIA	SP!,{R0}											
+ 233 0294 004020E9 		STMDB	R0!, {LR}											
+ 234 0298 00E0A0E1 		MOV	LR, R0												
+ 235 029c 0100BDE8 		LDMIA	SP!, {R0}											
+ 236 02a0 FF7F4EE9 		STMDB	LR,{R0-LR}^											
+ 237 02a4 0000A0E1 		NOP														
+ 238 02a8 3CE04EE2 		SUB	LR, LR, #60											
+ 239 02ac 00004FE1 		MRS	R0, SPSR											
+ 240 02b0 01002EE9 		STMDB	LR!, {R0}											
+ 241 02b4 9C019FE5 		LDR	R0, =ulCriticalNesting								
+ 242 02b8 000090E5 		LDR	R0, [R0]											
+ 243 02bc 01002EE9 		STMDB	LR!, {R0}											
+ 244 02c0 94019FE5 		LDR	R0, =pxCurrentTCB									
+ 245 02c4 000090E5 		LDR	R0, [R0]											
+ 246 02c8 00E080E5 		STR	LR, [R0]											
+ 247              		
+ 248              	@ 0 "" 2
+ 249 02cc 6C319FE5 		ldr	r3, .L43
+ 250 02d0 003093E5 		ldr	r3, [r3, #0]
+ 251 02d4 68319FE5 		ldr	r3, .L43+4
+ 252 02d8 003093E5 		ldr	r3, [r3, #0]
+ 253 02dc FEFFFFEB 		bl	runTimeStatISREntry
+ 254 02e0 0030A0E3 		mov	r3, #0
+ 255 02e4 00308DE5 		str	r3, [sp, #0]
+ 256 02e8 58319FE5 		ldr	r3, .L43+8
+ 257 02ec 082093E5 		ldr	r2, [r3, #8]
+ 258 02f0 0F3002E2 		and	r3, r2, #15
+ 259 02f4 023043E2 		sub	r3, r3, #2
+ 260 02f8 0A0053E3 		cmp	r3, #10
+ 261 02fc 03F19F97 		ldrls	pc, [pc, r3, asl #2]
+ 262 0300 370000EA 		b	.L30
+ 263              	.L34:
+ 264 0304 40030000 		.word	.L31
+ 265 0308 E4030000 		.word	.L30
+ 266 030c BC030000 		.word	.L32
+ 267 0310 E4030000 		.word	.L30
+ 268 0314 30030000 		.word	.L33
+ 269 0318 E4030000 		.word	.L30
+ 270 031c E4030000 		.word	.L30
+ 271 0320 E4030000 		.word	.L30
+ 272 0324 E4030000 		.word	.L30
+ 273 0328 E4030000 		.word	.L30
+ 274 032c BC030000 		.word	.L32
+ 275              	.L33:
+ 276 0330 10319FE5 		ldr	r3, .L43+8
+ 277 0334 143093E5 		ldr	r3, [r3, #20]
+ 278 0338 0730CDE5 		strb	r3, [sp, #7]
+ 279 033c 280000EA 		b	.L30
+ 280              	.L31:
+ 281 0340 C00012E3 		tst	r2, #192
+ 282 0344 1040A013 		movne	r4, #16
+ 283 0348 0140A003 		moveq	r4, #1
+ 284 034c F8809FE5 		ldr	r8, .L43+12
+ 285 0350 07708DE2 		add	r7, sp, #7
+ 286 0354 0D60A0E1 		mov	r6, sp
+ 287 0358 E8509FE5 		ldr	r5, .L43+8
+ 288 035c 010000EA 		b	.L36
+ 289              	.L38:
+ 290 0360 D730DDE1 		ldrsb	r3, [sp, #7]
+ 291 0364 003085E5 		str	r3, [r5, #0]
+ 292              	.L36:
+ 293 0368 013044E2 		sub	r3, r4, #1
+ 294 036c FF4003E2 		and	r4, r3, #255
+ 295 0370 FF0054E3 		cmp	r4, #255
+ 296 0374 0710A0E1 		mov	r1, r7
+ 297 0378 0D20A0E1 		mov	r2, sp
+ 298 037c 0300000A 		beq	.L37
+ 299 0380 000098E5 		ldr	r0, [r8, #0]
+ 300 0384 FEFFFFEB 		bl	xQueueReceiveFromISR
+ 301 0388 000050E3 		cmp	r0, #0
+ 302 038c F3FFFF1A 		bne	.L38
+ 303              	.L37:
+ 304 0390 043CA0E1 		mov	r3, r4, asl #24
+ 305 0394 000053E3 		cmp	r3, #0
+ 306 0398 B0309FC5 		ldrgt	r3, .L43+16
+ 307 039c 0120A0C3 		movgt	r2, #1
+ 308 03a0 002083C5 		strgt	r2, [r3, #0]
+ 309 03a4 0E0000EA 		b	.L30
+ 310              	.L39:
+ 311 03a8 00C094E5 		ldr	ip, [r4, #0]
+ 312 03ac 000097E5 		ldr	r0, [r7, #0]
+ 313 03b0 07C0CDE5 		strb	ip, [sp, #7]
+ 314 03b4 FEFFFFEB 		bl	xQueueGenericSendFromISR
+ 315 03b8 030000EA 		b	.L42
+ 316              	.L32:
+ 317 03bc 84409FE5 		ldr	r4, .L43+8
+ 318 03c0 8C709FE5 		ldr	r7, .L43+20
+ 319 03c4 07608DE2 		add	r6, sp, #7
+ 320 03c8 0D50A0E1 		mov	r5, sp
+ 321              	.L42:
+ 322 03cc 140094E5 		ldr	r0, [r4, #20]
+ 323 03d0 010010E3 		tst	r0, #1
+ 324 03d4 0610A0E1 		mov	r1, r6
+ 325 03d8 0D20A0E1 		mov	r2, sp
+ 326 03dc 0030A0E3 		mov	r3, #0
+ 327 03e0 F0FFFF1A 		bne	.L39
+ 328              	.L30:
+ 329 03e4 0030A0E3 		mov	r3, #0
+ 330 03e8 0020E0E3 		mvn	r2, #0
+ 331 03ec CF3F02E5 		str	r3, [r2, #-4047]
+ 332 03f0 00309DE5 		ldr	r3, [sp, #0]
+ 333 03f4 000053E3 		cmp	r3, #0
+ 334 03f8 FEFFFF1B 		blne	vTaskSwitchContext
+ 335              	.L40:
+ 336 03fc FEFFFFEB 		bl	runTimeStatISRExit
+ 337              	@ 90 "../drivers/uart/uart0.c" 1
+ 338 0400 54009FE5 		LDR		R0, =pxCurrentTCB								
+ 339 0404 000090E5 		LDR		R0, [R0]										
+ 340 0408 00E090E5 		LDR		LR, [R0]										
+ 341 040c 44009FE5 		LDR		R0, =ulCriticalNesting							
+ 342 0410 0200BEE8 		LDMFD	LR!, {R1}											
+ 343 0414 001080E5 		STR		R1, [R0]										
+ 344 0418 0100BEE8 		LDMFD	LR!, {R0}											
+ 345 041c 00F069E1 		MSR		SPSR, R0										
+ 346 0420 FF7FDEE8 		LDMFD	LR, {R0-R14}^										
+ 347 0424 0000A0E1 		NOP														
+ 348 0428 3CE09EE5 		LDR		LR, [LR, #+60]									
+ 349 042c 04F05EE2 		SUBS	PC, LR, #4											
+ 350              		
+ 351              	@ 0 "" 2
+ 352 0430 08309FE5 		ldr	r3, .L43
+ 353 0434 003093E5 		ldr	r3, [r3, #0]
+ 354 0438 04309FE5 		ldr	r3, .L43+4
+ 355 043c 003093E5 		ldr	r3, [r3, #0]
+ 356              	.L44:
+ 357              		.align	2
+ 358              	.L43:
+ 359 0440 00000000 		.word	ulCriticalNesting
+ 360 0444 00000000 		.word	pxCurrentTCB
+ 361 0448 00C000E0 		.word	-536821760
+ 362 044c 04000000 		.word	xTX0Queue
+ 363 0450 08000000 		.word	lTHREEmpty0
+ 364 0454 00000000 		.word	xRX0Queue
+ 366              		.bss
+ 367              		.align	2
+ 368              	xRX0Queue:
+ 369 0000 00000000 		.space	4
+ 370              		.align	2
+ 371              	xTX0Queue:
+ 372 0004 00000000 		.space	4
+ 373              		.align	2
+ 374              	lTHREEmpty0:
+ 375 0008 00000000 		.space	4
+ 376              		.ident	"GCC: (GNU) 4.3.2"
+DEFINED SYMBOLS
+                            *ABS*:00000000 uart0.c
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQhwUAs.s:6      .text:00000000 uart0Deinit
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQhwUAs.s:10     .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQhwUAs.s:25     .text:00000030 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQhwUAs.s:30     .text:00000034 uart0PutCharPolling
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQhwUAs.s:34     .text:00000034 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQhwUAs.s:47     .text:00000058 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQhwUAs.s:52     .text:0000005c uart0GetChar
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQhwUAs.s:55     .text:0000005c $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQhwUAs.s:69     .text:00000088 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQhwUAs.s:368    .bss:00000000 xRX0Queue
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQhwUAs.s:74     .text:0000008c uart0PutChar
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQhwUAs.s:77     .text:0000008c $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQhwUAs.s:124    .text:00000134 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQhwUAs.s:374    .bss:00000008 lTHREEmpty0
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQhwUAs.s:371    .bss:00000004 xTX0Queue
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQhwUAs.s:132    .text:00000140 uart0Init
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQhwUAs.s:135    .text:00000140 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQhwUAs.s:212    .text:00000264 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQhwUAs.s:223    .text:00000280 uart0ISR
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQhwUAs.s:228    .text:00000280 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQhwUAs.s:264    .text:00000304 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQhwUAs.s:276    .text:00000330 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQhwUAs.s:359    .text:00000440 $d
+
+UNDEFINED SYMBOLS
+xQueueGenericReceive
+vPortEnterCritical
+xQueueGenericSend
+vPortExitCritical
+__udivsi3
+xQueueCreate
+ulCriticalNesting
+pxCurrentTCB
+runTimeStatISREntry
+xQueueReceiveFromISR
+xQueueGenericSendFromISR
+vTaskSwitchContext
+runTimeStatISRExit
