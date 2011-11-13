@@ -22,6 +22,7 @@ typedef struct
 		xTaskHandle sender;
 		xTaskHandle receiver;
 		xTaskHandle i2cTimer;
+		xTaskHandle mp3player;
 	}task;
 
 	struct {

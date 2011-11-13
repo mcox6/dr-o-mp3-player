@@ -473,20 +473,20 @@
  425              		.ident	"GCC: (GNU) 4.3.2"
 DEFINED SYMBOLS
                             *ABS*:00000000 crash.c
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccUKp6sG.s:6      .text:00000000 didSystemCrash
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccUKp6sG.s:10     .text:00000000 $a
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccUKp6sG.s:26     .text:00000034 $d
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccUKp6sG.s:32     .text:0000003c performUndefinedInstructionCrash
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccUKp6sG.s:39     .text:00000040 $a
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccUKp6sG.s:44     .text:00000044 performPABORTCrash
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccUKp6sG.s:59     .text:00000050 performDABORTCrash
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccUKp6sG.s:69     .text:0000005c $d
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccUKp6sG.s:74     .text:00000060 clearCrashInfo
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccUKp6sG.s:77     .text:00000060 $a
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccUKp6sG.s:102    .text:000000b8 $d
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccUKp6sG.s:146    .text:000000bc printCrashInfo
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccUKp6sG.s:149    .text:000000bc $a
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccUKp6sG.s:405    .text:000004ac $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc83EoIt.s:6      .text:00000000 didSystemCrash
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc83EoIt.s:10     .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc83EoIt.s:26     .text:00000034 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc83EoIt.s:32     .text:0000003c performUndefinedInstructionCrash
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc83EoIt.s:39     .text:00000040 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc83EoIt.s:44     .text:00000044 performPABORTCrash
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc83EoIt.s:59     .text:00000050 performDABORTCrash
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc83EoIt.s:69     .text:0000005c $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc83EoIt.s:74     .text:00000060 clearCrashInfo
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc83EoIt.s:77     .text:00000060 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc83EoIt.s:102    .text:000000b8 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc83EoIt.s:146    .text:000000bc printCrashInfo
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc83EoIt.s:149    .text:000000bc $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc83EoIt.s:405    .text:000004ac $d
 
 UNDEFINED SYMBOLS
 __abort_dat

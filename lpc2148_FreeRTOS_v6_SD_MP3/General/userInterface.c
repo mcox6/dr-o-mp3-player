@@ -196,6 +196,7 @@ void uartUI(void *pvParameters)
 //HERE!
 		else if (MATCH(command, "play") || MATCH(command, "PLAY"))
 		{
+			rprintf("Play command received\n");
 			char itemOnQ[15];
 			char *songname = strtok(NULL, ".");
 			strcpy(itemOnQ, songname);
@@ -353,6 +354,7 @@ void getMP3Names(void)
 		return; //<----- not inside a loop!
 	}
 
+		rprintf("Entering the for loop in getMP3Names()");
 	//rprintf("Directory listing of: %s\n\n", dirPath);
 	//for (counter = 0; ; counter++)
 	for (index = 0; ; index++)
