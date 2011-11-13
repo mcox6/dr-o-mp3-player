@@ -51,13 +51,13 @@
   59              		.ident	"GCC: (GNU) 4.3.2"
 DEFINED SYMBOLS
                             *ABS*:00000000 reentrant.c
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccbDS60D.s:6      .text:00000000 ff_del_syncobj
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccbDS60D.s:10     .text:00000000 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccbDS60D.s:16     .text:00000008 ff_rel_grant
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccbDS60D.s:28     .text:00000018 ff_req_grant
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccbDS60D.s:43     .text:0000003c $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccbDS60D.s:48     .text:00000040 ff_cre_syncobj
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccbDS60D.s:51     .text:00000040 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccvHeCpd.s:6      .text:00000000 ff_del_syncobj
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccvHeCpd.s:10     .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccvHeCpd.s:16     .text:00000008 ff_rel_grant
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccvHeCpd.s:28     .text:00000018 ff_req_grant
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccvHeCpd.s:43     .text:0000003c $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccvHeCpd.s:48     .text:00000040 ff_cre_syncobj
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccvHeCpd.s:51     .text:00000040 $a
 
 UNDEFINED SYMBOLS
 xQueueGenericSend

@@ -159,676 +159,675 @@ startup         0x00001000      0x168
                 0x00001168                PROVIDE (__dtors_end__, .)
                 0x00001168                . = ALIGN (0x4)
 
-prog            0x00001168     0xfb50
+prog            0x00001168     0xfbb4
                 0x00001168                __start_of_text__ = .
                 0x00001168                __start_of_prog__ = .
  *(.text)
  .text          0x00001168      0x144 ./Startup.o
                 0x00001168                start
- .text          0x000012ac      0x52c ./main.o
-                0x000017c4                diskTimer
-                0x000012ac                i2cTimer
-                0x0000160c                mp3player
-                0x00001458                main
- .text          0x000017d8      0xcc4 ./fat/diskio.o
-                0x000019b0                wait_ready
-                0x000022a0                disk_initialize
-                0x0000186c                disk_status
-                0x00001f10                disk_ioctl
-                0x00001bc4                getSDCardInfo
-                0x00001ac0                xmit_datablock
-                0x000017d8                diskio_initializeSPIMutex
-                0x0000190c                rcvr_datablock
-                0x00001888                disk_timerproc
-                0x00001850                chk_power
-                0x00001ee0                power_off
-                0x00001b80                get_spi
-                0x000019ec                send_cmd
-                0x00001cd8                disk_write
-                0x000017e8                initialize_SdCardSignals
-                0x00001b40                release_spi
-                0x00001df0                disk_read
-                0x0000184c                power_on
- .text          0x0000249c     0x3614 ./fat/ff.o
-                0x00002ef4                get_fat
-                0x0000417c                f_rename
-                0x0000468c                f_truncate
-                0x000024c0                gen_numname
-                0x00004534                f_unlink
-                0x000057e0                f_close
-                0x00005104                f_read
-                0x00004988                f_readdir
-                0x00004480                f_chmod
-                0x000056b0                f_sync
-                0x00005a3c                f_mount
-                0x00004a44                f_opendir
-                0x00002d6c                put_fat
-                0x00004b10                f_lseek
-                0x00004900                f_stat
-                0x0000249c                clust2sect
-                0x000043c4                f_utime
-                0x00004dc0                f_write
-                0x000057f8                f_open
-                0x000053bc                f_mkdir
-                0x00004790                f_getfree
- .text          0x00005ab0      0x15c ./fat/rtc.o
-                0x00005ad8                rtc_gettime
-                0x00005ab0                initialize_RTC
-                0x00005bbc                get_fattime
-                0x00005b58                rtc_settime
- .text          0x00005c0c       0xb4 ./fat/option/ccsbcs.o
-                0x00005c80                ff_wtoupper
-                0x00005c0c                ff_convert
- .text          0x00005cc0       0x5c ./fat/option/reentrant.o
-                0x00005cc0                ff_del_syncobj
-                0x00005d00                ff_cre_syncobj
-                0x00005cc8                ff_rel_grant
-                0x00005cd8                ff_req_grant
- .text          0x00005d1c      0x460 ./drivers/uart/uart0.o
-                0x00005d78                uart0GetChar
-                0x00005d50                uart0PutCharPolling
-                0x00005e5c                uart0Init
-                0x00005d1c                uart0Deinit
-                0x00005f9c                uart0ISR
-                0x00005da8                uart0PutChar
- .text          0x0000617c      0x780 ./drivers/i2c.o
-                0x000066c4                initialize_I2C0
-                0x00006584                i2cWriteDeviceRegister
-                0x0000617c                i2cStateMachine
-                0x000065e4                initPE
-                0x0000661c                i2cReadDeviceRegister
-                0x00006518                i2cKickOffTransfer
- .text          0x000068fc       0xc8 ./drivers/pcm1774.o
-                0x000069b4                pcm1774_bassBoost
-                0x000068fc                pcm1774_sendByte
-                0x00006980                pcm1774_LineOutputConfiguration
-                0x00006958                pcm1774_ConnectDigitalOutputs
-                0x00006900                pcm1774_readByte
-                0x00006984                pcm1774_PowerUpVcom
-                0x00006964                pcm1774_DigitalInterfaceSelection
-                0x00006960                pcm1774_DigitalDeEmphasisFilter
-                0x00006970                pcm1774_PowerUpMixer
-                0x0000698c                pcm1774_setShortCircuitProtectionRight
-                0x000069ac                pcm1774_redirectAnalogInputToLeftOutput
-                0x00006974                pcm1774_PowerUpAnalogBiasControl
-                0x000069c0                pcm1774_3dSoundEffect
-                0x000069b0                pcm1774_redirectAnalogInputToRightOutput
-                0x00006990                pcm1774_readShortCircuitStatusLeft
-                0x0000695c                pcm1774_DigitalVolume
-                0x0000690c                initialize_pcm1774
-                0x000069bc                pcm1774_trebleBoost
-                0x00006914                pcm1774_Reset
-                0x000069b8                pcm1774_middleBoost
-                0x00006968                pcm1774_DigitalGainControl
-                0x000069a0                pcm1774_PowerUpGainAmplifierAnalog
-                0x00006908                pcm1774_bitMask
-                0x0000697c                pcm1774_PowerUpAnalog
-                0x00006978                pcm1774_PowerUpDAC
-                0x000069a4                pcm1774_selectAnalogInput
-                0x00006988                pcm1774_setShortCircuitProtectionLeft
-                0x00006954                pcm1774_OutputVolume
-                0x0000696c                pcm1774_DigitalOversamplingControl
-                0x000069a8                pcm1774_gainAmplifierAnalogInput
-                0x00006998                pcm1774_readShortCircuitStatusRight
-                0x00006950                pcm1774_LoadDefaultDigitalConfiguration
- .text          0x000069c4       0x88 ./drivers/ssp_spi.o
-                0x000069c4                initialize_SSPSPI
-                0x00006a38                setSSPSPI_Divider
-                0x00006a08                rxTxByteSSPSPI
- .text          0x00006a4c      0x158 ./drivers/sta013.o
-                0x00006b94                sta013GetAverageBitrate
-                0x00006b9c                sta013SetVolume
-                0x00006b70                sta013StopDecoder
-                0x00006b78                sta013ResumeDecoder
-                0x00006b74                sta013PauseDecoder
-                0x00006acc                sta013DownloadUpdate
-                0x00006b6c                sta013StartDecoder
-                0x00006a4c                sta013ReadReg
-                0x00006af4                initialize_sta013
-                0x00006b7c                sta013GetMP3Info
-                0x00006a58                sta013HWReset
-                0x00006a54                sta013WriteReg
-                0x00006ba0                sta013SetTone
- .text          0x00006ba4      0x120 ./System/cpu.o
-                0x00006c48                cpuPrintMemoryInfo
-                0x00006ba4                cpuSetupHardware
-                0x00006c44                cpuSetupFIQISR
- .text          0x00006cc4      0x4f8 ./System/crash.o
-                0x00006d24                clearCrashInfo
-                0x00006cc4                didSystemCrash
-                0x00006d08                performPABORTCrash
-                0x00006d80                printCrashInfo
-                0x00006d14                performDABORTCrash
-                0x00006d00                performUndefinedInstructionCrash
- .text          0x000071bc        0x4 ./System/fiqISR.o
-                0x000071bc                fiqISR
- .text          0x000071c0      0x264 ./System/rprintf.o
-                0x000071c0                rprintf_devopen
-                0x00007210                rprintf
- .text          0x00007424      0x128 ./System/syscalls.o
-                0x0000742c                _lseek_r
-                0x0000751c                _kill_r
-                0x00007434                _fstat_r
-                0x00007444                isatty
-                0x00007534                _getpid_r
-                0x0000744c                _sbrk_r
-                0x000074dc                _read_r
-                0x00007424                _close_r
-                0x000074a0                _write_r
- .text          0x0000754c       0xd4 ./System/watchdog.o
-                0x0000757c                watchdog_Start
-                0x0000754c                watchdog_Reset
-                0x00007564                watchdog_Feed
-                0x000075c4                watchdogDelayUs
-                0x000075a4                watchdog_Stop
- .text          0x00007620      0xa48 ./General/userInterface.o
-                0x00007620                retGlobals
-                0x0000768c                getMP3Names
-                0x00007680                printLine
-                0x0000787c                uartUI
-                0x000077d8                getUartLine
- .text          0x00008068        0x0 ./FreeRTOS/croutine.o
- .text          0x00008068       0x4c ./FreeRTOS/heap_3.o
-                0x00008068                vPortFree
-                0x00008088                pvPortMalloc
- .text          0x000080b4       0xf4 ./FreeRTOS/list.o
-                0x000080e4                vListInsertEnd
-                0x0000816c                vListRemove
-                0x000080d8                vListInitialiseItem
-                0x000080b4                vListInitialise
-                0x00008118                vListInsert
- .text          0x000081a8      0x1c0 ./FreeRTOS/port.o
-                0x000082fc                xPortStartScheduler
-                0x000082f8                vPortEndScheduler
-                0x000081a8                pxPortInitialiseStack
- .text          0x00008368      0x228 ./FreeRTOS/portISR.o
-                0x00008458                vTickISR
-                0x00008544                vPortExitCritical
-                0x000083b4                vPortYieldProcessor
-                0x00008368                vPortISRStartFirstTask
-                0x00008518                vPortEnterCritical
- .text          0x00008590      0x6f8 ./FreeRTOS/queue.o
-                0x000089c4                xQueueGenericSendFromISR
-                0x00008bec                xQueueCreate
-                0x000085c0                vQueueDelete
-                0x00008a34                xQueueGenericSend
-                0x000085f8                xQueueReceiveFromISR
-                0x000085a8                xQueueIsQueueFullFromISR
-                0x000085dc                uxQueueMessagesWaiting
-                0x00008744                xQueueGenericReceive
-                0x00008590                uxQueueMessagesWaitingFromISR
-                0x00008598                xQueueIsQueueEmptyFromISR
-                0x00008b7c                xQueueCreateMutex
- .text          0x00008c88     0x135c ./FreeRTOS/tasks.o
-                0x00009b1c                vTaskGetRunTimeStats
-                0x00009684                uxTaskPriorityGet
-                0x00009598                vTaskPrioritySet
-                0x00009cc4                vTaskEndScheduler
-                0x000096b4                vTaskPlaceOnEventList
-                0x00009cf8                xTaskGenericCreate
-                0x00008c88                xTaskIsTaskSuspended
-                0x00008d94                uxTaskGetStackHighWaterMark
-                0x0000909c                xTaskResumeFromISR
-                0x00008d28                runTimeStatISRExit
-                0x00009200                xTaskGetTickCount
-                0x00008ee0                xTaskRemoveFromEventList
-                0x00009164                xTaskCheckForTimeOut
-                0x00008cc4                vTaskSuspendAll
-                0x00008dd8                vTaskPriorityDisinherit
-                0x00008e40                vTaskPriorityInherit
-                0x00009464                vTaskResume
-                0x00009890                vTaskSwitchContext
-                0x00009520                vTaskSuspend
-                0x00008cdc                uxTaskGetNumberOfTasks
-                0x00008f84                vTaskIncrementTick
-                0x00009368                uxTaskGetIdlePercentage
-                0x000097c8                vTaskDelayUntil
-                0x00008dc8                xTaskGetCurrentTaskHandle
-                0x00009220                xTaskResumeAll
-                0x00009f44                vTaskStartScheduler
-                0x00008d80                vTaskMissedYield
-                0x00008cec                runTimeStatISREntry
-                0x00009740                vTaskDelay
-                0x00008d60                vTaskSetTimeOutState
- .text          0x00009fe4       0x6c ./FreeRTOS/hooks/hooks.o
-                0x00009ffc                vApplicationMallocFailedHook
-                0x0000a01c                vApplicationStackOverflowHook
-                0x00009fe4                vApplicationIdleHook
- .text          0x0000a050      0x110 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
-                0x0000a050                __udivsi3
-                0x0000a050                __aeabi_uidiv
-                0x0000a148                __aeabi_uidivmod
- .text          0x0000a160      0x140 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
-                0x0000a160                __aeabi_idiv
-                0x0000a160                __divsi3
-                0x0000a288                __aeabi_idivmod
- .text          0x0000a2a0       0xcc /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
-                0x0000a2a0                __umodsi3
- .text          0x0000a36c        0x4 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
-                0x0000a36c                __aeabi_ldiv0
-                0x0000a36c                __div0
-                0x0000a36c                __aeabi_idiv0
- .text          0x0000a370      0x590 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
-                0x0000a370                __divdi3
- .text          0x0000a900      0x520 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
-                0x0000a900                __udivdi3
- .text          0x0000ae20        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
- .text          0x0000ae20       0x18 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
-                0x0000ae20                _atoi_r
-                0x0000ae2c                atoi
- .text          0x0000ae38       0x54 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
-                0x0000ae38                _iprintf_r
-                0x0000ae5c                iprintf
- .text          0x0000ae8c       0x28 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
-                0x0000aea0                malloc
-                0x0000ae8c                free
- .text          0x0000aeb4      0x734 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
-                0x0000aeb4                _malloc_r
- .text          0x0000b5e8       0xac /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
-                0x0000b5e8                memcmp
- .text          0x0000b694       0xfc /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
-                0x0000b694                memcpy
- .text          0x0000b790       0xd0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
-                0x0000b790                memset
- .text          0x0000b860        0x8 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
-                0x0000b864                __malloc_unlock
-                0x0000b860                __malloc_lock
- .text          0x0000b868       0xcc /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
-                0x0000b8d4                _siprintf_r
-                0x0000b868                siprintf
- .text          0x0000b934       0xa4 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
-                0x0000b934                strcat
- .text          0x0000b9d8       0xe8 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
-                0x0000b9d8                strcmp
- .text          0x0000bac0       0xb8 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
-                0x0000bac0                strcpy
- .text          0x0000bb78       0x9c /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
-                0x0000bb78                strlen
- .text          0x0000bc14      0x10c /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
-                0x0000bc14                strncpy
- .text          0x0000bd20       0x18 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
-                0x0000bd20                strtok
- .text          0x0000bd38       0xd0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
-                0x0000be00                strtok_r
-                0x0000bd38                __strtok_r
- .text          0x0000be08      0x1e0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
-                0x0000bfbc                strtol
-                0x0000be08                _strtol_r
- .text          0x0000bfe8      0xff0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
-                0x0000cfac                vfiprintf
-                0x0000c018                _vfiprintf_r
- .text          0x0000cfd8      0x144 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
-                0x0000cfd8                __swsetup_r
- .text          0x0000d11c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
- .text          0x0000d11c      0x1dc /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
-                0x0000d2c4                fflush
-                0x0000d11c                _fflush_r
- .text          0x0000d2f8      0x2ac /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
-                0x0000d2f8                __sinit
-                0x0000d488                __sfmoreglue
-                0x0000d470                _cleanup
-                0x0000d464                _cleanup_r
-                0x0000d44c                __fp_lock_all
-                0x0000d414                __sfp_lock_acquire
-                0x0000d4d0                __sfp
-                0x0000d420                __sinit_lock_release
-                0x0000d434                __fp_unlock_all
-                0x0000d418                __sfp_lock_release
-                0x0000d41c                __sinit_lock_acquire
- .text          0x0000d5a4      0x370 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
-                0x0000d69c                _free_r
-                0x0000d5a4                _malloc_trim_r
- .text          0x0000d914      0x46c /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
-                0x0000d914                __sfvwrite_r
- .text          0x0000dd80      0x10c /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
-                0x0000de08                _fwalk
-                0x0000dd80                _fwalk_reent
- .text          0x0000de8c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
- .text          0x0000de8c      0x164 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
-                0x0000de8c                __smakebuf_r
- .text          0x0000dff0      0x118 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
-                0x0000dff0                memchr
- .text          0x0000e108      0x144 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
-                0x0000e108                memmove
- .text          0x0000e24c      0x510 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
-                0x0000e24c                _realloc_r
- .text          0x0000e75c       0xc0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
-                0x0000e764                __sseek
-                0x0000e7ec                __sread
-                0x0000e75c                __sclose
-                0x0000e798                __swrite
- .text          0x0000e81c      0x118 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
-                0x0000e81c                _fclose_r
-                0x0000e920                fclose
-                0x0000e934                __end_of_prog__ = .
-                0x0000e934                __start_of_rodata__ = .
+ .text          0x000012ac      0x544 ./main.o
+                0x000017dc                diskTimer
+                0x00001658                mp3player
+                0x0000149c                main
+                0x000012ac                buttonHandler
+ .text          0x000017f0      0xcc4 ./fat/diskio.o
+                0x000019c8                wait_ready
+                0x000022b8                disk_initialize
+                0x00001884                disk_status
+                0x00001f28                disk_ioctl
+                0x00001bdc                getSDCardInfo
+                0x00001ad8                xmit_datablock
+                0x000017f0                diskio_initializeSPIMutex
+                0x00001924                rcvr_datablock
+                0x000018a0                disk_timerproc
+                0x00001868                chk_power
+                0x00001ef8                power_off
+                0x00001b98                get_spi
+                0x00001a04                send_cmd
+                0x00001cf0                disk_write
+                0x00001800                initialize_SdCardSignals
+                0x00001b58                release_spi
+                0x00001e08                disk_read
+                0x00001864                power_on
+ .text          0x000024b4     0x3614 ./fat/ff.o
+                0x00002f0c                get_fat
+                0x00004194                f_rename
+                0x000046a4                f_truncate
+                0x000024d8                gen_numname
+                0x0000454c                f_unlink
+                0x000057f8                f_close
+                0x0000511c                f_read
+                0x000049a0                f_readdir
+                0x00004498                f_chmod
+                0x000056c8                f_sync
+                0x00005a54                f_mount
+                0x00004a5c                f_opendir
+                0x00002d84                put_fat
+                0x00004b28                f_lseek
+                0x00004918                f_stat
+                0x000024b4                clust2sect
+                0x000043dc                f_utime
+                0x00004dd8                f_write
+                0x00005810                f_open
+                0x000053d4                f_mkdir
+                0x000047a8                f_getfree
+ .text          0x00005ac8      0x15c ./fat/rtc.o
+                0x00005af0                rtc_gettime
+                0x00005ac8                initialize_RTC
+                0x00005bd4                get_fattime
+                0x00005b70                rtc_settime
+ .text          0x00005c24       0xb4 ./fat/option/ccsbcs.o
+                0x00005c98                ff_wtoupper
+                0x00005c24                ff_convert
+ .text          0x00005cd8       0x5c ./fat/option/reentrant.o
+                0x00005cd8                ff_del_syncobj
+                0x00005d18                ff_cre_syncobj
+                0x00005ce0                ff_rel_grant
+                0x00005cf0                ff_req_grant
+ .text          0x00005d34      0x460 ./drivers/uart/uart0.o
+                0x00005d90                uart0GetChar
+                0x00005d68                uart0PutCharPolling
+                0x00005e74                uart0Init
+                0x00005d34                uart0Deinit
+                0x00005fb4                uart0ISR
+                0x00005dc0                uart0PutChar
+ .text          0x00006194      0x780 ./drivers/i2c.o
+                0x000066dc                initialize_I2C0
+                0x0000659c                i2cWriteDeviceRegister
+                0x00006194                i2cStateMachine
+                0x000065fc                initPE
+                0x00006634                i2cReadDeviceRegister
+                0x00006530                i2cKickOffTransfer
+ .text          0x00006914       0xc8 ./drivers/pcm1774.o
+                0x000069cc                pcm1774_bassBoost
+                0x00006914                pcm1774_sendByte
+                0x00006998                pcm1774_LineOutputConfiguration
+                0x00006970                pcm1774_ConnectDigitalOutputs
+                0x00006918                pcm1774_readByte
+                0x0000699c                pcm1774_PowerUpVcom
+                0x0000697c                pcm1774_DigitalInterfaceSelection
+                0x00006978                pcm1774_DigitalDeEmphasisFilter
+                0x00006988                pcm1774_PowerUpMixer
+                0x000069a4                pcm1774_setShortCircuitProtectionRight
+                0x000069c4                pcm1774_redirectAnalogInputToLeftOutput
+                0x0000698c                pcm1774_PowerUpAnalogBiasControl
+                0x000069d8                pcm1774_3dSoundEffect
+                0x000069c8                pcm1774_redirectAnalogInputToRightOutput
+                0x000069a8                pcm1774_readShortCircuitStatusLeft
+                0x00006974                pcm1774_DigitalVolume
+                0x00006924                initialize_pcm1774
+                0x000069d4                pcm1774_trebleBoost
+                0x0000692c                pcm1774_Reset
+                0x000069d0                pcm1774_middleBoost
+                0x00006980                pcm1774_DigitalGainControl
+                0x000069b8                pcm1774_PowerUpGainAmplifierAnalog
+                0x00006920                pcm1774_bitMask
+                0x00006994                pcm1774_PowerUpAnalog
+                0x00006990                pcm1774_PowerUpDAC
+                0x000069bc                pcm1774_selectAnalogInput
+                0x000069a0                pcm1774_setShortCircuitProtectionLeft
+                0x0000696c                pcm1774_OutputVolume
+                0x00006984                pcm1774_DigitalOversamplingControl
+                0x000069c0                pcm1774_gainAmplifierAnalogInput
+                0x000069b0                pcm1774_readShortCircuitStatusRight
+                0x00006968                pcm1774_LoadDefaultDigitalConfiguration
+ .text          0x000069dc       0x88 ./drivers/ssp_spi.o
+                0x000069dc                initialize_SSPSPI
+                0x00006a50                setSSPSPI_Divider
+                0x00006a20                rxTxByteSSPSPI
+ .text          0x00006a64      0x158 ./drivers/sta013.o
+                0x00006bac                sta013GetAverageBitrate
+                0x00006bb4                sta013SetVolume
+                0x00006b88                sta013StopDecoder
+                0x00006b90                sta013ResumeDecoder
+                0x00006b8c                sta013PauseDecoder
+                0x00006ae4                sta013DownloadUpdate
+                0x00006b84                sta013StartDecoder
+                0x00006a64                sta013ReadReg
+                0x00006b0c                initialize_sta013
+                0x00006b94                sta013GetMP3Info
+                0x00006a70                sta013HWReset
+                0x00006a6c                sta013WriteReg
+                0x00006bb8                sta013SetTone
+ .text          0x00006bbc      0x120 ./System/cpu.o
+                0x00006c60                cpuPrintMemoryInfo
+                0x00006bbc                cpuSetupHardware
+                0x00006c5c                cpuSetupFIQISR
+ .text          0x00006cdc      0x4f8 ./System/crash.o
+                0x00006d3c                clearCrashInfo
+                0x00006cdc                didSystemCrash
+                0x00006d20                performPABORTCrash
+                0x00006d98                printCrashInfo
+                0x00006d2c                performDABORTCrash
+                0x00006d18                performUndefinedInstructionCrash
+ .text          0x000071d4        0x4 ./System/fiqISR.o
+                0x000071d4                fiqISR
+ .text          0x000071d8      0x264 ./System/rprintf.o
+                0x000071d8                rprintf_devopen
+                0x00007228                rprintf
+ .text          0x0000743c      0x128 ./System/syscalls.o
+                0x00007444                _lseek_r
+                0x00007534                _kill_r
+                0x0000744c                _fstat_r
+                0x0000745c                isatty
+                0x0000754c                _getpid_r
+                0x00007464                _sbrk_r
+                0x000074f4                _read_r
+                0x0000743c                _close_r
+                0x000074b8                _write_r
+ .text          0x00007564       0xd4 ./System/watchdog.o
+                0x00007594                watchdog_Start
+                0x00007564                watchdog_Reset
+                0x0000757c                watchdog_Feed
+                0x000075dc                watchdogDelayUs
+                0x000075bc                watchdog_Stop
+ .text          0x00007638      0xa48 ./General/userInterface.o
+                0x00007638                retGlobals
+                0x000076a4                getMP3Names
+                0x00007698                printLine
+                0x00007894                uartUI
+                0x000077f0                getUartLine
+ .text          0x00008080        0x0 ./FreeRTOS/croutine.o
+ .text          0x00008080       0x4c ./FreeRTOS/heap_3.o
+                0x00008080                vPortFree
+                0x000080a0                pvPortMalloc
+ .text          0x000080cc       0xf4 ./FreeRTOS/list.o
+                0x000080fc                vListInsertEnd
+                0x00008184                vListRemove
+                0x000080f0                vListInitialiseItem
+                0x000080cc                vListInitialise
+                0x00008130                vListInsert
+ .text          0x000081c0      0x1c0 ./FreeRTOS/port.o
+                0x00008314                xPortStartScheduler
+                0x00008310                vPortEndScheduler
+                0x000081c0                pxPortInitialiseStack
+ .text          0x00008380      0x228 ./FreeRTOS/portISR.o
+                0x00008470                vTickISR
+                0x0000855c                vPortExitCritical
+                0x000083cc                vPortYieldProcessor
+                0x00008380                vPortISRStartFirstTask
+                0x00008530                vPortEnterCritical
+ .text          0x000085a8      0x6f8 ./FreeRTOS/queue.o
+                0x000089dc                xQueueGenericSendFromISR
+                0x00008c04                xQueueCreate
+                0x000085d8                vQueueDelete
+                0x00008a4c                xQueueGenericSend
+                0x00008610                xQueueReceiveFromISR
+                0x000085c0                xQueueIsQueueFullFromISR
+                0x000085f4                uxQueueMessagesWaiting
+                0x0000875c                xQueueGenericReceive
+                0x000085a8                uxQueueMessagesWaitingFromISR
+                0x000085b0                xQueueIsQueueEmptyFromISR
+                0x00008b94                xQueueCreateMutex
+ .text          0x00008ca0     0x135c ./FreeRTOS/tasks.o
+                0x00009b34                vTaskGetRunTimeStats
+                0x0000969c                uxTaskPriorityGet
+                0x000095b0                vTaskPrioritySet
+                0x00009cdc                vTaskEndScheduler
+                0x000096cc                vTaskPlaceOnEventList
+                0x00009d10                xTaskGenericCreate
+                0x00008ca0                xTaskIsTaskSuspended
+                0x00008dac                uxTaskGetStackHighWaterMark
+                0x000090b4                xTaskResumeFromISR
+                0x00008d40                runTimeStatISRExit
+                0x00009218                xTaskGetTickCount
+                0x00008ef8                xTaskRemoveFromEventList
+                0x0000917c                xTaskCheckForTimeOut
+                0x00008cdc                vTaskSuspendAll
+                0x00008df0                vTaskPriorityDisinherit
+                0x00008e58                vTaskPriorityInherit
+                0x0000947c                vTaskResume
+                0x000098a8                vTaskSwitchContext
+                0x00009538                vTaskSuspend
+                0x00008cf4                uxTaskGetNumberOfTasks
+                0x00008f9c                vTaskIncrementTick
+                0x00009380                uxTaskGetIdlePercentage
+                0x000097e0                vTaskDelayUntil
+                0x00008de0                xTaskGetCurrentTaskHandle
+                0x00009238                xTaskResumeAll
+                0x00009f5c                vTaskStartScheduler
+                0x00008d98                vTaskMissedYield
+                0x00008d04                runTimeStatISREntry
+                0x00009758                vTaskDelay
+                0x00008d78                vTaskSetTimeOutState
+ .text          0x00009ffc       0x6c ./FreeRTOS/hooks/hooks.o
+                0x0000a014                vApplicationMallocFailedHook
+                0x0000a034                vApplicationStackOverflowHook
+                0x00009ffc                vApplicationIdleHook
+ .text          0x0000a068      0x110 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+                0x0000a068                __udivsi3
+                0x0000a068                __aeabi_uidiv
+                0x0000a160                __aeabi_uidivmod
+ .text          0x0000a178      0x140 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+                0x0000a178                __aeabi_idiv
+                0x0000a178                __divsi3
+                0x0000a2a0                __aeabi_idivmod
+ .text          0x0000a2b8       0xcc /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+                0x0000a2b8                __umodsi3
+ .text          0x0000a384        0x4 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+                0x0000a384                __aeabi_ldiv0
+                0x0000a384                __div0
+                0x0000a384                __aeabi_idiv0
+ .text          0x0000a388      0x590 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
+                0x0000a388                __divdi3
+ .text          0x0000a918      0x520 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
+                0x0000a918                __udivdi3
+ .text          0x0000ae38        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
+ .text          0x0000ae38       0x18 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+                0x0000ae38                _atoi_r
+                0x0000ae44                atoi
+ .text          0x0000ae50       0x54 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+                0x0000ae50                _iprintf_r
+                0x0000ae74                iprintf
+ .text          0x0000aea4       0x28 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+                0x0000aeb8                malloc
+                0x0000aea4                free
+ .text          0x0000aecc      0x734 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+                0x0000aecc                _malloc_r
+ .text          0x0000b600       0xac /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+                0x0000b600                memcmp
+ .text          0x0000b6ac       0xfc /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+                0x0000b6ac                memcpy
+ .text          0x0000b7a8       0xd0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+                0x0000b7a8                memset
+ .text          0x0000b878        0x8 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+                0x0000b87c                __malloc_unlock
+                0x0000b878                __malloc_lock
+ .text          0x0000b880       0xcc /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+                0x0000b8ec                _siprintf_r
+                0x0000b880                siprintf
+ .text          0x0000b94c       0xa4 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
+                0x0000b94c                strcat
+ .text          0x0000b9f0       0xe8 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+                0x0000b9f0                strcmp
+ .text          0x0000bad8       0xb8 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+                0x0000bad8                strcpy
+ .text          0x0000bb90       0x9c /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+                0x0000bb90                strlen
+ .text          0x0000bc2c      0x10c /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+                0x0000bc2c                strncpy
+ .text          0x0000bd38       0x18 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+                0x0000bd38                strtok
+ .text          0x0000bd50       0xd0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+                0x0000be18                strtok_r
+                0x0000bd50                __strtok_r
+ .text          0x0000be20      0x1e0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+                0x0000bfd4                strtol
+                0x0000be20                _strtol_r
+ .text          0x0000c000      0xff0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+                0x0000cfc4                vfiprintf
+                0x0000c030                _vfiprintf_r
+ .text          0x0000cff0      0x144 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+                0x0000cff0                __swsetup_r
+ .text          0x0000d134        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .text          0x0000d134      0x1dc /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+                0x0000d2dc                fflush
+                0x0000d134                _fflush_r
+ .text          0x0000d310      0x2ac /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+                0x0000d310                __sinit
+                0x0000d4a0                __sfmoreglue
+                0x0000d488                _cleanup
+                0x0000d47c                _cleanup_r
+                0x0000d464                __fp_lock_all
+                0x0000d42c                __sfp_lock_acquire
+                0x0000d4e8                __sfp
+                0x0000d438                __sinit_lock_release
+                0x0000d44c                __fp_unlock_all
+                0x0000d430                __sfp_lock_release
+                0x0000d434                __sinit_lock_acquire
+ .text          0x0000d5bc      0x370 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+                0x0000d6b4                _free_r
+                0x0000d5bc                _malloc_trim_r
+ .text          0x0000d92c      0x46c /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+                0x0000d92c                __sfvwrite_r
+ .text          0x0000dd98      0x10c /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+                0x0000de20                _fwalk
+                0x0000dd98                _fwalk_reent
+ .text          0x0000dea4        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .text          0x0000dea4      0x164 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+                0x0000dea4                __smakebuf_r
+ .text          0x0000e008      0x118 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+                0x0000e008                memchr
+ .text          0x0000e120      0x144 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+                0x0000e120                memmove
+ .text          0x0000e264      0x510 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+                0x0000e264                _realloc_r
+ .text          0x0000e774       0xc0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+                0x0000e77c                __sseek
+                0x0000e804                __sread
+                0x0000e774                __sclose
+                0x0000e7b0                __swrite
+ .text          0x0000e834      0x118 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+                0x0000e834                _fclose_r
+                0x0000e938                fclose
+                0x0000e94c                __end_of_prog__ = .
+                0x0000e94c                __start_of_rodata__ = .
  *(.rodata)
- .rodata        0x0000e934       0x18 ./main.o
- .rodata        0x0000e94c       0x8d ./fat/ff.o
- *fill*         0x0000e9d9        0x1 00
- .rodata        0x0000e9da      0x4c0 ./fat/option/ccsbcs.o
- .rodata        0x0000ee9a      0xfe0 ./drivers/sta013.o
-                0x0000eeca                STA013_UpdateData
-                0x0000ee9a                MP3_Bitrates
-                0x0000eeba                MP3_SamplingFrequencies
- .rodata        0x0000fe7a        0x7 ./General/userInterface.o
- .rodata        0x0000fe81       0x14 ./FreeRTOS/tasks.o
- .rodata        0x0000fe95      0x100 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
-                0x0000fe95                __clz_tab
- .rodata        0x0000ff95       0x20 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
- .rodata        0x0000ffb5      0x101 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
-                0x0000ffb5                _ctype_
- *fill*         0x000100b6        0x2 00
- .rodata        0x000100b8        0x4 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
-                0x000100b8                _global_impure_ptr
+ .rodata        0x0000e94c       0x1d ./main.o
+ .rodata        0x0000e969       0x8d ./fat/ff.o
+ .rodata        0x0000e9f6      0x4c0 ./fat/option/ccsbcs.o
+ .rodata        0x0000eeb6      0xfe0 ./drivers/sta013.o
+                0x0000eee6                STA013_UpdateData
+                0x0000eeb6                MP3_Bitrates
+                0x0000eed6                MP3_SamplingFrequencies
+ .rodata        0x0000fe96        0x7 ./General/userInterface.o
+ .rodata        0x0000fe9d       0x14 ./FreeRTOS/tasks.o
+ .rodata        0x0000feb1      0x100 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
+                0x0000feb1                __clz_tab
+ .rodata        0x0000ffb1       0x20 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .rodata        0x0000ffd1      0x101 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+                0x0000ffd1                _ctype_
+ *fill*         0x000100d2        0x2 00
+ .rodata        0x000100d4        0x4 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+                0x000100d4                _global_impure_ptr
  *(.rodata*)
  .rodata.str1.1
-                0x000100bc      0x21d ./main.o
+                0x000100d8      0x27d ./main.o
  .rodata.str1.1
-                0x000102d9       0x10 ./fat/ff.o
+                0x00010355       0x10 ./fat/ff.o
  .rodata.str1.1
-                0x000102e9       0x7d ./System/cpu.o
+                0x00010365       0x7d ./System/cpu.o
                                  0x9f (size before relaxing)
  .rodata.str1.1
-                0x00010366      0x214 ./System/crash.o
+                0x000103e2      0x214 ./System/crash.o
  .rodata.str1.1
-                0x0001057a       0x14 ./System/syscalls.o
+                0x000105f6       0x14 ./System/syscalls.o
  .rodata.str1.1
-                0x0001058e      0x601 ./General/userInterface.o
+                0x0001060a      0x5e9 ./General/userInterface.o
                                 0x637 (size before relaxing)
  .rodata.str1.1
-                0x00010b8f       0x4c ./FreeRTOS/tasks.o
+                0x00010bf3       0x4c ./FreeRTOS/tasks.o
  .rodata.str1.1
-                0x00010bdb       0x8d ./FreeRTOS/hooks/hooks.o
+                0x00010c3f       0x8d ./FreeRTOS/hooks/hooks.o
  .rodata.str1.4
-                0x00010c68       0x4a /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+                0x00010ccc       0x4a /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
                                  0x4c (size before relaxing)
- *fill*         0x00010cb2        0x2 00
+ *fill*         0x00010d16        0x2 00
  .rodata.str1.4
-                0x00010cb4        0x4 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
-                0x00010cb8                __end_of_rodata__ = .
-                0x00010cb8                __start_of_glue7__ = .
+                0x00010d18        0x4 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+                0x00010d1c                __end_of_rodata__ = .
+                0x00010d1c                __start_of_glue7__ = .
  *(.glue_7)
- .glue_7        0x00010cb8        0x0 ./Startup.o
- .glue_7        0x00010cb8        0x0 ./main.o
- .glue_7        0x00010cb8        0x0 ./fat/diskio.o
- .glue_7        0x00010cb8        0x0 ./fat/ff.o
- .glue_7        0x00010cb8        0x0 ./fat/rtc.o
- .glue_7        0x00010cb8        0x0 ./fat/option/ccsbcs.o
- .glue_7        0x00010cb8        0x0 ./fat/option/reentrant.o
- .glue_7        0x00010cb8        0x0 ./drivers/uart/uart0.o
- .glue_7        0x00010cb8        0x0 ./drivers/i2c.o
- .glue_7        0x00010cb8        0x0 ./drivers/pcm1774.o
- .glue_7        0x00010cb8        0x0 ./drivers/ssp_spi.o
- .glue_7        0x00010cb8        0x0 ./drivers/sta013.o
- .glue_7        0x00010cb8        0x0 ./System/cpu.o
- .glue_7        0x00010cb8        0x0 ./System/crash.o
- .glue_7        0x00010cb8        0x0 ./System/fiqISR.o
- .glue_7        0x00010cb8        0x0 ./System/rprintf.o
- .glue_7        0x00010cb8        0x0 ./System/syscalls.o
- .glue_7        0x00010cb8        0x0 ./System/watchdog.o
- .glue_7        0x00010cb8        0x0 ./General/userInterface.o
- .glue_7        0x00010cb8        0x0 ./FreeRTOS/croutine.o
- .glue_7        0x00010cb8        0x0 ./FreeRTOS/heap_3.o
- .glue_7        0x00010cb8        0x0 ./FreeRTOS/list.o
- .glue_7        0x00010cb8        0x0 ./FreeRTOS/port.o
- .glue_7        0x00010cb8        0x0 ./FreeRTOS/portISR.o
- .glue_7        0x00010cb8        0x0 ./FreeRTOS/queue.o
- .glue_7        0x00010cb8        0x0 ./FreeRTOS/tasks.o
- .glue_7        0x00010cb8        0x0 ./FreeRTOS/hooks/hooks.o
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
- .glue_7        0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+ .glue_7        0x00010d1c        0x0 ./Startup.o
+ .glue_7        0x00010d1c        0x0 ./main.o
+ .glue_7        0x00010d1c        0x0 ./fat/diskio.o
+ .glue_7        0x00010d1c        0x0 ./fat/ff.o
+ .glue_7        0x00010d1c        0x0 ./fat/rtc.o
+ .glue_7        0x00010d1c        0x0 ./fat/option/ccsbcs.o
+ .glue_7        0x00010d1c        0x0 ./fat/option/reentrant.o
+ .glue_7        0x00010d1c        0x0 ./drivers/uart/uart0.o
+ .glue_7        0x00010d1c        0x0 ./drivers/i2c.o
+ .glue_7        0x00010d1c        0x0 ./drivers/pcm1774.o
+ .glue_7        0x00010d1c        0x0 ./drivers/ssp_spi.o
+ .glue_7        0x00010d1c        0x0 ./drivers/sta013.o
+ .glue_7        0x00010d1c        0x0 ./System/cpu.o
+ .glue_7        0x00010d1c        0x0 ./System/crash.o
+ .glue_7        0x00010d1c        0x0 ./System/fiqISR.o
+ .glue_7        0x00010d1c        0x0 ./System/rprintf.o
+ .glue_7        0x00010d1c        0x0 ./System/syscalls.o
+ .glue_7        0x00010d1c        0x0 ./System/watchdog.o
+ .glue_7        0x00010d1c        0x0 ./General/userInterface.o
+ .glue_7        0x00010d1c        0x0 ./FreeRTOS/croutine.o
+ .glue_7        0x00010d1c        0x0 ./FreeRTOS/heap_3.o
+ .glue_7        0x00010d1c        0x0 ./FreeRTOS/list.o
+ .glue_7        0x00010d1c        0x0 ./FreeRTOS/port.o
+ .glue_7        0x00010d1c        0x0 ./FreeRTOS/portISR.o
+ .glue_7        0x00010d1c        0x0 ./FreeRTOS/queue.o
+ .glue_7        0x00010d1c        0x0 ./FreeRTOS/tasks.o
+ .glue_7        0x00010d1c        0x0 ./FreeRTOS/hooks/hooks.o
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .glue_7        0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
  *(.glue_7t)
- .glue_7t       0x00010cb8        0x0 ./Startup.o
- .glue_7t       0x00010cb8        0x0 ./main.o
- .glue_7t       0x00010cb8        0x0 ./fat/diskio.o
- .glue_7t       0x00010cb8        0x0 ./fat/ff.o
- .glue_7t       0x00010cb8        0x0 ./fat/rtc.o
- .glue_7t       0x00010cb8        0x0 ./fat/option/ccsbcs.o
- .glue_7t       0x00010cb8        0x0 ./fat/option/reentrant.o
- .glue_7t       0x00010cb8        0x0 ./drivers/uart/uart0.o
- .glue_7t       0x00010cb8        0x0 ./drivers/i2c.o
- .glue_7t       0x00010cb8        0x0 ./drivers/pcm1774.o
- .glue_7t       0x00010cb8        0x0 ./drivers/ssp_spi.o
- .glue_7t       0x00010cb8        0x0 ./drivers/sta013.o
- .glue_7t       0x00010cb8        0x0 ./System/cpu.o
- .glue_7t       0x00010cb8        0x0 ./System/crash.o
- .glue_7t       0x00010cb8        0x0 ./System/fiqISR.o
- .glue_7t       0x00010cb8        0x0 ./System/rprintf.o
- .glue_7t       0x00010cb8        0x0 ./System/syscalls.o
- .glue_7t       0x00010cb8        0x0 ./System/watchdog.o
- .glue_7t       0x00010cb8        0x0 ./General/userInterface.o
- .glue_7t       0x00010cb8        0x0 ./FreeRTOS/croutine.o
- .glue_7t       0x00010cb8        0x0 ./FreeRTOS/heap_3.o
- .glue_7t       0x00010cb8        0x0 ./FreeRTOS/list.o
- .glue_7t       0x00010cb8        0x0 ./FreeRTOS/port.o
- .glue_7t       0x00010cb8        0x0 ./FreeRTOS/portISR.o
- .glue_7t       0x00010cb8        0x0 ./FreeRTOS/queue.o
- .glue_7t       0x00010cb8        0x0 ./FreeRTOS/tasks.o
- .glue_7t       0x00010cb8        0x0 ./FreeRTOS/hooks/hooks.o
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
- .glue_7t       0x00010cb8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
-                0x00010cb8                __end_of_glue7__ = .
-                0x00010cb8                __end_of_text__ = .
+ .glue_7t       0x00010d1c        0x0 ./Startup.o
+ .glue_7t       0x00010d1c        0x0 ./main.o
+ .glue_7t       0x00010d1c        0x0 ./fat/diskio.o
+ .glue_7t       0x00010d1c        0x0 ./fat/ff.o
+ .glue_7t       0x00010d1c        0x0 ./fat/rtc.o
+ .glue_7t       0x00010d1c        0x0 ./fat/option/ccsbcs.o
+ .glue_7t       0x00010d1c        0x0 ./fat/option/reentrant.o
+ .glue_7t       0x00010d1c        0x0 ./drivers/uart/uart0.o
+ .glue_7t       0x00010d1c        0x0 ./drivers/i2c.o
+ .glue_7t       0x00010d1c        0x0 ./drivers/pcm1774.o
+ .glue_7t       0x00010d1c        0x0 ./drivers/ssp_spi.o
+ .glue_7t       0x00010d1c        0x0 ./drivers/sta013.o
+ .glue_7t       0x00010d1c        0x0 ./System/cpu.o
+ .glue_7t       0x00010d1c        0x0 ./System/crash.o
+ .glue_7t       0x00010d1c        0x0 ./System/fiqISR.o
+ .glue_7t       0x00010d1c        0x0 ./System/rprintf.o
+ .glue_7t       0x00010d1c        0x0 ./System/syscalls.o
+ .glue_7t       0x00010d1c        0x0 ./System/watchdog.o
+ .glue_7t       0x00010d1c        0x0 ./General/userInterface.o
+ .glue_7t       0x00010d1c        0x0 ./FreeRTOS/croutine.o
+ .glue_7t       0x00010d1c        0x0 ./FreeRTOS/heap_3.o
+ .glue_7t       0x00010d1c        0x0 ./FreeRTOS/list.o
+ .glue_7t       0x00010d1c        0x0 ./FreeRTOS/port.o
+ .glue_7t       0x00010d1c        0x0 ./FreeRTOS/portISR.o
+ .glue_7t       0x00010d1c        0x0 ./FreeRTOS/queue.o
+ .glue_7t       0x00010d1c        0x0 ./FreeRTOS/tasks.o
+ .glue_7t       0x00010d1c        0x0 ./FreeRTOS/hooks/hooks.o
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .glue_7t       0x00010d1c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+                0x00010d1c                __end_of_glue7__ = .
+                0x00010d1c                __end_of_text__ = .
 
-.intvects       0x40000000       0x40 load address 0x00010cb8
+.intvects       0x40000000       0x40 load address 0x00010d1c
                 0x40000000                __intvects_beg__ = .
-                0x00010cb8                __intvects_beg_src__ = __end_of_text__
+                0x00010d1c                __intvects_beg_src__ = __end_of_text__
  *(.intvects)
  .intvects      0x40000000       0x40 ./Startup.o
                 0x40000000                __intvects
                 0x40000040                __intvects_end__ = .
-                0x00010cf8                __end_of_intvects__ = (__end_of_text__ + (__intvects_end__ - __intvects_beg__))
+                0x00010d5c                __end_of_intvects__ = (__end_of_text__ + (__intvects_end__ - __intvects_beg__))
 
-.vfp11_veneer   0x00010cf8        0x0 load address 0x40000040
- .vfp11_veneer  0x00010cf8        0x0 ./Startup.o
- .vfp11_veneer  0x00010cf8        0x0 ./main.o
- .vfp11_veneer  0x00010cf8        0x0 ./fat/diskio.o
- .vfp11_veneer  0x00010cf8        0x0 ./fat/ff.o
- .vfp11_veneer  0x00010cf8        0x0 ./fat/rtc.o
- .vfp11_veneer  0x00010cf8        0x0 ./fat/option/ccsbcs.o
- .vfp11_veneer  0x00010cf8        0x0 ./fat/option/reentrant.o
- .vfp11_veneer  0x00010cf8        0x0 ./drivers/uart/uart0.o
- .vfp11_veneer  0x00010cf8        0x0 ./drivers/i2c.o
- .vfp11_veneer  0x00010cf8        0x0 ./drivers/pcm1774.o
- .vfp11_veneer  0x00010cf8        0x0 ./drivers/ssp_spi.o
- .vfp11_veneer  0x00010cf8        0x0 ./drivers/sta013.o
- .vfp11_veneer  0x00010cf8        0x0 ./System/cpu.o
- .vfp11_veneer  0x00010cf8        0x0 ./System/crash.o
- .vfp11_veneer  0x00010cf8        0x0 ./System/fiqISR.o
- .vfp11_veneer  0x00010cf8        0x0 ./System/rprintf.o
- .vfp11_veneer  0x00010cf8        0x0 ./System/syscalls.o
- .vfp11_veneer  0x00010cf8        0x0 ./System/watchdog.o
- .vfp11_veneer  0x00010cf8        0x0 ./General/userInterface.o
- .vfp11_veneer  0x00010cf8        0x0 ./FreeRTOS/croutine.o
- .vfp11_veneer  0x00010cf8        0x0 ./FreeRTOS/heap_3.o
- .vfp11_veneer  0x00010cf8        0x0 ./FreeRTOS/list.o
- .vfp11_veneer  0x00010cf8        0x0 ./FreeRTOS/port.o
- .vfp11_veneer  0x00010cf8        0x0 ./FreeRTOS/portISR.o
- .vfp11_veneer  0x00010cf8        0x0 ./FreeRTOS/queue.o
- .vfp11_veneer  0x00010cf8        0x0 ./FreeRTOS/tasks.o
- .vfp11_veneer  0x00010cf8        0x0 ./FreeRTOS/hooks/hooks.o
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
- .vfp11_veneer  0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+.vfp11_veneer   0x00010d5c        0x0 load address 0x40000040
+ .vfp11_veneer  0x00010d5c        0x0 ./Startup.o
+ .vfp11_veneer  0x00010d5c        0x0 ./main.o
+ .vfp11_veneer  0x00010d5c        0x0 ./fat/diskio.o
+ .vfp11_veneer  0x00010d5c        0x0 ./fat/ff.o
+ .vfp11_veneer  0x00010d5c        0x0 ./fat/rtc.o
+ .vfp11_veneer  0x00010d5c        0x0 ./fat/option/ccsbcs.o
+ .vfp11_veneer  0x00010d5c        0x0 ./fat/option/reentrant.o
+ .vfp11_veneer  0x00010d5c        0x0 ./drivers/uart/uart0.o
+ .vfp11_veneer  0x00010d5c        0x0 ./drivers/i2c.o
+ .vfp11_veneer  0x00010d5c        0x0 ./drivers/pcm1774.o
+ .vfp11_veneer  0x00010d5c        0x0 ./drivers/ssp_spi.o
+ .vfp11_veneer  0x00010d5c        0x0 ./drivers/sta013.o
+ .vfp11_veneer  0x00010d5c        0x0 ./System/cpu.o
+ .vfp11_veneer  0x00010d5c        0x0 ./System/crash.o
+ .vfp11_veneer  0x00010d5c        0x0 ./System/fiqISR.o
+ .vfp11_veneer  0x00010d5c        0x0 ./System/rprintf.o
+ .vfp11_veneer  0x00010d5c        0x0 ./System/syscalls.o
+ .vfp11_veneer  0x00010d5c        0x0 ./System/watchdog.o
+ .vfp11_veneer  0x00010d5c        0x0 ./General/userInterface.o
+ .vfp11_veneer  0x00010d5c        0x0 ./FreeRTOS/croutine.o
+ .vfp11_veneer  0x00010d5c        0x0 ./FreeRTOS/heap_3.o
+ .vfp11_veneer  0x00010d5c        0x0 ./FreeRTOS/list.o
+ .vfp11_veneer  0x00010d5c        0x0 ./FreeRTOS/port.o
+ .vfp11_veneer  0x00010d5c        0x0 ./FreeRTOS/portISR.o
+ .vfp11_veneer  0x00010d5c        0x0 ./FreeRTOS/queue.o
+ .vfp11_veneer  0x00010d5c        0x0 ./FreeRTOS/tasks.o
+ .vfp11_veneer  0x00010d5c        0x0 ./FreeRTOS/hooks/hooks.o
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .vfp11_veneer  0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
 
-.v4_bx          0x00010cf8        0x0 load address 0x40000040
- .v4_bx         0x00010cf8        0x0 ./Startup.o
- .v4_bx         0x00010cf8        0x0 ./main.o
- .v4_bx         0x00010cf8        0x0 ./fat/diskio.o
- .v4_bx         0x00010cf8        0x0 ./fat/ff.o
- .v4_bx         0x00010cf8        0x0 ./fat/rtc.o
- .v4_bx         0x00010cf8        0x0 ./fat/option/ccsbcs.o
- .v4_bx         0x00010cf8        0x0 ./fat/option/reentrant.o
- .v4_bx         0x00010cf8        0x0 ./drivers/uart/uart0.o
- .v4_bx         0x00010cf8        0x0 ./drivers/i2c.o
- .v4_bx         0x00010cf8        0x0 ./drivers/pcm1774.o
- .v4_bx         0x00010cf8        0x0 ./drivers/ssp_spi.o
- .v4_bx         0x00010cf8        0x0 ./drivers/sta013.o
- .v4_bx         0x00010cf8        0x0 ./System/cpu.o
- .v4_bx         0x00010cf8        0x0 ./System/crash.o
- .v4_bx         0x00010cf8        0x0 ./System/fiqISR.o
- .v4_bx         0x00010cf8        0x0 ./System/rprintf.o
- .v4_bx         0x00010cf8        0x0 ./System/syscalls.o
- .v4_bx         0x00010cf8        0x0 ./System/watchdog.o
- .v4_bx         0x00010cf8        0x0 ./General/userInterface.o
- .v4_bx         0x00010cf8        0x0 ./FreeRTOS/croutine.o
- .v4_bx         0x00010cf8        0x0 ./FreeRTOS/heap_3.o
- .v4_bx         0x00010cf8        0x0 ./FreeRTOS/list.o
- .v4_bx         0x00010cf8        0x0 ./FreeRTOS/port.o
- .v4_bx         0x00010cf8        0x0 ./FreeRTOS/portISR.o
- .v4_bx         0x00010cf8        0x0 ./FreeRTOS/queue.o
- .v4_bx         0x00010cf8        0x0 ./FreeRTOS/tasks.o
- .v4_bx         0x00010cf8        0x0 ./FreeRTOS/hooks/hooks.o
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
- .v4_bx         0x00010cf8        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+.v4_bx          0x00010d5c        0x0 load address 0x40000040
+ .v4_bx         0x00010d5c        0x0 ./Startup.o
+ .v4_bx         0x00010d5c        0x0 ./main.o
+ .v4_bx         0x00010d5c        0x0 ./fat/diskio.o
+ .v4_bx         0x00010d5c        0x0 ./fat/ff.o
+ .v4_bx         0x00010d5c        0x0 ./fat/rtc.o
+ .v4_bx         0x00010d5c        0x0 ./fat/option/ccsbcs.o
+ .v4_bx         0x00010d5c        0x0 ./fat/option/reentrant.o
+ .v4_bx         0x00010d5c        0x0 ./drivers/uart/uart0.o
+ .v4_bx         0x00010d5c        0x0 ./drivers/i2c.o
+ .v4_bx         0x00010d5c        0x0 ./drivers/pcm1774.o
+ .v4_bx         0x00010d5c        0x0 ./drivers/ssp_spi.o
+ .v4_bx         0x00010d5c        0x0 ./drivers/sta013.o
+ .v4_bx         0x00010d5c        0x0 ./System/cpu.o
+ .v4_bx         0x00010d5c        0x0 ./System/crash.o
+ .v4_bx         0x00010d5c        0x0 ./System/fiqISR.o
+ .v4_bx         0x00010d5c        0x0 ./System/rprintf.o
+ .v4_bx         0x00010d5c        0x0 ./System/syscalls.o
+ .v4_bx         0x00010d5c        0x0 ./System/watchdog.o
+ .v4_bx         0x00010d5c        0x0 ./General/userInterface.o
+ .v4_bx         0x00010d5c        0x0 ./FreeRTOS/croutine.o
+ .v4_bx         0x00010d5c        0x0 ./FreeRTOS/heap_3.o
+ .v4_bx         0x00010d5c        0x0 ./FreeRTOS/list.o
+ .v4_bx         0x00010d5c        0x0 ./FreeRTOS/port.o
+ .v4_bx         0x00010d5c        0x0 ./FreeRTOS/portISR.o
+ .v4_bx         0x00010d5c        0x0 ./FreeRTOS/queue.o
+ .v4_bx         0x00010d5c        0x0 ./FreeRTOS/tasks.o
+ .v4_bx         0x00010d5c        0x0 ./FreeRTOS/hooks/hooks.o
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .v4_bx         0x00010d5c        0x0 /cygdrive/c/Eclipse/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
 
 .protected      0x40000040       0x78
                 0x40000040                __protected_beg__ = .
@@ -837,9 +836,9 @@ prog            0x00001168     0xfb50
                 0x40000040                __abort_dat
                 0x400000b8                __protected_end__ = .
 
-.data           0x400000b8      0x85c load address 0x00010cf8
+.data           0x400000b8      0x85c load address 0x00010d5c
                 0x400000b8                __data_beg__ = .
-                0x00010cf8                __data_beg_src__ = __end_of_intvects__
+                0x00010d5c                __data_beg_src__ = __end_of_intvects__
  *(.data)
  .data          0x400000b8       0x3c ./Startup.o
                 0x400000c8                __stack_beg_fiq

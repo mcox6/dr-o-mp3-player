@@ -97,11 +97,11 @@
  107              		.ident	"GCC: (GNU) 4.3.2"
 DEFINED SYMBOLS
                             *ABS*:00000000 list.c
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccXsEPxT.s:6      .text:00000000 vListInitialise
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccXsEPxT.s:10     .text:00000000 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccXsEPxT.s:23     .text:00000024 vListInitialiseItem
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccXsEPxT.s:34     .text:00000030 vListInsertEnd
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccXsEPxT.s:55     .text:00000064 vListInsert
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccXsEPxT.s:87     .text:000000b8 vListRemove
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccHOEyLW.s:6      .text:00000000 vListInitialise
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccHOEyLW.s:10     .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccHOEyLW.s:23     .text:00000024 vListInitialiseItem
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccHOEyLW.s:34     .text:00000030 vListInsertEnd
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccHOEyLW.s:55     .text:00000064 vListInsert
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccHOEyLW.s:87     .text:000000b8 vListRemove
 
 NO UNDEFINED SYMBOLS

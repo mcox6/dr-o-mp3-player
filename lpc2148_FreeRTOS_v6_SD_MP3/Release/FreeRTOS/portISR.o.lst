@@ -217,23 +217,23 @@
  229              		.ident	"GCC: (GNU) 4.3.2"
 DEFINED SYMBOLS
                             *ABS*:00000000 portISR.c
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccuBFtCB.s:6      .text:00000000 vPortISRStartFirstTask
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccuBFtCB.s:11     .text:00000000 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccuBFtCB.s:227    .data:00000000 ulCriticalNesting
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccuBFtCB.s:33     .text:00000044 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccuBFtCB.s:39     .text:0000004c vPortYieldProcessor
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccuBFtCB.s:45     .text:0000004c $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccuBFtCB.s:96     .text:000000e8 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccuBFtCB.s:102    .text:000000f0 vTickISR
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccuBFtCB.s:107    .text:000000f0 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccuBFtCB.s:164    .text:000001a4 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccuBFtCB.s:171    .text:000001b0 vPortEnterCritical
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccuBFtCB.s:176    .text:000001b0 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccuBFtCB.s:190    .text:000001d8 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccuBFtCB.s:195    .text:000001dc vPortExitCritical
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccuBFtCB.s:199    .text:000001dc $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccuBFtCB.s:220    .text:0000021c $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccuBFtCB.s:228    .data:00000000 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccOtxzEx.s:6      .text:00000000 vPortISRStartFirstTask
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccOtxzEx.s:11     .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccOtxzEx.s:227    .data:00000000 ulCriticalNesting
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccOtxzEx.s:33     .text:00000044 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccOtxzEx.s:39     .text:0000004c vPortYieldProcessor
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccOtxzEx.s:45     .text:0000004c $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccOtxzEx.s:96     .text:000000e8 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccOtxzEx.s:102    .text:000000f0 vTickISR
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccOtxzEx.s:107    .text:000000f0 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccOtxzEx.s:164    .text:000001a4 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccOtxzEx.s:171    .text:000001b0 vPortEnterCritical
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccOtxzEx.s:176    .text:000001b0 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccOtxzEx.s:190    .text:000001d8 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccOtxzEx.s:195    .text:000001dc vPortExitCritical
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccOtxzEx.s:199    .text:000001dc $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccOtxzEx.s:220    .text:0000021c $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccOtxzEx.s:228    .data:00000000 $d
 
 UNDEFINED SYMBOLS
 pxCurrentTCB

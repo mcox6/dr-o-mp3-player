@@ -8,10 +8,12 @@
 #include "./System/rprintf.h"			// Reduced printf.  STDIO uses lot of FLASH space & Stack space
 #include "./general/userInterface.h"	// User interface functions to interact through UART
 
-#include "./drivers/i2c.h"
+//#include "./drivers/i2c.h"
 #include <stdbool.h>
 
 #include "drivers/pcm1774.h"
+
+
 
 //GLOBALS
 
@@ -35,14 +37,21 @@
 #include "./drivers/ssp_spi.h"
 
 void buttonReceiver(void *p);
-void buttonReceiver(void *p);
-void i2cTimer(void *pvParameters);
+void buttonHandler(void *pvParameters);
 
 //Additions: Gets rid of "magic" port expander register numbers
 #define SWREG  0x01
 #define LEDREG 0x02
 
 int paused = 0; // controls pausing
+
+#define allowVolCntrl 0
+
+#if allowVolCntrls
+int outputVol = 50;
+pcm1774_OutputVolume(outputVol, outputVol);
+pcm1774_DigitalVolume(vol, vo1);
+#endif
 
 void diskTimer()
 {
@@ -98,12 +107,14 @@ void mp3player(void *pvParameters)
 						rprintf("successful read\n");
 						if(xSemaphoreTake(osHandles->lock.SPI, 1000))
 						{
+							rprintf("***** Playing mp3\ *****\n");
 							SELECT_MP3_CS();
 
 							int i = 0;
 							while( i < numOfReadBytes)
 							{
-								if( STA013_NEEDS_DATA() && !paused)
+								//if( STA013_NEEDS_DATA() && !paused)
+								if( STA013_NEEDS_DATA())
 								{
 
 									rxTxByteSSPSPI(buffer[i++]);
@@ -131,12 +142,14 @@ void mp3player(void *pvParameters)
 				rprintf("Couldn't open file!\n");
 
 			}
+#if 0
 			if(xQueueReceive(osHandles->queue.command, &command, portMAX_DELAY))
 			{
 				f_close(&fileHandle);
 			}
-		//	readFile(&myFile, buff, 4096, &bytesRead);
-		//	int i = 0;
+#endif
+			//	readFile(&myFile, buff, 4096, &bytesRead);
+			//	int i = 0;
 
 		}
 	}
@@ -183,27 +196,28 @@ int main (void)
 	rprintf_devopen(uart0PutChar);
 
 	System.lock.SPI = xSemaphoreCreateMutex();
-	System.lock.i2c = xSemaphoreCreateMutex();
+	//System.lock.i2c = xSemaphoreCreateMutex();
 	System.queue.songname = xQueueCreate(1,15);
+	System.queue.command = xQueueCreate(1,1);
 
 	//xTaskCreate( sender,   (signed char*) "sender", 1024, &System, PRIORITY_HIGH, &System.task.sender );
 	rprintf("made it here\n");
 	// Use the WATERMARK command to determine optimal Stack size of each task (set to high, then slowly decrease)
 	// Priorities should be set according to response required
 	if (
-		// User Interaction set to lowest priority.
-		pdPASS != xTaskCreate( uartUI, (signed char*)"Uart UI", STACK_BYTES(1024*6), &System, PRIORITY_LOW,  &System.task.userInterface )
-		||
-		// diskTimer should always run, and it is a short function, so assign CRITIAL priority.
-		pdPASS != xTaskCreate( diskTimer, (signed char*)"Dtimer", STACK_BYTES(256), &System, PRIORITY_CRITICAL,  &System.task.diskTimer )
-		||
-		pdPASS != xTaskCreate( mp3player, (signed char*)"mp3player", STACK_BYTES(4*1024), &System, PRIORITY_HIGH,  &System.task.mp3player )
-		||
-		pdPASS != xTaskCreate( i2cTimer, (signed char*)"i2cTimer", STACK_BYTES(1024*2), &System, PRIORITY_LOW,  &System.task.i2cTimer )
-//		||
-//		pdPASS != xTaskCreate( buttonReceiver, (signed char*)"buttonReceiver", STACK_BYTES(1024*2), &System, PRIORITY_LOW,  &System.task.receiver )
+			// User Interaction set to lowest priority.
+			pdPASS != xTaskCreate( uartUI, (signed char*)"Uart UI", STACK_BYTES(1024*6), &System, PRIORITY_LOW,  &System.task.userInterface )
+			||
+			// diskTimer should always run, and it is a short function, so assign CRITIAL priority.
+			pdPASS != xTaskCreate( diskTimer, (signed char*)"Dtimer", STACK_BYTES(256), &System, PRIORITY_CRITICAL,  &System.task.diskTimer )
+			||
+			pdPASS != xTaskCreate( mp3player, (signed char*)"mp3player", STACK_BYTES(4*1024), &System, PRIORITY_HIGH,  &System.task.mp3player )
+			||
+			pdPASS != xTaskCreate( buttonHandler, (signed char*)"buttonHandler", STACK_BYTES(1024*2), &System, PRIORITY_LOW,  &System.task.buttonHandler )
+			//		||
+			//		pdPASS != xTaskCreate( buttonReceiver, (signed char*)"buttonReceiver", STACK_BYTES(1024*2), &System, PRIORITY_LOW,  &System.task.receiver )
 
-		)
+	)
 	{
 		rprintf("ERROR:  OUT OF MEMORY: Check OS Stack Size or task stack size.\n");
 	}
@@ -217,7 +231,7 @@ int main (void)
 }
 
 // button presses are detected and handled here.
-void i2cTimer(void *pvParameters)
+void buttonHandler(void *pvParameters)
 {
 	OSHANDLES *osHandles = (OSHANDLES*)pvParameters;
 
@@ -226,9 +240,6 @@ void i2cTimer(void *pvParameters)
 	int index = 0;
 	char send = 0;
 
-	int outputVol = 50;
-	//pcm1774_OutputVolume(outputVol, outputVol);
-	//pcm1774_DigitalVolume(vol, vo1);
 
 	//Additions
 	//i2cInit(handles);
@@ -249,52 +260,51 @@ void i2cTimer(void *pvParameters)
 	{
 		vTaskDelay(200);
 		returnData = i2cReadDeviceRegister(0x40, SWREG);
-		i2cWriteDeviceRegister(0x40, LEDREG, returnData);
+	//	i2cWriteDeviceRegister(0x40, LEDREG, returnData);
 		if (returnData != 0x00)
 		{
 			switch(returnData)
 			{
 			case button8:
-						//VOLUME DOWN
+				//VOLUME DOWN
 				rprintf("button 8 pressed\n");
+#if allowVolCntrls
 				if(outputVol>0)
 				{
-				outputVol--;
-				pcm1774_OutputVolume(outputVol, outputVol);
-				//pcm1774_DigitalVolume(vol, vo1);
-				}
+					outputVol--;
+					pcm1774_OutputVolume(outputVol, outputVol);
+					//pcm1774_DigitalVolume(vol, vo1);
 
-						break;
+				}
+#endif
+				break;
 			case button7:
 				rprintf("button 7 pressed\n");
-						//VOLUME UP
+				//VOLUME UP
+#if allowVolCntrls
 				if(outputVol<100)
 				{
 					pcm1774_OutputVolume(outputVol, outputVol);
-									//pcm1774_DigitalVolume(vol, vo1);
+					//pcm1774_DigitalVolume(vol, vo1);
 				}
-
-						break;
+#endif
+				break;
 
 
 			case button6:	// PLAY
 
 				rprintf("button 6 pressed\n");
-					rprintf("    %s(): Sending song-name to Queue ...\n", __FUNCTION__);
-					if(xQueueSend(osHandles->queue.songname, &testSong[0], 100)) {
-						rprintf("    Song Sent!\n");
-					}
-						break;
+
+				break;
 
 			case button5: // PAUSE
-						rprintf("button 5 pressed\n");
-						paused = paused ^ 1;
-						rprintf("paused = %d\n", paused);
-						break;
+				rprintf("button 5 pressed\n");
+
+				break;
 			case button4:
 				rprintf("button4\n");
 				// something here causes a crash
-						/*send = 'S';
+				/*send = 'S';
 						if(xQueueSend(osHandles->queue.command, &send, 100))
 						{
 							rprintf("Sent Skip!\n");
@@ -313,41 +323,50 @@ void i2cTimer(void *pvParameters)
 						{
 							rprintf("Timeout during Send!!!\n");
 						}*/
-						break;
+				break;
 			case button3:
 				rprintf("button3\n");
-						//Pause here
-						break;
+				//Pause here
+				paused = paused ^ 1;
+				rprintf("paused = %d\n", paused);
+				break;
 			case button2:
-					rprintf("button 2\n");
-						//Play here
-						break;
+				rprintf("button 2\n");
+				//Play here
+				rprintf("    %s(): Sending song-name to Queue ...\n", __FUNCTION__);
+				if(xQueueSend(osHandles->queue.songname, &testSong[0], 100)) {
+					rprintf("    Song Sent!\n");
+				}
+				break;
 			case button1:
-					rprintf("button 1\n");
-					// something down here causes a crash
-					/*	send = 'P';
-						if(xQueueSend(osHandles->queue.command, &send, 100))
-						{
-							rprintf("Sent Previous!\n");
-						}
-						else
-						{
-							rprintf("Timeout during Send!!!\n");
-						}
-						vTaskDelay(50);
-						retGlobals(send, songName);
-						if(xQueueSend(osHandles->queue.songname, &songName, 100))
-						{
-							rprintf("Sent Previous songname!\n");
-						}
-						else
-						{
-							rprintf("Timeout during Send!!!\n");
-						}*/
-						break;
+				rprintf("button 1\n");
+
+				send = 'P';
+
+				if(xQueueSend(osHandles->queue.command, &send, 100))
+				{
+					rprintf("Sent Previous!\n");
+				}
+				else
+				{
+					rprintf("Timeout during Send!!!\n");
+				}
+
+				vTaskDelay(50);
+				retGlobals(send, songName);
+
+				if(xQueueSend(osHandles->queue.songname, &songName, 100))
+				{
+					rprintf("Sent Previous songname!\n");
+				}
+				else
+				{
+					rprintf("Timeout during Send!!!\n");
+				}
+				break;
 			default:
-						rprintf("One button at a time, please...\n");
-						break;
+				rprintf("One button at a time, please...\n");
+				break;
 			}
 		}
 	}
@@ -356,20 +375,20 @@ void i2cTimer(void *pvParameters)
 #if 0
 void buttonReceiver(void *p)
 {
-    // Cast the Handle from void pointer to OS_HANDLES pointer
+	// Cast the Handle from void pointer to OS_HANDLES pointer
 	OSHANDLES *osHandles = (OSHANDLES*)p;
 
 
-    char operation;
-    for(;;)
-    {
-    	vTaskDelay(200);
-        if(xQueueReceive(handles->queue.pushButton, &pushButtonValue, portMAX_DELAY))
-        {
-            printf("%s(): Received push button value as: %i\n", MYNAME, pushButtonValue);
-        }
-        printf("------------------------------------------------------\n");
-    }
+	char operation;
+	for(;;)
+	{
+		vTaskDelay(200);
+		if(xQueueReceive(handles->queue.pushButton, &pushButtonValue, portMAX_DELAY))
+		{
+			printf("%s(): Received push button value as: %i\n", MYNAME, pushButtonValue);
+		}
+		printf("------------------------------------------------------\n");
+	}
 }
 #endif
 

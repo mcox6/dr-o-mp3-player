@@ -1089,26 +1089,26 @@
  913              		.ident	"GCC: (GNU) 4.3.2"
 DEFINED SYMBOLS
                             *ABS*:00000000 userInterface.c
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccO4Rmos.s:6      .text:00000000 retGlobals
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccO4Rmos.s:10     .text:00000000 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccO4Rmos.s:36     .text:00000058 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccM1krMy.s:6      .text:00000000 retGlobals
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccM1krMy.s:10     .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccM1krMy.s:36     .text:00000058 $d
                             *COM*:00000004 current
                             *COM*:00000004 lastFileIndex
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccO4Rmos.s:47     .text:00000060 printLine
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccO4Rmos.s:51     .text:00000060 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccO4Rmos.s:56     .text:00000068 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccO4Rmos.s:75     .text:0000006c getMP3Names
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccO4Rmos.s:78     .text:0000006c $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccO4Rmos.s:158    .text:00000190 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccM1krMy.s:47     .text:00000060 printLine
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccM1krMy.s:51     .text:00000060 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccM1krMy.s:56     .text:00000068 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccM1krMy.s:75     .text:0000006c getMP3Names
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccM1krMy.s:78     .text:0000006c $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccM1krMy.s:158    .text:00000190 $d
                             *COM*:00000078 array
                             *COM*:00000004 currentSong
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccO4Rmos.s:176    .text:000001b8 getUartLine
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccO4Rmos.s:179    .text:000001b8 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccO4Rmos.s:226    .text:00000258 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccO4Rmos.s:356    .text:0000025c uartUI
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccO4Rmos.s:359    .text:0000025c $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccO4Rmos.s:836    .text:00000944 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccO4Rmos.s:905    .rodata:00000000 __FUNCTION__.3335
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccM1krMy.s:176    .text:000001b8 getUartLine
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccM1krMy.s:179    .text:000001b8 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccM1krMy.s:226    .text:00000258 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccM1krMy.s:356    .text:0000025c uartUI
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccM1krMy.s:359    .text:0000025c $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccM1krMy.s:836    .text:00000944 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccM1krMy.s:905    .rodata:00000000 __FUNCTION__.3335
                             *COM*:00000004 nextSong
                             *COM*:00000004 prevSong
 
