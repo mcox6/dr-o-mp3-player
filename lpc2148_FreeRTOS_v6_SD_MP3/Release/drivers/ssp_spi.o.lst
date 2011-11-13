@@ -66,15 +66,15 @@
   72              		.ident	"GCC: (GNU) 4.3.2"
 DEFINED SYMBOLS
                             *ABS*:00000000 ssp_spi.c
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccz6thsX.s:6      .text:00000000 initialize_SSPSPI
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccz6thsX.s:10     .text:00000000 $a
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccz6thsX.s:28     .text:0000003c $d
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccz6thsX.s:34     .text:00000044 rxTxByteSSPSPI
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccz6thsX.s:38     .text:00000044 $a
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccz6thsX.s:53     .text:00000070 $d
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccz6thsX.s:58     .text:00000074 setSSPSPI_Divider
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccz6thsX.s:62     .text:00000074 $a
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccz6thsX.s:69     .text:00000084 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccp9wnwq.s:6      .text:00000000 initialize_SSPSPI
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccp9wnwq.s:10     .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccp9wnwq.s:28     .text:0000003c $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccp9wnwq.s:34     .text:00000044 rxTxByteSSPSPI
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccp9wnwq.s:38     .text:00000044 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccp9wnwq.s:53     .text:00000070 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccp9wnwq.s:58     .text:00000074 setSSPSPI_Divider
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccp9wnwq.s:62     .text:00000074 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccp9wnwq.s:69     .text:00000084 $d
                             *COM*:00000001 sspSpiDummyByte
 
 NO UNDEFINED SYMBOLS

@@ -208,15 +208,15 @@
  214              		.ident	"GCC: (GNU) 4.3.2"
 DEFINED SYMBOLS
                             *ABS*:00000000 rprintf.c
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccSJf0sc.s:6      .text:00000000 rprintf_devopen
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccSJf0sc.s:10     .text:00000000 $a
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccSJf0sc.s:16     .text:0000000c $d
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccSJf0sc.s:212    .bss:00000000 putcharfunc
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccSJf0sc.s:20     .text:00000010 rprintf_putCharSource
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccSJf0sc.s:23     .text:00000010 $a
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccSJf0sc.s:41     .text:00000048 $d
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccSJf0sc.s:49     .text:00000050 rprintf
-/cygdrive/c/Users/Michael/AppData/Local/Temp/ccSJf0sc.s:52     .text:00000050 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccV6VNti.s:6      .text:00000000 rprintf_devopen
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccV6VNti.s:10     .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccV6VNti.s:16     .text:0000000c $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccV6VNti.s:212    .bss:00000000 putcharfunc
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccV6VNti.s:20     .text:00000010 rprintf_putCharSource
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccV6VNti.s:23     .text:00000010 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccV6VNti.s:41     .text:00000048 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccV6VNti.s:49     .text:00000050 rprintf
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccV6VNti.s:52     .text:00000050 $a
                              .bss:00000000 $d
 
 UNDEFINED SYMBOLS

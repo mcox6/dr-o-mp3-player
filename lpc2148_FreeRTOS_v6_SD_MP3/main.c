@@ -72,8 +72,9 @@ void sender(void *p)
 }
 #endif
 
-void mp3(void *pvParameters)
+void mp3player(void *pvParameters)
 {
+	rprintf("mp3player()");
 	OSHANDLES *osHandles = (OSHANDLES*)pvParameters;
 
 	char songname[15];
@@ -82,18 +83,19 @@ void mp3(void *pvParameters)
 	{
 		if(xQueueReceive(osHandles->queue.songname, &songname[0], portMAX_DELAY))
 		{
-			rprintf("Song to play: %s\n", songname);
+			rprintf("SONG RECEIVED: %s\n", songname);
 			FIL fileHandle;
 			BYTE buffer[2048];
 
 			if(FR_OK == f_open(&fileHandle, songname, FA_OPEN_EXISTING | FA_READ))
 			{
-				rprintf("File opened, about to play:\n");
+				rprintf("File opened, about to play %s\n", songname);
 				int numOfReadBytes = sizeof(buffer);
 				while(numOfReadBytes == sizeof(buffer))
 				{
 					if(FR_OK == f_read(&fileHandle, buffer, sizeof(buffer), &numOfReadBytes))
 					{
+						rprintf("successful read\n");
 						if(xSemaphoreTake(osHandles->lock.SPI, 1000))
 						{
 							SELECT_MP3_CS();
@@ -195,7 +197,7 @@ int main (void)
 		// diskTimer should always run, and it is a short function, so assign CRITIAL priority.
 		pdPASS != xTaskCreate( diskTimer, (signed char*)"Dtimer", STACK_BYTES(256), &System, PRIORITY_CRITICAL,  &System.task.diskTimer )
 		||
-		pdPASS != xTaskCreate( mp3, (signed char*)"mp3", STACK_BYTES(4*1024), &System, PRIORITY_HIGH,  &System.task.diskTimer )
+		pdPASS != xTaskCreate( mp3player, (signed char*)"mp3player", STACK_BYTES(4*1024), &System, PRIORITY_HIGH,  &System.task.mp3player )
 		||
 		pdPASS != xTaskCreate( i2cTimer, (signed char*)"i2cTimer", STACK_BYTES(1024*2), &System, PRIORITY_LOW,  &System.task.i2cTimer )
 //		||
@@ -232,6 +234,16 @@ void i2cTimer(void *pvParameters)
 	//i2cInit(handles);
 	//initPE(handles);
 	//initialize_I2C0(400000);
+	char testSong[15] = "ESpark.mp3";
+
+#define button8 0x01
+#define button7 0x02
+#define button6 0x04
+#define button5 0x08
+#define button4 0x10
+#define button3 0x20
+#define button2 0x40
+#define button1 0x80
 
 	while(1)
 	{
@@ -242,8 +254,9 @@ void i2cTimer(void *pvParameters)
 		{
 			switch(returnData)
 			{
-			case 0x01:
+			case button8:
 						//VOLUME DOWN
+				rprintf("button 8 pressed\n");
 				if(outputVol>0)
 				{
 				outputVol--;
@@ -252,7 +265,8 @@ void i2cTimer(void *pvParameters)
 				}
 
 						break;
-			case 0x02:
+			case button7:
+				rprintf("button 7 pressed\n");
 						//VOLUME UP
 				if(outputVol<100)
 				{
@@ -262,18 +276,25 @@ void i2cTimer(void *pvParameters)
 
 						break;
 
-			case 0x03: // PAUSE
-						paused = paused ^ 1;
+
+			case button6:	// PLAY
+
+				rprintf("button 6 pressed\n");
+					rprintf("    %s(): Sending song-name to Queue ...\n", __FUNCTION__);
+					if(xQueueSend(osHandles->queue.songname, &testSong[0], 100)) {
+						rprintf("    Song Sent!\n");
+					}
 						break;
 
-			case 0x04:	// PLAY
-						//No function
+			case button5: // PAUSE
+						rprintf("button 5 pressed\n");
+						paused = paused ^ 1;
+						rprintf("paused = %d\n", paused);
 						break;
-			case 0x08:
-						//No function
-						break;
-			case 0x10:
-						send = 'S';
+			case button4:
+				rprintf("button4\n");
+				// something here causes a crash
+						/*send = 'S';
 						if(xQueueSend(osHandles->queue.command, &send, 100))
 						{
 							rprintf("Sent Skip!\n");
@@ -291,16 +312,20 @@ void i2cTimer(void *pvParameters)
 						else
 						{
 							rprintf("Timeout during Send!!!\n");
-						}
+						}*/
 						break;
-			case 0x20:
+			case button3:
+				rprintf("button3\n");
 						//Pause here
 						break;
-			case 0x40:
+			case button2:
+					rprintf("button 2\n");
 						//Play here
 						break;
-			case 0x80:
-						send = 'P';
+			case button1:
+					rprintf("button 1\n");
+					// something down here causes a crash
+					/*	send = 'P';
 						if(xQueueSend(osHandles->queue.command, &send, 100))
 						{
 							rprintf("Sent Previous!\n");
@@ -318,7 +343,7 @@ void i2cTimer(void *pvParameters)
 						else
 						{
 							rprintf("Timeout during Send!!!\n");
-						}
+						}*/
 						break;
 			default:
 						rprintf("One button at a time, please...\n");
