@@ -1,0 +1,494 @@
+   1              		.file	"crash.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	didSystemCrash
+   6              	didSystemCrash:
+   7              		@ args = 0, pretend = 0, frame = 0
+   8              		@ frame_needed = 0, uses_anonymous_args = 0
+   9              		@ link register save eliminated.
+  10 0000 2C309FE5 		ldr	r3, .L3
+  11 0004 0400D3E5 		ldrb	r0, [r3, #4]	@ zero_extendqisi2
+  12 0008 0520D3E5 		ldrb	r2, [r3, #5]	@ zero_extendqisi2
+  13 000c 0610D3E5 		ldrb	r1, [r3, #6]	@ zero_extendqisi2
+  14 0010 020480E1 		orr	r0, r0, r2, asl #8
+  15 0014 0730D3E5 		ldrb	r3, [r3, #7]	@ zero_extendqisi2
+  16 0018 010880E1 		orr	r0, r0, r1, asl #16
+  17 001c 030C80E1 		orr	r0, r0, r3, asl #24
+  18 0020 10309FE5 		ldr	r3, .L3+4
+  19 0024 030050E1 		cmp	r0, r3
+  20 0028 0000A013 		movne	r0, #0
+  21 002c 0100A003 		moveq	r0, #1
+  22 0030 1EFF2FE1 		bx	lr
+  23              	.L4:
+  24              		.align	2
+  25              	.L3:
+  26 0034 00000000 		.word	__abort_dat
+  27 0038 DEC0ADDE 		.word	-559038242
+  29              		.align	2
+  30              		.global	performUndefinedInstructionCrash
+  32              	performUndefinedInstructionCrash:
+  33              		@ args = 0, pretend = 0, frame = 0
+  34              		@ frame_needed = 0, uses_anonymous_args = 0
+  35              		@ link register save eliminated.
+  36              	@ 45 "../System/crash.c" 1
+  37 003c 10000006 		 .word 0x06000010
+  38              	@ 0 "" 2
+  39 0040 1EFF2FE1 		bx	lr
+  41              		.align	2
+  42              		.global	performPABORTCrash
+  44              	performPABORTCrash:
+  45              		@ args = 0, pretend = 0, frame = 0
+  46              		@ frame_needed = 0, uses_anonymous_args = 0
+  47              		@ link register save eliminated.
+  48              	@ 50 "../System/crash.c" 1
+  49 0044 0207A0E3 		 ldr r0, =0x00080000
+  50              	@ 0 "" 2
+  51              	@ 51 "../System/crash.c" 1
+  52 0048 00F0A0E1 		 mov pc, r0
+  53              	@ 0 "" 2
+  54 004c 1EFF2FE1 		bx	lr
+  56              		.align	2
+  57              		.global	performDABORTCrash
+  59              	performDABORTCrash:
+  60              		@ args = 0, pretend = 0, frame = 0
+  61              		@ frame_needed = 0, uses_anonymous_args = 0
+  62              		@ link register save eliminated.
+  63 0050 04309FE5 		ldr	r3, .L11
+  64 0054 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+  65 0058 1EFF2FE1 		bx	lr
+  66              	.L12:
+  67              		.align	2
+  68              	.L11:
+  69 005c 00800040 		.word	1073774592
+  71              		.align	2
+  72              		.global	clearCrashInfo
+  74              	clearCrashInfo:
+  75              		@ args = 0, pretend = 0, frame = 0
+  76              		@ frame_needed = 0, uses_anonymous_args = 0
+  77 0060 30402DE9 		stmfd	sp!, {r4, r5, lr}
+  78 0064 4C509FE5 		ldr	r5, .L15
+  79 0068 0930D5E5 		ldrb	r3, [r5, #9]	@ zero_extendqisi2
+  80 006c 0840D5E5 		ldrb	r4, [r5, #8]	@ zero_extendqisi2
+  81 0070 0A20D5E5 		ldrb	r2, [r5, #10]	@ zero_extendqisi2
+  82 0074 034484E1 		orr	r4, r4, r3, asl #8
+  83 0078 0B30D5E5 		ldrb	r3, [r5, #11]	@ zero_extendqisi2
+  84 007c 024884E1 		orr	r4, r4, r2, asl #16
+  85 0080 034C84E1 		orr	r4, r4, r3, asl #24
+  86 0084 0500A0E1 		mov	r0, r5
+  87 0088 0010A0E3 		mov	r1, #0
+  88 008c 7820A0E3 		mov	r2, #120
+  89 0090 FEFFFFEB 		bl	memset
+  90 0094 243CA0E1 		mov	r3, r4, lsr #24
+  91 0098 2424A0E1 		mov	r2, r4, lsr #8
+  92 009c 2418A0E1 		mov	r1, r4, lsr #16
+  93 00a0 0B30C5E5 		strb	r3, [r5, #11]
+  94 00a4 0920C5E5 		strb	r2, [r5, #9]
+  95 00a8 0A10C5E5 		strb	r1, [r5, #10]
+  96 00ac 0840C5E5 		strb	r4, [r5, #8]
+  97 00b0 0000A0E3 		mov	r0, #0
+  98 00b4 3080BDE8 		ldmfd	sp!, {r4, r5, pc}
+  99              	.L16:
+ 100              		.align	2
+ 101              	.L15:
+ 102 00b8 00000000 		.word	__abort_dat
+ 104              		.section	.rodata.str1.1,"aMS",%progbits,1
+ 105              	.LC0:
+ 106 0000 494E5641 		.ascii	"INVALID\000"
+ 106      4C494400 
+ 107              	.LC1:
+ 108 0008 4C494B45 		.ascii	"LIKELY\000"
+ 108      4C5900
+ 109              	.LC2:
+ 110 000f 0A526570 		.ascii	"\012Report Valid? :%s, sigil=0x%08X, count=%u\012\000"
+ 110      6F727420 
+ 110      56616C69 
+ 110      643F203A 
+ 110      25732C20 
+ 111              	.LC3:
+ 112 003b 554E4445 		.ascii	"UNDEFINED INSTRUCTION\000"
+ 112      46494E45 
+ 112      4420494E 
+ 112      53545255 
+ 112      4354494F 
+ 113              	.LC4:
+ 114 0051 50524546 		.ascii	"PREFETCH ABORT\000"
+ 114      45544348 
+ 114      2041424F 
+ 114      525400
+ 115              	.LC5:
+ 116 0060 756E6B6E 		.ascii	"unknown\000"
+ 116      6F776E00 
+ 117              	.LC6:
+ 118 0068 44415441 		.ascii	"DATA ABORT\000"
+ 118      2041424F 
+ 118      525400
+ 119              	.LC7:
+ 120 0073 41626F72 		.ascii	"Abort type: %s\012\000"
+ 120      74207479 
+ 120      70653A20 
+ 120      25730A00 
+ 121              	.LC8:
+ 122 0083 2A2A2050 		.ascii	"** PC=0x%08X, opcode=0x%08X **\012\000"
+ 122      433D3078 
+ 122      25303858 
+ 122      2C206F70 
+ 122      636F6465 
+ 123              	.LC9:
+ 124 00a3 2A2A204C 		.ascii	"** Locate value of PC in your *.lst file to find th"
+ 124      6F636174 
+ 124      65207661 
+ 124      6C756520 
+ 124      6F662050 
+ 125 00d6 6520726F 		.ascii	"e root cause. **\012\012\000"
+ 125      6F742063 
+ 125      61757365 
+ 125      2E202A2A 
+ 125      0A0A00
+ 126              	.LC10:
+ 127 00e9 63707372 		.ascii	"cpsr=0x%08X, sp=0x%08X, lr=0x%08X\012\000"
+ 127      3D307825 
+ 127      3038582C 
+ 127      2073703D 
+ 127      30782530 
+ 128              	.LC11:
+ 129 010c 72303D30 		.ascii	"r0=0x%08X, r1=0x%08X,  r2=0x%08X,  r3=0x%08X\012\000"
+ 129      78253038 
+ 129      582C2072 
+ 129      313D3078 
+ 129      25303858 
+ 130              	.LC12:
+ 131 013a 72343D30 		.ascii	"r4=0x%08X, r5=0x%08X,  r6=0x%08X,  r7=0x%08X\012\000"
+ 131      78253038 
+ 131      582C2072 
+ 131      353D3078 
+ 131      25303858 
+ 132              	.LC13:
+ 133 0168 72383D30 		.ascii	"r8=0x%08X, r9=0x%08X, r10=0x%08X, r11=0x%08X\012\000"
+ 133      78253038 
+ 133      582C2072 
+ 133      393D3078 
+ 133      25303858 
+ 134              	.LC14:
+ 135 0196 7231323D 		.ascii	"r12=0x%08X\012\012\000"
+ 135      30782530 
+ 135      38580A0A 
+ 135      00
+ 136              	.LC15:
+ 137 01a3 73705B30 		.ascii	"sp[0]=0x%08X, sp[1]=0x%08X, sp[2]=0x%08X, sp[3]=0x%"
+ 137      5D3D3078 
+ 137      25303858 
+ 137      2C207370 
+ 137      5B315D3D 
+ 138 01d6 3038580A 		.ascii	"08X\012\000"
+ 138      00
+ 139              	.LC16:
+ 140 01db 73705B34 		.ascii	"sp[4]=0x%08X, sp[5]=0x%08X, sp[6]=0x%08X, sp[7]=0x%"
+ 140      5D3D3078 
+ 140      25303858 
+ 140      2C207370 
+ 140      5B355D3D 
+ 141 020e 3038580A 		.ascii	"08X\012\012\000"
+ 141      0A00
+ 142              		.text
+ 143              		.align	2
+ 144              		.global	printCrashInfo
+ 146              	printCrashInfo:
+ 147              		@ args = 0, pretend = 0, frame = 0
+ 148              		@ frame_needed = 0, uses_anonymous_args = 0
+ 149 00bc F04F2DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+ 150 00c0 E4B39FE5 		ldr	fp, .L25
+ 151 00c4 0510DBE5 		ldrb	r1, [fp, #5]	@ zero_extendqisi2
+ 152 00c8 0420DBE5 		ldrb	r2, [fp, #4]	@ zero_extendqisi2
+ 153 00cc 06E0DBE5 		ldrb	lr, [fp, #6]	@ zero_extendqisi2
+ 154 00d0 0900DBE5 		ldrb	r0, [fp, #9]	@ zero_extendqisi2
+ 155 00d4 0830DBE5 		ldrb	r3, [fp, #8]	@ zero_extendqisi2
+ 156 00d8 012482E1 		orr	r2, r2, r1, asl #8
+ 157 00dc 0710DBE5 		ldrb	r1, [fp, #7]	@ zero_extendqisi2
+ 158 00e0 0AC0DBE5 		ldrb	ip, [fp, #10]	@ zero_extendqisi2
+ 159 00e4 0E2882E1 		orr	r2, r2, lr, asl #16
+ 160 00e8 012C82E1 		orr	r2, r2, r1, asl #24
+ 161 00ec 003483E1 		orr	r3, r3, r0, asl #8
+ 162 00f0 B8139FE5 		ldr	r1, .L25+4
+ 163 00f4 0BE0DBE5 		ldrb	lr, [fp, #11]	@ zero_extendqisi2
+ 164 00f8 0C3883E1 		orr	r3, r3, ip, asl #16
+ 165 00fc B0039FE5 		ldr	r0, .L25+8
+ 166 0100 B0C39FE5 		ldr	ip, .L25+12
+ 167 0104 010052E1 		cmp	r2, r1
+ 168 0108 0010A001 		moveq	r1, r0
+ 169 010c 0C10A011 		movne	r1, ip
+ 170 0110 0E3C83E1 		orr	r3, r3, lr, asl #24
+ 171 0114 04D04DE2 		sub	sp, sp, #4
+ 172 0118 9C039FE5 		ldr	r0, .L25+16
+ 173 011c FEFFFFEB 		bl	rprintf
+ 174 0120 0D20DBE5 		ldrb	r2, [fp, #13]	@ zero_extendqisi2
+ 175 0124 0C30DBE5 		ldrb	r3, [fp, #12]	@ zero_extendqisi2
+ 176 0128 0E10DBE5 		ldrb	r1, [fp, #14]	@ zero_extendqisi2
+ 177 012c 023483E1 		orr	r3, r3, r2, asl #8
+ 178 0130 0F20DBE5 		ldrb	r2, [fp, #15]	@ zero_extendqisi2
+ 179 0134 013883E1 		orr	r3, r3, r1, asl #16
+ 180 0138 021C93E1 		orrs	r1, r3, r2, asl #24
+ 181 013c 7C139F05 		ldreq	r1, .L25+20
+ 182 0140 0700000A 		beq	.L21
+ 183 0144 010051E3 		cmp	r1, #1
+ 184 0148 74139F05 		ldreq	r1, .L25+24
+ 185 014c 0400000A 		beq	.L21
+ 186 0150 70239FE5 		ldr	r2, .L25+28
+ 187 0154 70339FE5 		ldr	r3, .L25+32
+ 188 0158 020051E3 		cmp	r1, #2
+ 189 015c 0310A001 		moveq	r1, r3
+ 190 0160 0210A011 		movne	r1, r2
+ 191              	.L21:
+ 192 0164 64039FE5 		ldr	r0, .L25+36
+ 193 0168 FEFFFFEB 		bl	rprintf
+ 194 016c 1100DBE5 		ldrb	r0, [fp, #17]	@ zero_extendqisi2
+ 195 0170 1530DBE5 		ldrb	r3, [fp, #21]	@ zero_extendqisi2
+ 196 0174 1010DBE5 		ldrb	r1, [fp, #16]	@ zero_extendqisi2
+ 197 0178 1420DBE5 		ldrb	r2, [fp, #20]	@ zero_extendqisi2
+ 198 017c 12C0DBE5 		ldrb	ip, [fp, #18]	@ zero_extendqisi2
+ 199 0180 1640DBE5 		ldrb	r4, [fp, #22]	@ zero_extendqisi2
+ 200 0184 001481E1 		orr	r1, r1, r0, asl #8
+ 201 0188 032482E1 		orr	r2, r2, r3, asl #8
+ 202 018c 1700DBE5 		ldrb	r0, [fp, #23]	@ zero_extendqisi2
+ 203 0190 1330DBE5 		ldrb	r3, [fp, #19]	@ zero_extendqisi2
+ 204 0194 0C1881E1 		orr	r1, r1, ip, asl #16
+ 205 0198 042882E1 		orr	r2, r2, r4, asl #16
+ 206 019c 031C81E1 		orr	r1, r1, r3, asl #24
+ 207 01a0 002C82E1 		orr	r2, r2, r0, asl #24
+ 208 01a4 28039FE5 		ldr	r0, .L25+40
+ 209 01a8 FEFFFFEB 		bl	rprintf
+ 210 01ac 24039FE5 		ldr	r0, .L25+44
+ 211 01b0 FEFFFFEB 		bl	rprintf
+ 212 01b4 1940DBE5 		ldrb	r4, [fp, #25]	@ zero_extendqisi2
+ 213 01b8 21C0DBE5 		ldrb	ip, [fp, #33]	@ zero_extendqisi2
+ 214 01bc 1D00DBE5 		ldrb	r0, [fp, #29]	@ zero_extendqisi2
+ 215 01c0 1810DBE5 		ldrb	r1, [fp, #24]	@ zero_extendqisi2
+ 216 01c4 2020DBE5 		ldrb	r2, [fp, #32]	@ zero_extendqisi2
+ 217 01c8 1C30DBE5 		ldrb	r3, [fp, #28]	@ zero_extendqisi2
+ 218 01cc 1A50DBE5 		ldrb	r5, [fp, #26]	@ zero_extendqisi2
+ 219 01d0 2260DBE5 		ldrb	r6, [fp, #34]	@ zero_extendqisi2
+ 220 01d4 1E70DBE5 		ldrb	r7, [fp, #30]	@ zero_extendqisi2
+ 221 01d8 041481E1 		orr	r1, r1, r4, asl #8
+ 222 01dc 0C2482E1 		orr	r2, r2, ip, asl #8
+ 223 01e0 1F40DBE5 		ldrb	r4, [fp, #31]	@ zero_extendqisi2
+ 224 01e4 23C0DBE5 		ldrb	ip, [fp, #35]	@ zero_extendqisi2
+ 225 01e8 003483E1 		orr	r3, r3, r0, asl #8
+ 226 01ec 1B00DBE5 		ldrb	r0, [fp, #27]	@ zero_extendqisi2
+ 227 01f0 051881E1 		orr	r1, r1, r5, asl #16
+ 228 01f4 062882E1 		orr	r2, r2, r6, asl #16
+ 229 01f8 073883E1 		orr	r3, r3, r7, asl #16
+ 230 01fc 001C81E1 		orr	r1, r1, r0, asl #24
+ 231 0200 0C2C82E1 		orr	r2, r2, ip, asl #24
+ 232 0204 043C83E1 		orr	r3, r3, r4, asl #24
+ 233 0208 CC029FE5 		ldr	r0, .L25+48
+ 234 020c FEFFFFEB 		bl	rprintf
+ 235 0210 2560DBE5 		ldrb	r6, [fp, #37]	@ zero_extendqisi2
+ 236 0214 2950DBE5 		ldrb	r5, [fp, #41]	@ zero_extendqisi2
+ 237 0218 2D40DBE5 		ldrb	r4, [fp, #45]	@ zero_extendqisi2
+ 238 021c 3100DBE5 		ldrb	r0, [fp, #49]	@ zero_extendqisi2
+ 239 0220 2410DBE5 		ldrb	r1, [fp, #36]	@ zero_extendqisi2
+ 240 0224 2820DBE5 		ldrb	r2, [fp, #40]	@ zero_extendqisi2
+ 241 0228 2C30DBE5 		ldrb	r3, [fp, #44]	@ zero_extendqisi2
+ 242 022c 30C0DBE5 		ldrb	ip, [fp, #48]	@ zero_extendqisi2
+ 243 0230 2670DBE5 		ldrb	r7, [fp, #38]	@ zero_extendqisi2
+ 244 0234 2A80DBE5 		ldrb	r8, [fp, #42]	@ zero_extendqisi2
+ 245 0238 2EA0DBE5 		ldrb	sl, [fp, #46]	@ zero_extendqisi2
+ 246 023c 3290DBE5 		ldrb	r9, [fp, #50]	@ zero_extendqisi2
+ 247 0240 061481E1 		orr	r1, r1, r6, asl #8
+ 248 0244 052482E1 		orr	r2, r2, r5, asl #8
+ 249 0248 2F60DBE5 		ldrb	r6, [fp, #47]	@ zero_extendqisi2
+ 250 024c 2B50DBE5 		ldrb	r5, [fp, #43]	@ zero_extendqisi2
+ 251 0250 043483E1 		orr	r3, r3, r4, asl #8
+ 252 0254 00C48CE1 		orr	ip, ip, r0, asl #8
+ 253 0258 2740DBE5 		ldrb	r4, [fp, #39]	@ zero_extendqisi2
+ 254 025c 3300DBE5 		ldrb	r0, [fp, #51]	@ zero_extendqisi2
+ 255 0260 071881E1 		orr	r1, r1, r7, asl #16
+ 256 0264 082882E1 		orr	r2, r2, r8, asl #16
+ 257 0268 0A3883E1 		orr	r3, r3, sl, asl #16
+ 258 026c 09C88CE1 		orr	ip, ip, r9, asl #16
+ 259 0270 00CC8CE1 		orr	ip, ip, r0, asl #24
+ 260 0274 041C81E1 		orr	r1, r1, r4, asl #24
+ 261 0278 052C82E1 		orr	r2, r2, r5, asl #24
+ 262 027c 063C83E1 		orr	r3, r3, r6, asl #24
+ 263 0280 58029FE5 		ldr	r0, .L25+52
+ 264 0284 00C08DE5 		str	ip, [sp, #0]
+ 265 0288 FEFFFFEB 		bl	rprintf
+ 266 028c 3560DBE5 		ldrb	r6, [fp, #53]	@ zero_extendqisi2
+ 267 0290 3950DBE5 		ldrb	r5, [fp, #57]	@ zero_extendqisi2
+ 268 0294 3D40DBE5 		ldrb	r4, [fp, #61]	@ zero_extendqisi2
+ 269 0298 4100DBE5 		ldrb	r0, [fp, #65]	@ zero_extendqisi2
+ 270 029c 3410DBE5 		ldrb	r1, [fp, #52]	@ zero_extendqisi2
+ 271 02a0 3820DBE5 		ldrb	r2, [fp, #56]	@ zero_extendqisi2
+ 272 02a4 3C30DBE5 		ldrb	r3, [fp, #60]	@ zero_extendqisi2
+ 273 02a8 40C0DBE5 		ldrb	ip, [fp, #64]	@ zero_extendqisi2
+ 274 02ac 3670DBE5 		ldrb	r7, [fp, #54]	@ zero_extendqisi2
+ 275 02b0 3A80DBE5 		ldrb	r8, [fp, #58]	@ zero_extendqisi2
+ 276 02b4 3EA0DBE5 		ldrb	sl, [fp, #62]	@ zero_extendqisi2
+ 277 02b8 4290DBE5 		ldrb	r9, [fp, #66]	@ zero_extendqisi2
+ 278 02bc 061481E1 		orr	r1, r1, r6, asl #8
+ 279 02c0 052482E1 		orr	r2, r2, r5, asl #8
+ 280 02c4 3F60DBE5 		ldrb	r6, [fp, #63]	@ zero_extendqisi2
+ 281 02c8 3B50DBE5 		ldrb	r5, [fp, #59]	@ zero_extendqisi2
+ 282 02cc 043483E1 		orr	r3, r3, r4, asl #8
+ 283 02d0 00C48CE1 		orr	ip, ip, r0, asl #8
+ 284 02d4 3740DBE5 		ldrb	r4, [fp, #55]	@ zero_extendqisi2
+ 285 02d8 4300DBE5 		ldrb	r0, [fp, #67]	@ zero_extendqisi2
+ 286 02dc 071881E1 		orr	r1, r1, r7, asl #16
+ 287 02e0 082882E1 		orr	r2, r2, r8, asl #16
+ 288 02e4 0A3883E1 		orr	r3, r3, sl, asl #16
+ 289 02e8 09C88CE1 		orr	ip, ip, r9, asl #16
+ 290 02ec 00CC8CE1 		orr	ip, ip, r0, asl #24
+ 291 02f0 041C81E1 		orr	r1, r1, r4, asl #24
+ 292 02f4 052C82E1 		orr	r2, r2, r5, asl #24
+ 293 02f8 063C83E1 		orr	r3, r3, r6, asl #24
+ 294 02fc E0019FE5 		ldr	r0, .L25+56
+ 295 0300 00C08DE5 		str	ip, [sp, #0]
+ 296 0304 FEFFFFEB 		bl	rprintf
+ 297 0308 4560DBE5 		ldrb	r6, [fp, #69]	@ zero_extendqisi2
+ 298 030c 4950DBE5 		ldrb	r5, [fp, #73]	@ zero_extendqisi2
+ 299 0310 4D40DBE5 		ldrb	r4, [fp, #77]	@ zero_extendqisi2
+ 300 0314 5100DBE5 		ldrb	r0, [fp, #81]	@ zero_extendqisi2
+ 301 0318 4410DBE5 		ldrb	r1, [fp, #68]	@ zero_extendqisi2
+ 302 031c 4820DBE5 		ldrb	r2, [fp, #72]	@ zero_extendqisi2
+ 303 0320 4C30DBE5 		ldrb	r3, [fp, #76]	@ zero_extendqisi2
+ 304 0324 50C0DBE5 		ldrb	ip, [fp, #80]	@ zero_extendqisi2
+ 305 0328 4670DBE5 		ldrb	r7, [fp, #70]	@ zero_extendqisi2
+ 306 032c 4A80DBE5 		ldrb	r8, [fp, #74]	@ zero_extendqisi2
+ 307 0330 4EA0DBE5 		ldrb	sl, [fp, #78]	@ zero_extendqisi2
+ 308 0334 5290DBE5 		ldrb	r9, [fp, #82]	@ zero_extendqisi2
+ 309 0338 061481E1 		orr	r1, r1, r6, asl #8
+ 310 033c 052482E1 		orr	r2, r2, r5, asl #8
+ 311 0340 4760DBE5 		ldrb	r6, [fp, #71]	@ zero_extendqisi2
+ 312 0344 5350DBE5 		ldrb	r5, [fp, #83]	@ zero_extendqisi2
+ 313 0348 043483E1 		orr	r3, r3, r4, asl #8
+ 314 034c 00C48CE1 		orr	ip, ip, r0, asl #8
+ 315 0350 4F40DBE5 		ldrb	r4, [fp, #79]	@ zero_extendqisi2
+ 316 0354 4B00DBE5 		ldrb	r0, [fp, #75]	@ zero_extendqisi2
+ 317 0358 071881E1 		orr	r1, r1, r7, asl #16
+ 318 035c 082882E1 		orr	r2, r2, r8, asl #16
+ 319 0360 0A3883E1 		orr	r3, r3, sl, asl #16
+ 320 0364 09C88CE1 		orr	ip, ip, r9, asl #16
+ 321 0368 05CC8CE1 		orr	ip, ip, r5, asl #24
+ 322 036c 002C82E1 		orr	r2, r2, r0, asl #24
+ 323 0370 043C83E1 		orr	r3, r3, r4, asl #24
+ 324 0374 061C81E1 		orr	r1, r1, r6, asl #24
+ 325 0378 68019FE5 		ldr	r0, .L25+60
+ 326 037c 00C08DE5 		str	ip, [sp, #0]
+ 327 0380 FEFFFFEB 		bl	rprintf
+ 328 0384 5530DBE5 		ldrb	r3, [fp, #85]	@ zero_extendqisi2
+ 329 0388 5410DBE5 		ldrb	r1, [fp, #84]	@ zero_extendqisi2
+ 330 038c 5620DBE5 		ldrb	r2, [fp, #86]	@ zero_extendqisi2
+ 331 0390 031481E1 		orr	r1, r1, r3, asl #8
+ 332 0394 5730DBE5 		ldrb	r3, [fp, #87]	@ zero_extendqisi2
+ 333 0398 021881E1 		orr	r1, r1, r2, asl #16
+ 334 039c 031C81E1 		orr	r1, r1, r3, asl #24
+ 335 03a0 44019FE5 		ldr	r0, .L25+64
+ 336 03a4 FEFFFFEB 		bl	rprintf
+ 337 03a8 5960DBE5 		ldrb	r6, [fp, #89]	@ zero_extendqisi2
+ 338 03ac 5D50DBE5 		ldrb	r5, [fp, #93]	@ zero_extendqisi2
+ 339 03b0 6140DBE5 		ldrb	r4, [fp, #97]	@ zero_extendqisi2
+ 340 03b4 6500DBE5 		ldrb	r0, [fp, #101]	@ zero_extendqisi2
+ 341 03b8 5810DBE5 		ldrb	r1, [fp, #88]	@ zero_extendqisi2
+ 342 03bc 5C20DBE5 		ldrb	r2, [fp, #92]	@ zero_extendqisi2
+ 343 03c0 6030DBE5 		ldrb	r3, [fp, #96]	@ zero_extendqisi2
+ 344 03c4 64C0DBE5 		ldrb	ip, [fp, #100]	@ zero_extendqisi2
+ 345 03c8 5A70DBE5 		ldrb	r7, [fp, #90]	@ zero_extendqisi2
+ 346 03cc 5E80DBE5 		ldrb	r8, [fp, #94]	@ zero_extendqisi2
+ 347 03d0 62A0DBE5 		ldrb	sl, [fp, #98]	@ zero_extendqisi2
+ 348 03d4 6690DBE5 		ldrb	r9, [fp, #102]	@ zero_extendqisi2
+ 349 03d8 061481E1 		orr	r1, r1, r6, asl #8
+ 350 03dc 052482E1 		orr	r2, r2, r5, asl #8
+ 351 03e0 6360DBE5 		ldrb	r6, [fp, #99]	@ zero_extendqisi2
+ 352 03e4 5F50DBE5 		ldrb	r5, [fp, #95]	@ zero_extendqisi2
+ 353 03e8 043483E1 		orr	r3, r3, r4, asl #8
+ 354 03ec 00C48CE1 		orr	ip, ip, r0, asl #8
+ 355 03f0 5B40DBE5 		ldrb	r4, [fp, #91]	@ zero_extendqisi2
+ 356 03f4 6700DBE5 		ldrb	r0, [fp, #103]	@ zero_extendqisi2
+ 357 03f8 071881E1 		orr	r1, r1, r7, asl #16
+ 358 03fc 082882E1 		orr	r2, r2, r8, asl #16
+ 359 0400 0A3883E1 		orr	r3, r3, sl, asl #16
+ 360 0404 09C88CE1 		orr	ip, ip, r9, asl #16
+ 361 0408 00CC8CE1 		orr	ip, ip, r0, asl #24
+ 362 040c 041C81E1 		orr	r1, r1, r4, asl #24
+ 363 0410 052C82E1 		orr	r2, r2, r5, asl #24
+ 364 0414 063C83E1 		orr	r3, r3, r6, asl #24
+ 365 0418 D0009FE5 		ldr	r0, .L25+68
+ 366 041c 00C08DE5 		str	ip, [sp, #0]
+ 367 0420 FEFFFFEB 		bl	rprintf
+ 368 0424 6960DBE5 		ldrb	r6, [fp, #105]	@ zero_extendqisi2
+ 369 0428 6D50DBE5 		ldrb	r5, [fp, #109]	@ zero_extendqisi2
+ 370 042c 7140DBE5 		ldrb	r4, [fp, #113]	@ zero_extendqisi2
+ 371 0430 7500DBE5 		ldrb	r0, [fp, #117]	@ zero_extendqisi2
+ 372 0434 6810DBE5 		ldrb	r1, [fp, #104]	@ zero_extendqisi2
+ 373 0438 6C20DBE5 		ldrb	r2, [fp, #108]	@ zero_extendqisi2
+ 374 043c 7030DBE5 		ldrb	r3, [fp, #112]	@ zero_extendqisi2
+ 375 0440 74C0DBE5 		ldrb	ip, [fp, #116]	@ zero_extendqisi2
+ 376 0444 6A70DBE5 		ldrb	r7, [fp, #106]	@ zero_extendqisi2
+ 377 0448 6E80DBE5 		ldrb	r8, [fp, #110]	@ zero_extendqisi2
+ 378 044c 72A0DBE5 		ldrb	sl, [fp, #114]	@ zero_extendqisi2
+ 379 0450 7690DBE5 		ldrb	r9, [fp, #118]	@ zero_extendqisi2
+ 380 0454 061481E1 		orr	r1, r1, r6, asl #8
+ 381 0458 052482E1 		orr	r2, r2, r5, asl #8
+ 382 045c 7360DBE5 		ldrb	r6, [fp, #115]	@ zero_extendqisi2
+ 383 0460 6F50DBE5 		ldrb	r5, [fp, #111]	@ zero_extendqisi2
+ 384 0464 043483E1 		orr	r3, r3, r4, asl #8
+ 385 0468 00C48CE1 		orr	ip, ip, r0, asl #8
+ 386 046c 6B40DBE5 		ldrb	r4, [fp, #107]	@ zero_extendqisi2
+ 387 0470 7700DBE5 		ldrb	r0, [fp, #119]	@ zero_extendqisi2
+ 388 0474 071881E1 		orr	r1, r1, r7, asl #16
+ 389 0478 082882E1 		orr	r2, r2, r8, asl #16
+ 390 047c 0A3883E1 		orr	r3, r3, sl, asl #16
+ 391 0480 09C88CE1 		orr	ip, ip, r9, asl #16
+ 392 0484 00CC8CE1 		orr	ip, ip, r0, asl #24
+ 393 0488 041C81E1 		orr	r1, r1, r4, asl #24
+ 394 048c 052C82E1 		orr	r2, r2, r5, asl #24
+ 395 0490 063C83E1 		orr	r3, r3, r6, asl #24
+ 396 0494 58009FE5 		ldr	r0, .L25+72
+ 397 0498 00C08DE5 		str	ip, [sp, #0]
+ 398 049c FEFFFFEB 		bl	rprintf
+ 399 04a0 0000A0E3 		mov	r0, #0
+ 400 04a4 04D08DE2 		add	sp, sp, #4
+ 401 04a8 F08FBDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+ 402              	.L26:
+ 403              		.align	2
+ 404              	.L25:
+ 405 04ac 00000000 		.word	__abort_dat
+ 406 04b0 DEC0ADDE 		.word	-559038242
+ 407 04b4 08000000 		.word	.LC1
+ 408 04b8 00000000 		.word	.LC0
+ 409 04bc 0F000000 		.word	.LC2
+ 410 04c0 3B000000 		.word	.LC3
+ 411 04c4 51000000 		.word	.LC4
+ 412 04c8 60000000 		.word	.LC5
+ 413 04cc 68000000 		.word	.LC6
+ 414 04d0 73000000 		.word	.LC7
+ 415 04d4 83000000 		.word	.LC8
+ 416 04d8 A3000000 		.word	.LC9
+ 417 04dc E9000000 		.word	.LC10
+ 418 04e0 0C010000 		.word	.LC11
+ 419 04e4 3A010000 		.word	.LC12
+ 420 04e8 68010000 		.word	.LC13
+ 421 04ec 96010000 		.word	.LC14
+ 422 04f0 A3010000 		.word	.LC15
+ 423 04f4 DB010000 		.word	.LC16
+ 425              		.ident	"GCC: (GNU) 4.3.2"
+DEFINED SYMBOLS
+                            *ABS*:00000000 crash.c
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccUyh85K.s:6      .text:00000000 didSystemCrash
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccUyh85K.s:10     .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccUyh85K.s:26     .text:00000034 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccUyh85K.s:32     .text:0000003c performUndefinedInstructionCrash
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccUyh85K.s:39     .text:00000040 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccUyh85K.s:44     .text:00000044 performPABORTCrash
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccUyh85K.s:59     .text:00000050 performDABORTCrash
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccUyh85K.s:69     .text:0000005c $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccUyh85K.s:74     .text:00000060 clearCrashInfo
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccUyh85K.s:77     .text:00000060 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccUyh85K.s:102    .text:000000b8 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccUyh85K.s:146    .text:000000bc printCrashInfo
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccUyh85K.s:149    .text:000000bc $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccUyh85K.s:405    .text:000004ac $d
+
+UNDEFINED SYMBOLS
+__abort_dat
+memset
+rprintf
