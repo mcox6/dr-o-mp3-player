@@ -683,15 +683,15 @@
  693              		.ident	"GCC: (GNU) 4.3.2"
 DEFINED SYMBOLS
                             *ABS*:00000000 ccsbcs.c
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccfhwatM.s:6      .text:00000000 ff_convert
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccfhwatM.s:9      .text:00000000 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccfhwatM.s:42     .text:00000070 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccfhwatM.s:564    .rodata:000003c0 Tbl
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccfhwatM.s:47     .text:00000074 ff_wtoupper
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccfhwatM.s:51     .text:00000074 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccfhwatM.s:69     .text:000000ac $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccfhwatM.s:320    .rodata:000001e0 tbl_lower.1501
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccfhwatM.s:76     .rodata:00000000 tbl_upper.1502
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccfhwatM.s:77     .rodata:00000000 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccCRdN7.s:6      .text:00000000 ff_convert
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccCRdN7.s:9      .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccCRdN7.s:42     .text:00000070 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccCRdN7.s:564    .rodata:000003c0 Tbl
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccCRdN7.s:47     .text:00000074 ff_wtoupper
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccCRdN7.s:51     .text:00000074 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccCRdN7.s:69     .text:000000ac $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccCRdN7.s:320    .rodata:000001e0 tbl_lower.1501
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccCRdN7.s:76     .rodata:00000000 tbl_upper.1502
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccCRdN7.s:77     .rodata:00000000 $d
 
 NO UNDEFINED SYMBOLS

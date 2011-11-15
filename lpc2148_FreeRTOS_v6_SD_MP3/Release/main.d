@@ -10,8 +10,8 @@ main.d main.o: ../main.c .././osHandles.h ../././FreeRTOS/FreeRTOS.h \
   .././drivers/uart/../../FreeRTOS/FreeRTOS.h \
   .././drivers/uart/../../FreeRTOS/queue.h \
   .././drivers/uart/../../FreeRTOS/task.h .././System/rprintf.h \
-  .././general/userInterface.h .././drivers/i2c.h ../drivers/pcm1774.h \
-  .././fat/diskio.h .././fat/./diskioStructs.h .././fat/././integer.h \
+  .././general/userInterface.h .././fat/diskio.h \
+  .././fat/./diskioStructs.h .././fat/././integer.h \
   .././fat/./diskioDefines.h .././fat/./../drivers/ssp_spi.h \
   .././fat/./../drivers/../System/lpc214x.h \
   .././fat/../FreeRTOS/FreeRTOS.h .././fat/../FreeRTOS/semphr.h \
@@ -20,7 +20,8 @@ main.d main.o: ../main.c .././osHandles.h ../././FreeRTOS/FreeRTOS.h \
   .././fat/./option/../integer.h \
   .././fat/./option/../../FreeRTOS/FreeRTOS.h \
   .././fat/./option/../../FreeRTOS/semphr.h .././drivers/sta013.h \
-  .././drivers/../System/lpc214x.h .././drivers/ssp_spi.h
+  .././drivers/../System/lpc214x.h .././drivers/ssp_spi.h \
+  .././drivers/pcm1774.h .././drivers/i2c.h
 
 .././osHandles.h:
 
@@ -72,10 +73,6 @@ main.d main.o: ../main.c .././osHandles.h ../././FreeRTOS/FreeRTOS.h \
 
 .././general/userInterface.h:
 
-.././drivers/i2c.h:
-
-../drivers/pcm1774.h:
-
 .././fat/diskio.h:
 
 .././fat/./diskioStructs.h:
@@ -113,3 +110,7 @@ main.d main.o: ../main.c .././osHandles.h ../././FreeRTOS/FreeRTOS.h \
 .././drivers/../System/lpc214x.h:
 
 .././drivers/ssp_spi.h:
+
+.././drivers/pcm1774.h:
+
+.././drivers/i2c.h:

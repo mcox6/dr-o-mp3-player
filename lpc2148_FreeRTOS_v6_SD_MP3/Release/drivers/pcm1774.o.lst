@@ -1,289 +1,733 @@
    1              		.file	"pcm1774.c"
    2              		.text
    3              		.align	2
-   4              		.global	pcm1774_sendByte
-   6              	pcm1774_sendByte:
+   4              		.global	pcm1774_readByte
+   6              	pcm1774_readByte:
    7              		@ args = 0, pretend = 0, frame = 0
    8              		@ frame_needed = 0, uses_anonymous_args = 0
    9              		@ link register save eliminated.
-  10 0000 1EFF2FE1 		bx	lr
-  12              		.align	2
-  13              		.global	pcm1774_readByte
-  15              	pcm1774_readByte:
-  16              		@ args = 0, pretend = 0, frame = 0
-  17              		@ frame_needed = 0, uses_anonymous_args = 0
-  18              		@ link register save eliminated.
-  19 0004 0000A0E3 		mov	r0, #0
-  20 0008 1EFF2FE1 		bx	lr
-  22              		.align	2
-  23              		.global	pcm1774_bitMask
-  25              	pcm1774_bitMask:
-  26              		@ args = 0, pretend = 0, frame = 0
-  27              		@ frame_needed = 0, uses_anonymous_args = 0
-  28              		@ link register save eliminated.
-  29 000c 1EFF2FE1 		bx	lr
-  31              		.align	2
-  32              		.global	initialize_pcm1774
-  34              	initialize_pcm1774:
-  35              		@ args = 0, pretend = 0, frame = 0
-  36              		@ frame_needed = 0, uses_anonymous_args = 0
-  37              		@ link register save eliminated.
-  38 0010 0100A0E3 		mov	r0, #1
-  39 0014 1EFF2FE1 		bx	lr
-  41              		.align	2
-  42              		.global	pcm1774_Reset
-  44              	pcm1774_Reset:
-  45              		@ args = 0, pretend = 0, frame = 4
-  46              		@ frame_needed = 0, uses_anonymous_args = 0
-  47              		@ link register save eliminated.
-  48 0018 04D04DE2 		sub	sp, sp, #4
-  49 001c 0030A0E3 		mov	r3, #0
-  50 0020 00308DE5 		str	r3, [sp, #0]
-  51 0024 24209FE5 		ldr	r2, .L13
-  52 0028 00308DE5 		str	r3, [sp, #0]
-  53 002c 020000EA 		b	.L10
-  54              	.L11:
-  55 0030 00309DE5 		ldr	r3, [sp, #0]
-  56 0034 013083E2 		add	r3, r3, #1
-  57 0038 00308DE5 		str	r3, [sp, #0]
-  58              	.L10:
-  59 003c 00309DE5 		ldr	r3, [sp, #0]
-  60 0040 020053E1 		cmp	r3, r2
-  61 0044 F9FFFFDA 		ble	.L11
-  62 0048 04D08DE2 		add	sp, sp, #4
-  63 004c 1EFF2FE1 		bx	lr
-  64              	.L14:
-  65              		.align	2
-  66              	.L13:
-  67 0050 87130000 		.word	4999
-  69              		.align	2
-  70              		.global	pcm1774_LoadDefaultDigitalConfiguration
-  72              	pcm1774_LoadDefaultDigitalConfiguration:
-  73              		@ args = 0, pretend = 0, frame = 0
-  74              		@ frame_needed = 0, uses_anonymous_args = 0
-  75              		@ link register save eliminated.
-  76 0054 1EFF2FE1 		bx	lr
-  78              		.align	2
-  79              		.global	pcm1774_OutputVolume
-  81              	pcm1774_OutputVolume:
-  82              		@ args = 0, pretend = 0, frame = 0
-  83              		@ frame_needed = 0, uses_anonymous_args = 0
-  84              		@ link register save eliminated.
-  85 0058 1EFF2FE1 		bx	lr
+  10 0000 FF1000E2 		and	r1, r0, #255
+  11 0004 8C00A0E3 		mov	r0, #140
+  12 0008 FEFFFFEA 		b	i2cReadDeviceRegister
+  14              		.align	2
+  15              		.global	pcm1774_readShortCircuitStatusRight
+  17              	pcm1774_readShortCircuitStatusRight:
+  18              		@ args = 0, pretend = 0, frame = 0
+  19              		@ frame_needed = 0, uses_anonymous_args = 0
+  20 000c 04E02DE5 		str	lr, [sp, #-4]!
+  21 0010 4D10A0E3 		mov	r1, #77
+  22 0014 8C00A0E3 		mov	r0, #140
+  23 0018 FEFFFFEB 		bl	i2cReadDeviceRegister
+  24 001c A001A0E1 		mov	r0, r0, lsr #3
+  25 0020 010020E2 		eor	r0, r0, #1
+  26 0024 010000E2 		and	r0, r0, #1
+  27 0028 04F09DE4 		ldr	pc, [sp], #4
+  29              		.align	2
+  30              		.global	pcm1774_readShortCircuitStatusLeft
+  32              	pcm1774_readShortCircuitStatusLeft:
+  33              		@ args = 0, pretend = 0, frame = 0
+  34              		@ frame_needed = 0, uses_anonymous_args = 0
+  35 002c 04E02DE5 		str	lr, [sp, #-4]!
+  36 0030 4D10A0E3 		mov	r1, #77
+  37 0034 8C00A0E3 		mov	r0, #140
+  38 0038 FEFFFFEB 		bl	i2cReadDeviceRegister
+  39 003c 2001A0E1 		mov	r0, r0, lsr #2
+  40 0040 010020E2 		eor	r0, r0, #1
+  41 0044 010000E2 		and	r0, r0, #1
+  42 0048 04F09DE4 		ldr	pc, [sp], #4
+  44              		.align	2
+  45              		.global	pcm1774_sendByte
+  47              	pcm1774_sendByte:
+  48              		@ args = 0, pretend = 0, frame = 0
+  49              		@ frame_needed = 0, uses_anonymous_args = 0
+  50              		@ link register save eliminated.
+  51 004c FF0000E2 		and	r0, r0, #255
+  52 0050 FF2001E2 		and	r2, r1, #255
+  53 0054 0010A0E1 		mov	r1, r0
+  54 0058 8C00A0E3 		mov	r0, #140
+  55 005c FEFFFFEA 		b	i2cWriteDeviceRegister
+  57              		.align	2
+  58              		.global	pcm1774_trebleBoost
+  60              	pcm1774_trebleBoost:
+  61              		@ args = 0, pretend = 0, frame = 28
+  62              		@ frame_needed = 0, uses_anonymous_args = 0
+  63 0060 10402DE9 		stmfd	sp!, {r4, lr}
+  64 0064 1CD04DE2 		sub	sp, sp, #28
+  65 0068 004CA0E1 		mov	r4, r0, asl #24
+  66 006c 38109FE5 		ldr	r1, .L12
+  67 0070 1920A0E3 		mov	r2, #25
+  68 0074 03008DE2 		add	r0, sp, #3
+  69 0078 FEFFFFEB 		bl	memcpy
+  70 007c 444CA0E1 		mov	r4, r4, asr #24
+  71 0080 0C3084E2 		add	r3, r4, #12
+  72 0084 180053E3 		cmp	r3, #24
+  73 0088 1C208DE2 		add	r2, sp, #28
+  74 008c 0040A083 		movhi	r4, #0
+  75 0090 043082E0 		add	r3, r2, r4
+  76 0094 0D2053E5 		ldrb	r2, [r3, #-13]	@ zero_extendqisi2
+  77 0098 8C00A0E3 		mov	r0, #140
+  78 009c 5E10A0E3 		mov	r1, #94
+  79 00a0 1CD08DE2 		add	sp, sp, #28
+  80 00a4 1040BDE8 		ldmfd	sp!, {r4, lr}
+  81 00a8 FEFFFFEA 		b	i2cWriteDeviceRegister
+  82              	.L13:
+  83              		.align	2
+  84              	.L12:
+  85 00ac 00000000 		.word	C.4.1456
   87              		.align	2
-  88              		.global	pcm1774_ConnectDigitalOutputs
-  90              	pcm1774_ConnectDigitalOutputs:
-  91              		@ args = 0, pretend = 0, frame = 0
+  88              		.global	pcm1774_middleBoost
+  90              	pcm1774_middleBoost:
+  91              		@ args = 0, pretend = 0, frame = 28
   92              		@ frame_needed = 0, uses_anonymous_args = 0
-  93              		@ link register save eliminated.
-  94 005c 1EFF2FE1 		bx	lr
-  96              		.align	2
-  97              		.global	pcm1774_DigitalVolume
-  99              	pcm1774_DigitalVolume:
- 100              		@ args = 0, pretend = 0, frame = 0
- 101              		@ frame_needed = 0, uses_anonymous_args = 0
- 102              		@ link register save eliminated.
- 103 0060 1EFF2FE1 		bx	lr
- 105              		.align	2
- 106              		.global	pcm1774_DigitalDeEmphasisFilter
- 108              	pcm1774_DigitalDeEmphasisFilter:
- 109              		@ args = 0, pretend = 0, frame = 0
- 110              		@ frame_needed = 0, uses_anonymous_args = 0
- 111              		@ link register save eliminated.
- 112 0064 1EFF2FE1 		bx	lr
- 114              		.align	2
- 115              		.global	pcm1774_DigitalInterfaceSelection
- 117              	pcm1774_DigitalInterfaceSelection:
- 118              		@ args = 0, pretend = 0, frame = 0
- 119              		@ frame_needed = 0, uses_anonymous_args = 0
- 120              		@ link register save eliminated.
- 121 0068 1EFF2FE1 		bx	lr
- 123              		.align	2
- 124              		.global	pcm1774_DigitalGainControl
- 126              	pcm1774_DigitalGainControl:
- 127              		@ args = 0, pretend = 0, frame = 0
- 128              		@ frame_needed = 0, uses_anonymous_args = 0
- 129              		@ link register save eliminated.
- 130 006c 1EFF2FE1 		bx	lr
- 132              		.align	2
- 133              		.global	pcm1774_DigitalOversamplingControl
- 135              	pcm1774_DigitalOversamplingControl:
- 136              		@ args = 0, pretend = 0, frame = 0
- 137              		@ frame_needed = 0, uses_anonymous_args = 0
- 138              		@ link register save eliminated.
- 139 0070 1EFF2FE1 		bx	lr
- 141              		.align	2
- 142              		.global	pcm1774_PowerUpMixer
- 144              	pcm1774_PowerUpMixer:
- 145              		@ args = 0, pretend = 0, frame = 0
- 146              		@ frame_needed = 0, uses_anonymous_args = 0
- 147              		@ link register save eliminated.
- 148 0074 1EFF2FE1 		bx	lr
- 150              		.align	2
- 151              		.global	pcm1774_PowerUpAnalogBiasControl
- 153              	pcm1774_PowerUpAnalogBiasControl:
- 154              		@ args = 0, pretend = 0, frame = 0
- 155              		@ frame_needed = 0, uses_anonymous_args = 0
- 156              		@ link register save eliminated.
- 157 0078 1EFF2FE1 		bx	lr
- 159              		.align	2
- 160              		.global	pcm1774_PowerUpDAC
- 162              	pcm1774_PowerUpDAC:
- 163              		@ args = 0, pretend = 0, frame = 0
- 164              		@ frame_needed = 0, uses_anonymous_args = 0
- 165              		@ link register save eliminated.
- 166 007c 1EFF2FE1 		bx	lr
- 168              		.align	2
- 169              		.global	pcm1774_PowerUpAnalog
- 171              	pcm1774_PowerUpAnalog:
- 172              		@ args = 0, pretend = 0, frame = 0
- 173              		@ frame_needed = 0, uses_anonymous_args = 0
- 174              		@ link register save eliminated.
- 175 0080 1EFF2FE1 		bx	lr
- 177              		.align	2
- 178              		.global	pcm1774_LineOutputConfiguration
- 180              	pcm1774_LineOutputConfiguration:
- 181              		@ args = 0, pretend = 0, frame = 0
- 182              		@ frame_needed = 0, uses_anonymous_args = 0
- 183              		@ link register save eliminated.
- 184 0084 1EFF2FE1 		bx	lr
- 186              		.align	2
- 187              		.global	pcm1774_PowerUpVcom
- 189              	pcm1774_PowerUpVcom:
- 190              		@ args = 0, pretend = 0, frame = 0
- 191              		@ frame_needed = 0, uses_anonymous_args = 0
- 192              		@ link register save eliminated.
- 193 0088 1EFF2FE1 		bx	lr
- 195              		.align	2
- 196              		.global	pcm1774_setShortCircuitProtectionLeft
- 198              	pcm1774_setShortCircuitProtectionLeft:
- 199              		@ args = 0, pretend = 0, frame = 0
- 200              		@ frame_needed = 0, uses_anonymous_args = 0
- 201              		@ link register save eliminated.
- 202 008c 1EFF2FE1 		bx	lr
- 204              		.align	2
- 205              		.global	pcm1774_setShortCircuitProtectionRight
- 207              	pcm1774_setShortCircuitProtectionRight:
- 208              		@ args = 0, pretend = 0, frame = 0
- 209              		@ frame_needed = 0, uses_anonymous_args = 0
- 210              		@ link register save eliminated.
- 211 0090 1EFF2FE1 		bx	lr
- 213              		.align	2
- 214              		.global	pcm1774_readShortCircuitStatusLeft
- 216              	pcm1774_readShortCircuitStatusLeft:
- 217              		@ args = 0, pretend = 0, frame = 0
- 218              		@ frame_needed = 0, uses_anonymous_args = 0
- 219              		@ link register save eliminated.
- 220 0094 0100A0E3 		mov	r0, #1
- 221 0098 1EFF2FE1 		bx	lr
- 223              		.align	2
- 224              		.global	pcm1774_readShortCircuitStatusRight
- 226              	pcm1774_readShortCircuitStatusRight:
- 227              		@ args = 0, pretend = 0, frame = 0
- 228              		@ frame_needed = 0, uses_anonymous_args = 0
- 229              		@ link register save eliminated.
- 230 009c 0100A0E3 		mov	r0, #1
- 231 00a0 1EFF2FE1 		bx	lr
- 233              		.align	2
- 234              		.global	pcm1774_PowerUpGainAmplifierAnalog
- 236              	pcm1774_PowerUpGainAmplifierAnalog:
- 237              		@ args = 0, pretend = 0, frame = 0
- 238              		@ frame_needed = 0, uses_anonymous_args = 0
- 239              		@ link register save eliminated.
- 240 00a4 1EFF2FE1 		bx	lr
- 242              		.align	2
- 243              		.global	pcm1774_selectAnalogInput
- 245              	pcm1774_selectAnalogInput:
- 246              		@ args = 0, pretend = 0, frame = 0
- 247              		@ frame_needed = 0, uses_anonymous_args = 0
- 248              		@ link register save eliminated.
- 249 00a8 1EFF2FE1 		bx	lr
- 251              		.align	2
- 252              		.global	pcm1774_gainAmplifierAnalogInput
- 254              	pcm1774_gainAmplifierAnalogInput:
- 255              		@ args = 0, pretend = 0, frame = 0
- 256              		@ frame_needed = 0, uses_anonymous_args = 0
- 257              		@ link register save eliminated.
- 258 00ac 1EFF2FE1 		bx	lr
- 260              		.align	2
- 261              		.global	pcm1774_redirectAnalogInputToLeftOutput
- 263              	pcm1774_redirectAnalogInputToLeftOutput:
- 264              		@ args = 0, pretend = 0, frame = 0
- 265              		@ frame_needed = 0, uses_anonymous_args = 0
- 266              		@ link register save eliminated.
- 267 00b0 1EFF2FE1 		bx	lr
- 269              		.align	2
- 270              		.global	pcm1774_redirectAnalogInputToRightOutput
- 272              	pcm1774_redirectAnalogInputToRightOutput:
- 273              		@ args = 0, pretend = 0, frame = 0
- 274              		@ frame_needed = 0, uses_anonymous_args = 0
- 275              		@ link register save eliminated.
- 276 00b4 1EFF2FE1 		bx	lr
- 278              		.align	2
- 279              		.global	pcm1774_bassBoost
- 281              	pcm1774_bassBoost:
- 282              		@ args = 0, pretend = 0, frame = 0
- 283              		@ frame_needed = 0, uses_anonymous_args = 0
- 284              		@ link register save eliminated.
- 285 00b8 1EFF2FE1 		bx	lr
- 287              		.align	2
- 288              		.global	pcm1774_middleBoost
- 290              	pcm1774_middleBoost:
- 291              		@ args = 0, pretend = 0, frame = 0
- 292              		@ frame_needed = 0, uses_anonymous_args = 0
- 293              		@ link register save eliminated.
- 294 00bc 1EFF2FE1 		bx	lr
- 296              		.align	2
- 297              		.global	pcm1774_trebleBoost
- 299              	pcm1774_trebleBoost:
- 300              		@ args = 0, pretend = 0, frame = 0
- 301              		@ frame_needed = 0, uses_anonymous_args = 0
- 302              		@ link register save eliminated.
- 303 00c0 1EFF2FE1 		bx	lr
- 305              		.align	2
- 306              		.global	pcm1774_3dSoundEffect
- 308              	pcm1774_3dSoundEffect:
- 309              		@ args = 0, pretend = 0, frame = 0
- 310              		@ frame_needed = 0, uses_anonymous_args = 0
- 311              		@ link register save eliminated.
- 312 00c4 1EFF2FE1 		bx	lr
- 314              		.ident	"GCC: (GNU) 4.3.2"
+  93 00b0 10402DE9 		stmfd	sp!, {r4, lr}
+  94 00b4 1CD04DE2 		sub	sp, sp, #28
+  95 00b8 004CA0E1 		mov	r4, r0, asl #24
+  96 00bc 38109FE5 		ldr	r1, .L17
+  97 00c0 1920A0E3 		mov	r2, #25
+  98 00c4 03008DE2 		add	r0, sp, #3
+  99 00c8 FEFFFFEB 		bl	memcpy
+ 100 00cc 444CA0E1 		mov	r4, r4, asr #24
+ 101 00d0 0C3084E2 		add	r3, r4, #12
+ 102 00d4 180053E3 		cmp	r3, #24
+ 103 00d8 1C208DE2 		add	r2, sp, #28
+ 104 00dc 0040A083 		movhi	r4, #0
+ 105 00e0 043082E0 		add	r3, r2, r4
+ 106 00e4 0D2053E5 		ldrb	r2, [r3, #-13]	@ zero_extendqisi2
+ 107 00e8 8C00A0E3 		mov	r0, #140
+ 108 00ec 5D10A0E3 		mov	r1, #93
+ 109 00f0 1CD08DE2 		add	sp, sp, #28
+ 110 00f4 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 111 00f8 FEFFFFEA 		b	i2cWriteDeviceRegister
+ 112              	.L18:
+ 113              		.align	2
+ 114              	.L17:
+ 115 00fc 00000000 		.word	C.4.1456
+ 117              		.align	2
+ 118              		.global	pcm1774_bassBoost
+ 120              	pcm1774_bassBoost:
+ 121              		@ args = 0, pretend = 0, frame = 28
+ 122              		@ frame_needed = 0, uses_anonymous_args = 0
+ 123 0100 10402DE9 		stmfd	sp!, {r4, lr}
+ 124 0104 1CD04DE2 		sub	sp, sp, #28
+ 125 0108 004CA0E1 		mov	r4, r0, asl #24
+ 126 010c 38109FE5 		ldr	r1, .L22
+ 127 0110 1920A0E3 		mov	r2, #25
+ 128 0114 03008DE2 		add	r0, sp, #3
+ 129 0118 FEFFFFEB 		bl	memcpy
+ 130 011c 444CA0E1 		mov	r4, r4, asr #24
+ 131 0120 0C3084E2 		add	r3, r4, #12
+ 132 0124 180053E3 		cmp	r3, #24
+ 133 0128 1C208DE2 		add	r2, sp, #28
+ 134 012c 0040A083 		movhi	r4, #0
+ 135 0130 043082E0 		add	r3, r2, r4
+ 136 0134 0D2053E5 		ldrb	r2, [r3, #-13]	@ zero_extendqisi2
+ 137 0138 8C00A0E3 		mov	r0, #140
+ 138 013c 5C10A0E3 		mov	r1, #92
+ 139 0140 1CD08DE2 		add	sp, sp, #28
+ 140 0144 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 141 0148 FEFFFFEA 		b	i2cWriteDeviceRegister
+ 142              	.L23:
+ 143              		.align	2
+ 144              	.L22:
+ 145 014c 00000000 		.word	C.4.1456
+ 147              		.global	__divsi3
+ 148              		.align	2
+ 149              		.global	pcm1774_DigitalVolume
+ 151              	pcm1774_DigitalVolume:
+ 152              		@ args = 0, pretend = 0, frame = 0
+ 153              		@ frame_needed = 0, uses_anonymous_args = 0
+ 154 0150 BE30A0E3 		mov	r3, #190
+ 155 0154 10402DE9 		stmfd	sp!, {r4, lr}
+ 156 0158 930000E0 		mul	r0, r3, r0
+ 157 015c 930104E0 		mul	r4, r3, r1
+ 158 0160 4B1FA0E3 		mov	r1, #300
+ 159 0164 FEFFFFEB 		bl	__divsi3
+ 160 0168 4410A0E3 		mov	r1, #68
+ 161 016c 3F2000E2 		and	r2, r0, #63
+ 162 0170 8C00A0E3 		mov	r0, #140
+ 163 0174 FEFFFFEB 		bl	i2cWriteDeviceRegister
+ 164 0178 0400A0E1 		mov	r0, r4
+ 165 017c 4B1FA0E3 		mov	r1, #300
+ 166 0180 FEFFFFEB 		bl	__divsi3
+ 167 0184 4510A0E3 		mov	r1, #69
+ 168 0188 3F2000E2 		and	r2, r0, #63
+ 169 018c 8C00A0E3 		mov	r0, #140
+ 170 0190 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 171 0194 FEFFFFEA 		b	i2cWriteDeviceRegister
+ 173              		.align	2
+ 174              		.global	pcm1774_OutputVolume
+ 176              	pcm1774_OutputVolume:
+ 177              		@ args = 0, pretend = 0, frame = 0
+ 178              		@ frame_needed = 0, uses_anonymous_args = 0
+ 179 0198 BE30A0E3 		mov	r3, #190
+ 180 019c 10402DE9 		stmfd	sp!, {r4, lr}
+ 181 01a0 930000E0 		mul	r0, r3, r0
+ 182 01a4 930104E0 		mul	r4, r3, r1
+ 183 01a8 4B1FA0E3 		mov	r1, #300
+ 184 01ac FEFFFFEB 		bl	__divsi3
+ 185 01b0 4010A0E3 		mov	r1, #64
+ 186 01b4 3F2000E2 		and	r2, r0, #63
+ 187 01b8 8C00A0E3 		mov	r0, #140
+ 188 01bc FEFFFFEB 		bl	i2cWriteDeviceRegister
+ 189 01c0 0400A0E1 		mov	r0, r4
+ 190 01c4 4B1FA0E3 		mov	r1, #300
+ 191 01c8 FEFFFFEB 		bl	__divsi3
+ 192 01cc 4110A0E3 		mov	r1, #65
+ 193 01d0 3F2000E2 		and	r2, r0, #63
+ 194 01d4 8C00A0E3 		mov	r0, #140
+ 195 01d8 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 196 01dc FEFFFFEA 		b	i2cWriteDeviceRegister
+ 198              		.align	2
+ 199              		.global	initialize_pcm1774
+ 201              	initialize_pcm1774:
+ 202              		@ args = 0, pretend = 0, frame = 0
+ 203              		@ frame_needed = 0, uses_anonymous_args = 0
+ 204 01e0 04E02DE5 		str	lr, [sp, #-4]!
+ 205 01e4 4010A0E3 		mov	r1, #64
+ 206 01e8 2720A0E3 		mov	r2, #39
+ 207 01ec 8C00A0E3 		mov	r0, #140
+ 208 01f0 FEFFFFEB 		bl	i2cWriteDeviceRegister
+ 209 01f4 4110A0E3 		mov	r1, #65
+ 210 01f8 2720A0E3 		mov	r2, #39
+ 211 01fc 8C00A0E3 		mov	r0, #140
+ 212 0200 FEFFFFEB 		bl	i2cWriteDeviceRegister
+ 213 0204 4410A0E3 		mov	r1, #68
+ 214 0208 2720A0E3 		mov	r2, #39
+ 215 020c 8C00A0E3 		mov	r0, #140
+ 216 0210 FEFFFFEB 		bl	i2cWriteDeviceRegister
+ 217 0214 4510A0E3 		mov	r1, #69
+ 218 0218 2720A0E3 		mov	r2, #39
+ 219 021c 8C00A0E3 		mov	r0, #140
+ 220 0220 FEFFFFEB 		bl	i2cWriteDeviceRegister
+ 221 0224 4610A0E3 		mov	r1, #70
+ 222 0228 2020A0E3 		mov	r2, #32
+ 223 022c 8C00A0E3 		mov	r0, #140
+ 224 0230 FEFFFFEB 		bl	i2cWriteDeviceRegister
+ 225 0234 4910A0E3 		mov	r1, #73
+ 226 0238 E020A0E3 		mov	r2, #224
+ 227 023c 8C00A0E3 		mov	r0, #140
+ 228 0240 FEFFFFEB 		bl	i2cWriteDeviceRegister
+ 229 0244 5610A0E3 		mov	r1, #86
+ 230 0248 0120A0E3 		mov	r2, #1
+ 231 024c 8C00A0E3 		mov	r0, #140
+ 232 0250 FEFFFFEB 		bl	i2cWriteDeviceRegister
+ 233 0254 4810A0E3 		mov	r1, #72
+ 234 0258 0320A0E3 		mov	r2, #3
+ 235 025c 8C00A0E3 		mov	r0, #140
+ 236 0260 FEFFFFEB 		bl	i2cWriteDeviceRegister
+ 237 0264 5810A0E3 		mov	r1, #88
+ 238 0268 1120A0E3 		mov	r2, #17
+ 239 026c 8C00A0E3 		mov	r0, #140
+ 240 0270 FEFFFFEB 		bl	i2cWriteDeviceRegister
+ 241 0274 4910A0E3 		mov	r1, #73
+ 242 0278 EC20A0E3 		mov	r2, #236
+ 243 027c 8C00A0E3 		mov	r0, #140
+ 244 0280 FEFFFFEB 		bl	i2cWriteDeviceRegister
+ 245 0284 4A10A0E3 		mov	r1, #74
+ 246 0288 0120A0E3 		mov	r2, #1
+ 247 028c 8C00A0E3 		mov	r0, #140
+ 248 0290 FEFFFFEB 		bl	i2cWriteDeviceRegister
+ 249 0294 5210A0E3 		mov	r1, #82
+ 250 0298 3020A0E3 		mov	r2, #48
+ 251 029c 8C00A0E3 		mov	r0, #140
+ 252 02a0 FEFFFFEB 		bl	i2cWriteDeviceRegister
+ 253 02a4 0020A0E3 		mov	r2, #0
+ 254 02a8 5710A0E3 		mov	r1, #87
+ 255 02ac 8C00A0E3 		mov	r0, #140
+ 256 02b0 FEFFFFEB 		bl	i2cWriteDeviceRegister
+ 257 02b4 5A00A0E3 		mov	r0, #90
+ 258 02b8 0010A0E1 		mov	r1, r0
+ 259 02bc FEFFFFEB 		bl	pcm1774_DigitalVolume
+ 260 02c0 3200A0E3 		mov	r0, #50
+ 261 02c4 0010A0E1 		mov	r1, r0
+ 262 02c8 FEFFFFEB 		bl	pcm1774_OutputVolume
+ 263 02cc 0100A0E3 		mov	r0, #1
+ 264 02d0 04F09DE4 		ldr	pc, [sp], #4
+ 266              		.align	2
+ 267              		.global	pcm1774_bitMask
+ 269              	pcm1774_bitMask:
+ 270              		@ args = 0, pretend = 0, frame = 0
+ 271              		@ frame_needed = 0, uses_anonymous_args = 0
+ 272 02d4 FF0012E3 		tst	r2, #255
+ 273 02d8 30402DE9 		stmfd	sp!, {r4, r5, lr}
+ 274 02dc FF4000E2 		and	r4, r0, #255
+ 275 02e0 FF5001E2 		and	r5, r1, #255
+ 276 02e4 0400000A 		beq	.L31
+ 277 02e8 8C00A0E3 		mov	r0, #140
+ 278 02ec 0410A0E1 		mov	r1, r4
+ 279 02f0 FEFFFFEB 		bl	i2cReadDeviceRegister
+ 280 02f4 000085E1 		orr	r0, r5, r0
+ 281 02f8 030000EA 		b	.L34
+ 282              	.L31:
+ 283 02fc 8C00A0E3 		mov	r0, #140
+ 284 0300 0410A0E1 		mov	r1, r4
+ 285 0304 FEFFFFEB 		bl	i2cReadDeviceRegister
+ 286 0308 0500C0E1 		bic	r0, r0, r5
+ 287              	.L34:
+ 288 030c FF2000E2 		and	r2, r0, #255
+ 289 0310 0410A0E1 		mov	r1, r4
+ 290 0314 8C00A0E3 		mov	r0, #140
+ 291 0318 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
+ 292 031c FEFFFFEA 		b	i2cWriteDeviceRegister
+ 294              		.align	2
+ 295              		.global	pcm1774_redirectAnalogInputToRightOutput
+ 297              	pcm1774_redirectAnalogInputToRightOutput:
+ 298              		@ args = 0, pretend = 0, frame = 0
+ 299              		@ frame_needed = 0, uses_anonymous_args = 0
+ 300 0320 30402DE9 		stmfd	sp!, {r4, r5, lr}
+ 301 0324 0020A0E3 		mov	r2, #0
+ 302 0328 0150A0E1 		mov	r5, r1
+ 303 032c FF4000E2 		and	r4, r0, #255
+ 304 0330 6010A0E3 		mov	r1, #96
+ 305 0334 5800A0E3 		mov	r0, #88
+ 306 0338 FEFFFFEB 		bl	pcm1774_bitMask
+ 307 033c FF5005E2 		and	r5, r5, #255
+ 308 0340 0443A0E1 		mov	r4, r4, asl #6
+ 309 0344 854284E1 		orr	r4, r4, r5, asl #5
+ 310 0348 E01004E2 		and	r1, r4, #224
+ 311 034c 5800A0E3 		mov	r0, #88
+ 312 0350 0120A0E3 		mov	r2, #1
+ 313 0354 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
+ 314 0358 FEFFFFEA 		b	pcm1774_bitMask
+ 316              		.align	2
+ 317              		.global	pcm1774_redirectAnalogInputToLeftOutput
+ 319              	pcm1774_redirectAnalogInputToLeftOutput:
+ 320              		@ args = 0, pretend = 0, frame = 0
+ 321              		@ frame_needed = 0, uses_anonymous_args = 0
+ 322 035c 30402DE9 		stmfd	sp!, {r4, r5, lr}
+ 323 0360 0020A0E3 		mov	r2, #0
+ 324 0364 0150A0E1 		mov	r5, r1
+ 325 0368 FF4000E2 		and	r4, r0, #255
+ 326 036c 0610A0E3 		mov	r1, #6
+ 327 0370 5800A0E3 		mov	r0, #88
+ 328 0374 FEFFFFEB 		bl	pcm1774_bitMask
+ 329 0378 FF5005E2 		and	r5, r5, #255
+ 330 037c 8440A0E1 		mov	r4, r4, asl #1
+ 331 0380 054184E1 		orr	r4, r4, r5, asl #2
+ 332 0384 FE1004E2 		and	r1, r4, #254
+ 333 0388 5800A0E3 		mov	r0, #88
+ 334 038c 0120A0E3 		mov	r2, #1
+ 335 0390 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
+ 336 0394 FEFFFFEA 		b	pcm1774_bitMask
+ 338              		.align	2
+ 339              		.global	pcm1774_gainAmplifierAnalogInput
+ 341              	pcm1774_gainAmplifierAnalogInput:
+ 342              		@ args = 0, pretend = 0, frame = 0
+ 343              		@ frame_needed = 0, uses_anonymous_args = 0
+ 344 0398 30402DE9 		stmfd	sp!, {r4, r5, lr}
+ 345 039c 0020A0E3 		mov	r2, #0
+ 346 03a0 0050A0E1 		mov	r5, r0
+ 347 03a4 0140A0E1 		mov	r4, r1
+ 348 03a8 5900A0E3 		mov	r0, #89
+ 349 03ac 7710A0E3 		mov	r1, #119
+ 350 03b0 FEFFFFEB 		bl	pcm1774_bitMask
+ 351 03b4 074004E2 		and	r4, r4, #7
+ 352 03b8 075005E2 		and	r5, r5, #7
+ 353 03bc 041285E1 		orr	r1, r5, r4, asl #4
+ 354 03c0 5900A0E3 		mov	r0, #89
+ 355 03c4 0120A0E3 		mov	r2, #1
+ 356 03c8 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
+ 357 03cc FEFFFFEA 		b	pcm1774_bitMask
+ 359              		.align	2
+ 360              		.global	pcm1774_selectAnalogInput
+ 362              	pcm1774_selectAnalogInput:
+ 363              		@ args = 0, pretend = 0, frame = 0
+ 364              		@ frame_needed = 0, uses_anonymous_args = 0
+ 365 03d0 10402DE9 		stmfd	sp!, {r4, lr}
+ 366 03d4 FF2000E2 		and	r2, r0, #255
+ 367 03d8 FF4001E2 		and	r4, r1, #255
+ 368 03dc 5700A0E3 		mov	r0, #87
+ 369 03e0 0110A0E3 		mov	r1, #1
+ 370 03e4 FEFFFFEB 		bl	pcm1774_bitMask
+ 371 03e8 0420A0E1 		mov	r2, r4
+ 372 03ec 5700A0E3 		mov	r0, #87
+ 373 03f0 1010A0E3 		mov	r1, #16
+ 374 03f4 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 375 03f8 FEFFFFEA 		b	pcm1774_bitMask
+ 377              		.align	2
+ 378              		.global	pcm1774_PowerUpGainAmplifierAnalog
+ 380              	pcm1774_PowerUpGainAmplifierAnalog:
+ 381              		@ args = 0, pretend = 0, frame = 0
+ 382              		@ frame_needed = 0, uses_anonymous_args = 0
+ 383 03fc 10402DE9 		stmfd	sp!, {r4, lr}
+ 384 0400 FF2000E2 		and	r2, r0, #255
+ 385 0404 FF4001E2 		and	r4, r1, #255
+ 386 0408 5200A0E3 		mov	r0, #82
+ 387 040c 1010A0E3 		mov	r1, #16
+ 388 0410 FEFFFFEB 		bl	pcm1774_bitMask
+ 389 0414 0420A0E1 		mov	r2, r4
+ 390 0418 5200A0E3 		mov	r0, #82
+ 391 041c 2010A0E3 		mov	r1, #32
+ 392 0420 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 393 0424 FEFFFFEA 		b	pcm1774_bitMask
+ 395              		.align	2
+ 396              		.global	pcm1774_setShortCircuitProtectionRight
+ 398              	pcm1774_setShortCircuitProtectionRight:
+ 399              		@ args = 0, pretend = 0, frame = 0
+ 400              		@ frame_needed = 0, uses_anonymous_args = 0
+ 401              		@ link register save eliminated.
+ 402 0428 FF0010E3 		tst	r0, #255
+ 403 042c 4A00A013 		movne	r0, #74
+ 404 0430 0810A013 		movne	r1, #8
+ 405 0434 0020A013 		movne	r2, #0
+ 406 0438 4A00A003 		moveq	r0, #74
+ 407 043c 0810A003 		moveq	r1, #8
+ 408 0440 0120A003 		moveq	r2, #1
+ 409 0444 FEFFFFEA 		b	pcm1774_bitMask
+ 411              		.align	2
+ 412              		.global	pcm1774_setShortCircuitProtectionLeft
+ 414              	pcm1774_setShortCircuitProtectionLeft:
+ 415              		@ args = 0, pretend = 0, frame = 0
+ 416              		@ frame_needed = 0, uses_anonymous_args = 0
+ 417              		@ link register save eliminated.
+ 418 0448 FF0010E3 		tst	r0, #255
+ 419 044c 4A00A013 		movne	r0, #74
+ 420 0450 0410A013 		movne	r1, #4
+ 421 0454 0020A013 		movne	r2, #0
+ 422 0458 4A00A003 		moveq	r0, #74
+ 423 045c 0410A003 		moveq	r1, #4
+ 424 0460 0120A003 		moveq	r2, #1
+ 425 0464 FEFFFFEA 		b	pcm1774_bitMask
+ 427              		.align	2
+ 428              		.global	pcm1774_PowerUpVcom
+ 430              	pcm1774_PowerUpVcom:
+ 431              		@ args = 0, pretend = 0, frame = 0
+ 432              		@ frame_needed = 0, uses_anonymous_args = 0
+ 433              		@ link register save eliminated.
+ 434 0468 FF2000E2 		and	r2, r0, #255
+ 435 046c 0110A0E3 		mov	r1, #1
+ 436 0470 4A00A0E3 		mov	r0, #74
+ 437 0474 FEFFFFEA 		b	pcm1774_bitMask
+ 439              		.align	2
+ 440              		.global	pcm1774_LineOutputConfiguration
+ 442              	pcm1774_LineOutputConfiguration:
+ 443              		@ args = 0, pretend = 0, frame = 0
+ 444              		@ frame_needed = 0, uses_anonymous_args = 0
+ 445 0478 10402DE9 		stmfd	sp!, {r4, lr}
+ 446 047c 0C10A0E3 		mov	r1, #12
+ 447 0480 FF4000E2 		and	r4, r0, #255
+ 448 0484 0020A0E3 		mov	r2, #0
+ 449 0488 4A00A0E3 		mov	r0, #74
+ 450 048c FEFFFFEB 		bl	pcm1774_bitMask
+ 451 0490 010054E3 		cmp	r4, #1
+ 452 0494 4A00A003 		moveq	r0, #74
+ 453 0498 C010A003 		moveq	r1, #192
+ 454 049c 0420A003 		moveq	r2, #4
+ 455 04a0 0600000A 		beq	.L61
+ 456 04a4 020054E3 		cmp	r4, #2
+ 457 04a8 4A00A013 		movne	r0, #74
+ 458 04ac C010A013 		movne	r1, #192
+ 459 04b0 0020A013 		movne	r2, #0
+ 460 04b4 4A00A003 		moveq	r0, #74
+ 461 04b8 C010A003 		moveq	r1, #192
+ 462 04bc 0820A003 		moveq	r2, #8
+ 463              	.L61:
+ 464 04c0 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 465 04c4 FEFFFFEA 		b	pcm1774_bitMask
+ 467              		.align	2
+ 468              		.global	pcm1774_PowerUpAnalog
+ 470              	pcm1774_PowerUpAnalog:
+ 471              		@ args = 0, pretend = 0, frame = 0
+ 472              		@ frame_needed = 0, uses_anonymous_args = 0
+ 473 04c8 10402DE9 		stmfd	sp!, {r4, lr}
+ 474 04cc FF2000E2 		and	r2, r0, #255
+ 475 04d0 FF4001E2 		and	r4, r1, #255
+ 476 04d4 4900A0E3 		mov	r0, #73
+ 477 04d8 0410A0E3 		mov	r1, #4
+ 478 04dc FEFFFFEB 		bl	pcm1774_bitMask
+ 479 04e0 0420A0E1 		mov	r2, r4
+ 480 04e4 4900A0E3 		mov	r0, #73
+ 481 04e8 0810A0E3 		mov	r1, #8
+ 482 04ec 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 483 04f0 FEFFFFEA 		b	pcm1774_bitMask
+ 485              		.align	2
+ 486              		.global	pcm1774_PowerUpDAC
+ 488              	pcm1774_PowerUpDAC:
+ 489              		@ args = 0, pretend = 0, frame = 0
+ 490              		@ frame_needed = 0, uses_anonymous_args = 0
+ 491 04f4 10402DE9 		stmfd	sp!, {r4, lr}
+ 492 04f8 FF2000E2 		and	r2, r0, #255
+ 493 04fc FF4001E2 		and	r4, r1, #255
+ 494 0500 4900A0E3 		mov	r0, #73
+ 495 0504 2010A0E3 		mov	r1, #32
+ 496 0508 FEFFFFEB 		bl	pcm1774_bitMask
+ 497 050c 0420A0E1 		mov	r2, r4
+ 498 0510 4900A0E3 		mov	r0, #73
+ 499 0514 4010A0E3 		mov	r1, #64
+ 500 0518 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 501 051c FEFFFFEA 		b	pcm1774_bitMask
+ 503              		.align	2
+ 504              		.global	pcm1774_PowerUpAnalogBiasControl
+ 506              	pcm1774_PowerUpAnalogBiasControl:
+ 507              		@ args = 0, pretend = 0, frame = 0
+ 508              		@ frame_needed = 0, uses_anonymous_args = 0
+ 509              		@ link register save eliminated.
+ 510 0520 FF2000E2 		and	r2, r0, #255
+ 511 0524 8010A0E3 		mov	r1, #128
+ 512 0528 4900A0E3 		mov	r0, #73
+ 513 052c FEFFFFEA 		b	pcm1774_bitMask
+ 515              		.align	2
+ 516              		.global	pcm1774_PowerUpMixer
+ 518              	pcm1774_PowerUpMixer:
+ 519              		@ args = 0, pretend = 0, frame = 0
+ 520              		@ frame_needed = 0, uses_anonymous_args = 0
+ 521 0530 10402DE9 		stmfd	sp!, {r4, lr}
+ 522 0534 FF2000E2 		and	r2, r0, #255
+ 523 0538 FF4001E2 		and	r4, r1, #255
+ 524 053c 4800A0E3 		mov	r0, #72
+ 525 0540 0110A0E3 		mov	r1, #1
+ 526 0544 FEFFFFEB 		bl	pcm1774_bitMask
+ 527 0548 0420A0E1 		mov	r2, r4
+ 528 054c 4800A0E3 		mov	r0, #72
+ 529 0550 0210A0E3 		mov	r1, #2
+ 530 0554 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 531 0558 FEFFFFEA 		b	pcm1774_bitMask
+ 533              		.align	2
+ 534              		.global	pcm1774_DigitalOversamplingControl
+ 536              	pcm1774_DigitalOversamplingControl:
+ 537              		@ args = 0, pretend = 0, frame = 0
+ 538              		@ frame_needed = 0, uses_anonymous_args = 0
+ 539              		@ link register save eliminated.
+ 540 055c FF2000E2 		and	r2, r0, #255
+ 541 0560 0110A0E3 		mov	r1, #1
+ 542 0564 4600A0E3 		mov	r0, #70
+ 543 0568 FEFFFFEA 		b	pcm1774_bitMask
+ 545              		.align	2
+ 546              		.global	pcm1774_DigitalGainControl
+ 548              	pcm1774_DigitalGainControl:
+ 549              		@ args = 0, pretend = 0, frame = 0
+ 550              		@ frame_needed = 0, uses_anonymous_args = 0
+ 551 056c 10402DE9 		stmfd	sp!, {r4, lr}
+ 552 0570 0C10A0E3 		mov	r1, #12
+ 553 0574 0040A0E1 		mov	r4, r0
+ 554 0578 0020A0E3 		mov	r2, #0
+ 555 057c 4600A0E3 		mov	r0, #70
+ 556 0580 FEFFFFEB 		bl	pcm1774_bitMask
+ 557 0584 034004E2 		and	r4, r4, #3
+ 558 0588 0411A0E1 		mov	r1, r4, asl #2
+ 559 058c 4600A0E3 		mov	r0, #70
+ 560 0590 0120A0E3 		mov	r2, #1
+ 561 0594 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 562 0598 FEFFFFEA 		b	pcm1774_bitMask
+ 564              		.align	2
+ 565              		.global	pcm1774_DigitalInterfaceSelection
+ 567              	pcm1774_DigitalInterfaceSelection:
+ 568              		@ args = 0, pretend = 0, frame = 0
+ 569              		@ frame_needed = 0, uses_anonymous_args = 0
+ 570 059c 10402DE9 		stmfd	sp!, {r4, lr}
+ 571 05a0 3010A0E3 		mov	r1, #48
+ 572 05a4 0040A0E1 		mov	r4, r0
+ 573 05a8 0020A0E3 		mov	r2, #0
+ 574 05ac 4600A0E3 		mov	r0, #70
+ 575 05b0 FEFFFFEB 		bl	pcm1774_bitMask
+ 576 05b4 034004E2 		and	r4, r4, #3
+ 577 05b8 0412A0E1 		mov	r1, r4, asl #4
+ 578 05bc 4600A0E3 		mov	r0, #70
+ 579 05c0 0120A0E3 		mov	r2, #1
+ 580 05c4 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 581 05c8 FEFFFFEA 		b	pcm1774_bitMask
+ 583              		.align	2
+ 584              		.global	pcm1774_DigitalDeEmphasisFilter
+ 586              	pcm1774_DigitalDeEmphasisFilter:
+ 587              		@ args = 0, pretend = 0, frame = 0
+ 588              		@ frame_needed = 0, uses_anonymous_args = 0
+ 589 05cc 10402DE9 		stmfd	sp!, {r4, lr}
+ 590 05d0 C010A0E3 		mov	r1, #192
+ 591 05d4 FF4000E2 		and	r4, r0, #255
+ 592 05d8 0020A0E3 		mov	r2, #0
+ 593 05dc 4600A0E3 		mov	r0, #70
+ 594 05e0 FEFFFFEB 		bl	pcm1774_bitMask
+ 595 05e4 0443A0E1 		mov	r4, r4, asl #6
+ 596 05e8 C01004E2 		and	r1, r4, #192
+ 597 05ec 4600A0E3 		mov	r0, #70
+ 598 05f0 0120A0E3 		mov	r2, #1
+ 599 05f4 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 600 05f8 FEFFFFEA 		b	pcm1774_bitMask
+ 602              		.align	2
+ 603              		.global	pcm1774_ConnectDigitalOutputs
+ 605              	pcm1774_ConnectDigitalOutputs:
+ 606              		@ args = 0, pretend = 0, frame = 0
+ 607              		@ frame_needed = 0, uses_anonymous_args = 0
+ 608 05fc 10402DE9 		stmfd	sp!, {r4, lr}
+ 609 0600 FF2000E2 		and	r2, r0, #255
+ 610 0604 FF4001E2 		and	r4, r1, #255
+ 611 0608 5800A0E3 		mov	r0, #88
+ 612 060c 0110A0E3 		mov	r1, #1
+ 613 0610 FEFFFFEB 		bl	pcm1774_bitMask
+ 614 0614 0420A0E1 		mov	r2, r4
+ 615 0618 5800A0E3 		mov	r0, #88
+ 616 061c 1010A0E3 		mov	r1, #16
+ 617 0620 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 618 0624 FEFFFFEA 		b	pcm1774_bitMask
+ 620              		.align	2
+ 621              		.global	pcm1774_LoadDefaultDigitalConfiguration
+ 623              	pcm1774_LoadDefaultDigitalConfiguration:
+ 624              		@ args = 0, pretend = 0, frame = 0
+ 625              		@ frame_needed = 0, uses_anonymous_args = 0
+ 626 0628 04E02DE5 		str	lr, [sp, #-4]!
+ 627 062c FEFFFFEB 		bl	initialize_pcm1774
+ 628 0630 0100A0E3 		mov	r0, #1
+ 629 0634 0010A0E1 		mov	r1, r0
+ 630 0638 FEFFFFEB 		bl	pcm1774_PowerUpMixer
+ 631 063c 0100A0E3 		mov	r0, #1
+ 632 0640 0010A0E1 		mov	r1, r0
+ 633 0644 FEFFFFEB 		bl	pcm1774_PowerUpAnalog
+ 634 0648 0100A0E3 		mov	r0, #1
+ 635 064c 0010A0E1 		mov	r1, r0
+ 636 0650 FEFFFFEB 		bl	pcm1774_PowerUpGainAmplifierAnalog
+ 637 0654 0000A0E3 		mov	r0, #0
+ 638 0658 0010A0E1 		mov	r1, r0
+ 639 065c FEFFFFEB 		bl	pcm1774_selectAnalogInput
+ 640 0660 0000A0E3 		mov	r0, #0
+ 641 0664 0010A0E1 		mov	r1, r0
+ 642 0668 FEFFFFEB 		bl	pcm1774_redirectAnalogInputToLeftOutput
+ 643 066c 0000A0E3 		mov	r0, #0
+ 644 0670 0010A0E1 		mov	r1, r0
+ 645 0674 FEFFFFEB 		bl	pcm1774_redirectAnalogInputToRightOutput
+ 646 0678 0400A0E3 		mov	r0, #4
+ 647 067c 0010A0E1 		mov	r1, r0
+ 648 0680 FEFFFFEB 		bl	pcm1774_gainAmplifierAnalogInput
+ 649 0684 0100A0E3 		mov	r0, #1
+ 650 0688 0010A0E1 		mov	r1, r0
+ 651 068c FEFFFFEB 		bl	pcm1774_ConnectDigitalOutputs
+ 652 0690 2800A0E3 		mov	r0, #40
+ 653 0694 0010A0E1 		mov	r1, r0
+ 654 0698 FEFFFFEB 		bl	pcm1774_DigitalVolume
+ 655 069c 3200A0E3 		mov	r0, #50
+ 656 06a0 0010A0E1 		mov	r1, r0
+ 657 06a4 04E09DE4 		ldr	lr, [sp], #4
+ 658 06a8 FEFFFFEA 		b	pcm1774_OutputVolume
+ 660              		.align	2
+ 661              		.global	pcm1774_3dSoundEffect
+ 663              	pcm1774_3dSoundEffect:
+ 664              		@ args = 0, pretend = 0, frame = 0
+ 665              		@ frame_needed = 0, uses_anonymous_args = 0
+ 666              		@ link register save eliminated.
+ 667 06ac FF2001E2 		and	r2, r1, #255
+ 668 06b0 FF0010E3 		tst	r0, #255
+ 669 06b4 0010A013 		movne	r1, #0
+ 670 06b8 1010A003 		moveq	r1, #16
+ 671 06bc 0A0052E3 		cmp	r2, #10
+ 672 06c0 0A20A083 		movhi	r2, #10
+ 673 06c4 0400008A 		bhi	.L86
+ 674 06c8 000052E3 		cmp	r2, #0
+ 675 06cc 0200001A 		bne	.L86
+ 676 06d0 8C00A0E3 		mov	r0, #140
+ 677 06d4 5F10A0E3 		mov	r1, #95
+ 678 06d8 FEFFFFEA 		b	i2cWriteDeviceRegister
+ 679              	.L86:
+ 680 06dc 401081E3 		orr	r1, r1, #64
+ 681 06e0 011082E1 		orr	r1, r2, r1
+ 682 06e4 5F00A0E3 		mov	r0, #95
+ 683 06e8 0120A0E3 		mov	r2, #1
+ 684 06ec FEFFFFEA 		b	pcm1774_bitMask
+ 686              		.align	2
+ 687              		.global	pcm1774_Reset
+ 689              	pcm1774_Reset:
+ 690              		@ args = 0, pretend = 0, frame = 4
+ 691              		@ frame_needed = 0, uses_anonymous_args = 0
+ 692 06f0 10402DE9 		stmfd	sp!, {r4, lr}
+ 693 06f4 8020A0E3 		mov	r2, #128
+ 694 06f8 04D04DE2 		sub	sp, sp, #4
+ 695 06fc 0040A0E3 		mov	r4, #0
+ 696 0700 8C00A0E3 		mov	r0, #140
+ 697 0704 5510A0E3 		mov	r1, #85
+ 698 0708 00408DE5 		str	r4, [sp, #0]
+ 699 070c FEFFFFEB 		bl	i2cWriteDeviceRegister
+ 700 0710 00408DE5 		str	r4, [sp, #0]
+ 701 0714 28209FE5 		ldr	r2, .L92
+ 702 0718 020000EA 		b	.L89
+ 703              	.L90:
+ 704 071c 00309DE5 		ldr	r3, [sp, #0]
+ 705 0720 013083E2 		add	r3, r3, #1
+ 706 0724 00308DE5 		str	r3, [sp, #0]
+ 707              	.L89:
+ 708 0728 00309DE5 		ldr	r3, [sp, #0]
+ 709 072c 020053E1 		cmp	r3, r2
+ 710 0730 F9FFFFDA 		ble	.L90
+ 711 0734 FEFFFFEB 		bl	initialize_pcm1774
+ 712 0738 04D08DE2 		add	sp, sp, #4
+ 713 073c 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 714 0740 FEFFFFEA 		b	pcm1774_LoadDefaultDigitalConfiguration
+ 715              	.L93:
+ 716              		.align	2
+ 717              	.L92:
+ 718 0744 87130000 		.word	4999
+ 720              		.section	.rodata
+ 723              	C.4.1456:
+ 724 0000 9B       		.byte	-101
+ 725 0001 9A       		.byte	-102
+ 726 0002 99       		.byte	-103
+ 727 0003 98       		.byte	-104
+ 728 0004 97       		.byte	-105
+ 729 0005 96       		.byte	-106
+ 730 0006 95       		.byte	-107
+ 731 0007 94       		.byte	-108
+ 732 0008 93       		.byte	-109
+ 733 0009 92       		.byte	-110
+ 734 000a 91       		.byte	-111
+ 735 000b 90       		.byte	-112
+ 736 000c 80       		.byte	-128
+ 737 000d 8E       		.byte	-114
+ 738 000e 8D       		.byte	-115
+ 739 000f 8C       		.byte	-116
+ 740 0010 8B       		.byte	-117
+ 741 0011 8A       		.byte	-118
+ 742 0012 89       		.byte	-119
+ 743 0013 88       		.byte	-120
+ 744 0014 87       		.byte	-121
+ 745 0015 86       		.byte	-122
+ 746 0016 85       		.byte	-123
+ 747 0017 84       		.byte	-124
+ 748 0018 83       		.byte	-125
+ 749              		.ident	"GCC: (GNU) 4.3.2"
 DEFINED SYMBOLS
                             *ABS*:00000000 pcm1774.c
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:6      .text:00000000 pcm1774_sendByte
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:10     .text:00000000 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:15     .text:00000004 pcm1774_readByte
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:25     .text:0000000c pcm1774_bitMask
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:34     .text:00000010 initialize_pcm1774
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:44     .text:00000018 pcm1774_Reset
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:67     .text:00000050 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:72     .text:00000054 pcm1774_LoadDefaultDigitalConfiguration
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:76     .text:00000054 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:81     .text:00000058 pcm1774_OutputVolume
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:90     .text:0000005c pcm1774_ConnectDigitalOutputs
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:99     .text:00000060 pcm1774_DigitalVolume
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:108    .text:00000064 pcm1774_DigitalDeEmphasisFilter
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:117    .text:00000068 pcm1774_DigitalInterfaceSelection
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:126    .text:0000006c pcm1774_DigitalGainControl
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:135    .text:00000070 pcm1774_DigitalOversamplingControl
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:144    .text:00000074 pcm1774_PowerUpMixer
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:153    .text:00000078 pcm1774_PowerUpAnalogBiasControl
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:162    .text:0000007c pcm1774_PowerUpDAC
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:171    .text:00000080 pcm1774_PowerUpAnalog
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:180    .text:00000084 pcm1774_LineOutputConfiguration
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:189    .text:00000088 pcm1774_PowerUpVcom
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:198    .text:0000008c pcm1774_setShortCircuitProtectionLeft
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:207    .text:00000090 pcm1774_setShortCircuitProtectionRight
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:216    .text:00000094 pcm1774_readShortCircuitStatusLeft
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:226    .text:0000009c pcm1774_readShortCircuitStatusRight
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:236    .text:000000a4 pcm1774_PowerUpGainAmplifierAnalog
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:245    .text:000000a8 pcm1774_selectAnalogInput
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:254    .text:000000ac pcm1774_gainAmplifierAnalogInput
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:263    .text:000000b0 pcm1774_redirectAnalogInputToLeftOutput
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:272    .text:000000b4 pcm1774_redirectAnalogInputToRightOutput
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:281    .text:000000b8 pcm1774_bassBoost
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:290    .text:000000bc pcm1774_middleBoost
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:299    .text:000000c0 pcm1774_trebleBoost
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccVtn78j.s:308    .text:000000c4 pcm1774_3dSoundEffect
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:6      .text:00000000 pcm1774_readByte
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:10     .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:17     .text:0000000c pcm1774_readShortCircuitStatusRight
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:32     .text:0000002c pcm1774_readShortCircuitStatusLeft
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:47     .text:0000004c pcm1774_sendByte
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:60     .text:00000060 pcm1774_trebleBoost
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:85     .text:000000ac $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:723    .rodata:00000000 C.4.1456
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:90     .text:000000b0 pcm1774_middleBoost
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:93     .text:000000b0 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:115    .text:000000fc $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:120    .text:00000100 pcm1774_bassBoost
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:123    .text:00000100 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:145    .text:0000014c $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:151    .text:00000150 pcm1774_DigitalVolume
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:154    .text:00000150 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:176    .text:00000198 pcm1774_OutputVolume
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:201    .text:000001e0 initialize_pcm1774
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:269    .text:000002d4 pcm1774_bitMask
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:297    .text:00000320 pcm1774_redirectAnalogInputToRightOutput
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:319    .text:0000035c pcm1774_redirectAnalogInputToLeftOutput
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:341    .text:00000398 pcm1774_gainAmplifierAnalogInput
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:362    .text:000003d0 pcm1774_selectAnalogInput
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:380    .text:000003fc pcm1774_PowerUpGainAmplifierAnalog
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:398    .text:00000428 pcm1774_setShortCircuitProtectionRight
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:414    .text:00000448 pcm1774_setShortCircuitProtectionLeft
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:430    .text:00000468 pcm1774_PowerUpVcom
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:442    .text:00000478 pcm1774_LineOutputConfiguration
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:470    .text:000004c8 pcm1774_PowerUpAnalog
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:488    .text:000004f4 pcm1774_PowerUpDAC
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:506    .text:00000520 pcm1774_PowerUpAnalogBiasControl
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:518    .text:00000530 pcm1774_PowerUpMixer
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:536    .text:0000055c pcm1774_DigitalOversamplingControl
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:548    .text:0000056c pcm1774_DigitalGainControl
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:567    .text:0000059c pcm1774_DigitalInterfaceSelection
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:586    .text:000005cc pcm1774_DigitalDeEmphasisFilter
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:605    .text:000005fc pcm1774_ConnectDigitalOutputs
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:623    .text:00000628 pcm1774_LoadDefaultDigitalConfiguration
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:663    .text:000006ac pcm1774_3dSoundEffect
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:689    .text:000006f0 pcm1774_Reset
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:718    .text:00000744 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccg122sg.s:724    .rodata:00000000 $d
 
-NO UNDEFINED SYMBOLS
+UNDEFINED SYMBOLS
+i2cReadDeviceRegister
+i2cWriteDeviceRegister
+memcpy
+__divsi3

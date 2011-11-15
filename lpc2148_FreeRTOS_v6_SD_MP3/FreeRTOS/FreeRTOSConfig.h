@@ -91,7 +91,7 @@
 #define OS_MS(x)						( x / MS_PER_TICK() )
 
 #define configMAX_TASK_NAME_LEN				16	/* Maximum characters to describe a task */
-#define configUSE_TRACE_FACILITY			0	/* This is for offline traces, usually run-time status is better option */
+#define configUSE_TRACE_FACILITY			1	/* This is for offline traces, usually run-time status is better option */
 #define configGENERATE_RUN_TIME_STATS		1	/* Use for debugging: Uses some overhead along and TIMER1 */
 #define configCHECK_FOR_STACK_OVERFLOW  	2	/* Use for debugging initially until you are sure you have set correct stack sizes, then set to 0 */
 #define INCLUDE_uxTaskGetStackHighWaterMark 1	/* You can uxTaskGetStackHighWaterMark() to get tasks remaining stack to make sure it won't overflow */

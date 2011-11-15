@@ -133,13 +133,13 @@
  119              		.ident	"GCC: (GNU) 4.3.2"
 DEFINED SYMBOLS
                             *ABS*:00000000 cpu.c
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccq9pbBm.s:6      .text:00000000 cpuSetupHardware
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccq9pbBm.s:10     .text:00000000 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccq9pbBm.s:50     .text:00000090 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccq9pbBm.s:58     .text:000000a0 cpuSetupFIQISR
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccq9pbBm.s:62     .text:000000a0 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccq9pbBm.s:81     .text:000000a4 cpuPrintMemoryInfo
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccq9pbBm.s:111    .text:00000104 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccUkG3ai.s:6      .text:00000000 cpuSetupHardware
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccUkG3ai.s:10     .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccUkG3ai.s:50     .text:00000090 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccUkG3ai.s:58     .text:000000a0 cpuSetupFIQISR
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccUkG3ai.s:62     .text:000000a0 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccUkG3ai.s:81     .text:000000a4 cpuPrintMemoryInfo
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccUkG3ai.s:111    .text:00000104 $d
 
 UNDEFINED SYMBOLS
 rprintf

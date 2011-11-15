@@ -19,15 +19,13 @@ typedef struct
 	struct {
 		xTaskHandle userInterface;
 		xTaskHandle diskTimer;
-		xTaskHandle sender;
-		xTaskHandle receiver;
+		xTaskHandle mp3;
+		xTaskHandle popSongs;
 		xTaskHandle buttonHandler;
-		xTaskHandle mp3player;
 	}task;
 
 	struct {
 		xSemaphoreHandle SPI;
-		xSemaphoreHandle i2c;
 	}lock;
 }OSHANDLES;
 

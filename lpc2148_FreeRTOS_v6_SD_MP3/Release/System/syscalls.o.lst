@@ -155,22 +155,22 @@
  169              		.ident	"GCC: (GNU) 4.3.2"
 DEFINED SYMBOLS
                             *ABS*:00000000 syscalls.c
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBcoL6U.s:6      .text:00000000 _close_r
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBcoL6U.s:10     .text:00000000 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBcoL6U.s:16     .text:00000008 _lseek_r
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBcoL6U.s:26     .text:00000010 _fstat_r
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBcoL6U.s:38     .text:00000020 isatty
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBcoL6U.s:48     .text:00000028 _sbrk_r
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBcoL6U.s:73     .text:00000070 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBcoL6U.s:167    .bss:00000000 heap_end.2375
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBcoL6U.s:80     .text:0000007c _write_r
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBcoL6U.s:83     .text:0000007c $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBcoL6U.s:104    .text:000000b8 _read_r
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBcoL6U.s:132    .text:000000f8 _kill_r
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBcoL6U.s:143    .text:0000010c $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBcoL6U.s:152    .text:00000110 _getpid_r
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBcoL6U.s:155    .text:00000110 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccBcoL6U.s:163    .text:00000124 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccFdx0gd.s:6      .text:00000000 _close_r
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccFdx0gd.s:10     .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccFdx0gd.s:16     .text:00000008 _lseek_r
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccFdx0gd.s:26     .text:00000010 _fstat_r
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccFdx0gd.s:38     .text:00000020 isatty
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccFdx0gd.s:48     .text:00000028 _sbrk_r
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccFdx0gd.s:73     .text:00000070 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccFdx0gd.s:167    .bss:00000000 heap_end.2375
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccFdx0gd.s:80     .text:0000007c _write_r
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccFdx0gd.s:83     .text:0000007c $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccFdx0gd.s:104    .text:000000b8 _read_r
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccFdx0gd.s:132    .text:000000f8 _kill_r
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccFdx0gd.s:143    .text:0000010c $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccFdx0gd.s:152    .text:00000110 _getpid_r
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccFdx0gd.s:155    .text:00000110 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccFdx0gd.s:163    .text:00000124 $d
 
 UNDEFINED SYMBOLS
 end

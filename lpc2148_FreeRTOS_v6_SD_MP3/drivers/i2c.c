@@ -6,8 +6,6 @@
 #include "../FreeRTOS/FreeRTOS.h"
 #include "../FreeRTOS/Semphr.h"
 
-void initPE(void);
-
 typedef enum { 
 	busy,
 	readComplete,
@@ -74,8 +72,6 @@ void initialize_I2C0(unsigned int i2cFrequency)
 	xSemaphoreTake(i2cReadCompleteSignal, 0);
 
 	VICIntEnable = (1<<9);					// I2C0 Interrupt Enable
-
-	initPE();
 }
 
 char i2cReadDeviceRegister(char deviceAddress, char registerAddress)
@@ -289,18 +285,3 @@ static void i2cISR()
 	portRESTORE_CONTEXT();	// Restore context to possibly a task waiting for I2C Read or I2C Mutex
 }
 
-void initPE(void)
-{
-	//OSHANDLES * handles = (OSHANDLES*)v;
-	//rprintf("Initializing Port Expander...\n");
-
-	//i2cWrite(0x40, 0x07, init, 2); //Command configuration register write: Port 0 is Output
-	// and Command configuration register write: Port 1 is Input simultaneously
-
-	i2cWriteDeviceRegister(0x40, 0x06, 0x00);
-	i2cWriteDeviceRegister(0x40, 0x07, 0xFF);
-
-	//rprintf("initPE complete!\n");
-
-	i2cWriteDeviceRegister(0x40, 0x07, 0xFF);
-}
