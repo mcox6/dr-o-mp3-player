@@ -7,7 +7,6 @@ extern "C" {
 #include "../System/lpc214x.h"
 
 
-// TODO: 3a. (Done) Finish the # Defines at STA013.h header file.
 #define STA013_CS_PIN		(1<<29)					// Select the PIN# for Decoder's CS Signal
 #define STA013_RESET_PIN	(1<<13)					// Select the PIN# for Decoder's Reset Signal
 #define STA013_DATREQ_PIN	(1<<15)					// Select the PIN# for Decoder's DATAREQ Signal

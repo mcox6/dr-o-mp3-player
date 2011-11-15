@@ -87,11 +87,11 @@
   97              		.ident	"GCC: (GNU) 4.3.2"
 DEFINED SYMBOLS
                             *ABS*:00000000 watchdog.c
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQvjqRd.s:6      .text:00000000 watchdog_Reset
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQvjqRd.s:10     .text:00000000 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQvjqRd.s:20     .text:00000018 watchdog_Feed
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQvjqRd.s:34     .text:00000030 watchdog_Start
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQvjqRd.s:52     .text:00000058 watchdog_Stop
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccQvjqRd.s:68     .text:00000078 watchdogDelayUs
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc4HKfJU.s:6      .text:00000000 watchdog_Reset
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc4HKfJU.s:10     .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc4HKfJU.s:20     .text:00000018 watchdog_Feed
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc4HKfJU.s:34     .text:00000030 watchdog_Start
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc4HKfJU.s:52     .text:00000058 watchdog_Stop
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc4HKfJU.s:68     .text:00000078 watchdogDelayUs
 
 NO UNDEFINED SYMBOLS

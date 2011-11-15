@@ -33,9 +33,9 @@
   37              		.ident	"GCC: (GNU) 4.3.2"
 DEFINED SYMBOLS
                             *ABS*:00000000 heap_3.c
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccPOWHUw.s:6      .text:00000000 vPortFree
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccPOWHUw.s:9      .text:00000000 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccPOWHUw.s:21     .text:00000020 pvPortMalloc
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccGsEKjS.s:6      .text:00000000 vPortFree
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccGsEKjS.s:9      .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccGsEKjS.s:21     .text:00000020 pvPortMalloc
 
 UNDEFINED SYMBOLS
 vTaskSuspendAll

@@ -2108,7 +2108,7 @@ tskTCB *pxNewTCB;
 			}
 			#else
 			{
-				usStackRemaining = usTaskCheckFreeStackSpace( ( unsigned char * ) pxNextTCB->pxStack );
+				usStackRemaining = 4 * usTaskCheckFreeStackSpace( ( unsigned char * ) pxNextTCB->pxStack );
 			}
 			#endif			
 			

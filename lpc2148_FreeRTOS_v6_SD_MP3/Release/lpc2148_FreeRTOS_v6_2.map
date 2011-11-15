@@ -1,0 +1,1667 @@
+Archive member included because of file (symbol)
+
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+                              ./fat/ff.o (__udivsi3)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+                              ./fat/ff.o (__divsi3)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+                              ./System/rprintf.o (__umodsi3)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+                              /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o) (__div0)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
+                              ./FreeRTOS/tasks.o (__divdi3)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
+                              ./FreeRTOS/tasks.o (__udivdi3)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
+                              /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o) (__clz_tab)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+                              ./General/userInterface.o (atoi)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+                              ./General/userInterface.o (iprintf)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+                              ./FreeRTOS/heap_3.o (free)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+                              /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o) (_malloc_r)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+                              ./FreeRTOS/tasks.o (memcmp)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+                              ./main.o (memcpy)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+                              ./System/crash.o (memset)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+                              /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o) (__malloc_lock)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+                              ./FreeRTOS/tasks.o (siprintf)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
+                              ./main.o (strcat)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+                              ./General/userInterface.o (strcmp)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+                              ./main.o (strcpy)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+                              ./FreeRTOS/tasks.o (strlen)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+                              ./FreeRTOS/tasks.o (strncpy)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+                              ./main.o (strtok)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+                              /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o) (__strtok_r)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+                              /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o) (_strtol_r)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+                              /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o) (_vfiprintf_r)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+                              /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o) (__swsetup_r)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+                              /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o) (__ctype_ptr)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+                              /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o) (_fflush_r)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+                              /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o) (__sinit)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+                              /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o) (_free_r)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+                              /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o) (__sfvwrite_r)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+                              /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o) (_fwalk_reent)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+                              /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o) (_impure_ptr)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+                              /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o) (__smakebuf_r)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+                              /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o) (memchr)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+                              /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o) (memmove)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+                              /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o) (_realloc_r)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+                              /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o) (__sclose)
+/cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+                              /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o) (fclose)
+
+Allocating common symbols
+Common symbol       size              file
+
+paused              0x4               ./main.o
+outputVol           0x4               ./main.o
+i2cReadCompleteSignal
+                    0x4               ./drivers/i2c.o
+currentSong         0x4               ./main.o
+CardType            0x1               ./fat/diskio.o
+command             0x1               ./main.o
+i2cLock             0x4               ./drivers/i2c.o
+lastFileIndex       0x4               ./main.o
+sspSpiDummyByte     0x1               ./drivers/ssp_spi.o
+nowPlaying          0x4               ./main.o
+songArray           0x1c2             ./main.o
+Timer2              0x1               ./fat/diskio.o
+SPIAccessSemaphore  0x4               ./fat/diskio.o
+Timer1              0x1               ./fat/diskio.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+flash            0x00001000         0x0007c000         xr
+ram              0x40000000         0x00007fe0         rw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD ./Startup.o
+LOAD ./main.o
+LOAD ./fat/diskio.o
+LOAD ./fat/ff.o
+LOAD ./fat/rtc.o
+LOAD ./fat/option/ccsbcs.o
+LOAD ./fat/option/reentrant.o
+LOAD ./drivers/uart/uart0.o
+LOAD ./drivers/i2c.o
+LOAD ./drivers/pcm1774.o
+LOAD ./drivers/ssp_spi.o
+LOAD ./drivers/sta013.o
+LOAD ./System/cpu.o
+LOAD ./System/crash.o
+LOAD ./System/fiqISR.o
+LOAD ./System/rprintf.o
+LOAD ./System/syscalls.o
+LOAD ./System/watchdog.o
+LOAD ./General/userInterface.o
+LOAD ./FreeRTOS/croutine.o
+LOAD ./FreeRTOS/heap_3.o
+LOAD ./FreeRTOS/list.o
+LOAD ./FreeRTOS/port.o
+LOAD ./FreeRTOS/portISR.o
+LOAD ./FreeRTOS/queue.o
+LOAD ./FreeRTOS/tasks.o
+LOAD ./FreeRTOS/hooks/hooks.o
+START GROUP
+LOAD /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a
+LOAD /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a
+END GROUP
+                0x40007fdc                __stack_end__ = 0x40007fdc
+                0x00000000                . = 0x0
+
+startup         0x00001000      0x168
+                0x00001000                __start_of_startup__ = .
+ *(.startup)
+ .startup       0x00001000      0x168 ./Startup.o
+                0x00001168                __end_of_startup__ = .
+
+.ctors          0x00001168        0x0
+                0x00001168                PROVIDE (__ctors_start__, .)
+ *(SORT(.ctors.*))
+ *(.ctors)
+                0x00001168                PROVIDE (__ctors_end__, .)
+
+.dtors          0x00001168        0x0
+                0x00001168                PROVIDE (__dtors_start__, .)
+ *(SORT(.dtors.*))
+ *(.dtors)
+                0x00001168                PROVIDE (__dtors_end__, .)
+                0x00001168                . = ALIGN (0x4)
+
+prog            0x00001168    0x10be0
+                0x00001168                __start_of_text__ = .
+                0x00001168                __start_of_prog__ = .
+ *(.text)
+ .text          0x00001168      0x144 ./Startup.o
+                0x00001168                start
+ .text          0x000012ac      0xa34 ./main.o
+                0x00001ccc                diskTimer
+                0x00001a9c                mp3
+                0x000017c4                i2cTimer
+                0x00001538                popSongs
+                0x00001464                getSong
+                0x000012ac                main
+                0x00001414                initPE
+ .text          0x00001ce0      0xcc4 ./fat/diskio.o
+                0x00001eb8                wait_ready
+                0x000027a8                disk_initialize
+                0x00001d74                disk_status
+                0x00002418                disk_ioctl
+                0x000020cc                getSDCardInfo
+                0x00001fc8                xmit_datablock
+                0x00001ce0                diskio_initializeSPIMutex
+                0x00001e14                rcvr_datablock
+                0x00001d90                disk_timerproc
+                0x00001d58                chk_power
+                0x000023e8                power_off
+                0x00002088                get_spi
+                0x00001ef4                send_cmd
+                0x000021e0                disk_write
+                0x00001cf0                initialize_SdCardSignals
+                0x00002048                release_spi
+                0x000022f8                disk_read
+                0x00001d54                power_on
+ .text          0x000029a4     0x3614 ./fat/ff.o
+                0x000033fc                get_fat
+                0x00004684                f_rename
+                0x00004b94                f_truncate
+                0x000029c8                gen_numname
+                0x00004a3c                f_unlink
+                0x00005ce8                f_close
+                0x0000560c                f_read
+                0x00004e90                f_readdir
+                0x00004988                f_chmod
+                0x00005bb8                f_sync
+                0x00005f44                f_mount
+                0x00004f4c                f_opendir
+                0x00003274                put_fat
+                0x00005018                f_lseek
+                0x00004e08                f_stat
+                0x000029a4                clust2sect
+                0x000048cc                f_utime
+                0x000052c8                f_write
+                0x00005d00                f_open
+                0x000058c4                f_mkdir
+                0x00004c98                f_getfree
+ .text          0x00005fb8      0x15c ./fat/rtc.o
+                0x00005fe0                rtc_gettime
+                0x00005fb8                initialize_RTC
+                0x000060c4                get_fattime
+                0x00006060                rtc_settime
+ .text          0x00006114       0xb4 ./fat/option/ccsbcs.o
+                0x00006188                ff_wtoupper
+                0x00006114                ff_convert
+ .text          0x000061c8       0x5c ./fat/option/reentrant.o
+                0x000061c8                ff_del_syncobj
+                0x00006208                ff_cre_syncobj
+                0x000061d0                ff_rel_grant
+                0x000061e0                ff_req_grant
+ .text          0x00006224      0x460 ./drivers/uart/uart0.o
+                0x00006280                uart0GetChar
+                0x00006258                uart0PutCharPolling
+                0x00006364                uart0Init
+                0x00006224                uart0Deinit
+                0x000064a4                uart0ISR
+                0x000062b0                uart0PutChar
+ .text          0x00006684      0x744 ./drivers/i2c.o
+                0x00006b94                initialize_I2C0
+                0x00006a8c                i2cWriteDeviceRegister
+                0x00006684                i2cStateMachine
+                0x00006aec                i2cReadDeviceRegister
+                0x00006a20                i2cKickOffTransfer
+ .text          0x00006dc8      0x748 ./drivers/pcm1774.o
+                0x00006ec8                pcm1774_bassBoost
+                0x00006e14                pcm1774_sendByte
+                0x00007240                pcm1774_LineOutputConfiguration
+                0x000073c4                pcm1774_ConnectDigitalOutputs
+                0x00006dc8                pcm1774_readByte
+                0x00007230                pcm1774_PowerUpVcom
+                0x00007364                pcm1774_DigitalInterfaceSelection
+                0x00007394                pcm1774_DigitalDeEmphasisFilter
+                0x000072f8                pcm1774_PowerUpMixer
+                0x000071f0                pcm1774_setShortCircuitProtectionRight
+                0x00007124                pcm1774_redirectAnalogInputToLeftOutput
+                0x000072e8                pcm1774_PowerUpAnalogBiasControl
+                0x00007474                pcm1774_3dSoundEffect
+                0x000070e8                pcm1774_redirectAnalogInputToRightOutput
+                0x00006df4                pcm1774_readShortCircuitStatusLeft
+                0x00006f18                pcm1774_DigitalVolume
+                0x00006fa8                initialize_pcm1774
+                0x00006e28                pcm1774_trebleBoost
+                0x000074b8                pcm1774_Reset
+                0x00006e78                pcm1774_middleBoost
+                0x00007334                pcm1774_DigitalGainControl
+                0x000071c4                pcm1774_PowerUpGainAmplifierAnalog
+                0x0000709c                pcm1774_bitMask
+                0x00007290                pcm1774_PowerUpAnalog
+                0x000072bc                pcm1774_PowerUpDAC
+                0x00007198                pcm1774_selectAnalogInput
+                0x00007210                pcm1774_setShortCircuitProtectionLeft
+                0x00006f60                pcm1774_OutputVolume
+                0x00007324                pcm1774_DigitalOversamplingControl
+                0x00007160                pcm1774_gainAmplifierAnalogInput
+                0x00006dd4                pcm1774_readShortCircuitStatusRight
+                0x000073f0                pcm1774_LoadDefaultDigitalConfiguration
+ .text          0x00007510       0x88 ./drivers/ssp_spi.o
+                0x00007510                initialize_SSPSPI
+                0x00007584                setSSPSPI_Divider
+                0x00007554                rxTxByteSSPSPI
+ .text          0x00007598      0x558 ./drivers/sta013.o
+                0x000079a0                sta013GetAverageBitrate
+                0x000076d0                sta013SetVolume
+                0x000077a4                sta013StopDecoder
+                0x00007754                sta013ResumeDecoder
+                0x0000777c                sta013PauseDecoder
+                0x00007948                sta013DownloadUpdate
+                0x000077dc                sta013StartDecoder
+                0x00007994                sta013ReadReg
+                0x00007a4c                initialize_sta013
+                0x000079bc                sta013GetMP3Info
+                0x00007598                sta013HWReset
+                0x0000760c                sta013WriteReg
+                0x00007620                sta013SetTone
+ .text          0x00007af0      0x120 ./System/cpu.o
+                0x00007b94                cpuPrintMemoryInfo
+                0x00007af0                cpuSetupHardware
+                0x00007b90                cpuSetupFIQISR
+ .text          0x00007c10      0x4f8 ./System/crash.o
+                0x00007c70                clearCrashInfo
+                0x00007c10                didSystemCrash
+                0x00007c54                performPABORTCrash
+                0x00007ccc                printCrashInfo
+                0x00007c60                performDABORTCrash
+                0x00007c4c                performUndefinedInstructionCrash
+ .text          0x00008108        0x4 ./System/fiqISR.o
+                0x00008108                fiqISR
+ .text          0x0000810c      0x264 ./System/rprintf.o
+                0x0000810c                rprintf_devopen
+                0x0000815c                rprintf
+ .text          0x00008370      0x128 ./System/syscalls.o
+                0x00008378                _lseek_r
+                0x00008468                _kill_r
+                0x00008380                _fstat_r
+                0x00008390                isatty
+                0x00008480                _getpid_r
+                0x00008398                _sbrk_r
+                0x00008428                _read_r
+                0x00008370                _close_r
+                0x000083ec                _write_r
+ .text          0x00008498       0xd4 ./System/watchdog.o
+                0x000084c8                watchdog_Start
+                0x00008498                watchdog_Reset
+                0x000084b0                watchdog_Feed
+                0x00008510                watchdogDelayUs
+                0x000084f0                watchdog_Stop
+ .text          0x0000856c      0x834 ./General/userInterface.o
+                0x00008610                printLine
+                0x0000861c                uartUI
+                0x0000856c                getUartLine
+ .text          0x00008da0        0x0 ./FreeRTOS/croutine.o
+ .text          0x00008da0       0x4c ./FreeRTOS/heap_3.o
+                0x00008da0                vPortFree
+                0x00008dc0                pvPortMalloc
+ .text          0x00008dec       0xf4 ./FreeRTOS/list.o
+                0x00008e1c                vListInsertEnd
+                0x00008ea4                vListRemove
+                0x00008e10                vListInitialiseItem
+                0x00008dec                vListInitialise
+                0x00008e50                vListInsert
+ .text          0x00008ee0      0x1c0 ./FreeRTOS/port.o
+                0x00009034                xPortStartScheduler
+                0x00009030                vPortEndScheduler
+                0x00008ee0                pxPortInitialiseStack
+ .text          0x000090a0      0x228 ./FreeRTOS/portISR.o
+                0x00009190                vTickISR
+                0x0000927c                vPortExitCritical
+                0x000090ec                vPortYieldProcessor
+                0x000090a0                vPortISRStartFirstTask
+                0x00009250                vPortEnterCritical
+ .text          0x000092c8      0x6f8 ./FreeRTOS/queue.o
+                0x000096fc                xQueueGenericSendFromISR
+                0x00009924                xQueueCreate
+                0x000092f8                vQueueDelete
+                0x0000976c                xQueueGenericSend
+                0x00009330                xQueueReceiveFromISR
+                0x000092e0                xQueueIsQueueFullFromISR
+                0x00009314                uxQueueMessagesWaiting
+                0x0000947c                xQueueGenericReceive
+                0x000092c8                uxQueueMessagesWaitingFromISR
+                0x000092d0                xQueueIsQueueEmptyFromISR
+                0x000098b4                xQueueCreateMutex
+ .text          0x000099c0     0x163c ./FreeRTOS/tasks.o
+                0x0000a988                vTaskGetRunTimeStats
+                0x0000a44c                uxTaskPriorityGet
+                0x0000a360                vTaskPrioritySet
+                0x0000acd8                vTaskEndScheduler
+                0x0000a47c                vTaskPlaceOnEventList
+                0x0000ad0c                xTaskGenericCreate
+                0x000099c0                xTaskIsTaskSuspended
+                0x00009acc                uxTaskGetStackHighWaterMark
+                0x00009dd4                xTaskResumeFromISR
+                0x00009a60                runTimeStatISRExit
+                0x00009f38                ulTaskEndTrace
+                0x00009fc8                xTaskGetTickCount
+                0x00009c18                xTaskRemoveFromEventList
+                0x00009f74                vTaskStartTrace
+                0x00009e9c                xTaskCheckForTimeOut
+                0x000099fc                vTaskSuspendAll
+                0x00009b10                vTaskPriorityDisinherit
+                0x00009b78                vTaskPriorityInherit
+                0x0000a22c                vTaskResume
+                0x0000a658                vTaskSwitchContext
+                0x0000a2e8                vTaskSuspend
+                0x00009a14                uxTaskGetNumberOfTasks
+                0x00009cbc                vTaskIncrementTick
+                0x0000a130                uxTaskGetIdlePercentage
+                0x0000abf4                vTaskList
+                0x0000a590                vTaskDelayUntil
+                0x00009b00                xTaskGetCurrentTaskHandle
+                0x00009fe8                xTaskResumeAll
+                0x0000af5c                vTaskStartScheduler
+                0x00009ab8                vTaskMissedYield
+                0x00009a24                runTimeStatISREntry
+                0x0000a508                vTaskDelay
+                0x00009a98                vTaskSetTimeOutState
+ .text          0x0000affc       0x6c ./FreeRTOS/hooks/hooks.o
+                0x0000b014                vApplicationMallocFailedHook
+                0x0000b034                vApplicationStackOverflowHook
+                0x0000affc                vApplicationIdleHook
+ .text          0x0000b068      0x110 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+                0x0000b068                __udivsi3
+                0x0000b068                __aeabi_uidiv
+                0x0000b160                __aeabi_uidivmod
+ .text          0x0000b178      0x140 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+                0x0000b178                __aeabi_idiv
+                0x0000b178                __divsi3
+                0x0000b2a0                __aeabi_idivmod
+ .text          0x0000b2b8       0xcc /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+                0x0000b2b8                __umodsi3
+ .text          0x0000b384        0x4 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+                0x0000b384                __aeabi_ldiv0
+                0x0000b384                __div0
+                0x0000b384                __aeabi_idiv0
+ .text          0x0000b388      0x590 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
+                0x0000b388                __divdi3
+ .text          0x0000b918      0x520 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
+                0x0000b918                __udivdi3
+ .text          0x0000be38        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
+ .text          0x0000be38       0x18 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+                0x0000be38                _atoi_r
+                0x0000be44                atoi
+ .text          0x0000be50       0x54 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+                0x0000be50                _iprintf_r
+                0x0000be74                iprintf
+ .text          0x0000bea4       0x28 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+                0x0000beb8                malloc
+                0x0000bea4                free
+ .text          0x0000becc      0x734 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+                0x0000becc                _malloc_r
+ .text          0x0000c600       0xac /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+                0x0000c600                memcmp
+ .text          0x0000c6ac       0xfc /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+                0x0000c6ac                memcpy
+ .text          0x0000c7a8       0xd0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+                0x0000c7a8                memset
+ .text          0x0000c878        0x8 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+                0x0000c87c                __malloc_unlock
+                0x0000c878                __malloc_lock
+ .text          0x0000c880       0xcc /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+                0x0000c8ec                _siprintf_r
+                0x0000c880                siprintf
+ .text          0x0000c94c       0xa4 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
+                0x0000c94c                strcat
+ .text          0x0000c9f0       0xe8 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+                0x0000c9f0                strcmp
+ .text          0x0000cad8       0xb8 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+                0x0000cad8                strcpy
+ .text          0x0000cb90       0x9c /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+                0x0000cb90                strlen
+ .text          0x0000cc2c      0x10c /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+                0x0000cc2c                strncpy
+ .text          0x0000cd38       0x18 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+                0x0000cd38                strtok
+ .text          0x0000cd50       0xd0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+                0x0000ce18                strtok_r
+                0x0000cd50                __strtok_r
+ .text          0x0000ce20      0x1e0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+                0x0000cfd4                strtol
+                0x0000ce20                _strtol_r
+ .text          0x0000d000      0xff0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+                0x0000dfc4                vfiprintf
+                0x0000d030                _vfiprintf_r
+ .text          0x0000dff0      0x144 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+                0x0000dff0                __swsetup_r
+ .text          0x0000e134        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .text          0x0000e134      0x1dc /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+                0x0000e2dc                fflush
+                0x0000e134                _fflush_r
+ .text          0x0000e310      0x2ac /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+                0x0000e310                __sinit
+                0x0000e4a0                __sfmoreglue
+                0x0000e488                _cleanup
+                0x0000e47c                _cleanup_r
+                0x0000e464                __fp_lock_all
+                0x0000e42c                __sfp_lock_acquire
+                0x0000e4e8                __sfp
+                0x0000e438                __sinit_lock_release
+                0x0000e44c                __fp_unlock_all
+                0x0000e430                __sfp_lock_release
+                0x0000e434                __sinit_lock_acquire
+ .text          0x0000e5bc      0x370 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+                0x0000e6b4                _free_r
+                0x0000e5bc                _malloc_trim_r
+ .text          0x0000e92c      0x46c /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+                0x0000e92c                __sfvwrite_r
+ .text          0x0000ed98      0x10c /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+                0x0000ee20                _fwalk
+                0x0000ed98                _fwalk_reent
+ .text          0x0000eea4        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .text          0x0000eea4      0x164 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+                0x0000eea4                __smakebuf_r
+ .text          0x0000f008      0x118 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+                0x0000f008                memchr
+ .text          0x0000f120      0x144 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+                0x0000f120                memmove
+ .text          0x0000f264      0x510 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+                0x0000f264                _realloc_r
+ .text          0x0000f774       0xc0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+                0x0000f77c                __sseek
+                0x0000f804                __sread
+                0x0000f774                __sclose
+                0x0000f7b0                __swrite
+ .text          0x0000f834      0x118 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+                0x0000f834                _fclose_r
+                0x0000f938                fclose
+                0x0000f94c                __end_of_prog__ = .
+                0x0000f94c                __start_of_rodata__ = .
+ *(.rodata)
+ .rodata        0x0000f94c       0x8d ./fat/ff.o
+ *fill*         0x0000f9d9        0x1 00
+ .rodata        0x0000f9da      0x4c0 ./fat/option/ccsbcs.o
+ .rodata        0x0000fe9a       0x19 ./drivers/pcm1774.o
+ .rodata        0x0000feb3      0xfe0 ./drivers/sta013.o
+                0x0000fee3                STA013_UpdateData
+                0x0000feb3                MP3_Bitrates
+                0x0000fed3                MP3_SamplingFrequencies
+ .rodata        0x00010e93        0x7 ./General/userInterface.o
+ .rodata        0x00010e9a       0x14 ./FreeRTOS/tasks.o
+ .rodata        0x00010eae      0x100 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
+                0x00010eae                __clz_tab
+ .rodata        0x00010fae       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .rodata        0x00010fce      0x101 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+                0x00010fce                _ctype_
+ *fill*         0x000110cf        0x1 00
+ .rodata        0x000110d0        0x4 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+                0x000110d0                _global_impure_ptr
+ *(.rodata*)
+ .rodata.str1.1
+                0x000110d4      0x365 ./main.o
+                                0x36d (size before relaxing)
+ .rodata.str1.1
+                0x00011439       0x10 ./fat/ff.o
+ .rodata.str1.1
+                0x00011449       0x7d ./System/cpu.o
+                                 0x9f (size before relaxing)
+ .rodata.str1.1
+                0x000114c6      0x214 ./System/crash.o
+ .rodata.str1.1
+                0x000116da       0x14 ./System/syscalls.o
+ .rodata.str1.1
+                0x000116ee      0x4e8 ./General/userInterface.o
+                                0x593 (size before relaxing)
+ .rodata.str1.1
+                0x00011bd6       0x94 ./FreeRTOS/tasks.o
+ .rodata.str1.1
+                0x00011c6a       0x8d ./FreeRTOS/hooks/hooks.o
+ *fill*         0x00011cf7        0x1 00
+ .rodata.str1.4
+                0x00011cf8       0x4a /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+                                 0x4c (size before relaxing)
+ *fill*         0x00011d42        0x2 00
+ .rodata.str1.4
+                0x00011d44        0x4 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+                0x00011d48                __end_of_rodata__ = .
+                0x00011d48                __start_of_glue7__ = .
+ *(.glue_7)
+ .glue_7        0x00011d48        0x0 ./Startup.o
+ .glue_7        0x00011d48        0x0 ./main.o
+ .glue_7        0x00011d48        0x0 ./fat/diskio.o
+ .glue_7        0x00011d48        0x0 ./fat/ff.o
+ .glue_7        0x00011d48        0x0 ./fat/rtc.o
+ .glue_7        0x00011d48        0x0 ./fat/option/ccsbcs.o
+ .glue_7        0x00011d48        0x0 ./fat/option/reentrant.o
+ .glue_7        0x00011d48        0x0 ./drivers/uart/uart0.o
+ .glue_7        0x00011d48        0x0 ./drivers/i2c.o
+ .glue_7        0x00011d48        0x0 ./drivers/pcm1774.o
+ .glue_7        0x00011d48        0x0 ./drivers/ssp_spi.o
+ .glue_7        0x00011d48        0x0 ./drivers/sta013.o
+ .glue_7        0x00011d48        0x0 ./System/cpu.o
+ .glue_7        0x00011d48        0x0 ./System/crash.o
+ .glue_7        0x00011d48        0x0 ./System/fiqISR.o
+ .glue_7        0x00011d48        0x0 ./System/rprintf.o
+ .glue_7        0x00011d48        0x0 ./System/syscalls.o
+ .glue_7        0x00011d48        0x0 ./System/watchdog.o
+ .glue_7        0x00011d48        0x0 ./General/userInterface.o
+ .glue_7        0x00011d48        0x0 ./FreeRTOS/croutine.o
+ .glue_7        0x00011d48        0x0 ./FreeRTOS/heap_3.o
+ .glue_7        0x00011d48        0x0 ./FreeRTOS/list.o
+ .glue_7        0x00011d48        0x0 ./FreeRTOS/port.o
+ .glue_7        0x00011d48        0x0 ./FreeRTOS/portISR.o
+ .glue_7        0x00011d48        0x0 ./FreeRTOS/queue.o
+ .glue_7        0x00011d48        0x0 ./FreeRTOS/tasks.o
+ .glue_7        0x00011d48        0x0 ./FreeRTOS/hooks/hooks.o
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .glue_7        0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+ *(.glue_7t)
+ .glue_7t       0x00011d48        0x0 ./Startup.o
+ .glue_7t       0x00011d48        0x0 ./main.o
+ .glue_7t       0x00011d48        0x0 ./fat/diskio.o
+ .glue_7t       0x00011d48        0x0 ./fat/ff.o
+ .glue_7t       0x00011d48        0x0 ./fat/rtc.o
+ .glue_7t       0x00011d48        0x0 ./fat/option/ccsbcs.o
+ .glue_7t       0x00011d48        0x0 ./fat/option/reentrant.o
+ .glue_7t       0x00011d48        0x0 ./drivers/uart/uart0.o
+ .glue_7t       0x00011d48        0x0 ./drivers/i2c.o
+ .glue_7t       0x00011d48        0x0 ./drivers/pcm1774.o
+ .glue_7t       0x00011d48        0x0 ./drivers/ssp_spi.o
+ .glue_7t       0x00011d48        0x0 ./drivers/sta013.o
+ .glue_7t       0x00011d48        0x0 ./System/cpu.o
+ .glue_7t       0x00011d48        0x0 ./System/crash.o
+ .glue_7t       0x00011d48        0x0 ./System/fiqISR.o
+ .glue_7t       0x00011d48        0x0 ./System/rprintf.o
+ .glue_7t       0x00011d48        0x0 ./System/syscalls.o
+ .glue_7t       0x00011d48        0x0 ./System/watchdog.o
+ .glue_7t       0x00011d48        0x0 ./General/userInterface.o
+ .glue_7t       0x00011d48        0x0 ./FreeRTOS/croutine.o
+ .glue_7t       0x00011d48        0x0 ./FreeRTOS/heap_3.o
+ .glue_7t       0x00011d48        0x0 ./FreeRTOS/list.o
+ .glue_7t       0x00011d48        0x0 ./FreeRTOS/port.o
+ .glue_7t       0x00011d48        0x0 ./FreeRTOS/portISR.o
+ .glue_7t       0x00011d48        0x0 ./FreeRTOS/queue.o
+ .glue_7t       0x00011d48        0x0 ./FreeRTOS/tasks.o
+ .glue_7t       0x00011d48        0x0 ./FreeRTOS/hooks/hooks.o
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .glue_7t       0x00011d48        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+                0x00011d48                __end_of_glue7__ = .
+                0x00011d48                __end_of_text__ = .
+
+.intvects       0x40000000       0x40 load address 0x00011d48
+                0x40000000                __intvects_beg__ = .
+                0x00011d48                __intvects_beg_src__ = __end_of_text__
+ *(.intvects)
+ .intvects      0x40000000       0x40 ./Startup.o
+                0x40000000                __intvects
+                0x40000040                __intvects_end__ = .
+                0x00011d88                __end_of_intvects__ = (__end_of_text__ + (__intvects_end__ - __intvects_beg__))
+
+.vfp11_veneer   0x00011d88        0x0 load address 0x40000040
+ .vfp11_veneer  0x00011d88        0x0 ./Startup.o
+ .vfp11_veneer  0x00011d88        0x0 ./main.o
+ .vfp11_veneer  0x00011d88        0x0 ./fat/diskio.o
+ .vfp11_veneer  0x00011d88        0x0 ./fat/ff.o
+ .vfp11_veneer  0x00011d88        0x0 ./fat/rtc.o
+ .vfp11_veneer  0x00011d88        0x0 ./fat/option/ccsbcs.o
+ .vfp11_veneer  0x00011d88        0x0 ./fat/option/reentrant.o
+ .vfp11_veneer  0x00011d88        0x0 ./drivers/uart/uart0.o
+ .vfp11_veneer  0x00011d88        0x0 ./drivers/i2c.o
+ .vfp11_veneer  0x00011d88        0x0 ./drivers/pcm1774.o
+ .vfp11_veneer  0x00011d88        0x0 ./drivers/ssp_spi.o
+ .vfp11_veneer  0x00011d88        0x0 ./drivers/sta013.o
+ .vfp11_veneer  0x00011d88        0x0 ./System/cpu.o
+ .vfp11_veneer  0x00011d88        0x0 ./System/crash.o
+ .vfp11_veneer  0x00011d88        0x0 ./System/fiqISR.o
+ .vfp11_veneer  0x00011d88        0x0 ./System/rprintf.o
+ .vfp11_veneer  0x00011d88        0x0 ./System/syscalls.o
+ .vfp11_veneer  0x00011d88        0x0 ./System/watchdog.o
+ .vfp11_veneer  0x00011d88        0x0 ./General/userInterface.o
+ .vfp11_veneer  0x00011d88        0x0 ./FreeRTOS/croutine.o
+ .vfp11_veneer  0x00011d88        0x0 ./FreeRTOS/heap_3.o
+ .vfp11_veneer  0x00011d88        0x0 ./FreeRTOS/list.o
+ .vfp11_veneer  0x00011d88        0x0 ./FreeRTOS/port.o
+ .vfp11_veneer  0x00011d88        0x0 ./FreeRTOS/portISR.o
+ .vfp11_veneer  0x00011d88        0x0 ./FreeRTOS/queue.o
+ .vfp11_veneer  0x00011d88        0x0 ./FreeRTOS/tasks.o
+ .vfp11_veneer  0x00011d88        0x0 ./FreeRTOS/hooks/hooks.o
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .vfp11_veneer  0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+
+.v4_bx          0x00011d88        0x0 load address 0x40000040
+ .v4_bx         0x00011d88        0x0 ./Startup.o
+ .v4_bx         0x00011d88        0x0 ./main.o
+ .v4_bx         0x00011d88        0x0 ./fat/diskio.o
+ .v4_bx         0x00011d88        0x0 ./fat/ff.o
+ .v4_bx         0x00011d88        0x0 ./fat/rtc.o
+ .v4_bx         0x00011d88        0x0 ./fat/option/ccsbcs.o
+ .v4_bx         0x00011d88        0x0 ./fat/option/reentrant.o
+ .v4_bx         0x00011d88        0x0 ./drivers/uart/uart0.o
+ .v4_bx         0x00011d88        0x0 ./drivers/i2c.o
+ .v4_bx         0x00011d88        0x0 ./drivers/pcm1774.o
+ .v4_bx         0x00011d88        0x0 ./drivers/ssp_spi.o
+ .v4_bx         0x00011d88        0x0 ./drivers/sta013.o
+ .v4_bx         0x00011d88        0x0 ./System/cpu.o
+ .v4_bx         0x00011d88        0x0 ./System/crash.o
+ .v4_bx         0x00011d88        0x0 ./System/fiqISR.o
+ .v4_bx         0x00011d88        0x0 ./System/rprintf.o
+ .v4_bx         0x00011d88        0x0 ./System/syscalls.o
+ .v4_bx         0x00011d88        0x0 ./System/watchdog.o
+ .v4_bx         0x00011d88        0x0 ./General/userInterface.o
+ .v4_bx         0x00011d88        0x0 ./FreeRTOS/croutine.o
+ .v4_bx         0x00011d88        0x0 ./FreeRTOS/heap_3.o
+ .v4_bx         0x00011d88        0x0 ./FreeRTOS/list.o
+ .v4_bx         0x00011d88        0x0 ./FreeRTOS/port.o
+ .v4_bx         0x00011d88        0x0 ./FreeRTOS/portISR.o
+ .v4_bx         0x00011d88        0x0 ./FreeRTOS/queue.o
+ .v4_bx         0x00011d88        0x0 ./FreeRTOS/tasks.o
+ .v4_bx         0x00011d88        0x0 ./FreeRTOS/hooks/hooks.o
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .v4_bx         0x00011d88        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+
+.protected      0x40000040       0x78
+                0x40000040                __protected_beg__ = .
+ *(.protected)
+ .protected     0x40000040       0x78 ./Startup.o
+                0x40000040                __abort_dat
+                0x400000b8                __protected_end__ = .
+
+.data           0x400000b8      0x860 load address 0x00011d88
+                0x400000b8                __data_beg__ = .
+                0x00011d88                __data_beg_src__ = __end_of_intvects__
+ *(.data)
+ .data          0x400000b8       0x3c ./Startup.o
+                0x400000c8                __stack_beg_fiq
+                0x400000c0                __stack_beg_abt
+                0x400000b8                __stack_beg_und
+                0x400000d8                __stack_beg_svc
+                0x400000d0                __stack_beg_irq
+                0x400000cc                __stack_end_fiq
+                0x400000c4                __stack_end_abt
+                0x400000ec                __heap_beg
+                0x400000dc                __stack_end_svc
+                0x400000e0                __stack_beg_sys
+                0x400000f0                __heap_end
+                0x400000bc                __stack_end_und
+                0x400000e4                __stack_end_sys
+                0x400000e8                __heap_max
+                0x400000d4                __stack_end_irq
+ .data          0x400000f4        0x0 ./main.o
+ .data          0x400000f4        0x1 ./fat/diskio.o
+                0x400000f4                Stat
+ .data          0x400000f5        0x0 ./fat/ff.o
+ .data          0x400000f5        0x0 ./fat/rtc.o
+ .data          0x400000f5        0x0 ./fat/option/ccsbcs.o
+ .data          0x400000f5        0x0 ./fat/option/reentrant.o
+ .data          0x400000f5        0x0 ./drivers/uart/uart0.o
+ .data          0x400000f5        0x0 ./drivers/i2c.o
+ .data          0x400000f5        0x0 ./drivers/pcm1774.o
+ .data          0x400000f5        0x0 ./drivers/ssp_spi.o
+ .data          0x400000f5        0x0 ./drivers/sta013.o
+ .data          0x400000f5        0x0 ./System/cpu.o
+ .data          0x400000f5        0x0 ./System/crash.o
+ .data          0x400000f5        0x0 ./System/fiqISR.o
+ .data          0x400000f5        0x0 ./System/rprintf.o
+ .data          0x400000f5        0x0 ./System/syscalls.o
+ .data          0x400000f5        0x0 ./System/watchdog.o
+ .data          0x400000f5        0x0 ./General/userInterface.o
+ .data          0x400000f5        0x0 ./FreeRTOS/croutine.o
+ .data          0x400000f5        0x0 ./FreeRTOS/heap_3.o
+ .data          0x400000f5        0x0 ./FreeRTOS/list.o
+ .data          0x400000f5        0x0 ./FreeRTOS/port.o
+ *fill*         0x400000f5        0x3 00
+ .data          0x400000f8        0x4 ./FreeRTOS/portISR.o
+                0x400000f8                ulCriticalNesting
+ .data          0x400000fc        0x0 ./FreeRTOS/queue.o
+ .data          0x400000fc        0x4 ./FreeRTOS/tasks.o
+ .data          0x40000100        0x0 ./FreeRTOS/hooks/hooks.o
+ .data          0x40000100        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .data          0x40000100        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .data          0x40000100        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .data          0x40000100        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .data          0x40000100        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
+ .data          0x40000100        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
+ .data          0x40000100        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
+ .data          0x40000100        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .data          0x40000100        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .data          0x40000100        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .data          0x40000100      0x410 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+                0x4000050c                __malloc_sbrk_base
+                0x40000100                __malloc_av_
+                0x40000508                __malloc_trim_threshold
+ .data          0x40000510        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .data          0x40000510        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .data          0x40000510        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .data          0x40000510        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .data          0x40000510        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .data          0x40000510        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
+ .data          0x40000510        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .data          0x40000510        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .data          0x40000510        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .data          0x40000510        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .data          0x40000510        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .data          0x40000510        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .data          0x40000510        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .data          0x40000510        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .data          0x40000510        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .data          0x40000510        0x4 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+                0x40000510                __ctype_ptr
+ .data          0x40000514        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .data          0x40000514        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .data          0x40000514        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .data          0x40000514        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .data          0x40000514        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .data          0x40000514      0x404 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+                0x40000514                _impure_ptr
+ .data          0x40000918        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .data          0x40000918        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .data          0x40000918        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .data          0x40000918        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .data          0x40000918        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .data          0x40000918        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+                0x40000918                __data_end__ = .
+
+.bss            0x40000918      0x359
+                0x40000918                __bss_beg__ = .
+ *(.bss)
+ .bss           0x40000918        0x0 ./Startup.o
+ .bss           0x40000918        0x0 ./main.o
+ .bss           0x40000918        0x1 ./fat/diskio.o
+ *fill*         0x40000919        0x3 00
+ .bss           0x4000091c        0x8 ./fat/ff.o
+ .bss           0x40000924        0x0 ./fat/rtc.o
+ .bss           0x40000924        0x0 ./fat/option/ccsbcs.o
+ .bss           0x40000924        0x0 ./fat/option/reentrant.o
+ .bss           0x40000924        0xc ./drivers/uart/uart0.o
+ .bss           0x40000930       0x14 ./drivers/i2c.o
+ .bss           0x40000944        0x0 ./drivers/pcm1774.o
+ .bss           0x40000944        0x0 ./drivers/ssp_spi.o
+ .bss           0x40000944        0x0 ./drivers/sta013.o
+ .bss           0x40000944        0x0 ./System/cpu.o
+ .bss           0x40000944        0x0 ./System/crash.o
+ .bss           0x40000944        0x0 ./System/fiqISR.o
+ .bss           0x40000944        0x4 ./System/rprintf.o
+ .bss           0x40000948        0x4 ./System/syscalls.o
+ .bss           0x4000094c        0x0 ./System/watchdog.o
+ .bss           0x4000094c        0x0 ./General/userInterface.o
+ .bss           0x4000094c        0x0 ./FreeRTOS/croutine.o
+ .bss           0x4000094c        0x0 ./FreeRTOS/heap_3.o
+ .bss           0x4000094c        0x0 ./FreeRTOS/list.o
+ .bss           0x4000094c        0x0 ./FreeRTOS/port.o
+ .bss           0x4000094c        0x0 ./FreeRTOS/portISR.o
+ .bss           0x4000094c        0x0 ./FreeRTOS/queue.o
+ .bss           0x4000094c      0x100 ./FreeRTOS/tasks.o
+                0x4000094c                pxCurrentTCB
+                0x40000954                ulISROverhead
+                0x40000950                xTickCount
+ .bss           0x40000a4c        0x0 ./FreeRTOS/hooks/hooks.o
+ .bss           0x40000a4c        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .bss           0x40000a4c        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .bss           0x40000a4c        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .bss           0x40000a4c        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .bss           0x40000a4c        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
+ .bss           0x40000a4c        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
+ .bss           0x40000a4c        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
+ .bss           0x40000a4c        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .bss           0x40000a4c        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .bss           0x40000a4c        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .bss           0x40000a4c       0x34 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+                0x40000a4c                __malloc_top_pad
+                0x40000a50                __malloc_max_sbrked_mem
+                0x40000a58                __malloc_current_mallinfo
+                0x40000a54                __malloc_max_total_mem
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .bss           0x40000a80        0x0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+ COMMON         0x40000a80      0x1da ./main.o
+                0x40000a80                paused
+                0x40000a84                outputVol
+                0x40000a88                currentSong
+                0x40000a8c                command
+                0x40000a90                lastFileIndex
+                0x40000a94                nowPlaying
+                0x40000a98                songArray
+ *fill*         0x40000c5a        0x2 00
+ COMMON         0x40000c5c        0x9 ./fat/diskio.o
+                0x40000c5c                CardType
+                0x40000c5d                Timer2
+                0x40000c60                SPIAccessSemaphore
+                0x40000c64                Timer1
+ *fill*         0x40000c65        0x3 00
+ COMMON         0x40000c68        0x8 ./drivers/i2c.o
+                0x40000c68                i2cReadCompleteSignal
+                0x40000c6c                i2cLock
+ COMMON         0x40000c70        0x1 ./drivers/ssp_spi.o
+                0x40000c70                sspSpiDummyByte
+                0x40000c74                . = ALIGN (0x4)
+                0x40000c74                . = ALIGN (0x4)
+                0x40000c74                _end = .
+                0x40000c74                _bss_end__ = .
+                0x40000c74                __bss_end__ = .
+                0x40000c74                __heap_beg__ = .
+                0x40000c74                __heap_end__ = .
+                0x40000c74                __end__ = .
+                0x40000c74                PROVIDE (end, .)
+OUTPUT(lpc2148_FreeRTOS_v6_2.elf elf32-littlearm)
+
+.ARM.attributes
+                0x00000000       0x10
+ .ARM.attributes
+                0x00000000       0x10 ./Startup.o
+ .ARM.attributes
+                0x00000010       0x10 ./main.o
+ .ARM.attributes
+                0x00000020       0x10 ./fat/diskio.o
+ .ARM.attributes
+                0x00000030       0x10 ./fat/ff.o
+ .ARM.attributes
+                0x00000040       0x10 ./fat/rtc.o
+ .ARM.attributes
+                0x00000050       0x10 ./fat/option/ccsbcs.o
+ .ARM.attributes
+                0x00000060       0x10 ./fat/option/reentrant.o
+ .ARM.attributes
+                0x00000070       0x10 ./drivers/uart/uart0.o
+ .ARM.attributes
+                0x00000080       0x10 ./drivers/i2c.o
+ .ARM.attributes
+                0x00000090       0x10 ./drivers/pcm1774.o
+ .ARM.attributes
+                0x000000a0       0x10 ./drivers/ssp_spi.o
+ .ARM.attributes
+                0x000000b0       0x10 ./drivers/sta013.o
+ .ARM.attributes
+                0x000000c0       0x10 ./System/cpu.o
+ .ARM.attributes
+                0x000000d0       0x10 ./System/crash.o
+ .ARM.attributes
+                0x000000e0       0x10 ./System/fiqISR.o
+ .ARM.attributes
+                0x000000f0       0x10 ./System/rprintf.o
+ .ARM.attributes
+                0x00000100       0x10 ./System/syscalls.o
+ .ARM.attributes
+                0x00000110       0x10 ./System/watchdog.o
+ .ARM.attributes
+                0x00000120       0x10 ./General/userInterface.o
+ .ARM.attributes
+                0x00000130       0x10 ./FreeRTOS/croutine.o
+ .ARM.attributes
+                0x00000140       0x10 ./FreeRTOS/heap_3.o
+ .ARM.attributes
+                0x00000150       0x10 ./FreeRTOS/list.o
+ .ARM.attributes
+                0x00000160       0x10 ./FreeRTOS/port.o
+ .ARM.attributes
+                0x00000170       0x10 ./FreeRTOS/portISR.o
+ .ARM.attributes
+                0x00000180       0x10 ./FreeRTOS/queue.o
+ .ARM.attributes
+                0x00000190       0x10 ./FreeRTOS/tasks.o
+ .ARM.attributes
+                0x000001a0       0x10 ./FreeRTOS/hooks/hooks.o
+ .ARM.attributes
+                0x000001b0       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x000001c0       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .ARM.attributes
+                0x000001d0       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .ARM.attributes
+                0x000001e0       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x000001f0       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
+ .ARM.attributes
+                0x00000200       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
+ .ARM.attributes
+                0x00000210       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
+ .ARM.attributes
+                0x00000220       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .ARM.attributes
+                0x00000230       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .ARM.attributes
+                0x00000240       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .ARM.attributes
+                0x00000250       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .ARM.attributes
+                0x00000260       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .ARM.attributes
+                0x00000270       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .ARM.attributes
+                0x00000280       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .ARM.attributes
+                0x00000290       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .ARM.attributes
+                0x000002a0       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .ARM.attributes
+                0x000002b0       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
+ .ARM.attributes
+                0x000002c0       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .ARM.attributes
+                0x000002d0       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .ARM.attributes
+                0x000002e0       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .ARM.attributes
+                0x000002f0       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .ARM.attributes
+                0x00000300       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .ARM.attributes
+                0x00000310       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .ARM.attributes
+                0x00000320       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .ARM.attributes
+                0x00000330       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .ARM.attributes
+                0x00000340       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .ARM.attributes
+                0x00000350       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .ARM.attributes
+                0x00000360       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .ARM.attributes
+                0x00000370       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .ARM.attributes
+                0x00000380       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .ARM.attributes
+                0x00000390       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .ARM.attributes
+                0x000003a0       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .ARM.attributes
+                0x000003b0       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .ARM.attributes
+                0x000003c0       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .ARM.attributes
+                0x000003d0       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .ARM.attributes
+                0x000003e0       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .ARM.attributes
+                0x000003f0       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .ARM.attributes
+                0x00000400       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .ARM.attributes
+                0x00000410       0x10 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+
+.comment        0x00000000      0x44a
+ .comment       0x00000000       0x12 ./main.o
+ .comment       0x00000012       0x12 ./fat/diskio.o
+ .comment       0x00000024       0x12 ./fat/ff.o
+ .comment       0x00000036       0x12 ./fat/rtc.o
+ .comment       0x00000048       0x12 ./fat/option/ccsbcs.o
+ .comment       0x0000005a       0x12 ./fat/option/reentrant.o
+ .comment       0x0000006c       0x12 ./drivers/uart/uart0.o
+ .comment       0x0000007e       0x12 ./drivers/i2c.o
+ .comment       0x00000090       0x12 ./drivers/pcm1774.o
+ .comment       0x000000a2       0x12 ./drivers/ssp_spi.o
+ .comment       0x000000b4       0x12 ./drivers/sta013.o
+ .comment       0x000000c6       0x12 ./System/cpu.o
+ .comment       0x000000d8       0x12 ./System/crash.o
+ .comment       0x000000ea       0x12 ./System/fiqISR.o
+ .comment       0x000000fc       0x12 ./System/rprintf.o
+ .comment       0x0000010e       0x12 ./System/syscalls.o
+ .comment       0x00000120       0x12 ./System/watchdog.o
+ .comment       0x00000132       0x12 ./General/userInterface.o
+ .comment       0x00000144       0x12 ./FreeRTOS/croutine.o
+ .comment       0x00000156       0x12 ./FreeRTOS/heap_3.o
+ .comment       0x00000168       0x12 ./FreeRTOS/list.o
+ .comment       0x0000017a       0x12 ./FreeRTOS/port.o
+ .comment       0x0000018c       0x12 ./FreeRTOS/portISR.o
+ .comment       0x0000019e       0x12 ./FreeRTOS/queue.o
+ .comment       0x000001b0       0x12 ./FreeRTOS/tasks.o
+ .comment       0x000001c2       0x12 ./FreeRTOS/hooks/hooks.o
+ .comment       0x000001d4       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
+ .comment       0x000001e6       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
+ .comment       0x000001f8       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
+ .comment       0x0000020a       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .comment       0x0000021c       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .comment       0x0000022e       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .comment       0x00000240       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .comment       0x00000252       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .comment       0x00000264       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .comment       0x00000276       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .comment       0x00000288       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .comment       0x0000029a       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .comment       0x000002ac       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
+ .comment       0x000002be       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .comment       0x000002d0       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .comment       0x000002e2       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .comment       0x000002f4       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .comment       0x00000306       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .comment       0x00000318       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .comment       0x0000032a       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .comment       0x0000033c       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .comment       0x0000034e       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .comment       0x00000360       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .comment       0x00000372       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .comment       0x00000384       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .comment       0x00000396       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .comment       0x000003a8       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .comment       0x000003ba       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .comment       0x000003cc       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .comment       0x000003de       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .comment       0x000003f0       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .comment       0x00000402       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .comment       0x00000414       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .comment       0x00000426       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .comment       0x00000438       0x12 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+
+.debug_frame    0x00000000      0x868
+ .debug_frame   0x00000000       0x28 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .debug_frame   0x00000028       0x28 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .debug_frame   0x00000050       0x28 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .debug_frame   0x00000078       0x38 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
+ .debug_frame   0x000000b0       0x38 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
+ .debug_frame   0x000000e8       0x30 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .debug_frame   0x00000118       0x50 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .debug_frame   0x00000168       0x30 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_frame   0x00000198       0x38 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_frame   0x000001d0       0x2c /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_frame   0x000001fc       0x2c /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_frame   0x00000228       0x28 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .debug_frame   0x00000250       0x30 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .debug_frame   0x00000280       0x58 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .debug_frame   0x000002d8       0x28 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
+ .debug_frame   0x00000300       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_frame   0x00000320       0x28 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .debug_frame   0x00000348       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .debug_frame   0x00000368       0x28 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .debug_frame   0x00000390       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .debug_frame   0x000003b0       0x3c /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .debug_frame   0x000003ec       0x50 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .debug_frame   0x0000043c       0x6c /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .debug_frame   0x000004a8       0x2c /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .debug_frame   0x000004d4       0x40 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .debug_frame   0x00000514      0x10c /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .debug_frame   0x00000620       0x50 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .debug_frame   0x00000670       0x38 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .debug_frame   0x000006a8       0x58 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .debug_frame   0x00000700       0x30 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .debug_frame   0x00000730       0x28 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .debug_frame   0x00000758       0x2c /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .debug_frame   0x00000784       0x38 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .debug_frame   0x000007bc       0x70 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .debug_frame   0x0000082c       0x3c /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+
+.debug_line     0x00000000     0x2a02
+ .debug_line    0x00000000       0x96 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .debug_line    0x00000096       0xa2 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .debug_line    0x00000138       0x7f /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .debug_line    0x000001b7       0x6a /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .debug_line    0x00000221      0x10e /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
+ .debug_line    0x0000032f       0xf3 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
+ .debug_line    0x00000422       0x58 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
+ .debug_line    0x0000047a       0xf2 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .debug_line    0x0000056c       0xfe /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .debug_line    0x0000066a       0xf8 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_line    0x00000762      0x227 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_line    0x00000989       0xc3 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_line    0x00000a4c       0xda /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_line    0x00000b26       0xe1 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .debug_line    0x00000c07       0xec /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .debug_line    0x00000cf3      0x15f /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .debug_line    0x00000e52       0x7d /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
+ .debug_line    0x00000ecf       0x86 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_line    0x00000f55       0x83 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .debug_line    0x00000fd8       0xac /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .debug_line    0x00001084       0xd3 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .debug_line    0x00001157       0xee /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .debug_line    0x00001245       0x9f /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .debug_line    0x000012e4      0x174 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .debug_line    0x00001458      0x382 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .debug_line    0x000017da      0x14a /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .debug_line    0x00001924       0x58 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .debug_line    0x0000197c      0x18b /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .debug_line    0x00001b07      0x208 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .debug_line    0x00001d0f      0x17c /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .debug_line    0x00001e8b      0x1e5 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .debug_line    0x00002070      0x146 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .debug_line    0x000021b6       0xda /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .debug_line    0x00002290      0x17a /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .debug_line    0x0000240a       0xd9 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .debug_line    0x000024e3       0xe9 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .debug_line    0x000025cc      0x19c /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .debug_line    0x00002768      0x153 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .debug_line    0x000028bb      0x147 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+
+.debug_info     0x00000000     0xeec2
+ .debug_info    0x00000000       0x80 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .debug_info    0x00000080       0x80 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .debug_info    0x00000100       0x80 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .debug_info    0x00000180       0x80 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .debug_info    0x00000200      0x6a2 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
+ .debug_info    0x000008a2      0x666 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
+ .debug_info    0x00000f08       0xc5 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
+ .debug_info    0x00000fcd      0x95c /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .debug_info    0x00001929      0x9cb /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .debug_info    0x000022f4      0x96a /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_info    0x00002c5e      0xcca /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_info    0x00003928      0x10f /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_info    0x00003a37      0x10e /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_info    0x00003b45      0x113 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .debug_info    0x00003c58      0x953 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .debug_info    0x000045ab      0x9ff /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .debug_info    0x00004faa       0xe9 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
+ .debug_info    0x00005093       0xdb /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_info    0x0000516e      0x10e /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .debug_info    0x0000527c       0xd7 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .debug_info    0x00005353      0x12a /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .debug_info    0x0000547d      0x945 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .debug_info    0x00005dc2      0x164 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .debug_info    0x00005f26      0xa24 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .debug_info    0x0000694a      0xde0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .debug_info    0x0000772a      0x959 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .debug_info    0x00008083       0x75 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .debug_info    0x000080f8      0x9f2 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .debug_info    0x00008aea      0xc04 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .debug_info    0x000096ee      0xbbf /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .debug_info    0x0000a2ad      0xa80 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .debug_info    0x0000ad2d      0xae1 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .debug_info    0x0000b80e      0x939 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .debug_info    0x0000c147      0xb1a /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .debug_info    0x0000cc61      0x134 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .debug_info    0x0000cd95      0x142 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .debug_info    0x0000ced7      0xbb3 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .debug_info    0x0000da8a      0xaaa /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .debug_info    0x0000e534      0x98e /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+
+.debug_abbrev   0x00000000     0x2f08
+ .debug_abbrev  0x00000000       0x14 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .debug_abbrev  0x00000014       0x14 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .debug_abbrev  0x00000028       0x14 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .debug_abbrev  0x0000003c       0x14 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .debug_abbrev  0x00000050      0x183 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
+ .debug_abbrev  0x000001d3      0x186 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
+ .debug_abbrev  0x00000359       0x6a /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
+ .debug_abbrev  0x000003c3      0x17f /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .debug_abbrev  0x00000542      0x1b2 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .debug_abbrev  0x000006f4      0x190 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_abbrev  0x00000884      0x22e /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_abbrev  0x00000ab2       0x94 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_abbrev  0x00000b46       0x99 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_abbrev  0x00000bdf       0xb2 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .debug_abbrev  0x00000c91      0x173 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .debug_abbrev  0x00000e04      0x1b2 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .debug_abbrev  0x00000fb6       0x90 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
+ .debug_abbrev  0x00001046       0x7a /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_abbrev  0x000010c0       0x98 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .debug_abbrev  0x00001158       0x94 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .debug_abbrev  0x000011ec       0x96 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .debug_abbrev  0x00001282      0x188 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .debug_abbrev  0x0000140a       0xb8 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .debug_abbrev  0x000014c2      0x1c6 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .debug_abbrev  0x00001688      0x2e6 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .debug_abbrev  0x0000196e      0x179 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .debug_abbrev  0x00001ae7       0x5b /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .debug_abbrev  0x00001b42      0x1c4 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .debug_abbrev  0x00001d06      0x2b3 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .debug_abbrev  0x00001fb9      0x200 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .debug_abbrev  0x000021b9      0x1ac /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .debug_abbrev  0x00002365      0x1ee /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .debug_abbrev  0x00002553      0x160 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .debug_abbrev  0x000026b3      0x193 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .debug_abbrev  0x00002846       0xbe /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .debug_abbrev  0x00002904       0xa2 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .debug_abbrev  0x000029a6      0x1ef /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .debug_abbrev  0x00002b95      0x1c3 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .debug_abbrev  0x00002d58      0x1b0 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+
+.debug_aranges  0x00000000      0x480
+ .debug_aranges
+                0x00000000       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .debug_aranges
+                0x00000020       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .debug_aranges
+                0x00000040       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .debug_aranges
+                0x00000060       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .debug_aranges
+                0x00000080       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
+ .debug_aranges
+                0x000000a0       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
+ .debug_aranges
+                0x000000c0       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .debug_aranges
+                0x000000e0       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .debug_aranges
+                0x00000100       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_aranges
+                0x00000120       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_aranges
+                0x00000140       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_aranges
+                0x00000160       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_aranges
+                0x00000180       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .debug_aranges
+                0x000001a0       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .debug_aranges
+                0x000001c0       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .debug_aranges
+                0x000001e0       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
+ .debug_aranges
+                0x00000200       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_aranges
+                0x00000220       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .debug_aranges
+                0x00000240       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .debug_aranges
+                0x00000260       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .debug_aranges
+                0x00000280       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .debug_aranges
+                0x000002a0       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .debug_aranges
+                0x000002c0       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .debug_aranges
+                0x000002e0       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .debug_aranges
+                0x00000300       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .debug_aranges
+                0x00000320       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .debug_aranges
+                0x00000340       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .debug_aranges
+                0x00000360       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .debug_aranges
+                0x00000380       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .debug_aranges
+                0x000003a0       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .debug_aranges
+                0x000003c0       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .debug_aranges
+                0x000003e0       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .debug_aranges
+                0x00000400       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .debug_aranges
+                0x00000420       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .debug_aranges
+                0x00000440       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .debug_aranges
+                0x00000460       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+
+.debug_loc      0x00000000     0x4981
+ .debug_loc     0x00000000      0x839 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
+ .debug_loc     0x00000839      0x76f /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
+ .debug_loc     0x00000fa8       0x39 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .debug_loc     0x00000fe1       0x7c /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .debug_loc     0x0000105d       0x3c /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_loc     0x00001099      0x75d /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_loc     0x000017f6      0x102 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_loc     0x000018f8      0x130 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_loc     0x00001a28      0x12b /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .debug_loc     0x00001b53       0xbf /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .debug_loc     0x00001c12       0x79 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
+ .debug_loc     0x00001c8b       0xba /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_loc     0x00001d45       0xaa /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .debug_loc     0x00001def       0x47 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .debug_loc     0x00001e36      0x128 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .debug_loc     0x00001f5e       0x26 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .debug_loc     0x00001f84      0x1c4 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .debug_loc     0x00002148      0x210 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .debug_loc     0x00002358      0xdd7 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .debug_loc     0x0000312f       0x5b /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .debug_loc     0x0000318a      0x151 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .debug_loc     0x000032db      0x1a7 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .debug_loc     0x00003482      0x2ab /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .debug_loc     0x0000372d      0x42e /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .debug_loc     0x00003b5b       0xc1 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .debug_loc     0x00003c1c       0xcd /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .debug_loc     0x00003ce9      0x196 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .debug_loc     0x00003e7f      0x193 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .debug_loc     0x00004012      0x727 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .debug_loc     0x00004739      0x1cf /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .debug_loc     0x00004908       0x79 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+
+.debug_pubnames
+                0x00000000      0x69d
+ .debug_pubnames
+                0x00000000       0x1f /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
+ .debug_pubnames
+                0x0000001f       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
+ .debug_pubnames
+                0x0000003f       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
+ .debug_pubnames
+                0x0000005f       0x27 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .debug_pubnames
+                0x00000086       0x2d /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .debug_pubnames
+                0x000000b3       0x26 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_pubnames
+                0x000000d9       0xce /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_pubnames
+                0x000001a7       0x1d /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_pubnames
+                0x000001c4       0x1d /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_pubnames
+                0x000001e1       0x1d /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .debug_pubnames
+                0x000001fe       0x38 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .debug_pubnames
+                0x00000236       0x2f /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .debug_pubnames
+                0x00000265       0x1d /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
+ .debug_pubnames
+                0x00000282       0x1d /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_pubnames
+                0x0000029f       0x1d /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .debug_pubnames
+                0x000002bc       0x1d /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .debug_pubnames
+                0x000002d9       0x1e /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .debug_pubnames
+                0x000002f7       0x1d /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .debug_pubnames
+                0x00000314       0x2e /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .debug_pubnames
+                0x00000342       0x2b /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .debug_pubnames
+                0x0000036d       0x31 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .debug_pubnames
+                0x0000039e       0x22 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .debug_pubnames
+                0x000003c0       0x2e /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .debug_pubnames
+                0x000003ee       0x2b /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .debug_pubnames
+                0x00000419       0xdb /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .debug_pubnames
+                0x000004f4       0x31 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .debug_pubnames
+                0x00000525       0x23 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .debug_pubnames
+                0x00000548       0x2e /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .debug_pubnames
+                0x00000576       0x39 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .debug_pubnames
+                0x000005af       0x23 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .debug_pubnames
+                0x000005d2       0x1d /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .debug_pubnames
+                0x000005ef       0x1e /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .debug_pubnames
+                0x0000060d       0x21 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .debug_pubnames
+                0x0000062e       0x44 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .debug_pubnames
+                0x00000672       0x2b /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+
+.debug_ranges   0x00000000      0x450
+ .debug_ranges  0x00000000      0x128 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
+ .debug_ranges  0x00000128      0x120 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
+ .debug_ranges  0x00000248       0x58 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_ranges  0x000002a0       0x40 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .debug_ranges  0x000002e0       0x38 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .debug_ranges  0x00000318       0x80 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .debug_ranges  0x00000398       0x20 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .debug_ranges  0x000003b8       0x40 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .debug_ranges  0x000003f8       0x58 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+
+.debug_str      0x00000000     0x13e6
+ .debug_str     0x00000000      0x144 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divdi3.o)
+                                0x198 (size before relaxing)
+ .debug_str     0x00000144        0xa /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivdi3.o)
+                                0x199 (size before relaxing)
+ .debug_str     0x00000000      0x11c /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_clz.o)
+ .debug_str     0x0000014e      0x3da /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+                                0x49d (size before relaxing)
+ .debug_str     0x00000528       0x93 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+                                0x4d9 (size before relaxing)
+ .debug_str     0x000005bb       0x51 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+                                0x4bd (size before relaxing)
+ .debug_str     0x0000060c      0x206 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+                                0x692 (size before relaxing)
+ .debug_str     0x00000812       0x6f /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+                                0x10b (size before relaxing)
+ .debug_str     0x00000881       0x67 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+                                 0xc9 (size before relaxing)
+ .debug_str     0x000008e8       0x54 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+                                0x11f (size before relaxing)
+ .debug_str     0x0000093c       0x6b /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+                                0x4c4 (size before relaxing)
+ .debug_str     0x000009a7       0x4f /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+                                0x4e1 (size before relaxing)
+ .debug_str     0x000009f6       0x4b /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcat.o)
+                                0x10f (size before relaxing)
+ .debug_str     0x00000a41       0x40 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+                                0x104 (size before relaxing)
+ .debug_str     0x00000a81       0x40 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+                                0x126 (size before relaxing)
+ .debug_str     0x00000ac1       0x46 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+                                0x11e (size before relaxing)
+ .debug_str     0x00000b07       0x42 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+                                0x135 (size before relaxing)
+ .debug_str     0x00000b49       0x40 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+                                0x4ab (size before relaxing)
+ .debug_str     0x00000b89       0x6a /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+                                0x13d (size before relaxing)
+ .debug_str     0x00000bf3       0x70 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+                                0x4df (size before relaxing)
+ .debug_str     0x00000c63      0x133 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+                                0x604 (size before relaxing)
+ .debug_str     0x00000d96       0x44 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+                                0x4ad (size before relaxing)
+ .debug_str     0x00000dda       0x6e /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+                                 0x8b (size before relaxing)
+ .debug_str     0x00000e48       0x63 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+                                0x4d3 (size before relaxing)
+ .debug_str     0x00000eab      0x100 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+                                0x595 (size before relaxing)
+ .debug_str     0x00000fab       0x3c /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+                                0x5e4 (size before relaxing)
+ .debug_str     0x00000fe7       0x64 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+                                0x504 (size before relaxing)
+ .debug_str     0x0000104b       0x5c /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+                                0x4d6 (size before relaxing)
+ .debug_str     0x000010a7       0x72 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+                                0x4bb (size before relaxing)
+ .debug_str     0x00001119      0x126 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+                                0x5a7 (size before relaxing)
+ .debug_str     0x0000123f       0x5a /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+                                0x12c (size before relaxing)
+ .debug_str     0x00001299       0x4b /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+                                0x13e (size before relaxing)
+ .debug_str     0x000012e4       0x59 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+                                0x564 (size before relaxing)
+ .debug_str     0x0000133d       0x60 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+                                0x4d2 (size before relaxing)
+ .debug_str     0x0000139d       0x49 /cygdrive/c/Users/Michael/Documents/CmpE 146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+                                0x4b7 (size before relaxing)

@@ -273,7 +273,7 @@
  274              	.L54:
  275 0390 00C001E0 		.word	-536756224
  276 0394 04000000 		.word	I2C_IOFRAME
- 277 0398 00000000 		.word	bPointer.1752
+ 277 0398 00000000 		.word	bPointer.1748
  279              		.align	2
  280              		.global	i2cKickOffTransfer
  282              	i2cKickOffTransfer:
@@ -343,280 +343,259 @@
  348              	.L64:
  349 0464 00000000 		.word	i2cLock
  351              		.align	2
- 352              		.global	initPE
- 354              	initPE:
- 355              		@ args = 0, pretend = 0, frame = 0
+ 352              		.global	i2cReadDeviceRegister
+ 354              	i2cReadDeviceRegister:
+ 355              		@ args = 0, pretend = 0, frame = 4
  356              		@ frame_needed = 0, uses_anonymous_args = 0
- 357 0468 04E02DE5 		str	lr, [sp, #-4]!
- 358 046c 0610A0E3 		mov	r1, #6
- 359 0470 0020A0E3 		mov	r2, #0
- 360 0474 4000A0E3 		mov	r0, #64
- 361 0478 FEFFFFEB 		bl	i2cWriteDeviceRegister
- 362 047c 0710A0E3 		mov	r1, #7
- 363 0480 FF20A0E3 		mov	r2, #255
- 364 0484 4000A0E3 		mov	r0, #64
- 365 0488 FEFFFFEB 		bl	i2cWriteDeviceRegister
- 366 048c 4000A0E3 		mov	r0, #64
- 367 0490 0710A0E3 		mov	r1, #7
- 368 0494 FF20A0E3 		mov	r2, #255
- 369 0498 04E09DE4 		ldr	lr, [sp], #4
- 370 049c FEFFFFEA 		b	i2cWriteDeviceRegister
- 372              		.align	2
- 373              		.global	i2cReadDeviceRegister
- 375              	i2cReadDeviceRegister:
- 376              		@ args = 0, pretend = 0, frame = 4
- 377              		@ frame_needed = 0, uses_anonymous_args = 0
- 378 04a0 F0412DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, lr}
- 379 04a4 90809FE5 		ldr	r8, .L70
- 380 04a8 08D04DE2 		sub	sp, sp, #8
- 381 04ac 0060A0E3 		mov	r6, #0
- 382 04b0 08708DE2 		add	r7, sp, #8
- 383 04b4 016067E5 		strb	r6, [r7, #-1]!
- 384 04b8 0630A0E1 		mov	r3, r6
- 385 04bc 0040A0E1 		mov	r4, r0
- 386 04c0 0150A0E1 		mov	r5, r1
- 387 04c4 0020E0E3 		mvn	r2, #0
- 388 04c8 0610A0E1 		mov	r1, r6
- 389 04cc 000098E5 		ldr	r0, [r8, #0]
- 390 04d0 FEFFFFEB 		bl	xQueueGenericReceive
- 391 04d4 FF4004E2 		and	r4, r4, #255
- 392 04d8 01C0A0E3 		mov	ip, #1
- 393 04dc FF5005E2 		and	r5, r5, #255
- 394 04e0 0C00A0E1 		mov	r0, ip
- 395 04e4 0410A0E1 		mov	r1, r4
- 396 04e8 0520A0E1 		mov	r2, r5
- 397 04ec 0730A0E1 		mov	r3, r7
- 398 04f0 00C08DE5 		str	ip, [sp, #0]
- 399 04f4 FEFFFFEB 		bl	i2cKickOffTransfer
- 400 04f8 40309FE5 		ldr	r3, .L70+4
- 401 04fc 0610A0E1 		mov	r1, r6
- 402 0500 000093E5 		ldr	r0, [r3, #0]
- 403 0504 0020E0E3 		mvn	r2, #0
- 404 0508 0630A0E1 		mov	r3, r6
- 405 050c FEFFFFEB 		bl	xQueueGenericReceive
- 406 0510 2C309FE5 		ldr	r3, .L70+8
- 407 0514 08C0D3E5 		ldrb	ip, [r3, #8]	@ zero_extendqisi2
- 408 0518 0610A0E1 		mov	r1, r6
- 409 051c 000098E5 		ldr	r0, [r8, #0]
- 410 0520 0620A0E1 		mov	r2, r6
- 411 0524 0630A0E1 		mov	r3, r6
- 412 0528 07C0CDE5 		strb	ip, [sp, #7]
- 413 052c FEFFFFEB 		bl	xQueueGenericSend
- 414 0530 0700DDE5 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
- 415 0534 08D08DE2 		add	sp, sp, #8
- 416 0538 F081BDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, pc}
- 417              	.L71:
- 418              		.align	2
- 419              	.L70:
- 420 053c 00000000 		.word	i2cLock
- 421 0540 00000000 		.word	i2cReadCompleteSignal
- 422 0544 04000000 		.word	I2C_IOFRAME
- 424              		.global	__udivsi3
- 425              		.align	2
- 426              		.global	initialize_I2C0
- 428              	initialize_I2C0:
- 429              		@ args = 0, pretend = 0, frame = 0
- 430              		@ frame_needed = 0, uses_anonymous_args = 0
- 431 0548 08C19FE5 		ldr	ip, .L77
- 432 054c 00309CE5 		ldr	r3, [ip, #0]
- 433 0550 F030C3E3 		bic	r3, r3, #240
- 434 0554 00308CE5 		str	r3, [ip, #0]
- 435 0558 FC309FE5 		ldr	r3, .L77+4
- 436 055c 00209CE5 		ldr	r2, [ip, #0]
- 437 0560 F8109FE5 		ldr	r1, .L77+8
- 438 0564 030050E1 		cmp	r0, r3
- 439 0568 30402DE9 		stmfd	sp!, {r4, r5, lr}
- 440 056c F0409FE5 		ldr	r4, .L77+12
- 441 0570 0050A091 		movls	r5, r0
- 442 0574 0150A081 		movhi	r5, r1
- 443 0578 502082E3 		orr	r2, r2, #80
- 444 057c 6C30A0E3 		mov	r3, #108
- 445 0580 00208CE5 		str	r2, [ip, #0]
- 446 0584 011085E2 		add	r1, r5, #1
- 447 0588 183084E5 		str	r3, [r4, #24]
- 448 058c D4009FE5 		ldr	r0, .L77+16
- 449 0590 FEFFFFEB 		bl	__udivsi3
- 450 0594 0030A0E1 		mov	r3, r0
- 451 0598 0510A0E1 		mov	r1, r5
- 452 059c 103084E5 		str	r3, [r4, #16]
- 453 05a0 C0009FE5 		ldr	r0, .L77+16
- 454 05a4 FEFFFFEB 		bl	__udivsi3
- 455 05a8 0050A0E3 		mov	r5, #0
- 456 05ac 4030A0E3 		mov	r3, #64
- 457 05b0 140084E5 		str	r0, [r4, #20]
- 458 05b4 0C5084E5 		str	r5, [r4, #12]
- 459 05b8 003084E5 		str	r3, [r4, #0]
- 460 05bc 0020E0E3 		mvn	r2, #0
- 461 05c0 F33F12E5 		ldr	r3, [r2, #-4083]
- 462 05c4 023CC3E3 		bic	r3, r3, #512
- 463 05c8 F33F02E5 		str	r3, [r2, #-4083]
- 464 05cc 2930A0E3 		mov	r3, #41
- 465 05d0 EF3D02E5 		str	r3, [r2, #-3567]
- 466 05d4 90309FE5 		ldr	r3, .L77+20
- 467 05d8 0100A0E3 		mov	r0, #1
- 468 05dc EF3E02E5 		str	r3, [r2, #-3823]
- 469 05e0 0510A0E1 		mov	r1, r5
- 470 05e4 FEFFFFEB 		bl	xQueueCreate
- 471 05e8 80309FE5 		ldr	r3, .L77+24
- 472 05ec 050050E1 		cmp	r0, r5
- 473 05f0 000083E5 		str	r0, [r3, #0]
- 474 05f4 0510A011 		movne	r1, r5
- 475 05f8 0520A011 		movne	r2, r5
- 476 05fc 0530A011 		movne	r3, r5
- 477 0600 FEFFFF1B 		blne	xQueueGenericSend
- 478              	.L74:
- 479 0604 0100A0E3 		mov	r0, #1
- 480 0608 0010A0E3 		mov	r1, #0
- 481 060c FEFFFFEB 		bl	xQueueCreate
- 482 0610 5C309FE5 		ldr	r3, .L77+28
- 483 0614 000050E3 		cmp	r0, #0
- 484 0618 000083E5 		str	r0, [r3, #0]
- 485 061c 0010A013 		movne	r1, #0
- 486 0620 0120A011 		movne	r2, r1
- 487 0624 0130A011 		movne	r3, r1
- 488 0628 FEFFFF1B 		blne	xQueueGenericSend
- 489              	.L75:
- 490 062c 40309FE5 		ldr	r3, .L77+28
- 491 0630 0010A0E3 		mov	r1, #0
- 492 0634 0120A0E1 		mov	r2, r1
- 493 0638 000093E5 		ldr	r0, [r3, #0]
- 494 063c 0130A0E1 		mov	r3, r1
- 495 0640 FEFFFFEB 		bl	xQueueGenericReceive
- 496 0644 022CA0E3 		mov	r2, #512
- 497 0648 0030E0E3 		mvn	r3, #0
- 498 064c EF2F03E5 		str	r2, [r3, #-4079]
- 499 0650 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
- 500 0654 FEFFFFEA 		b	initPE
- 501              	.L78:
- 502              		.align	2
- 503              	.L77:
- 504 0658 00C002E0 		.word	-536690688
- 505 065c 40420F00 		.word	1000000
- 506 0660 801A0600 		.word	400000
- 507 0664 00C001E0 		.word	-536756224
- 508 0668 00366E01 		.word	24000000
- 509 066c 00000000 		.word	i2cISR
- 510 0670 00000000 		.word	i2cLock
- 511 0674 00000000 		.word	i2cReadCompleteSignal
- 513              		.align	2
- 515              	i2cISR:
- 516              		@ Naked Function: prologue and epilogue provided by programmer.
- 517              		@ args = 0, pretend = 0, frame = 4
- 518              		@ frame_needed = 0, uses_anonymous_args = 0
- 519              	@ 270 "../drivers/i2c.c" 1
- 520 0678 01002DE9 		STMDB	SP!, {R0}											
- 521 067c 00204DE9 		STMDB	SP,{SP}^											
- 522 0680 0000A0E1 		NOP														
- 523 0684 04D04DE2 		SUB	SP, SP, #4											
- 524 0688 0100BDE8 		LDMIA	SP!,{R0}											
- 525 068c 004020E9 		STMDB	R0!, {LR}											
- 526 0690 00E0A0E1 		MOV	LR, R0												
- 527 0694 0100BDE8 		LDMIA	SP!, {R0}											
- 528 0698 FF7F4EE9 		STMDB	LR,{R0-LR}^											
- 529 069c 0000A0E1 		NOP														
- 530 06a0 3CE04EE2 		SUB	LR, LR, #60											
- 531 06a4 00004FE1 		MRS	R0, SPSR											
- 532 06a8 01002EE9 		STMDB	LR!, {R0}											
- 533 06ac C4009FE5 		LDR	R0, =ulCriticalNesting								
- 534 06b0 000090E5 		LDR	R0, [R0]											
- 535 06b4 01002EE9 		STMDB	LR!, {R0}											
- 536 06b8 BC009FE5 		LDR	R0, =pxCurrentTCB									
- 537 06bc 000090E5 		LDR	R0, [R0]											
- 538 06c0 00E080E5 		STR	LR, [R0]											
- 539              		
- 540              	@ 0 "" 2
- 541 06c4 9C309FE5 		ldr	r3, .L85
- 542 06c8 003093E5 		ldr	r3, [r3, #0]
- 543 06cc 98309FE5 		ldr	r3, .L85+4
- 544 06d0 0040A0E3 		mov	r4, #0
- 545 06d4 003093E5 		ldr	r3, [r3, #0]
- 546 06d8 00408DE5 		str	r4, [sp, #0]
- 547 06dc FEFFFFEB 		bl	i2cStateMachine
- 548 06e0 010050E3 		cmp	r0, #1
- 549 06e4 0410A001 		moveq	r1, r4
- 550 06e8 80309F05 		ldreq	r3, .L85+8
- 551 06ec 0300000A 		beq	.L84
- 552 06f0 020050E3 		cmp	r0, #2
- 553 06f4 0500001A 		bne	.L81
- 554 06f8 74309FE5 		ldr	r3, .L85+12
- 555 06fc 0410A0E1 		mov	r1, r4
- 556              	.L84:
- 557 0700 000093E5 		ldr	r0, [r3, #0]
- 558 0704 0D20A0E1 		mov	r2, sp
- 559 0708 0130A0E1 		mov	r3, r1
- 560 070c FEFFFFEB 		bl	xQueueGenericSendFromISR
- 561              	.L81:
- 562 0710 00309DE5 		ldr	r3, [sp, #0]
- 563 0714 000053E3 		cmp	r3, #0
- 564 0718 FEFFFF1B 		blne	vTaskSwitchContext
- 565              	.L82:
- 566 071c 0020A0E3 		mov	r2, #0
- 567 0720 0030E0E3 		mvn	r3, #0
- 568 0724 CF2F03E5 		str	r2, [r3, #-4047]
- 569              	@ 289 "../drivers/i2c.c" 1
- 570 0728 4C009FE5 		LDR		R0, =pxCurrentTCB								
- 571 072c 000090E5 		LDR		R0, [R0]										
- 572 0730 00E090E5 		LDR		LR, [R0]										
- 573 0734 3C009FE5 		LDR		R0, =ulCriticalNesting							
- 574 0738 0200BEE8 		LDMFD	LR!, {R1}											
- 575 073c 001080E5 		STR		R1, [R0]										
- 576 0740 0100BEE8 		LDMFD	LR!, {R0}											
- 577 0744 00F069E1 		MSR		SPSR, R0										
- 578 0748 FF7FDEE8 		LDMFD	LR, {R0-R14}^										
- 579 074c 0000A0E1 		NOP														
- 580 0750 3CE09EE5 		LDR		LR, [LR, #+60]									
- 581 0754 04F05EE2 		SUBS	PC, LR, #4											
- 582              		
- 583              	@ 0 "" 2
- 584 0758 08309FE5 		ldr	r3, .L85
- 585 075c 003093E5 		ldr	r3, [r3, #0]
- 586 0760 04309FE5 		ldr	r3, .L85+4
- 587 0764 003093E5 		ldr	r3, [r3, #0]
- 588              	.L86:
- 589              		.align	2
- 590              	.L85:
- 591 0768 00000000 		.word	ulCriticalNesting
- 592 076c 00000000 		.word	pxCurrentTCB
- 593 0770 00000000 		.word	i2cReadCompleteSignal
- 594 0774 00000000 		.word	i2cLock
- 596              		.bss
- 597              		.align	2
- 598              	bPointer.1752:
- 599 0000 00000000 		.space	4
- 600              		.align	2
- 601              	I2C_IOFRAME:
- 602 0004 00000000 		.space	16
- 602      00000000 
- 602      00000000 
- 602      00000000 
- 603              		.comm	i2cReadCompleteSignal,4,4
- 604              		.comm	i2cLock,4,4
- 605              		.ident	"GCC: (GNU) 4.3.2"
+ 357 0468 F0412DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, lr}
+ 358 046c 90809FE5 		ldr	r8, .L68
+ 359 0470 08D04DE2 		sub	sp, sp, #8
+ 360 0474 0060A0E3 		mov	r6, #0
+ 361 0478 08708DE2 		add	r7, sp, #8
+ 362 047c 016067E5 		strb	r6, [r7, #-1]!
+ 363 0480 0630A0E1 		mov	r3, r6
+ 364 0484 0040A0E1 		mov	r4, r0
+ 365 0488 0150A0E1 		mov	r5, r1
+ 366 048c 0020E0E3 		mvn	r2, #0
+ 367 0490 0610A0E1 		mov	r1, r6
+ 368 0494 000098E5 		ldr	r0, [r8, #0]
+ 369 0498 FEFFFFEB 		bl	xQueueGenericReceive
+ 370 049c FF4004E2 		and	r4, r4, #255
+ 371 04a0 01C0A0E3 		mov	ip, #1
+ 372 04a4 FF5005E2 		and	r5, r5, #255
+ 373 04a8 0C00A0E1 		mov	r0, ip
+ 374 04ac 0410A0E1 		mov	r1, r4
+ 375 04b0 0520A0E1 		mov	r2, r5
+ 376 04b4 0730A0E1 		mov	r3, r7
+ 377 04b8 00C08DE5 		str	ip, [sp, #0]
+ 378 04bc FEFFFFEB 		bl	i2cKickOffTransfer
+ 379 04c0 40309FE5 		ldr	r3, .L68+4
+ 380 04c4 0610A0E1 		mov	r1, r6
+ 381 04c8 000093E5 		ldr	r0, [r3, #0]
+ 382 04cc 0020E0E3 		mvn	r2, #0
+ 383 04d0 0630A0E1 		mov	r3, r6
+ 384 04d4 FEFFFFEB 		bl	xQueueGenericReceive
+ 385 04d8 2C309FE5 		ldr	r3, .L68+8
+ 386 04dc 08C0D3E5 		ldrb	ip, [r3, #8]	@ zero_extendqisi2
+ 387 04e0 0610A0E1 		mov	r1, r6
+ 388 04e4 000098E5 		ldr	r0, [r8, #0]
+ 389 04e8 0620A0E1 		mov	r2, r6
+ 390 04ec 0630A0E1 		mov	r3, r6
+ 391 04f0 07C0CDE5 		strb	ip, [sp, #7]
+ 392 04f4 FEFFFFEB 		bl	xQueueGenericSend
+ 393 04f8 0700DDE5 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
+ 394 04fc 08D08DE2 		add	sp, sp, #8
+ 395 0500 F081BDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, pc}
+ 396              	.L69:
+ 397              		.align	2
+ 398              	.L68:
+ 399 0504 00000000 		.word	i2cLock
+ 400 0508 00000000 		.word	i2cReadCompleteSignal
+ 401 050c 04000000 		.word	I2C_IOFRAME
+ 403              		.global	__udivsi3
+ 404              		.align	2
+ 405              		.global	initialize_I2C0
+ 407              	initialize_I2C0:
+ 408              		@ args = 0, pretend = 0, frame = 0
+ 409              		@ frame_needed = 0, uses_anonymous_args = 0
+ 410 0510 04C19FE5 		ldr	ip, .L75
+ 411 0514 00309CE5 		ldr	r3, [ip, #0]
+ 412 0518 F030C3E3 		bic	r3, r3, #240
+ 413 051c 00308CE5 		str	r3, [ip, #0]
+ 414 0520 F8309FE5 		ldr	r3, .L75+4
+ 415 0524 00209CE5 		ldr	r2, [ip, #0]
+ 416 0528 F4109FE5 		ldr	r1, .L75+8
+ 417 052c 030050E1 		cmp	r0, r3
+ 418 0530 30402DE9 		stmfd	sp!, {r4, r5, lr}
+ 419 0534 EC409FE5 		ldr	r4, .L75+12
+ 420 0538 0050A091 		movls	r5, r0
+ 421 053c 0150A081 		movhi	r5, r1
+ 422 0540 502082E3 		orr	r2, r2, #80
+ 423 0544 6C30A0E3 		mov	r3, #108
+ 424 0548 00208CE5 		str	r2, [ip, #0]
+ 425 054c 011085E2 		add	r1, r5, #1
+ 426 0550 183084E5 		str	r3, [r4, #24]
+ 427 0554 D0009FE5 		ldr	r0, .L75+16
+ 428 0558 FEFFFFEB 		bl	__udivsi3
+ 429 055c 0030A0E1 		mov	r3, r0
+ 430 0560 0510A0E1 		mov	r1, r5
+ 431 0564 103084E5 		str	r3, [r4, #16]
+ 432 0568 BC009FE5 		ldr	r0, .L75+16
+ 433 056c FEFFFFEB 		bl	__udivsi3
+ 434 0570 0050A0E3 		mov	r5, #0
+ 435 0574 4030A0E3 		mov	r3, #64
+ 436 0578 140084E5 		str	r0, [r4, #20]
+ 437 057c 0C5084E5 		str	r5, [r4, #12]
+ 438 0580 003084E5 		str	r3, [r4, #0]
+ 439 0584 0020E0E3 		mvn	r2, #0
+ 440 0588 F33F12E5 		ldr	r3, [r2, #-4083]
+ 441 058c 023CC3E3 		bic	r3, r3, #512
+ 442 0590 F33F02E5 		str	r3, [r2, #-4083]
+ 443 0594 2930A0E3 		mov	r3, #41
+ 444 0598 EF3D02E5 		str	r3, [r2, #-3567]
+ 445 059c 8C309FE5 		ldr	r3, .L75+20
+ 446 05a0 0100A0E3 		mov	r0, #1
+ 447 05a4 EF3E02E5 		str	r3, [r2, #-3823]
+ 448 05a8 0510A0E1 		mov	r1, r5
+ 449 05ac FEFFFFEB 		bl	xQueueCreate
+ 450 05b0 7C309FE5 		ldr	r3, .L75+24
+ 451 05b4 050050E1 		cmp	r0, r5
+ 452 05b8 000083E5 		str	r0, [r3, #0]
+ 453 05bc 0510A011 		movne	r1, r5
+ 454 05c0 0520A011 		movne	r2, r5
+ 455 05c4 0530A011 		movne	r3, r5
+ 456 05c8 FEFFFF1B 		blne	xQueueGenericSend
+ 457              	.L72:
+ 458 05cc 0100A0E3 		mov	r0, #1
+ 459 05d0 0010A0E3 		mov	r1, #0
+ 460 05d4 FEFFFFEB 		bl	xQueueCreate
+ 461 05d8 58309FE5 		ldr	r3, .L75+28
+ 462 05dc 000050E3 		cmp	r0, #0
+ 463 05e0 000083E5 		str	r0, [r3, #0]
+ 464 05e4 0010A013 		movne	r1, #0
+ 465 05e8 0120A011 		movne	r2, r1
+ 466 05ec 0130A011 		movne	r3, r1
+ 467 05f0 FEFFFF1B 		blne	xQueueGenericSend
+ 468              	.L73:
+ 469 05f4 3C309FE5 		ldr	r3, .L75+28
+ 470 05f8 0010A0E3 		mov	r1, #0
+ 471 05fc 000093E5 		ldr	r0, [r3, #0]
+ 472 0600 0120A0E1 		mov	r2, r1
+ 473 0604 0130A0E1 		mov	r3, r1
+ 474 0608 FEFFFFEB 		bl	xQueueGenericReceive
+ 475 060c 022CA0E3 		mov	r2, #512
+ 476 0610 0030E0E3 		mvn	r3, #0
+ 477 0614 EF2F03E5 		str	r2, [r3, #-4079]
+ 478 0618 3080BDE8 		ldmfd	sp!, {r4, r5, pc}
+ 479              	.L76:
+ 480              		.align	2
+ 481              	.L75:
+ 482 061c 00C002E0 		.word	-536690688
+ 483 0620 40420F00 		.word	1000000
+ 484 0624 801A0600 		.word	400000
+ 485 0628 00C001E0 		.word	-536756224
+ 486 062c 00366E01 		.word	24000000
+ 487 0630 00000000 		.word	i2cISR
+ 488 0634 00000000 		.word	i2cLock
+ 489 0638 00000000 		.word	i2cReadCompleteSignal
+ 491              		.align	2
+ 493              	i2cISR:
+ 494              		@ Naked Function: prologue and epilogue provided by programmer.
+ 495              		@ args = 0, pretend = 0, frame = 4
+ 496              		@ frame_needed = 0, uses_anonymous_args = 0
+ 497              	@ 266 "../drivers/i2c.c" 1
+ 498 063c 01002DE9 		STMDB	SP!, {R0}											
+ 499 0640 00204DE9 		STMDB	SP,{SP}^											
+ 500 0644 0000A0E1 		NOP														
+ 501 0648 04D04DE2 		SUB	SP, SP, #4											
+ 502 064c 0100BDE8 		LDMIA	SP!,{R0}											
+ 503 0650 004020E9 		STMDB	R0!, {LR}											
+ 504 0654 00E0A0E1 		MOV	LR, R0												
+ 505 0658 0100BDE8 		LDMIA	SP!, {R0}											
+ 506 065c FF7F4EE9 		STMDB	LR,{R0-LR}^											
+ 507 0660 0000A0E1 		NOP														
+ 508 0664 3CE04EE2 		SUB	LR, LR, #60											
+ 509 0668 00004FE1 		MRS	R0, SPSR											
+ 510 066c 01002EE9 		STMDB	LR!, {R0}											
+ 511 0670 C4009FE5 		LDR	R0, =ulCriticalNesting								
+ 512 0674 000090E5 		LDR	R0, [R0]											
+ 513 0678 01002EE9 		STMDB	LR!, {R0}											
+ 514 067c BC009FE5 		LDR	R0, =pxCurrentTCB									
+ 515 0680 000090E5 		LDR	R0, [R0]											
+ 516 0684 00E080E5 		STR	LR, [R0]											
+ 517              		
+ 518              	@ 0 "" 2
+ 519 0688 9C309FE5 		ldr	r3, .L83
+ 520 068c 003093E5 		ldr	r3, [r3, #0]
+ 521 0690 98309FE5 		ldr	r3, .L83+4
+ 522 0694 0040A0E3 		mov	r4, #0
+ 523 0698 003093E5 		ldr	r3, [r3, #0]
+ 524 069c 00408DE5 		str	r4, [sp, #0]
+ 525 06a0 FEFFFFEB 		bl	i2cStateMachine
+ 526 06a4 010050E3 		cmp	r0, #1
+ 527 06a8 0410A001 		moveq	r1, r4
+ 528 06ac 80309F05 		ldreq	r3, .L83+8
+ 529 06b0 0300000A 		beq	.L82
+ 530 06b4 020050E3 		cmp	r0, #2
+ 531 06b8 0500001A 		bne	.L79
+ 532 06bc 74309FE5 		ldr	r3, .L83+12
+ 533 06c0 0410A0E1 		mov	r1, r4
+ 534              	.L82:
+ 535 06c4 000093E5 		ldr	r0, [r3, #0]
+ 536 06c8 0D20A0E1 		mov	r2, sp
+ 537 06cc 0130A0E1 		mov	r3, r1
+ 538 06d0 FEFFFFEB 		bl	xQueueGenericSendFromISR
+ 539              	.L79:
+ 540 06d4 00309DE5 		ldr	r3, [sp, #0]
+ 541 06d8 000053E3 		cmp	r3, #0
+ 542 06dc FEFFFF1B 		blne	vTaskSwitchContext
+ 543              	.L80:
+ 544 06e0 0020A0E3 		mov	r2, #0
+ 545 06e4 0030E0E3 		mvn	r3, #0
+ 546 06e8 CF2F03E5 		str	r2, [r3, #-4047]
+ 547              	@ 285 "../drivers/i2c.c" 1
+ 548 06ec 4C009FE5 		LDR		R0, =pxCurrentTCB								
+ 549 06f0 000090E5 		LDR		R0, [R0]										
+ 550 06f4 00E090E5 		LDR		LR, [R0]										
+ 551 06f8 3C009FE5 		LDR		R0, =ulCriticalNesting							
+ 552 06fc 0200BEE8 		LDMFD	LR!, {R1}											
+ 553 0700 001080E5 		STR		R1, [R0]										
+ 554 0704 0100BEE8 		LDMFD	LR!, {R0}											
+ 555 0708 00F069E1 		MSR		SPSR, R0										
+ 556 070c FF7FDEE8 		LDMFD	LR, {R0-R14}^										
+ 557 0710 0000A0E1 		NOP														
+ 558 0714 3CE09EE5 		LDR		LR, [LR, #+60]									
+ 559 0718 04F05EE2 		SUBS	PC, LR, #4											
+ 560              		
+ 561              	@ 0 "" 2
+ 562 071c 08309FE5 		ldr	r3, .L83
+ 563 0720 003093E5 		ldr	r3, [r3, #0]
+ 564 0724 04309FE5 		ldr	r3, .L83+4
+ 565 0728 003093E5 		ldr	r3, [r3, #0]
+ 566              	.L84:
+ 567              		.align	2
+ 568              	.L83:
+ 569 072c 00000000 		.word	ulCriticalNesting
+ 570 0730 00000000 		.word	pxCurrentTCB
+ 571 0734 00000000 		.word	i2cReadCompleteSignal
+ 572 0738 00000000 		.word	i2cLock
+ 574              		.bss
+ 575              		.align	2
+ 576              	bPointer.1748:
+ 577 0000 00000000 		.space	4
+ 578              		.align	2
+ 579              	I2C_IOFRAME:
+ 580 0004 00000000 		.space	16
+ 580      00000000 
+ 580      00000000 
+ 580      00000000 
+ 581              		.comm	i2cReadCompleteSignal,4,4
+ 582              		.comm	i2cLock,4,4
+ 583              		.ident	"GCC: (GNU) 4.3.2"
 DEFINED SYMBOLS
                             *ABS*:00000000 i2c.c
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccXKoMQ.s:6      .text:00000000 i2cStateMachine
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccXKoMQ.s:9      .text:00000000 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccXKoMQ.s:275    .text:00000390 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccXKoMQ.s:601    .bss:00000004 I2C_IOFRAME
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccXKoMQ.s:598    .bss:00000000 bPointer.1752
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccXKoMQ.s:282    .text:0000039c i2cKickOffTransfer
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccXKoMQ.s:285    .text:0000039c $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccXKoMQ.s:314    .text:00000400 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccXKoMQ.s:320    .text:00000408 i2cWriteDeviceRegister
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccXKoMQ.s:323    .text:00000408 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccXKoMQ.s:349    .text:00000464 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCQo9uD.s:6      .text:00000000 i2cStateMachine
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCQo9uD.s:9      .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCQo9uD.s:275    .text:00000390 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCQo9uD.s:579    .bss:00000004 I2C_IOFRAME
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCQo9uD.s:576    .bss:00000000 bPointer.1748
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCQo9uD.s:282    .text:0000039c i2cKickOffTransfer
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCQo9uD.s:285    .text:0000039c $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCQo9uD.s:314    .text:00000400 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCQo9uD.s:320    .text:00000408 i2cWriteDeviceRegister
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCQo9uD.s:323    .text:00000408 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCQo9uD.s:349    .text:00000464 $d
                             *COM*:00000004 i2cLock
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccXKoMQ.s:354    .text:00000468 initPE
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccXKoMQ.s:357    .text:00000468 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccXKoMQ.s:375    .text:000004a0 i2cReadDeviceRegister
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccXKoMQ.s:420    .text:0000053c $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCQo9uD.s:354    .text:00000468 i2cReadDeviceRegister
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCQo9uD.s:357    .text:00000468 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCQo9uD.s:399    .text:00000504 $d
                             *COM*:00000004 i2cReadCompleteSignal
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccXKoMQ.s:428    .text:00000548 initialize_I2C0
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccXKoMQ.s:431    .text:00000548 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccXKoMQ.s:504    .text:00000658 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccXKoMQ.s:515    .text:00000678 i2cISR
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccXKoMQ.s:520    .text:00000678 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cccXKoMQ.s:591    .text:00000768 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCQo9uD.s:407    .text:00000510 initialize_I2C0
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCQo9uD.s:410    .text:00000510 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCQo9uD.s:482    .text:0000061c $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCQo9uD.s:493    .text:0000063c i2cISR
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCQo9uD.s:498    .text:0000063c $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccCQo9uD.s:569    .text:0000072c $d
 
 UNDEFINED SYMBOLS
 memcpy

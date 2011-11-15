@@ -8,7 +8,6 @@
 #include <stdlib.h>                 // atoi()
 #include <stdio.h>                  // printf() or iprintf()
 #include <string.h>                 // strtok()
-#include <stdbool.h>
 
 #include "../fat/ff.h"				// FAT File System Library
 #include "../fat/diskio.h" 			// Disk IO Initialize SPI Mutex
@@ -18,14 +17,6 @@
 
 #include "../drivers/ssp_spi.h"
 #include "../drivers/i2c.h"
-
-char *nextSong;
-char *currentSong;
-char *prevSong;
-
-char *array[30];
-int current;
-int lastFileIndex;
 
 void printLine()
 {
@@ -44,8 +35,7 @@ void uartUI(void *pvParameters)
 	}
 
 	initialize_SSPSPI();
-	//initialize_I2C0(100*1000);
-	initialize_I2C0(400*1000);
+	initialize_I2C0(100*1000);
 
 	diskio_initializeSPIMutex(&(osHandles->lock.SPI));
 	initialize_SdCardSignals();
@@ -71,6 +61,24 @@ void uartUI(void *pvParameters)
 		if (MATCH(command, "echo")){
 			char *echoBack = strtok(NULL, "");
 			rprintf("Echo: %s\n", echoBack);
+		}
+		else if (MATCH(command, "play") || MATCH(command, "PLAY"))
+		{
+			char itemOnQ[15];
+			char *songname = strtok(NULL, ".");
+			strcpy(itemOnQ, songname);
+			//strcpy(currentSong ,itemOnQ);
+			strcat(itemOnQ, ".mp3");
+			rprintf("%s", itemOnQ);
+			rprintf("    %s(): Sending song-name to Queue ...\n", __FUNCTION__);
+			if(xQueueSend(osHandles->queue.songname, &itemOnQ, 100))
+			{
+				rprintf("    Song Sent: %s!\n", itemOnQ);
+			}
+			else
+			{
+				rprintf("Timeout during Send!!!\n");
+			}
 		}
 		else if(MATCH("ls", command))
 		{
@@ -193,26 +201,6 @@ void uartUI(void *pvParameters)
 			else if(MATCH(crashType, "DABORT"))	performDABORTCrash();
 			else rprintf("Define the crash type as either UNDEF, PABORT, or DABORT\n");
 		}
-//HERE!
-		else if (MATCH(command, "play") || MATCH(command, "PLAY"))
-		{
-			rprintf("Play command received\n");
-			char itemOnQ[15];
-			char *songname = strtok(NULL, ".");
-			strcpy(itemOnQ, songname);
-			strcpy(currentSong ,itemOnQ);
-			strcat(itemOnQ, ".mp3");
-			rprintf("%s", itemOnQ);
-			rprintf("    %s(): Sending song-name to Queue ...\n", __FUNCTION__);
-			if(xQueueSend(osHandles->queue.songname, &itemOnQ, 100))
-			{
-				rprintf("    Song Sent: %s!\n", itemOnQ);
-			}
-			else
-			{
-				rprintf("Timeout during Send!!!\n");
-			}
-		}
 #if configGENERATE_RUN_TIME_STATS
 		else if(MATCH(command, "CPU")) {
 			vTaskGetRunTimeStats(uartInput, 0);
@@ -320,132 +308,5 @@ void getUartLine(char* uartInput)
 			uart0PutChar(data, 100);
 			uartInput[uartInputPtr++] = data;
 		}
-	}
-}
-
-void getMP3Names(void)
-{
-	/*char *nextSong;
-	char *prevSong;*/
-	int counter = 0;
-	char fullName;
-	char file;
-	char fileExtension;
-	//char array[30][15];
-	//char lastRead;
-	//bool gotCurrent = false;
-	int index = 0;
-
-	DIR Dir;
-	FILINFO Finfo;
-	FATFS *fs;
-	FRESULT returnCode = FR_OK;
-
-	unsigned int fileBytesTotal, numFiles, numDirs;
-	fileBytesTotal = numFiles = numDirs = 0;
-	#if _USE_LFN
-	char Lfname[512];
-	#endif
-
-	rprintf("userInterface.c: WE'RE NOT INSIDE A LOOP!\n");
-	char dirPath[] = "0:";
-	if (RES_OK != (returnCode = f_opendir(&Dir, dirPath))) {
-		rprintf("Invalid directory: |%s|\n", dirPath);
-		return; //<----- not inside a loop!
-	}
-
-		rprintf("Entering the for loop in getMP3Names()");
-	//rprintf("Directory listing of: %s\n\n", dirPath);
-	//for (counter = 0; ; counter++)
-	for (index = 0; ; index++)
-	{
-		#if _USE_LFN
-		Finfo.lfname = Lfname;
-		Finfo.lfsize = sizeof(Lfname);
-		#endif
-
-		char returnCode = f_readdir(&Dir, &Finfo);
-
-		if ( (FR_OK != returnCode) || !Finfo.fname[0])
-			break;
-		if (Finfo.fattrib & AM_DIR)
-		{
-			numDirs++;
-		}
-		else
-		{
-			numFiles++;
-			fileBytesTotal += Finfo.fsize;
-		}
-//HERE!
-		strcpy (fullName, Finfo.fname);
-		file = strtok(fullName, ".");
-		fileExtension = strtok(fullName, NULL);
-		/*if (gotCurrent && mp3 == "mp3")
-		{
-			nextSong = file;
-			break;
-		}
-		else if (mp3 == "mp3")
-		{
-			if (file == currentSong)
-			{
-				gotCurrent = true;
-			}
-			else
-			{
-				prevSong = file;
-			}
-		}*/
-
-		if (fileExtension == "mp3")
-		{
-			strcpy (array[index], file);
-			if (currentSong == file)
-			{
-				current = index;
-			}
-		}
-
-		lastFileIndex = index;
-
-		//don't overflow the song array!
-		if (index +1 > 30)
-			break;
-
-		strcpy (array[counter], Finfo.fname);
-
-	}
-}
-
-void retGlobals(char c, char toReturn[])
-{
-	if (c == 'S')
-	{
-		if (current + 1 > lastFileIndex)
-		{
-			current = 0;
-		}
-		else
-		{
-			current++;
-		}
-		toReturn = array[current];
-	}
-	else if (c == 'P')
-	{
-		if (current - 1 < 0)
-		{
-			current = lastFileIndex;
-		}
-		else
-		{
-			current--;
-		}
-		toReturn = array[current];
-	}
-	else
-	{
-		toReturn = "ERROR!";
 	}
 }

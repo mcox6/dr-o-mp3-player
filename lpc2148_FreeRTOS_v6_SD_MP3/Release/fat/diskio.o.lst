@@ -1008,7 +1008,7 @@
  1043 0c78 34209FE5 		ldr	r2, .L200
  1044 0c7c 0030D2E5 		ldrb	r3, [r2, #0]	@ zero_extendqisi2
  1045 0c80 FE3003E2 		and	r3, r3, #254
- 1046 0c84 0200A0E3 		mov	r0, #2
+ 1046 0c84 0400A0E3 		mov	r0, #4
  1047 0c88 0030C2E5 		strb	r3, [r2, #0]
  1048 0c8c FEFFFFEB 		bl	setSSPSPI_Divider
  1049 0c90 000000EA 		b	.L191
@@ -1046,65 +1046,65 @@
  1084              		.ident	"GCC: (GNU) 4.3.2"
 DEFINED SYMBOLS
                             *ABS*:00000000 diskio.c
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:6      .text:00000000 diskio_initializeSPIMutex
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:10     .text:00000000 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:16     .text:0000000c $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:6      .text:00000000 diskio_initializeSPIMutex
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:10     .text:00000000 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:16     .text:0000000c $d
                             *COM*:00000004 SPIAccessSemaphore
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:21     .text:00000010 initialize_SdCardSignals
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:25     .text:00000010 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:51     .text:0000006c $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:57     .text:00000074 power_on
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:61     .text:00000074 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:66     .text:00000078 chk_power
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:79     .text:00000090 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:84     .text:00000094 disk_status
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:88     .text:00000094 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:97     .text:000000ac $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:1075   .data:00000000 Stat
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:102    .text:000000b0 disk_timerproc
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:106    .text:000000b0 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:137    .text:00000120 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:21     .text:00000010 initialize_SdCardSignals
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:25     .text:00000010 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:51     .text:0000006c $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:57     .text:00000074 power_on
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:61     .text:00000074 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:66     .text:00000078 chk_power
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:79     .text:00000090 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:84     .text:00000094 disk_status
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:88     .text:00000094 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:97     .text:000000ac $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:1075   .data:00000000 Stat
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:102    .text:000000b0 disk_timerproc
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:106    .text:000000b0 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:137    .text:00000120 $d
                             *COM*:00000001 Timer1
                             *COM*:00000001 Timer2
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:1078   .bss:00000000 pv.1758
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:146    .text:00000134 rcvr_datablock
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:149    .text:00000134 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:196    .text:000001d4 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:201    .text:000001d8 wait_ready
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:204    .text:000001d8 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:222    .text:00000210 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:227    .text:00000214 send_cmd
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:230    .text:00000214 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:290    .text:000002e4 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:295    .text:000002e8 xmit_datablock
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:298    .text:000002e8 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:335    .text:00000368 release_spi
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:355    .text:000003a0 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:361    .text:000003a8 get_spi
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:364    .text:000003a8 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:381    .text:000003e0 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:388    .text:000003ec getSDCardInfo
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:391    .text:000003ec $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:419    .text:00000450 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:435    .text:0000048c $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:475    .text:00000500 disk_write
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:554    .text:00000610 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:1078   .bss:00000000 pv.1758
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:146    .text:00000134 rcvr_datablock
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:149    .text:00000134 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:196    .text:000001d4 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:201    .text:000001d8 wait_ready
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:204    .text:000001d8 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:222    .text:00000210 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:227    .text:00000214 send_cmd
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:230    .text:00000214 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:290    .text:000002e4 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:295    .text:000002e8 xmit_datablock
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:298    .text:000002e8 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:335    .text:00000368 release_spi
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:355    .text:000003a0 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:361    .text:000003a8 get_spi
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:364    .text:000003a8 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:381    .text:000003e0 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:388    .text:000003ec getSDCardInfo
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:391    .text:000003ec $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:419    .text:00000450 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:435    .text:0000048c $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:475    .text:00000500 disk_write
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:554    .text:00000610 $d
                             *COM*:00000001 CardType
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:560    .text:00000618 disk_read
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:563    .text:00000618 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:628    .text:00000700 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:634    .text:00000708 power_off
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:637    .text:00000708 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:651    .text:00000734 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:656    .text:00000738 disk_ioctl
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:659    .text:00000738 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:701    .text:000007d0 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:717    .text:0000080c $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:915    .text:00000abc $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:922    .text:00000ac8 disk_initialize
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:925    .text:00000ac8 $a
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:1066   .text:00000cb4 $d
-/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ccJZvUAs.s:1076   .data:00000000 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:560    .text:00000618 disk_read
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:563    .text:00000618 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:628    .text:00000700 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:634    .text:00000708 power_off
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:637    .text:00000708 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:651    .text:00000734 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:656    .text:00000738 disk_ioctl
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:659    .text:00000738 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:701    .text:000007d0 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:717    .text:0000080c $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:915    .text:00000abc $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:922    .text:00000ac8 disk_initialize
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:925    .text:00000ac8 $a
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:1066   .text:00000cb4 $d
+/cygdrive/c/DOCUME~1/ADMINI~1/LOCALS~1/Temp/cc5vJ6O7.s:1076   .data:00000000 $d
 
 UNDEFINED SYMBOLS
 rxTxByteSSPSPI

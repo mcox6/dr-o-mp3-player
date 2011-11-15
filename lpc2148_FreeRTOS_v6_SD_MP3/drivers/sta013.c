@@ -1,21 +1,7 @@
 #include "sta013.h"
+#include "i2c.h"
 
-// TODO: 3b.  Include I2C Header File
 
-unsigned char sta013ReadReg(unsigned char reg)
-{
-	// TODO: 3c.  Fill in your I2C Read Register function here
-	// Read STA_I2C_DEV (device) and register reg
-	return 0;
-	//return i2cReadDeviceRegister(STA_I2C_DEV, reg) ???
-}
-
-void sta013WriteReg(unsigned char reg, unsigned char data)
-{
-	// TODO: 3d.  Fill in I2C Write Register Function here
-	// Write STA_I2C_DEV (device) and write register reg with "data"
-	//i2cWriteDeviceRegister(STA_I2C_DEV, reg, data) ???
-}
 
 
 #define STA013_MIN(a,b)			((a<b)?(a):(b))
@@ -24,6 +10,16 @@ void sta013WriteReg(unsigned char reg, unsigned char data)
 // STA013 I2C address
 #define STA_I2C_DEV                    0x86
 #define STA_IDENT                      0xAC
+
+unsigned char sta013ReadReg(unsigned char reg)
+{
+	return i2cReadDeviceRegister(STA_I2C_DEV, reg);
+}
+
+void sta013WriteReg(unsigned char reg, unsigned char data)
+{
+	i2cWriteDeviceRegister(STA_I2C_DEV, reg, data);
+}
 
 // STA013 register (sub)address
 #define STA_REG_VERSION                0x00
